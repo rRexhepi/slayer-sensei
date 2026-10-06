@@ -1,0 +1,2223 @@
+[
+  {
+    "task": "Bandits",
+    "assignedBy": "Weight at each master: Krystilia 4. Krystilia's version is in the Wilderness.",
+    "bestLocation": "Wilderness Bandit Camp for a Krystilia task; her assignments only count inside the Wilderness.",
+    "multiOrSingle": "multi/open",
+    "killStyle": "melee or ranged",
+    "weakness": "No special weapon requirement.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "Wilderness escape supplies; risk only what you can lose.",
+    "cannon": "usable in some open Wilderness spots; watch PK risk",
+    "hasSuperior": false,
+    "notableDrops": "Low-value weapons, armour and coins.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Wilderness Bandit Camp. Low level with low value drops."
+    }
+  },
+  {
+    "task": "Bats",
+    "assignedBy": "Weight at each master: Turael/Aya 7, Spria 7 and Mazchna/Achtryn 7. Needs combat level 5.",
+    "bestLocation": "Giant bats in Taverley Dungeon or near Keep Le Faye.",
+    "multiOrSingle": "single",
+    "killStyle": "any combat style",
+    "weakness": "No special weakness needed.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "None needed at normal levels",
+    "requiredItems": "None.",
+    "cannon": "usually unnecessary",
+    "hasSuperior": false,
+    "notableDrops": "Low-value filler drops.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level filler with low HP and no notable drops.",
+      "filler": {
+        "minutes": 8,
+        "basis": "Judgment from the wiki's Turael task completion tips (Slayer reward point): cannonable but single-way combat."
+      }
+    }
+  },
+  {
+    "task": "Bears",
+    "assignedBy": "Weight at each master: Turael/Aya 7, Spria 7, Mazchna/Achtryn 6 and Krystilia 6. Needs combat level 13. Krystilia's version is in the Wilderness.",
+    "bestLocation": "Wilderness grizzly bears for Krystilia; otherwise bears near Ardougne or Varrock.",
+    "multiOrSingle": "single/open",
+    "killStyle": "melee or ranged",
+    "weakness": "No special weapon requirement; Callisto/Artio are boss alternatives where eligible.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "Wilderness escape supplies for Krystilia.",
+    "cannon": "usable where placement permits",
+    "hasSuperior": false,
+    "notableDrops": "Bear fur; boss alternatives have separate loot.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level filler. Money making guide: about 20k/h.",
+      "wilderness": {
+        "xp": 1,
+        "gp": 1,
+        "speed": 4,
+        "basis": "Krystilia: grizzly bears in the Wilderness. Artio or Callisto count but are not rated."
+      },
+      "filler": {
+        "minutes": 7,
+        "basis": "Judgment from the wiki's Turael task completion tips (Slayer reward point): cannonable, by quest point cape or fairy ring to the Ardougne mine."
+      }
+    }
+  },
+  {
+    "task": "Birds",
+    "assignedBy": "Weight at each master: Turael/Aya 6 and Spria 6.",
+    "bestLocation": "Chickens around Lumbridge or Falador farm are the fastest low-level option.",
+    "multiOrSingle": "single",
+    "killStyle": "fast melee or ranged weapon",
+    "weakness": "No special weakness needed.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "None",
+    "requiredItems": "None.",
+    "cannon": "not worth setting up",
+    "hasSuperior": false,
+    "notableDrops": "Feathers and raw chicken.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level filler with low HP and no notable drops.",
+      "filler": {
+        "minutes": 7,
+        "basis": "Judgment from the wiki's Turael task completion tips (Slayer reward point): cannonable chickens, by skills necklace, cowbell amulet or ectophial."
+      }
+    }
+  },
+  {
+    "task": "Black Knights",
+    "assignedBy": "Weight at each master: Krystilia 3. Krystilia's version is in the Wilderness.",
+    "bestLocation": "Use the Wilderness black-knight location specified by Krystilia; non-Wilderness kills do not count for her task.",
+    "multiOrSingle": "single",
+    "killStyle": "melee or ranged",
+    "weakness": "No special weapon requirement.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "Wilderness escape supplies; do not rely on Black Knights' Fortress for a Wilderness assignment.",
+    "cannon": "only where local placement permits",
+    "hasSuperior": false,
+    "notableDrops": "Low-value armour and runes.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Wilderness low level monster with low value drops."
+    }
+  },
+  {
+    "task": "Catablepon",
+    "assignedBy": "Weight at each master: Mazchna/Achtryn 8. Needs combat level 35.",
+    "bestLocation": "Stronghold of Security, third level.",
+    "multiOrSingle": "single",
+    "killStyle": "melee or ranged",
+    "weakness": "Magic is accurate against their low Magic level, but no special weapon is required.",
+    "monsterAttackStyle": "melee plus a Strength-draining magical gaze",
+    "protectionPrayer": "Protect from Melee",
+    "requiredItems": "Food or stat restore if the gaze lowers Strength.",
+    "cannon": "not usable in the Stronghold",
+    "hasSuperior": false,
+    "notableDrops": "Runes and low-level alchables.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level filler in the Stronghold of Security."
+    }
+  },
+  {
+    "task": "Cave bugs",
+    "assignedBy": "Weight at each master: Turael/Aya 8, Spria 8 and Mazchna/Achtryn 8. Needs 7 Slayer.",
+    "bestLocation": "Lumbridge Swamp Caves.",
+    "multiOrSingle": "single",
+    "killStyle": "any fast weapon",
+    "weakness": "No special weakness needed.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "None",
+    "requiredItems": "A covered light source; rope is needed for the main Lumbridge entrance.",
+    "cannon": "not usable",
+    "hasSuperior": false,
+    "notableDrops": "Very low-value filler drops.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level filler with very low HP.",
+      "filler": {
+        "minutes": 12,
+        "basis": "Judgment from the wiki's Turael task completion tips (Slayer reward point): needs a light source, and the few spawns mean running around the cave."
+      }
+    }
+  },
+  {
+    "task": "Cave crawlers",
+    "assignedBy": "Weight at each master: Turael/Aya 8, Spria 8, Mazchna/Achtryn 8 and Mortimer 10. Needs 10 Slayer and combat level 10.",
+    "bestLocation": "Fremennik Slayer Dungeon.",
+    "multiOrSingle": "single",
+    "killStyle": "melee or ranged",
+    "weakness": "No special weapon requirement.",
+    "monsterAttackStyle": "melee and poison",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "Antipoison is strongly recommended.",
+    "cannon": "not usable",
+    "hasSuperior": true,
+    "notableDrops": "Herbs, seeds and low-level runes.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level. A fast skip task near a Slayer ring teleport (wiki Mortimer strategies).",
+      "filler": {
+        "minutes": 10,
+        "basis": "Judgment from the wiki's Turael task completion tips (Slayer reward point): poisonous and not cannonable."
+      }
+    }
+  },
+  {
+    "task": "Cave slimes",
+    "assignedBy": "Weight at each master: Turael/Aya 8, Spria 8 and Mazchna/Achtryn 8. Needs 17 Slayer and combat level 15.",
+    "bestLocation": "Fremennik Slayer Dungeon or Lumbridge Swamp Caves.",
+    "multiOrSingle": "single",
+    "killStyle": "melee or ranged",
+    "weakness": "No special weapon requirement.",
+    "monsterAttackStyle": "melee and poison",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "Antipoison plus a covered light source in Lumbridge Swamp Caves.",
+    "cannon": "not usable",
+    "hasSuperior": false,
+    "notableDrops": "Low-level herbs and ores.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level filler with low value drops.",
+      "filler": {
+        "minutes": 11,
+        "basis": "Judgment from the wiki's Turael task completion tips (Slayer reward point): poisonous and needs a light source."
+      }
+    }
+  },
+  {
+    "task": "Chaos druids",
+    "assignedBy": "Weight at each master: Krystilia 5. Krystilia's version is in the Wilderness.",
+    "bestLocation": "Edgeville Dungeon resource area or Taverley Dungeon; use the exact Wilderness location for Krystilia.",
+    "multiOrSingle": "single",
+    "killStyle": "fast melee or ranged",
+    "weakness": "No special weakness needed.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "None",
+    "requiredItems": "Wilderness awareness if using Edgeville's Wilderness section.",
+    "cannon": "usable in some locations",
+    "hasSuperior": false,
+    "notableDrops": "Grimy herbs.",
+    "rating": {
+      "xp": 1,
+      "gp": 2,
+      "speed": 5,
+      "basis": "Wilderness druids with herb drops, about 125k/h (money making guide)."
+    }
+  },
+  {
+    "task": "Cockatrice",
+    "assignedBy": "Weight at each master: Mazchna/Achtryn 8, Vannaka 8 and Mortimer 10. Needs 25 Slayer, 20 Defence and combat level 25.",
+    "bestLocation": "Fremennik Slayer Dungeon.",
+    "multiOrSingle": "single",
+    "killStyle": "melee",
+    "weakness": "No elemental weakness needed.",
+    "monsterAttackStyle": "melee plus a stat-draining gaze",
+    "protectionPrayer": "Protect from Melee",
+    "requiredItems": "Mandatory: mirror shield or V's shield; a Slayer helmet does not replace it.",
+    "cannon": "not usable",
+    "hasSuperior": true,
+    "notableDrops": "Limpwurt roots, mystic boots (light), herbs.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Low level, 37 HP and away from teleports (wiki Mortimer strategies)."
+    }
+  },
+  {
+    "task": "Cows",
+    "assignedBy": "Weight at each master: Turael/Aya 8 and Spria 8.",
+    "bestLocation": "Lumbridge cow field.",
+    "multiOrSingle": "single",
+    "killStyle": "any fast weapon",
+    "weakness": "No special weakness needed.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "None",
+    "requiredItems": "None.",
+    "cannon": "not worth setting up",
+    "hasSuperior": false,
+    "notableDrops": "Cowhide, raw beef and bones.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level filler. Cowhides only.",
+      "filler": {
+        "minutes": 7,
+        "basis": "Judgment from the wiki's Turael task completion tips (Slayer reward point): cannonable, with the cowbell amulet to the Lumbridge cow field."
+      }
+    }
+  },
+  {
+    "task": "Crabs",
+    "assignedBy": "Weight at each master: Mazchna/Achtryn 8, Vannaka 8 and Chaeldar 8.",
+    "bestLocation": "Sand Crabs on Hosidius shore or ammonite crabs on Fossil Island.",
+    "multiOrSingle": "single",
+    "killStyle": "melee for AFK training",
+    "weakness": "No special weakness needed.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "None",
+    "requiredItems": "None.",
+    "cannon": "not usable at common crab spots",
+    "hasSuperior": false,
+    "notableDrops": "Nearly no valuable drops; this is an AFK combat task.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 3,
+      "basis": "AFK crabs with almost no drops. Low XP for the time spent."
+    }
+  },
+  {
+    "task": "Crawling hands",
+    "assignedBy": "Weight at each master: Turael/Aya 8, Spria 8, Mazchna/Achtryn 8 and Mortimer 10. Needs 5 Slayer.",
+    "bestLocation": "Slayer Tower ground floor.",
+    "multiOrSingle": "single",
+    "killStyle": "melee or ranged",
+    "weakness": "Undead bonuses such as Salve can work, but do not stack with a Slayer helmet.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "None.",
+    "cannon": "not usable",
+    "hasSuperior": true,
+    "notableDrops": "Coloured gloves, rings and the superior Crushing hand.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level. The fastest skip task with a Slayer ring teleport (wiki Mortimer strategies).",
+      "filler": {
+        "minutes": 9,
+        "basis": "Judgment from the wiki's Turael task completion tips (Slayer reward point): not cannonable, with the Slayer ring to the Slayer Tower."
+      }
+    }
+  },
+  {
+    "task": "Crocodiles",
+    "assignedBy": "Weight at each master: Vannaka 6. Needs combat level 50.",
+    "bestLocation": "Along the River Elid in the Kharidian Desert.",
+    "multiOrSingle": "single",
+    "killStyle": "ranged or melee",
+    "weakness": "No special weapon requirement.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "Desert heat protection or waterskins.",
+    "cannon": "usable in some desert spots",
+    "hasSuperior": false,
+    "notableDrops": "Bones and low-value drops.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Low level desert monster with poor drops."
+    }
+  },
+  {
+    "task": "Dark warriors",
+    "assignedBy": "Weight at each master: Krystilia 4. Krystilia's version is in the Wilderness.",
+    "bestLocation": "Dark Warriors' Fortress in the Wilderness.",
+    "multiOrSingle": "single",
+    "killStyle": "melee or ranged",
+    "weakness": "No special weakness needed.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "Wilderness escape supplies and low-risk gear.",
+    "cannon": "usable where placement permits",
+    "hasSuperior": false,
+    "notableDrops": "Low-value weapons and armour.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Wilderness low level monster with low value drops."
+    }
+  },
+  {
+    "task": "Dogs",
+    "assignedBy": "Weight at each master: Turael/Aya 7, Spria 7 and Mazchna/Achtryn 7. Needs combat level 15.",
+    "bestLocation": "Wild dogs in Brimhaven Dungeon are a common option; check whether the assigned variant/location counts.",
+    "multiOrSingle": "single",
+    "killStyle": "melee or ranged",
+    "weakness": "No special weapon requirement.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "Coins for Brimhaven Dungeon and an axe if entering through the vines.",
+    "cannon": "usable in Brimhaven Dungeon",
+    "hasSuperior": false,
+    "notableDrops": "Low-value drops.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level filler with low value drops.",
+      "filler": {
+        "minutes": 7,
+        "basis": "Judgment from the wiki's Turael task completion tips (Slayer reward point): cannonable jackals, by Nardah teleport or fairy ring."
+      }
+    }
+  },
+  {
+    "task": "Dwarves",
+    "assignedBy": "Weight at each master: Turael/Aya 7 and Spria 7. Needs combat level 6.",
+    "bestLocation": "Dwarven Mine or the dwarves around White Wolf Mountain.",
+    "multiOrSingle": "single",
+    "killStyle": "any combat style",
+    "weakness": "No special weakness needed.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "None",
+    "requiredItems": "None.",
+    "cannon": "usually unnecessary",
+    "hasSuperior": false,
+    "notableDrops": "Low-value ore, bars and weapons.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level filler with low value drops.",
+      "filler": {
+        "minutes": 7,
+        "basis": "Judgment from the wiki's Turael task completion tips (Slayer reward point): cannonable, with a Taverley teleport."
+      }
+    }
+  },
+  {
+    "task": "Earth warriors",
+    "assignedBy": "Weight at each master: Krystilia 6. Needs 15 Agility. Krystilia's version is in the Wilderness.",
+    "bestLocation": "Edgeville Dungeon's Wilderness section.",
+    "multiOrSingle": "single",
+    "killStyle": "melee or ranged",
+    "weakness": "No special weapon requirement.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee",
+    "requiredItems": "Wilderness escape supplies; a dusty key or Agility shortcut may be needed for access.",
+    "cannon": "not usable in the narrow section",
+    "hasSuperior": false,
+    "notableDrops": "Herbs, runes and medium clues.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Wilderness part of Edgeville Dungeon. Low level with herb and clue drops."
+    }
+  },
+  {
+    "task": "Ents",
+    "assignedBy": "Weight at each master: Krystilia 5. Krystilia's version is in the Wilderness.",
+    "bestLocation": "Wooded Wilderness areas; Krystilia kills must remain inside the Wilderness.",
+    "multiOrSingle": "single",
+    "killStyle": "melee",
+    "weakness": "Axes are useful for the optional log-cutting interaction after a kill, not for dealing combat damage.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "Wilderness escape supplies.",
+    "cannon": "not recommended",
+    "hasSuperior": false,
+    "notableDrops": "Ent trunks can be chopped for noted logs.",
+    "rating": {
+      "xp": 2,
+      "gp": 2,
+      "speed": 3,
+      "basis": "About 370k/h from the logs (money making guide). Somewhat long with no other loot (wiki Krystilia strategies)."
+    }
+  },
+  {
+    "task": "Fleshcrawlers",
+    "assignedBy": "Weight at each master: Mazchna/Achtryn 7. Needs combat level 15.",
+    "bestLocation": "Stronghold of Security, second level.",
+    "multiOrSingle": "single",
+    "killStyle": "melee for AFK kills",
+    "weakness": "No special weakness needed.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "None at adequate Defence",
+    "requiredItems": "None.",
+    "cannon": "not usable",
+    "hasSuperior": false,
+    "notableDrops": "Herbs, runes and noted iron ore.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level filler in the Stronghold of Security."
+    }
+  },
+  {
+    "task": "Ghosts",
+    "assignedBy": "Weight at each master: Turael/Aya 7, Spria 7 and Mazchna/Achtryn 7. Needs combat level 13.",
+    "bestLocation": "Stronghold of Security or the Graveyard of Shadows for Wilderness tasks.",
+    "multiOrSingle": "single",
+    "killStyle": "melee",
+    "weakness": "Undead: Salve amulet works, but does not stack with a Slayer helmet.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "Wilderness escape supplies when applicable.",
+    "cannon": "location-dependent",
+    "hasSuperior": false,
+    "notableDrops": "Low-value undead drops.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level filler with low value drops.",
+      "filler": {
+        "minutes": 8,
+        "basis": "Judgment from the wiki's Turael task completion tips (Slayer reward point): cannonable but single-way combat."
+      }
+    }
+  },
+  {
+    "task": "Ghouls",
+    "assignedBy": "Weight at each master: Mazchna/Achtryn 7 and Vannaka 7. Needs combat level 25.",
+    "bestLocation": "South-west of Canifis or inside the Morytania Slayer Tower area.",
+    "multiOrSingle": "single",
+    "killStyle": "melee",
+    "weakness": "Undead: Salve amulet works, but does not stack with a Slayer helmet.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "Priest in Peril access to Morytania.",
+    "cannon": "not usable at the common spot",
+    "hasSuperior": false,
+    "notableDrops": "Low-value drops.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level filler in Canifis with low value drops."
+    }
+  },
+  {
+    "task": "Goblins",
+    "assignedBy": "Weight at each master: Turael/Aya 7 and Spria 7.",
+    "bestLocation": "Lumbridge or Goblin Village.",
+    "multiOrSingle": "single",
+    "killStyle": "any fast weapon",
+    "weakness": "No special weakness needed.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "None",
+    "requiredItems": "None.",
+    "cannon": "not worth setting up",
+    "hasSuperior": false,
+    "notableDrops": "Low-value weapons, armour and clue scrolls.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level filler with low value drops.",
+      "filler": {
+        "minutes": 7,
+        "basis": "Judgment from the wiki's Turael task completion tips (Slayer reward point): cannonable, with the cowbell amulet to Lumbridge."
+      }
+    }
+  },
+  {
+    "task": "Harpie bug swarms",
+    "assignedBy": "Weight at each master: Vannaka 8. Needs 33 Slayer, 33 Firemaking and combat level 45.",
+    "bestLocation": "North-east Karamja, near Tai Bwo Wannai.",
+    "multiOrSingle": "single",
+    "killStyle": "melee or ranged",
+    "weakness": "No special weakness needed.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "Mandatory: lit bug lantern; an unlit lantern does not protect you.",
+    "cannon": "not usable",
+    "hasSuperior": false,
+    "notableDrops": "Fire runes, herbs and low-value alchables.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Low level Karamja monster, needs a bug lantern."
+    }
+  },
+  {
+    "task": "Hill giants",
+    "assignedBy": "Weight at each master: Mazchna/Achtryn 7, Vannaka 7 and Krystilia 3. Needs combat level 25. Krystilia's version is in the Wilderness.",
+    "bestLocation": "Giants' Den for cannoning or Catacombs of Kourend for passive ancient shards/totem pieces.",
+    "multiOrSingle": "single",
+    "killStyle": "cannon plus melee, or melee alone",
+    "weakness": "No special weakness required.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "Brass key for the Edgeville shed route if using Edgeville Dungeon.",
+    "cannon": "great in Giants' Den",
+    "hasSuperior": false,
+    "notableDrops": "Big bones, limpwurt roots, giant keys.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level giants, cannon in the Giants' Den. Money making guide: about 66k/h.",
+      "wilderness": {
+        "xp": 1,
+        "gp": 1,
+        "speed": 4,
+        "basis": "Krystilia: more kills, in the Wilderness."
+      }
+    }
+  },
+  {
+    "task": "Hobgoblins",
+    "assignedBy": "Weight at each master: Mazchna/Achtryn 7 and Vannaka 7. Needs combat level 20.",
+    "bestLocation": "Peninsula west of the Crafting Guild or Asgarnian Ice Dungeon.",
+    "multiOrSingle": "single",
+    "killStyle": "cannon plus ranged/melee",
+    "weakness": "No special weakness needed.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "None.",
+    "cannon": "good at the Crafting Guild peninsula",
+    "hasSuperior": false,
+    "notableDrops": "Limpwurt roots, runes and low-value weapons.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level filler with low value drops."
+    }
+  },
+  {
+    "task": "Icefiends",
+    "assignedBy": "Weight at each master: Turael/Aya 8 and Spria 8. Needs combat level 20.",
+    "bestLocation": "Ice Mountain.",
+    "multiOrSingle": "single",
+    "killStyle": "any fast weapon",
+    "weakness": "Fire spells are a sensible elemental option; no special weapon is required.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "None",
+    "requiredItems": "Warm clothing is not required for this surface task.",
+    "cannon": "not worth setting up",
+    "hasSuperior": false,
+    "notableDrops": "Very low-value drops.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level filler with very low value drops.",
+      "filler": {
+        "minutes": 8,
+        "basis": "Judgment from the wiki's Turael task completion tips (Slayer reward point): cannonable, but the trip is a Lassar teleport or a run from the Monastery."
+      }
+    }
+  },
+  {
+    "task": "Ice giants",
+    "assignedBy": "Weight at each master: Vannaka 7 and Krystilia 6. Needs combat level 50. Krystilia's version is in the Wilderness.",
+    "bestLocation": "Asgarnian Ice Dungeon or the Ice Plateau for Wilderness assignments.",
+    "multiOrSingle": "single",
+    "killStyle": "melee or ranged",
+    "weakness": "Fire spells exploit their elemental weakness.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "Wilderness escape supplies if assigned there.",
+    "cannon": "usable in some locations",
+    "hasSuperior": false,
+    "notableDrops": "Big bones, runes and giant keys.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Low level giants with rune and key drops.",
+      "wilderness": {
+        "xp": 1,
+        "gp": 1,
+        "speed": 3,
+        "basis": "Krystilia: more kills, in the Wilderness."
+      }
+    }
+  },
+  {
+    "task": "Ice warriors",
+    "assignedBy": "Weight at each master: Mazchna/Achtryn 7, Vannaka 7 and Krystilia 7. Needs combat level 45. Krystilia's version is in the Wilderness.",
+    "bestLocation": "Asgarnian Ice Dungeon or Ice Plateau for Wilderness assignments.",
+    "multiOrSingle": "single",
+    "killStyle": "melee or ranged",
+    "weakness": "Fire spells exploit their elemental weakness.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "Wilderness escape supplies if assigned there.",
+    "cannon": "usable in some locations",
+    "hasSuperior": false,
+    "notableDrops": "Nature runes, mithril weapons and clues.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Low level with nature rune drops.",
+      "wilderness": {
+        "xp": 1,
+        "gp": 1,
+        "speed": 3,
+        "basis": "Krystilia: fairly long, busy with PKers, no loot (wiki Krystilia strategies)."
+      }
+    }
+  },
+  {
+    "task": "Infernal mages",
+    "assignedBy": "Weight at each master: Vannaka 8 and Mortimer 10. Needs 45 Slayer and combat level 40.",
+    "bestLocation": "Slayer Tower second floor.",
+    "multiOrSingle": "single",
+    "killStyle": "ranged or melee in magic-defence gear",
+    "weakness": "Water spells exploit their elemental weakness.",
+    "monsterAttackStyle": "magic",
+    "protectionPrayer": "Protect from Magic",
+    "requiredItems": "None.",
+    "cannon": "not usable",
+    "hasSuperior": true,
+    "notableDrops": "Mystic boots (dark), runes and the superior Malevolent mage.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Low level Slayer Tower monster. Mystic boots drops."
+    }
+  },
+  {
+    "task": "Jungle horrors",
+    "assignedBy": "Weight at each master: Vannaka 8 and Chaeldar 10. Needs combat level 65.",
+    "bestLocation": "Mos Le'Harmless jungle after Cabin Fever.",
+    "multiOrSingle": "single",
+    "killStyle": "melee or ranged",
+    "weakness": "No special weapon requirement.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "Completion of Cabin Fever; witchwood icon is for cave horrors, not jungle horrors.",
+    "cannon": "not usable",
+    "hasSuperior": false,
+    "notableDrops": "Herbs, seeds and low-value alchables.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Low level Mos Le'Harmless monster with herb drops."
+    }
+  },
+  {
+    "task": "Killerwatts",
+    "assignedBy": "Weight at each master: Mazchna/Achtryn 6. Needs 37 Slayer and combat level 50.",
+    "bestLocation": "Killerwatt plane through the portal in Draynor Manor.",
+    "multiOrSingle": "single",
+    "killStyle": "ranged or melee with strong defence",
+    "weakness": "No reliable elemental shortcut; their Defence is low.",
+    "monsterAttackStyle": "melee and ranged electrical attacks",
+    "protectionPrayer": "Protect from Missiles, then keep distance",
+    "requiredItems": "Completion of Ernest the Chicken; insulated boots are recommended protection.",
+    "cannon": "not usable",
+    "hasSuperior": false,
+    "notableDrops": "Mystic gloves (light), runes and low-value alchables.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Low level, reached through Draynor Manor."
+    }
+  },
+  {
+    "task": "Lesser demons",
+    "assignedBy": "Weight at each master: Vannaka 7, Chaeldar 9 and Krystilia 6. Needs combat level 60. Krystilia's version is in the Wilderness.",
+    "bestLocation": "Chasm of Fire or Catacombs of Kourend; use Wilderness locations for Krystilia.",
+    "multiOrSingle": "single",
+    "killStyle": "demonbane melee or cannon plus melee",
+    "weakness": "Demonbane weapons receive their normal bonus.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee",
+    "requiredItems": "Wilderness escape supplies when applicable.",
+    "cannon": "good in suitable multi areas",
+    "hasSuperior": false,
+    "notableDrops": "Malicious ashes, rune med helms and clues.",
+    "rating": {
+      "xp": 2,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Cannon in the Karamja volcano or the Chasm of Fire. Poor drops."
+    }
+  },
+  {
+    "task": "Lizards",
+    "assignedBy": "Weight at each master: Turael/Aya 8, Spria 8 and Mazchna/Achtryn 8. Needs 22 Slayer.",
+    "bestLocation": "Kharidian Desert lizard areas.",
+    "multiOrSingle": "single",
+    "killStyle": "melee or ranged",
+    "weakness": "No special damage weakness; the finishing item is what matters.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "Mandatory: ice coolers to finish desert lizards at low health; bring desert heat protection.",
+    "cannon": "location-dependent",
+    "hasSuperior": false,
+    "notableDrops": "Low-value herbs, runes and ores.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level desert lizards, needs ice coolers.",
+      "filler": {
+        "minutes": 10,
+        "basis": "Judgment from the wiki's Turael task completion tips (Slayer reward point): cannonable, but desert lizards need ice coolers to kill."
+      }
+    }
+  },
+  {
+    "task": "The Maggot King",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "A boss task. It does not count as a vampyre task. It needs 74 Slayer and The Blood Moon Rises.",
+    "bestLocation": "Maggot King's lair in the Sotfa Forest east of Sangvesti near the Ruined Village, Vampyrium; use Drakan's medallion and the aranei scout shortcut.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Use heavy Ranged or fire Magic at distance, then crush melee for timed slam punishes once the boss falls below about 65% health; a standard bow handles airborne larvae.",
+    "weakness": "Weakest to crush and heavy Ranged. Fire spells have 80% elemental weakness while the boss is far or roaring (5% while nearby), apply burn damage and lower Magic Defence.",
+    "monsterAttackStyle": "All three styles: alternating Ranged/Magic spit and bile pools, melee slams, prayer-punishing screeches, falling carrion and ur-maggot larvae.",
+    "protectionPrayer": "Start Protect from Missiles; switch between Missiles and Magic after screeches, turn overhead prayer off before each screech, and use Protect from Melee for slams (it reduces damage but does not fully block it).",
+    "requiredItems": "The Blood Moon Rises completed; melee plus heavy-Ranged or fire-Magic gear. Poison protection, food/prayer supplies, and a standard bow with arrows for larvae are strongly recommended.",
+    "cannon": "not usable in the instanced boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Elder venator fang, crimson kisten, Maggot marquess pet, elite clues and supply/resource drops."
+  },
+  {
+    "task": "Magic axes",
+    "assignedBy": "Weight at each master: Krystilia 7. Needs 23 Thieving and combat level 40. Krystilia's version is in the Wilderness.",
+    "bestLocation": "Magic Axe Hut in deep Wilderness.",
+    "multiOrSingle": "single",
+    "killStyle": "melee or ranged",
+    "weakness": "No special weapon requirement.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee",
+    "requiredItems": "Mandatory for entry: lockpick; bring Wilderness escape supplies.",
+    "cannon": "not usable inside the hut",
+    "hasSuperior": false,
+    "notableDrops": "Iron and steel battleaxes.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 3,
+      "basis": "Somewhat long with no loot (wiki Krystilia strategies)."
+    }
+  },
+  {
+    "task": "Mammoths",
+    "assignedBy": "Weight at each master: Krystilia 6. Krystilia's version is in the Wilderness.",
+    "bestLocation": "Wilderness mammoth area; Krystilia kills must stay in the Wilderness.",
+    "multiOrSingle": "single",
+    "killStyle": "melee or ranged",
+    "weakness": "No special weapon requirement.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee",
+    "requiredItems": "Wilderness escape supplies and low-risk gear.",
+    "cannon": "usable in open spots",
+    "hasSuperior": false,
+    "notableDrops": "Big bones, herbs and seeds.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 3,
+      "basis": "Wilderness mammoths with big bones and low value drops."
+    }
+  },
+  {
+    "task": "Minotaurs",
+    "assignedBy": "Weight at each master: Turael/Aya 7 and Spria 7. Needs combat level 7.",
+    "bestLocation": "Stronghold of Security, first level.",
+    "multiOrSingle": "single",
+    "killStyle": "any fast weapon",
+    "weakness": "No special weakness needed.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "None",
+    "requiredItems": "None.",
+    "cannon": "not usable",
+    "hasSuperior": false,
+    "notableDrops": "Iron arrows and low-value weapons.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level filler in the Stronghold of Security.",
+      "filler": {
+        "minutes": 7,
+        "basis": "Judgment from the wiki's Turael task completion tips (Slayer reward point): cannonable, by skull sceptre or glory."
+      }
+    }
+  },
+  {
+    "task": "Mogres",
+    "assignedBy": "Weight at each master: Mazchna/Achtryn 8 and Vannaka 7. Needs 32 Slayer and combat level 30.",
+    "bestLocation": "Mudskipper Point, after starting Mogre-related activity.",
+    "multiOrSingle": "single",
+    "killStyle": "melee or ranged",
+    "weakness": "No special weapon requirement.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "Fishing explosives are needed to lure mogres from ominous fishing spots.",
+    "cannon": "usable near Mudskipper Point",
+    "hasSuperior": false,
+    "notableDrops": "Flippers, mudskipper hat, seeds and seaweed.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Low level, needs fishing explosives at Mudskipper Point."
+    }
+  },
+  {
+    "task": "Molanisks",
+    "assignedBy": "Weight at each master: Vannaka 7. Needs 39 Slayer and combat level 50.",
+    "bestLocation": "Dorgesh-Kaan South Dungeon.",
+    "multiOrSingle": "single",
+    "killStyle": "melee",
+    "weakness": "No special weakness needed.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "Mandatory: Slayer bell to knock a molanisk off the wall before attacking.",
+    "cannon": "not usable",
+    "hasSuperior": false,
+    "notableDrops": "Mole claws/skins, swamp weed and low-value drops.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Low level Dorgesh-Kaan monster with low value drops."
+    }
+  },
+  {
+    "task": "Monkeys",
+    "assignedBy": "Weight at each master: Turael/Aya 6 and Spria 6.",
+    "bestLocation": "Karamja surface for a fast filler task; demonic gorillas are a high-profit alternative after Monkey Madness II.",
+    "multiOrSingle": "single",
+    "killStyle": "melee or ranged; use a proper switches guide for demonic gorillas",
+    "weakness": "No generic monkey weakness; demonic gorillas require style switching.",
+    "monsterAttackStyle": "melee for normal monkeys; mixed for demonic gorillas",
+    "protectionPrayer": "None for normal monkeys",
+    "requiredItems": "None for normal monkeys; MM2 and strong gear for demonic gorillas.",
+    "cannon": "not worth using for normal monkeys",
+    "hasSuperior": false,
+    "notableDrops": "Low value normally; zenyte shards from demonic gorillas.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level filler. Money making guide: about 50k/h.",
+      "filler": {
+        "minutes": 8,
+        "basis": "Judgment from the wiki's Turael task completion tips (Slayer reward point): cannonable but single-way combat, by fairy ring or Ardougne cloak."
+      }
+    }
+  },
+  {
+    "task": "Moss giants",
+    "assignedBy": "Weight at each master: Vannaka 7 and Krystilia 4. Needs combat level 40. Krystilia's version is in the Wilderness.",
+    "bestLocation": "Giants' Den for cannoning or Catacombs of Kourend for shards/totem pieces.",
+    "multiOrSingle": "single",
+    "killStyle": "cannon plus melee, or melee",
+    "weakness": "No special weapon requirement.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "None.",
+    "cannon": "great in Giants' Den",
+    "hasSuperior": false,
+    "notableDrops": "Big bones, seeds, mossy keys and clues.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Low level giants with seed and key drops.",
+      "wilderness": {
+        "xp": 1,
+        "gp": 1,
+        "speed": 3,
+        "basis": "Krystilia: more kills, in the Wilderness."
+      }
+    }
+  },
+  {
+    "task": "Ogres",
+    "assignedBy": "Weight at each master: Vannaka 7. Needs combat level 40.",
+    "bestLocation": "Combat Training Camp for cannoning after Biohazard, or Tree Gnome Stronghold.",
+    "multiOrSingle": "single",
+    "killStyle": "cannon plus ranged/melee",
+    "weakness": "No special weapon requirement.",
+    "monsterAttackStyle": "mostly melee; some variants use ranged",
+    "protectionPrayer": "Protect from Melee against standard ogres",
+    "requiredItems": "Quest access may be needed for the Combat Training Camp.",
+    "cannon": "great at the Combat Training Camp",
+    "hasSuperior": false,
+    "notableDrops": "Big bones, seeds, herbs and rune items from stronger variants.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Low level with big bones and herb drops."
+    }
+  },
+  {
+    "task": "Otherworldly beings",
+    "assignedBy": "Weight at each master: Vannaka 8. Needs combat level 40.",
+    "bestLocation": "Zanaris, near the cosmic altar route.",
+    "multiOrSingle": "single",
+    "killStyle": "melee or ranged",
+    "weakness": "No special weapon requirement.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "Lost City access to Zanaris.",
+    "cannon": "not usable",
+    "hasSuperior": false,
+    "notableDrops": "Runes, gems and low-value alchables.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Low level Zanaris monster with low value drops."
+    }
+  },
+  {
+    "task": "Pirates",
+    "assignedBy": "Weight at each master: Krystilia 3. Needs 39 Thieving. Krystilia's version is in the Wilderness.",
+    "bestLocation": "Pirates' Cove or Brimhaven; use the exact Wilderness spot for Krystilia.",
+    "multiOrSingle": "single",
+    "killStyle": "melee or ranged",
+    "weakness": "No special weakness needed.",
+    "monsterAttackStyle": "mostly melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "Wilderness escape supplies when applicable.",
+    "cannon": "location-dependent",
+    "hasSuperior": false,
+    "notableDrops": "Low-value weapons, coins and clues.",
+    "rating": {
+      "xp": 3,
+      "gp": 4,
+      "speed": 5,
+      "basis": "Zombie pirates at the Chaos Temple count and make an incredibly good, very profitable task (wiki Krystilia strategies). About 1.9M/h on a budget (money making guide)."
+    }
+  },
+  {
+    "task": "Pyrefiends",
+    "assignedBy": "Weight at each master: Mazchna/Achtryn 8, Vannaka 8 and Mortimer 10. Needs 30 Slayer and combat level 25.",
+    "bestLocation": "Fremennik Slayer Dungeon.",
+    "multiOrSingle": "single",
+    "killStyle": "ranged or melee in magic-defence gear",
+    "weakness": "Water spells exploit their elemental weakness.",
+    "monsterAttackStyle": "magic-based attack",
+    "protectionPrayer": "Protect from Magic",
+    "requiredItems": "None.",
+    "cannon": "not usable",
+    "hasSuperior": true,
+    "notableDrops": "Chaos/death runes, gold ore and the superior Flaming pyrelord.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Low level, away from teleports (wiki Mortimer strategies)."
+    }
+  },
+  {
+    "task": "Rats",
+    "assignedBy": "Weight at each master: Turael/Aya 7 and Spria 7.",
+    "bestLocation": "Varrock Sewers for normal rats; Scurrius is a boss alternative where eligible.",
+    "multiOrSingle": "single",
+    "killStyle": "any fast weapon",
+    "weakness": "No special weakness needed.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "None",
+    "requiredItems": "None for normal rats.",
+    "cannon": "not worth setting up",
+    "hasSuperior": false,
+    "notableDrops": "Low value normally; Scurrius has separate boss rewards.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level filler. Scurrius counts but is not rated.",
+      "filler": {
+        "minutes": 7,
+        "basis": "Judgment from the wiki's Turael task completion tips (Slayer reward point): cannonable, with a Lumbridge, Varrock or West Ardougne teleport."
+      }
+    }
+  },
+  {
+    "task": "Rockslugs",
+    "assignedBy": "Weight at each master: Mazchna/Achtryn 8 and Mortimer 10. Needs 20 Slayer and combat level 20.",
+    "bestLocation": "Fremennik Slayer Dungeon.",
+    "multiOrSingle": "single",
+    "killStyle": "melee or ranged",
+    "weakness": "No special damage weakness; they must be finished correctly.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "Mandatory: bag of salt used when the rockslug reaches low health; a Slayer helmet does not replace it.",
+    "cannon": "not usable",
+    "hasSuperior": true,
+    "notableDrops": "Mystic gloves (light), ores and the superior Giant rockslug.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level. A decent skip task near a Slayer ring teleport (wiki Mortimer strategies)."
+    }
+  },
+  {
+    "task": "Rogues",
+    "assignedBy": "Weight at each master: Krystilia 5. Krystilia's version is in the Wilderness.",
+    "bestLocation": "Rogues' Castle or other Wilderness rogue spawns.",
+    "multiOrSingle": "single",
+    "killStyle": "melee or ranged",
+    "weakness": "No special weapon requirement.",
+    "monsterAttackStyle": "melee and ranged depending on variant",
+    "protectionPrayer": "Protect from Missiles when fighting ranged rogues",
+    "requiredItems": "Wilderness escape supplies and low-risk gear.",
+    "cannon": "location-dependent",
+    "hasSuperior": false,
+    "notableDrops": "Low-value weapons, runes and coins.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Wilderness Rogues' Castle. Low level with low value drops."
+    }
+  },
+  {
+    "task": "Scorpions",
+    "assignedBy": "Weight at each master: Turael/Aya 7, Spria 7, Mazchna/Achtryn 7 and Krystilia 6. Needs combat level 7. Krystilia's version is in the Wilderness.",
+    "bestLocation": "Scorpion Pit or Dwarven Mine; Scorpia is a Wilderness boss alternative.",
+    "multiOrSingle": "single",
+    "killStyle": "melee or ranged",
+    "weakness": "No special weakness needed.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "Wilderness escape supplies for Scorpia or Wilderness locations.",
+    "cannon": "location-dependent",
+    "hasSuperior": false,
+    "notableDrops": "Low value normally; Scorpia has separate boss loot.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level filler with low value drops.",
+      "wilderness": {
+        "xp": 1,
+        "gp": 1,
+        "speed": 5,
+        "basis": "Krystilia: a cannon in Scorpia's lair finishes it in seconds (wiki Krystilia strategies)."
+      },
+      "filler": {
+        "minutes": 7,
+        "basis": "Judgment from the wiki's Turael task completion tips (Slayer reward point): cannonable, by ring of dueling, quest point cape or fairy ring."
+      }
+    }
+  },
+  {
+    "task": "Sea snakes",
+    "assignedBy": "Weight at each master: Vannaka 6. Needs 40 Slayer and combat level 50.",
+    "bestLocation": "Miscellania and Etceteria Dungeon, open during and after Royal Trouble.",
+    "multiOrSingle": "single",
+    "killStyle": "melee or ranged",
+    "weakness": "No special weapon requirement.",
+    "monsterAttackStyle": "melee and poison",
+    "protectionPrayer": "Protect from Melee",
+    "requiredItems": "Antipoison. Royal Trouble progress for the Miscellania and Etceteria Dungeon.",
+    "cannon": "usable, but the dungeon is single combat",
+    "hasSuperior": false,
+    "notableDrops": "Snake hides, herbs and seeds.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Low level Miscellania monster with hide and herb drops."
+    }
+  },
+  {
+    "task": "Shades",
+    "assignedBy": "Weight at each master: Mazchna/Achtryn 8 and Vannaka 8. Needs combat level 30.",
+    "bestLocation": "Mort'ton shade areas or Catacombs variants that count for the task.",
+    "multiOrSingle": "single",
+    "killStyle": "melee",
+    "weakness": "Undead: Salve amulet works, but does not stack with a Slayer helmet.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "None for combat; sacred oil and pyre logs are only for cremation rewards.",
+    "cannon": "location-dependent",
+    "hasSuperior": false,
+    "notableDrops": "Shade remains and keys through the cremation minigame.",
+    "rating": {
+      "xp": 1,
+      "gp": 3,
+      "speed": 5,
+      "basis": "Loar shades in Mort'ton are the fastest (wiki task page). Fiyr and urium shades about 1.2M/h with Firemaking (money making guide)."
+    }
+  },
+  {
+    "task": "Shadow warriors",
+    "assignedBy": "Weight at each master: Vannaka 8 and Chaeldar 8. Needs combat level 60.",
+    "bestLocation": "Legends' Guild basement.",
+    "multiOrSingle": "single",
+    "killStyle": "melee",
+    "weakness": "No special weapon requirement.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee",
+    "requiredItems": "Legends' Quest access.",
+    "cannon": "not usable",
+    "hasSuperior": false,
+    "notableDrops": "Blood/death runes and low-value weapons.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Low level Legends' Guild monster with low value drops."
+    }
+  },
+  {
+    "task": "Skeletons",
+    "assignedBy": "Weight at each master: Turael/Aya 7, Spria 7, Mazchna/Achtryn 7 and Krystilia 5. Needs combat level 15. Krystilia's version is in the Wilderness.",
+    "bestLocation": "Catacombs of Kourend or Stronghold of Security; Wilderness variants for Krystilia.",
+    "multiOrSingle": "single",
+    "killStyle": "melee",
+    "weakness": "Undead: Salve amulet works, but does not stack with a Slayer helmet.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "Wilderness escape supplies when applicable.",
+    "cannon": "location-dependent",
+    "hasSuperior": false,
+    "notableDrops": "Low value normally; Vet'ion/Calvar'ion can be boss alternatives.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level filler with low value drops.",
+      "wilderness": {
+        "xp": 1,
+        "gp": 1,
+        "speed": 4,
+        "basis": "Krystilia: more kills, in the Wilderness. Vet'ion or Calvar'ion count but are not rated."
+      },
+      "filler": {
+        "minutes": 7,
+        "basis": "Judgment from the wiki's Turael task completion tips (Slayer reward point): cannonable, by Paddewwa teleport or digsite pendant."
+      }
+    }
+  },
+  {
+    "task": "Sourhogs",
+    "assignedBy": "Weight at each master: Spria 6.",
+    "bestLocation": "Sourhog Cave south of Draynor after A Porcine of Interest.",
+    "multiOrSingle": "single",
+    "killStyle": "melee",
+    "weakness": "No special weapon requirement.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "Completion of A Porcine of Interest.",
+    "cannon": "not usable",
+    "hasSuperior": false,
+    "notableDrops": "Low-level herbs, seeds and alchables.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level filler near Draynor.",
+      "filler": {
+        "minutes": 9,
+        "basis": "Judgment. Not in the wiki's Turael task completion tips. Spria gives them in the Sourhog Cave, where a cannon cannot be used."
+      }
+    }
+  },
+  {
+    "task": "Spiders",
+    "assignedBy": "Weight at each master: Turael/Aya 6, Spria 6 and Krystilia 6. Krystilia's version is in the Wilderness.",
+    "bestLocation": "Stronghold of Security for a quick task; boss alternatives include Sarachnis, Venenatis/Spindel and Araxxor when eligible.",
+    "multiOrSingle": "single",
+    "killStyle": "melee for normal spiders; boss-specific setup for alternatives",
+    "weakness": "Normal spiders need no special weapon; several bosses favour crush.",
+    "monsterAttackStyle": "melee normally; mixed for bosses",
+    "protectionPrayer": "None for normal spiders",
+    "requiredItems": "Antipoison/anti-venom for poisonous variants; boss requirements vary.",
+    "cannon": "location-dependent",
+    "hasSuperior": false,
+    "notableDrops": "Low value normally; boss alternatives have separate uniques.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level filler with low value drops.",
+      "wilderness": {
+        "xp": 1,
+        "gp": 1,
+        "speed": 5,
+        "basis": "Krystilia: giant spiders in the Wilderness. Spindel or Venenatis count but are not rated."
+      },
+      "filler": {
+        "minutes": 7,
+        "basis": "Judgment from the wiki's Turael task completion tips (Slayer reward point): cannonable, with a Lumbridge or Dareeyak teleport."
+      }
+    }
+  },
+  {
+    "task": "Terror dogs",
+    "assignedBy": "Weight at each master: Vannaka 6. Needs 40 Slayer and combat level 60.",
+    "bestLocation": "Tarn's Lair after completing the Haunted Mine/Tarn access requirements.",
+    "multiOrSingle": "single",
+    "killStyle": "melee",
+    "weakness": "No special weapon requirement.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee",
+    "requiredItems": "Tarn's Lair access; Slayer ring teleport is the convenient return route once unlocked.",
+    "cannon": "not usable",
+    "hasSuperior": false,
+    "notableDrops": "Granite helm, herbs and high-level bones.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Low level Tarn's Lair monster. Granite helm drops."
+    }
+  },
+  {
+    "task": "Wall beasts",
+    "assignedBy": "Weight at each master: Mazchna/Achtryn 7. Needs 35 Slayer, 5 Defence and combat level 30.",
+    "bestLocation": "Lumbridge Swamp Caves.",
+    "multiOrSingle": "single",
+    "killStyle": "melee",
+    "weakness": "No special weapon requirement.",
+    "monsterAttackStyle": "melee ambush",
+    "protectionPrayer": "Protect from Melee",
+    "requiredItems": "Mandatory: spiny helmet or Slayer helmet; also bring a covered light source.",
+    "cannon": "not usable",
+    "hasSuperior": false,
+    "notableDrops": "Mystic hat (light), runes and low-value alchables.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level Lumbridge Swamp Caves monster, needs a spiny helmet."
+    }
+  },
+  {
+    "task": "Werewolves",
+    "assignedBy": "Weight at each master: Vannaka 7. Needs combat level 60.",
+    "bestLocation": "Canifis; God Wars variants only when the assigned location permits.",
+    "multiOrSingle": "single",
+    "killStyle": "melee",
+    "weakness": "No special weapon requirement.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee",
+    "requiredItems": "Priest in Peril access. Do not use Wolfbane if you need humans to transform into task-counting werewolves.",
+    "cannon": "not usable at common spots",
+    "hasSuperior": false,
+    "notableDrops": "Wolf bones, herbs and low-value weapons.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Low level Canifis monster with low value drops."
+    }
+  },
+  {
+    "task": "Wolves",
+    "assignedBy": "Weight at each master: Turael/Aya 7, Spria 7 and Mazchna/Achtryn 7. Needs combat level 20.",
+    "bestLocation": "White Wolf Mountain or Feldip Hills.",
+    "multiOrSingle": "single",
+    "killStyle": "melee or ranged",
+    "weakness": "No special weakness needed.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "Cold-weather gear is not required for White Wolf Mountain.",
+    "cannon": "not worth setting up",
+    "hasSuperior": false,
+    "notableDrops": "Wolf bones and low-value drops.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level filler with low value drops.",
+      "filler": {
+        "minutes": 7,
+        "basis": "Judgment from the wiki's Turael task completion tips (Slayer reward point): cannonable, by skull sceptre or gnome glider."
+      }
+    }
+  },
+  {
+    "task": "Zombies",
+    "assignedBy": "Weight at each master: Turael/Aya 7, Spria 7, Mazchna/Achtryn 7 and Krystilia 3. Needs combat level 10. Krystilia's version is in the Wilderness.",
+    "bestLocation": "Stronghold of Security or Varrock Sewers; Vorkath may count under the appropriate assignment.",
+    "multiOrSingle": "single",
+    "killStyle": "melee",
+    "weakness": "Undead: Salve amulet works, but does not stack with a Slayer helmet.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee if needed",
+    "requiredItems": "None for normal zombies.",
+    "cannon": "location-dependent",
+    "hasSuperior": false,
+    "notableDrops": "Low value normally; Vorkath has separate boss loot.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level filler. Vorkath counts but is not rated.",
+      "wilderness": {
+        "xp": 3,
+        "gp": 4,
+        "speed": 5,
+        "basis": "Krystilia: zombie pirates at the Chaos Temple count, very profitable (wiki Krystilia strategies)."
+      },
+      "filler": {
+        "minutes": 7,
+        "basis": "Judgment from the wiki's Turael task completion tips (Slayer reward point): cannonable, by ectophial or fairy ring."
+      }
+    }
+  },
+  {
+    "task": "Aquanites",
+    "assignedBy": "Weight at each master: Nieve/Steve 5, Duradel/Kuradal 5 and Mortimer 10. Nieve/Steve and Duradel/Kuradal need Lured In first. Needs 78 Slayer, 73 Sailing and combat level 80.",
+    "note": "They need access to Ynysdail.",
+    "bestLocation": "Ynysdail Cavern; single combat and no cannon.",
+    "multiOrSingle": "single",
+    "killStyle": "Slash once to sever the lure, then use an accurate stab weapon; long-range ranged can safespot.",
+    "weakness": "A slash hit severs the lure and lowers its stab Defence by 50; damage is not required for the sever.",
+    "monsterAttackStyle": "high-accuracy Magic",
+    "protectionPrayer": "Protect from Magic; flick it against the Elder Aquanite's anti-camping special",
+    "requiredItems": "73 Sailing, an adamant keel or better, and the Aquanite task unlock. Bring a slash switch if using stab.",
+    "cannon": "banned - cavern floor is too damp",
+    "hasSuperior": true,
+    "notableDrops": "Aquanite tendon, seeds, snape grass and the Elder Aquanite superior.",
+    "rating": {
+      "xp": 2,
+      "gp": 3,
+      "speed": 3,
+      "basis": "Single combat with no cannon, 78 Slayer and 73 Sailing (wiki task page). Tendon drops. Mortimer strategies list it as a slow task."
+    }
+  },
+  {
+    "task": "Araxytes",
+    "assignedBy": "Weight at each master: Nieve/Steve 8, Duradel/Kuradal 10 and Mortimer 8. Needs 92 Slayer.",
+    "note": "Araxxor counts toward the task.",
+    "bestLocation": "Morytania Spider Cave; use the southern level-146 multi room for cannon/venator.",
+    "multiOrSingle": "both",
+    "killStyle": "Venator bow plus cannon for normal araxytes; crush melee for Araxxor.",
+    "weakness": "Araxytes are spiders; Araxxor is notably weak to crush and has a thematic fire weakness.",
+    "monsterAttackStyle": "melee and venom",
+    "protectionPrayer": "Protect from Melee",
+    "requiredItems": "Venom immunity is recommended, preferably extended anti-venom+ for long trips. A spider cave teleport is the fastest route.",
+    "cannon": "great in the multi rooms",
+    "hasSuperior": true,
+    "notableDrops": "Araxyte venom sacks, Aranea boots, alchables and Dreadborn Araxyte superior; Araxxor has boss uniques.",
+    "rating": {
+      "xp": 5,
+      "gp": 4,
+      "speed": 4,
+      "basis": "Wiki Slayer training: 100k XP/h with cannon and venator bow, decent profit. Money making guide: about 1.5M/h off task.",
+      "xpAdvice": "DO"
+    }
+  },
+  {
+    "task": "Custodian Stalkers",
+    "assignedBy": "Weight at each master: Chaeldar 11, Nieve/Steve 8 and Mortimer 8. Needs 54 Slayer.",
+    "note": "They need Shadows of Custodia. Mature and elder stalkers need 67 and 76 Slayer.",
+    "bestLocation": "Stalker Den; south-west is multicombat/cannonable, other caverns are single.",
+    "multiOrSingle": "both",
+    "killStyle": "Venator bow or barrage plus cannon in multi; slash melee in single.",
+    "weakness": "No elemental requirement; slash is effective for melee setups.",
+    "monsterAttackStyle": "melee, then a low-health Magic bleed special",
+    "protectionPrayer": "Protect from Melee; Protect from Magic can block the bleed special, but avoid unsafe switches in a large pile",
+    "requiredItems": "Completion of Shadows of Custodia. Bring food or healing for bleeds when multi-targeting.",
+    "cannon": "great in the south-west multi area",
+    "hasSuperior": true,
+    "notableDrops": "Broken antlers, antler guard from mature/elder variants, and Ancient Custodian superior.",
+    "rating": {
+      "xp": 3,
+      "gp": 2,
+      "speed": 3,
+      "basis": "Multi room with cannon spots and venator bow use (wiki task page). Antler drops. No XP figure on the wiki."
+    }
+  },
+  {
+    "task": "Elves",
+    "assignedBy": "Weight at each master: Vannaka 7, Chaeldar 8, Nieve/Steve 4 and Duradel/Kuradal 4. Needs combat level 70.",
+    "bestLocation": "Prifddinas Iorwerth workers for crystal shards after Song of the Elves; Lletya is the earlier option.",
+    "multiOrSingle": "single",
+    "killStyle": "melee or ranged; cannon only in locations that permit it",
+    "weakness": "No universal elf weakness; variant defences differ.",
+    "monsterAttackStyle": "melee, ranged or magic depending on elf variant",
+    "protectionPrayer": "Match prayer to the specific elf being fought",
+    "requiredItems": "Mournings' End/Regicide progression for Lletya; Song of the Elves for Prifddinas.",
+    "cannon": "location-dependent",
+    "hasSuperior": false,
+    "notableDrops": "Crystal shards, teleport crystals, herbs and alchables.",
+    "rating": {
+      "xp": 2,
+      "gp": 2,
+      "speed": 3,
+      "basis": "Wiki Slayer training: 25k XP/h, skip. Crystal shard drops.",
+      "xpAdvice": "SKIP"
+    }
+  },
+  {
+    "task": "Frost dragons",
+    "assignedBy": "Weight at each master: Nieve/Steve 5 and Duradel/Kuradal 5. Needs 87 Sailing and combat level 85.",
+    "note": "Dragon metal sheets drop more often on task.",
+    "bestLocation": "Grimstone Dungeon task-only cavern.",
+    "multiOrSingle": "single",
+    "killStyle": "Fire magic, crush melee or dragonbane; heavy ranged is viable.",
+    "weakness": "100% weakness to fire spells; also weak to crush and dragonbane weapons.",
+    "monsterAttackStyle": "melee and short-range icy dragonfire",
+    "protectionPrayer": "Protect from Melee while using full dragonfire protection",
+    "requiredItems": "Mandatory: full dragonfire protection (shield plus antifire, or super antifire). Requires 87 Sailing/Grimstone access.",
+    "cannon": "verify locally before setup; do not assume placement",
+    "hasSuperior": false,
+    "notableDrops": "Frost dragon bones and dragon metal sheet (improved rate on task).",
+    "rating": {
+      "xp": 2,
+      "gp": 5,
+      "speed": 2,
+      "basis": "Wiki Slayer training: 30k XP/h. About 2.4M/h on task (money making guide). Needs 87 Sailing and a long boat trip.",
+      "xpAdvice": "SKIP"
+    }
+  },
+  {
+    "task": "Gryphons",
+    "assignedBy": "Weight at each master: Vannaka 10, Chaeldar 10, Nieve/Steve 7, Duradel/Kuradal 7 and Mortimer 10. Needs 51 Slayer and combat level 50.",
+    "note": "They need Troubled Tortugans. The Shellbane Gryphon counts toward the task.",
+    "bestLocation": "The Great Conch task-only eastern cave; south-west room is multi and cannonable.",
+    "multiOrSingle": "both",
+    "killStyle": "Stab melee, or venator bow plus cannon in multi.",
+    "weakness": "Weakest to melee, especially stab; also 50% weak to air spells.",
+    "monsterAttackStyle": "melee plus a knockback special",
+    "protectionPrayer": "Protect from Melee",
+    "requiredItems": "Wear at least 30 kg to stop normal knockback. Keep a tortugan shield for Dire Gryphon superior; 40 kg plus shield for Shellbane.",
+    "cannon": "great in the southern multi room",
+    "hasSuperior": true,
+    "notableDrops": "Mostly low-value normal drops; Dire Gryphon superior and Shellbane boss uniques.",
+    "rating": {
+      "xp": 3,
+      "gp": 1,
+      "speed": 3,
+      "basis": "Wiki Slayer training: 50k XP/h cannoning in multi, cannon runs at a loss. Poor drops."
+    }
+  },
+  {
+    "task": "Lava Dragons",
+    "assignedBy": "Weight at each master: Krystilia 3. Krystilia's version is in the Wilderness.",
+    "note": "They live deep in the Wilderness, where other players can attack you.",
+    "bestLocation": "Lava Dragon Isle in deep Wilderness.",
+    "multiOrSingle": "single/open Wilderness",
+    "killStyle": "ranged or Magic from safespots; dragonbane works",
+    "weakness": "Draconic; water spells and dragonbane are effective.",
+    "monsterAttackStyle": "melee and dragonfire",
+    "protectionPrayer": "Protect from Magic plus dragonfire protection when exposed",
+    "requiredItems": "Anti-dragon shield or antifire protection, slash weapon for webs, and a Wilderness escape plan.",
+    "cannon": "not usable on the isle",
+    "hasSuperior": false,
+    "notableDrops": "Lava dragon bones, rune items, noted ores and onyx bolt tips.",
+    "rating": {
+      "xp": 2,
+      "gp": 4,
+      "speed": 2,
+      "basis": "About 1.6M/h (money making guide). Long time to complete in the deep Wilderness (wiki Krystilia strategies)."
+    }
+  },
+  {
+    "task": "Lesser Nagua",
+    "assignedBy": "Weight at each master: Chaeldar 4 and Konar 2. Needs 48 Slayer.",
+    "bestLocation": "Neypotzli for Sulphur Nagua; Ruins of Tapoyauik for Frost Nagua; follow Konar's exact location.",
+    "multiOrSingle": "single",
+    "killStyle": "Fast multi-hit melee weapons; crush becomes best against armoured Earthen Nagua.",
+    "weakness": "Negative flat armour rewards fast/multi-hit weapons. Sulphur has 15% air weakness; Frost has 50% fire weakness.",
+    "monsterAttackStyle": "Sulphur: melee; Frost: Magic; variants use prayer-draining tile specials",
+    "protectionPrayer": "Protect from Melee at Sulphur or Protect from Magic at Frost; step away from marked specials",
+    "requiredItems": "Partial Perilous Moons for Sulphur access; other variants need their quest access. Moonlight potions provide free combat/prayer sustain.",
+    "cannon": "not usable in the common areas",
+    "hasSuperior": false,
+    "notableDrops": "Sulphur blades, glacial temotli, runes, ores and Amoxliatl boss option.",
+    "rating": {
+      "xp": 2,
+      "gp": 2,
+      "speed": 3,
+      "basis": "AFK with free supplies at Neypotzli (wiki task page). Frost nagua about 455k/h, sulphur about 230k/h (money making guide)."
+    }
+  },
+  {
+    "task": "Metal dragons",
+    "assignedBy": "Weight at each master: Konar 15, Nieve/Steve 12 and Duradel/Kuradal 14. Needs combat level 85.",
+    "note": "Any metal dragon counts toward the task.",
+    "bestLocation": "Use the exact metal and location named by the assignment; Brimhaven Dungeon covers bronze/iron/steel, while higher metals have dedicated areas.",
+    "multiOrSingle": "single",
+    "killStyle": "Dragonbane stab/ranged or earth magic where applicable",
+    "weakness": "Metal dragons are draconic; most modern variants have an earth-spell weakness and all benefit from dragonbane weapons.",
+    "monsterAttackStyle": "melee, long-range dragonfire and variant-specific specials",
+    "protectionPrayer": "Prayer depends on combat style; dragonfire protection is mandatory and Protect from Magic alone is not enough for metal dragonfire",
+    "requiredItems": "Mandatory: sufficient dragonfire protection, normally antifire plus anti-dragon/dragonfire shield or super antifire; verify high-tier special attacks.",
+    "cannon": "usually banned or impractical",
+    "hasSuperior": false,
+    "notableDrops": "Dragon bones/bars, visage chance and metal-specific uniques.",
+    "rating": {
+      "xp": 2,
+      "gp": 4,
+      "speed": 4,
+      "basis": "Wiki Slayer training: 30k XP/h on iron to mithril, 15k on adamant and rune. Rune and adamant about 1.5M to 1.8M/h (money making guide). The wiki's Task extension section discourages extending them, as they do not have enough good drops or XP to justify it.",
+      "extensionDiscouraged": true,
+      "xpAdvice": "SKIP"
+    }
+  },
+  {
+    "task": "Revenants",
+    "assignedBy": "Weight at each master: Krystilia 5. Krystilia's version is in the Wilderness.",
+    "note": "Revenants live in the Wilderness, where other players can attack you.",
+    "bestLocation": "Revenant Caves; choose a low-risk route and bank often.",
+    "multiOrSingle": "single-plus/open Wilderness",
+    "killStyle": "Wilderness weapons or your best low-risk ranged/melee setup",
+    "weakness": "Revenant weapons gain their Wilderness bonuses; Salve amulet works because revenants are undead.",
+    "monsterAttackStyle": "rapid mixed combat styles",
+    "protectionPrayer": "Prayer must match the revenant's current style; do not let prayer distract from PK awareness",
+    "requiredItems": "Strongly recommended: charged bracelet of ethereum to reduce revenant damage, plus teleport/escape supplies and protected-item planning.",
+    "cannon": "not usable",
+    "hasSuperior": false,
+    "notableDrops": "Revenant ether, ancient artefacts and Wilderness weapons.",
+    "rating": {
+      "xp": 2,
+      "gp": 5,
+      "speed": 2,
+      "basis": "About 3M to 4M/h (money making guide). Much slower than other Wilderness tasks (wiki Krystilia strategies). High PK risk."
+    }
+  },
+  {
+    "task": "Scabarites",
+    "assignedBy": "Weight at each master: Nieve/Steve 4. Needs combat level 85.",
+    "note": "Small scarabs count toward the task. The Uzer Mastaba needs The Curse of Arrav started.",
+    "bestLocation": "Uzer Mastaba small scarabs for the safest fast completion; Sophanem Dungeon for cannon/loot.",
+    "multiOrSingle": "both",
+    "killStyle": "Fast weapon at small scarabs; cannon plus melee in Sophanem Dungeon.",
+    "weakness": "Variant-dependent; no single universal elemental weakness.",
+    "monsterAttackStyle": "ranged from locust riders, Magic from scarab mages, mixed in multi rooms",
+    "protectionPrayer": "Protect from Missiles around locust riders; Protect from Magic around scarab mages",
+    "requiredItems": "Partial completion of The Curse of Arrav for Uzer Mastaba; bring food/prayer for Sophanem Dungeon.",
+    "cannon": "great but dangerous in the Sophanem multi room",
+    "hasSuperior": false,
+    "notableDrops": "Small scarabs drop nothing; locust riders/mages drop coins, noted supplies and food.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Small scarabs in the Uzer Mastaba are the fastest way and drop nothing (wiki task page)."
+    }
+  },
+  {
+    "task": "Warped Creatures",
+    "assignedBy": "Weight at each master: Chaeldar 6, Konar 4, Nieve/Steve 6, Duradel/Kuradal 8 and Mortimer 10. Chaeldar, Konar, Nieve/Steve and Duradel/Kuradal need Warped Reality first.",
+    "note": "They need progress in The Path of Glouphrie and a crystal chime.",
+    "bestLocation": "Poison Waste Dungeon.",
+    "multiOrSingle": "single",
+    "killStyle": "melee or ranged; use the crystal chime before attacking",
+    "weakness": "No elemental shortcut; mutated tortoise and terrorbird defences differ.",
+    "monsterAttackStyle": "melee and ranged",
+    "protectionPrayer": "Protect from Missiles against terrorbirds; Protect from Melee against tortoises",
+    "requiredItems": "Mandatory: a crystal chime in your inventory, or they cannot be hurt. Earmuffs or a Slayer helmet are recommended, as they halve the warped terrorbirds' max hit.",
+    "cannon": "not usable",
+    "hasSuperior": true,
+    "notableDrops": "Warped sceptre, warped terrorbird feathers and the superior variants.",
+    "rating": {
+      "xp": 4,
+      "gp": 1,
+      "speed": 3,
+      "basis": "Wiki Slayer training: 55k XP/h with a cannon, drops only cover the cannonballs. Far from a bank (wiki Mortimer strategies).",
+      "xpAdvice": "DONT_UNLOCK"
+    }
+  },
+  {
+    "task": "Waterfiends",
+    "assignedBy": "Weight at each master: Konar 2 and Duradel/Kuradal 2. Needs combat level 75.",
+    "bestLocation": "Ancient Cavern for density; Kraken Cove or Iorwerth Dungeon when assigned there.",
+    "multiOrSingle": "single",
+    "killStyle": "crush melee",
+    "weakness": "Very low crush Defence; resistant to slash/stab and many ranged setups.",
+    "monsterAttackStyle": "Magic and magical ranged",
+    "protectionPrayer": "Protect from Magic",
+    "requiredItems": "Barbarian Training access for Ancient Cavern; bring emergency food because entry can be dangerous.",
+    "cannon": "not usable in common locations",
+    "hasSuperior": false,
+    "notableDrops": "Water orbs, runes, herbs and noted supplies.",
+    "rating": {
+      "xp": 1,
+      "gp": 2,
+      "speed": 1,
+      "basis": "Wiki Slayer training: 15k XP/h, skip. Somewhat decent drops.",
+      "xpAdvice": "SKIP"
+    }
+  },
+  {
+    "task": "Boss",
+    "assignedBy": "Weight at each master: Konar 8, Nieve/Steve 8, Duradel/Kuradal 12 and Krystilia 8. Konar, Nieve/Steve, Duradel/Kuradal and Krystilia need Like a Boss first. Krystilia's version is in the Wilderness.",
+    "note": "The master picks a boss you can reach and you pick 3 to 35 kills. Finishing gives 5,000 Slayer XP. Boss tasks cannot be blocked, only turned off with Like a Boss.",
+    "bestLocation": "Wherever the assigned boss lives. Krystilia only assigns Wilderness bosses.",
+    "multiOrSingle": "Depends on the boss.",
+    "killStyle": "Follow the assigned boss's own strategy.",
+    "weakness": "Depends on the boss.",
+    "monsterAttackStyle": "Depends on the boss.",
+    "protectionPrayer": "Depends on the boss.",
+    "requiredItems": "Whatever the boss needs. Check its strategy guide before you go.",
+    "cannon": "Depends on the boss.",
+    "hasSuperior": false,
+    "notableDrops": "The boss's own drops.",
+    "rating": {
+      "xp": 2,
+      "gp": 4,
+      "speed": 3,
+      "basis": "Wiki Slayer training: XP generally poor but varies, plus a 5,000 XP bonus. Profit depends on the boss. You choose 3 to 35 kills.",
+      "xpAdvice": "DONT_UNLOCK"
+    }
+  },
+  {
+    "task": "The Abyssal Sire",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "Counts on an abyssal demon task or a boss task. Needs 85 Slayer.",
+    "bestLocation": "Abyssal Nexus via fairy ring DIP.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Ranged/Magic for respiratory systems, then demonbane or strong melee for the Sire.",
+    "weakness": "Demon attribute: demonbane weapons work.",
+    "monsterAttackStyle": "Magic, melee, poison pools and miasma movement mechanics.",
+    "protectionPrayer": "Protect from Melee during the main fight; dodge pools and manage the respiratory phase.",
+    "requiredItems": "85 Slayer, fairy-ring access, antipoison and stamina/run energy management.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Unsired, abyssal bludgeon pieces, abyssal dagger, abyssal head."
+  },
+  {
+    "task": "The Alchemical Hydra",
+    "assignedBy": "A boss task from Konar once Like a Boss is bought.",
+    "note": "Counts on a hydra task or a boss task from Konar. Needs 95 Slayer.",
+    "bestLocation": "Alchemical Hydra arena in Karuulm Slayer Dungeon.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Ranged or melee with dragonbane; move Hydra over the correct vents.",
+    "weakness": "Draconic: dragonbane weapons work.",
+    "monsterAttackStyle": "Alternating ranged/magic plus poison, lightning and fire specials.",
+    "protectionPrayer": "Switch Protect from Missiles/Magic according to the attack cycle.",
+    "requiredItems": "95 Slayer; boots of stone/brimstone/granite unless diary immunity; antipoison and strong supplies.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Hydra's claw/leather/tail/ring pieces, dragon knives/axes and pet."
+  },
+  {
+    "task": "Araxxor",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "Counts on an araxyte task or a boss task. Needs 92 Slayer.",
+    "bestLocation": "Morytania Spider Cave, Araxxor lair.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Crush melee is strongly preferred.",
+    "weakness": "Very low crush Defence; fire weakness exists but high Magic Defence makes melee practical.",
+    "monsterAttackStyle": "Melee plus ranged/magic attacks, venom, acid pools and araxyte specials.",
+    "protectionPrayer": "Use the correct prayer for each attack and move off acid.",
+    "requiredItems": "92 Slayer, anti-venom and spider-cave access.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Noxious halberd pieces, araxyte fang, rancour materials and pet."
+  },
+  {
+    "task": "Barrows Brothers",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "A boss task only. You pick 3 to 36 kills.",
+    "bestLocation": "Barrows crypts in Morytania.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Magic against most brothers; ranged against Ahrim; melee/ranged against Karil as gear allows.",
+    "weakness": "Most brothers have low Magic Defence despite armour.",
+    "monsterAttackStyle": "Each brother uses one combat style; Akrisae can switch if present in applicable content.",
+    "protectionPrayer": "Use the protection prayer matching the active brother.",
+    "requiredItems": "Priest in Peril access; spade and prayer/restoration supplies.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Barrows armour pieces, runes and bolt racks."
+  },
+  {
+    "task": "Callisto",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "Artio can be killed instead. It is in the Wilderness, where other players can attack you.",
+    "bestLocation": "Callisto's Den in multi Wilderness; Artio is the singles alternative.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Ranged or Magic while freezing/kiting; boss-specific setup.",
+    "weakness": "Weak to Magic in practical kiting strategies.",
+    "monsterAttackStyle": "Melee, ranged and Magic with knockback/root mechanics.",
+    "protectionPrayer": "Protect from Missiles is commonly prioritised; react to mechanics and PKers.",
+    "requiredItems": "Wilderness risk setup, freezes/entangles, stamina and teleport where permitted.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Tyrannical ring, dragon pickaxe, voidwaker hilt and Wilderness supplies."
+  },
+  {
+    "task": "Cerberus",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "Counts on a hellhound task or a boss task. Needs 91 Slayer.",
+    "bestLocation": "Cerberus' Lair in Taverley Dungeon.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Melee with arclight/emberlight or strong crush/stab; ranged is viable.",
+    "weakness": "Demonbane works; Cerberus has substantial Defence.",
+    "monsterAttackStyle": "All three combat styles plus ghosts, lava pools and combo attacks.",
+    "protectionPrayer": "Switch prayers for attacks/ghosts; do not rely on one protection prayer.",
+    "requiredItems": "91 Slayer, hellhound assignment and prayer restores.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Primordial, pegasian and eternal crystals; smouldering stone and pet."
+  },
+  {
+    "task": "The Chaos Elemental",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "It is deep in the Wilderness, where other players can attack you.",
+    "bestLocation": "West of the Rogues' Castle in deep Wilderness.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Ranged or melee with inventory arranged to counter unequip.",
+    "weakness": "No special elemental weakness required.",
+    "monsterAttackStyle": "Magic/ranged damage plus teleport and equipment-removal specials.",
+    "protectionPrayer": "Protect from Magic or Missiles according to setup; PK awareness is more important.",
+    "requiredItems": "Keep inventory slots filled so the unequip special cannot remove gear; bring an escape plan.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Dragon pickaxe, pet, ancient staff and Wilderness supplies."
+  },
+  {
+    "task": "The Chaos Fanatic",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "It is in the Wilderness, where other players can attack you.",
+    "bestLocation": "West of the Lava Maze.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Ranged, avoiding the green special projectiles.",
+    "weakness": "Low Defence; ranged is simple and safe.",
+    "monsterAttackStyle": "Magic plus a telegraphed area projectile special.",
+    "protectionPrayer": "Protect from Magic.",
+    "requiredItems": "Wilderness escape supplies; move off targeted tiles.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Odium/malediction shards, ancient staff and pet."
+  },
+  {
+    "task": "Crazy Archaeologists",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "The deranged archaeologist can be killed instead, except on Konar's tasks. It is in the Wilderness.",
+    "bestLocation": "Forgotten Cemetery in the Wilderness.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Ranged while dodging the explosive book special.",
+    "weakness": "Low Defence; ranged is straightforward.",
+    "monsterAttackStyle": "Magic/ranged-like attacks plus a multi-tile explosive special.",
+    "protectionPrayer": "Protect from Missiles is commonly used; move when the special is thrown.",
+    "requiredItems": "Wilderness escape supplies and low-risk gear.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Odium/malediction shards, rune crossbow and fedora."
+  },
+  {
+    "task": "Dagannoth Kings",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "Counts on a dagannoth task or a boss task.",
+    "bestLocation": "Waterbirth Island Dungeon, Dagannoth Kings lair.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Rex: Magic; Prime: ranged; Supreme: melee.",
+    "weakness": "Each king is weak to the combat style in the triangle opposite its own.",
+    "monsterAttackStyle": "Rex melee, Prime Magic, Supreme ranged.",
+    "protectionPrayer": "Protect from the active king's style; avoid tanking multiple kings.",
+    "requiredItems": "Pet rock/rune thrownaxe or alternate route, antipoison, stamina and three-style supplies.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Berserker, archer, seers and warrior rings; dragon axe and pets."
+  },
+  {
+    "task": "Deranged Archaeologist",
+    "assignedBy": "Can be killed in place of a crazy archaeologist boss task, except one from Konar.",
+    "bestLocation": "Fossil Island, southern tar swamp.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Ranged while dodging the explosive book special.",
+    "weakness": "Low Defence; ranged works well.",
+    "monsterAttackStyle": "Magic/ranged-like attacks plus a telegraphed explosive special.",
+    "protectionPrayer": "Protect from Missiles; move away from targeted tiles.",
+    "requiredItems": "Fossil Island access and food for environmental chip damage.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Rune crossbow, black d'hide body and fossils."
+  },
+  {
+    "task": "Duke Sucellus",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "It needs Desert Treasure II.",
+    "bestLocation": "Ghorrock Prison beneath the Ancient Vault.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Slash melee after preparing the arena.",
+    "weakness": "Slash is the practical melee style.",
+    "monsterAttackStyle": "Melee/Magic cycle, gas vents and eye specials.",
+    "protectionPrayer": "Protect from Melee in melee range and react to the Magic slam/eyes.",
+    "requiredItems": "Desert Treasure II, pestle and mortar, pickaxe and strong melee supplies.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Magus vestige, virtus pieces, chromium ingots and soulreaper axe component."
+  },
+  {
+    "task": "General Graardor",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "bestLocation": "Bandos' Stronghold in God Wars Dungeon.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Ranged kiting or melee/tank team.",
+    "weakness": "No elemental shortcut; ranged kiting avoids much melee pressure.",
+    "monsterAttackStyle": "Heavy melee plus ranged from Graardor; minions use all styles.",
+    "protectionPrayer": "Protect from Melee when tanking; ranged methods use their method-specific prayer.",
+    "requiredItems": "God item protection, 40 Bandos killcount or bypass, hammer and GWD supplies.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Bandos chestplate/tassets, Bandos hilt, godsword shards and pet."
+  },
+  {
+    "task": "The Giant Mole",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "bestLocation": "Falador Mole Lair.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Melee or ranged with locator arrows.",
+    "weakness": "No special weakness; high damage melee is simple.",
+    "monsterAttackStyle": "Melee; burrows away after taking damage.",
+    "protectionPrayer": "Protect from Melee.",
+    "requiredItems": "Mandatory: light source; Falador shield 3/4 strongly helps locate it.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Mole claws/skins, nests, seeds and pet."
+  },
+  {
+    "task": "The Grotesque Guardians",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "Counts on a gargoyle task or a boss task. Needs 75 Slayer and a brittle key the first time.",
+    "bestLocation": "Slayer Tower rooftop.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Hybrid ranged and melee across phases.",
+    "weakness": "Dusk and Dawn have phase-specific combat-style protection.",
+    "monsterAttackStyle": "Ranged, melee and area mechanics.",
+    "protectionPrayer": "Prayer changes by phase; move from falling rocks and flame walls.",
+    "requiredItems": "75 Slayer, brittle key access and a rock hammer in inventory.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Granite gloves/ring/hammer, black tourmaline core, dust and pet."
+  },
+  {
+    "task": "TzTok-Jad",
+    "assignedBy": "Taken in place of a TzHaar task, which needs Hot Stuff.",
+    "note": "Taken in place of a TzHaar task. Failing the attempt cancels the task.",
+    "bestLocation": "TzHaar Fight Cave, wave 63.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Ranged is simplest; tag healers once Jad reaches half health.",
+    "weakness": "No exploitable elemental shortcut; Slayer helmet bonus applies on task.",
+    "monsterAttackStyle": "Alternating Magic and ranged; melee if adjacent.",
+    "protectionPrayer": "Rear-up/fireball: Protect from Magic. Fast ground slam: Protect from Missiles.",
+    "requiredItems": "Fight Cave supplies and a reliable healer-tag plan.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Fire cape, Jad pet chance and large Slayer XP reward."
+  },
+  {
+    "task": "The Kalphite Queen",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "Counts on a kalphite task or a boss task.",
+    "bestLocation": "Kalphite Queen Lair south-west of Shantay Pass.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Melee first phase, ranged or Magic second phase.",
+    "weakness": "Phase protections force style switching; Keris weapons are effective in phase one.",
+    "monsterAttackStyle": "Melee, ranged and Magic with high accuracy.",
+    "protectionPrayer": "Protect from Magic or Missiles; prayer does not eliminate all damage.",
+    "requiredItems": "Two ropes for first access unless diary shortcut is unlocked; antipoison and strong food.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Dragon chainbody, dragon 2h, KQ head and pet."
+  },
+  {
+    "task": "The King Black Dragon",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "Counts on a black dragon task or a boss task.",
+    "bestLocation": "KBD Lair; entrance is in the Wilderness, arena itself is not.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Dragonbane ranged or melee.",
+    "weakness": "Draconic: dragonbane weapons work.",
+    "monsterAttackStyle": "Melee and multiple dragonfire types causing poison/freeze/stat drain.",
+    "protectionPrayer": "Protect from Magic plus strong dragonfire protection.",
+    "requiredItems": "Anti-dragon/dragonfire shield plus antifire; antipoison and Wilderness transit plan.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Draconic visage, dragon pickaxe, KBD heads and pet."
+  },
+  {
+    "task": "The Cave Kraken Boss",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "Counts on a cave kraken task or a boss task. Needs 87 Slayer.",
+    "bestLocation": "Kraken Cove boss pool.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Magic only; disturb tentacles before attacking Kraken.",
+    "weakness": "Very high resistance to melee/ranged; Magic is intended.",
+    "monsterAttackStyle": "Magic/ranged-like typeless projectiles.",
+    "protectionPrayer": "Protection prayers do not reduce Kraken's attacks; use offensive prayers.",
+    "requiredItems": "87 Slayer and a cave-kraken assignment; fishing explosive can start the encounter quickly.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Trident of the seas, tentacle, jar, pet and runes."
+  },
+  {
+    "task": "Kree'arra",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "Counts on an aviansie task or a boss task.",
+    "bestLocation": "Armadyl's Eyrie in God Wars Dungeon.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Ranged; chin minions to damage Kree or use high-end direct ranged.",
+    "weakness": "Kree must be attacked with ranged or Magic.",
+    "monsterAttackStyle": "Powerful ranged and Magic; melee knockback if not attacking.",
+    "protectionPrayer": "Protect from Missiles.",
+    "requiredItems": "God item protection, Armadyl killcount/bypass and strong ranged defence/supplies.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Armadyl armour, hilt and pet."
+  },
+  {
+    "task": "K'ril Tsutsaroth",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "Counts on a greater demon task or a boss task.",
+    "bestLocation": "Zamorak's Fortress in God Wars Dungeon.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Demonbane melee or ranged kiting.",
+    "weakness": "Demon attribute: demonbane works.",
+    "monsterAttackStyle": "Melee and Magic; prayer-smash special can hit through prayer.",
+    "protectionPrayer": "Protect from Melee for tanking, but the special still drains prayer.",
+    "requiredItems": "God item protection, Zamorak killcount/bypass and prayer restores.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Zamorakian spear, staff of the dead, hilt and pet."
+  },
+  {
+    "task": "The Phantom Muspah",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "It needs Secrets of the North.",
+    "bestLocation": "Muspah cave via ring of shadows/quest transport.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Ranged for both forms or ranged plus Magic; sapphire bolts for prayer shield.",
+    "weakness": "Form-dependent Defence; sapphire enchanted bolts excel against the prayer shield.",
+    "monsterAttackStyle": "Ranged/Magic forms, spikes and prayer-drain shield phase.",
+    "protectionPrayer": "Match prayer to the active attack/form and move from spikes.",
+    "requiredItems": "Secrets of the North; sapphire bolt switch and stamina are strongly recommended.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Ancient essence, venator shards, ancient icon and pet."
+  },
+  {
+    "task": "Sarachnis",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "Counts on a spider task or a boss task.",
+    "bestLocation": "Forthos Dungeon.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Crush melee.",
+    "weakness": "Weak to crush.",
+    "monsterAttackStyle": "Melee plus ranged webs and spawned spiders.",
+    "protectionPrayer": "Protect from Melee while adjacent; switch to Missiles when forced away if needed.",
+    "requiredItems": "Forthos access and normal boss supplies.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Sarachnis cudgel, grubby keys, red spider eggs and pet."
+  },
+  {
+    "task": "Scorpia",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "Counts on a scorpion task or a boss task. It is in the Wilderness.",
+    "bestLocation": "Scorpion Pit in deep Wilderness.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Magic with freezes; kill or freeze guardians.",
+    "weakness": "Low Magic Defence makes Magic effective.",
+    "monsterAttackStyle": "Melee plus healing guardians.",
+    "protectionPrayer": "Protect from Melee; stay alert for PKers.",
+    "requiredItems": "Wilderness escape supplies, freezes and low-risk gear.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Odium/malediction shards and pet."
+  },
+  {
+    "task": "The Shellbane Gryphon",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "Counts on a gryphon task. It needs Troubled Tortugans.",
+    "bestLocation": "Shellbane Gryphon Cave on the Great Conch; fairy ring CJQ then north.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Stab-focused melee; maintain movement for specials.",
+    "weakness": "Primarily weak to melee/stab; also 50% weak to air spells.",
+    "monsterAttackStyle": "Melee, occasional ranged, knockback, corrosive spit and whirlwinds.",
+    "protectionPrayer": "Protect from Melee; still obey specials.",
+    "requiredItems": "Strongly recommended: tortugan shield and at least 40 kg worn weight.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Shellbane uniques and boss supplies."
+  },
+  {
+    "task": "The Leviathan",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "It needs Desert Treasure II.",
+    "bestLocation": "The Scar via the Ancient Vault route.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Ranged; stun with shadow spells at the correct time.",
+    "weakness": "Ranged is the intended style.",
+    "monsterAttackStyle": "Rapid ranged/Magic attacks, boulders and an enrage orb.",
+    "protectionPrayer": "Switch Protect from Missiles/Magic on each visible attack.",
+    "requiredItems": "Desert Treasure II, shadow spell runes and strong ranged supplies.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Venator vestige, virtus pieces, ingots and soulreaper axe component."
+  },
+  {
+    "task": "The Whisperer",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "It needs Desert Treasure II.",
+    "bestLocation": "Lassar Undercity via the Ancient Vault route.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Magic.",
+    "weakness": "Magic is intended.",
+    "monsterAttackStyle": "Magic/ranged patterns, tentacles, pillars and sanity mechanics.",
+    "protectionPrayer": "Switch prayers to the attack pattern and execute movement mechanics.",
+    "requiredItems": "Desert Treasure II and a strong Magic setup.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Bellator vestige, virtus pieces, ingots and soulreaper axe component."
+  },
+  {
+    "task": "The Thermonuclear Smoke Devil",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "Counts on a smoke devil task or a boss task. Needs 93 Slayer.",
+    "bestLocation": "Smoke Devil Dungeon boss room.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Melee or ranged while walking under to reduce hits.",
+    "weakness": "No special elemental requirement.",
+    "monsterAttackStyle": "Very accurate Magic-like ranged attack.",
+    "protectionPrayer": "Protection prayers do not fully solve its damage; use step-under and healing.",
+    "requiredItems": "93 Slayer and a smoke devil task. One kill is allowed off task for the Western Provinces Diary. The boss page lists no face mask, which only the regular smoke devils need.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Occult necklace, smoke battlestaff, dragon chainbody and pet."
+  },
+  {
+    "task": "Vardorvis",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "It needs Desert Treasure II.",
+    "bestLocation": "Stranglewood via the Ancient Vault route.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Slash melee.",
+    "weakness": "Low slash Defence.",
+    "monsterAttackStyle": "Melee, axes, head projectiles and ground spikes.",
+    "protectionPrayer": "Protect from Melee; flick to Missiles for the head projectile.",
+    "requiredItems": "Desert Treasure II and strong melee/food supplies.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Ultor vestige, virtus pieces, ingots and soulreaper axe component."
+  },
+  {
+    "task": "Venenatis",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "Spindel can be killed instead. It is in the Wilderness, where other players can attack you.",
+    "bestLocation": "Venenatis' lair in multi Wilderness; Spindel is singles.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Crush melee.",
+    "weakness": "Weak to crush.",
+    "monsterAttackStyle": "Melee/ranged, prayer drain, webs and spiderlings.",
+    "protectionPrayer": "Prayer depends on attack position/pattern; follow the boss cycle.",
+    "requiredItems": "Wilderness risk setup, crush weapon, stamina and escape plan.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Treasonous ring, dragon pickaxe, voidwaker gem and supplies."
+  },
+  {
+    "task": "Vet'ion",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "Calvar'ion can be killed instead. It is in the Wilderness, where other players can attack you.",
+    "bestLocation": "Vet'ion's Rest in multi Wilderness; Calvar'ion is singles.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Crush melee.",
+    "weakness": "Weak to crush; Salve amulet works because it is undead.",
+    "monsterAttackStyle": "Magic-like lightning, melee pressure and skeletal hellhounds.",
+    "protectionPrayer": "Protect from Magic for lightning patterns; avoid marked tiles.",
+    "requiredItems": "Wilderness risk setup, crush weapon, Salve amulet and escape plan.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Ring of the gods, dragon pickaxe, voidwaker blade and supplies."
+  },
+  {
+    "task": "Vorkath",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "note": "Counts on a blue dragon task or a boss task. It needs Dragon Slayer II.",
+    "bestLocation": "Ungael via Rellekka boat.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Dragonbane ranged or melee; Salve amulet works because Vorkath is undead.",
+    "weakness": "Draconic and undead: dragonbane and Salve apply; Salve does not stack with Slayer helmet.",
+    "monsterAttackStyle": "Ranged, Magic, dragonfire, acid and zombified-spawn specials.",
+    "protectionPrayer": "Protect from Missiles for common ranged setups; use the prayer required by your method.",
+    "requiredItems": "Dragon Slayer II, dragonfire protection, venom immunity, crumble undead and acid-walk plan.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Superior dragon bones, dragon bolts, visages and pet."
+  },
+  {
+    "task": "Commander Zilyana",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "bestLocation": "Saradomin's Encampment in God Wars Dungeon.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Ranged while kiting; do not let Zilyana stay in melee range.",
+    "weakness": "Mobility is the defence; no special elemental shortcut.",
+    "monsterAttackStyle": "Fast accurate melee plus Magic from a minion.",
+    "protectionPrayer": "Protect from Magic while kiting and avoid melee.",
+    "requiredItems": "God protection, 70 Agility, killcount/bypass, stamina and ranged supplies.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Armadyl crossbow, Saradomin hilt/sword, light and pet."
+  },
+  {
+    "task": "TzKal-Zuk",
+    "assignedBy": "Taken in place of a TzHaar task, which needs Hot Stuff, once you have killed Zuk.",
+    "note": "Taken in place of a TzHaar task once you have killed Zuk. It is an Inferno run, and failing it cancels the task.",
+    "bestLocation": "The Inferno beneath Mor Ul Rek.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Inferno-specific ranged/Magic progression and shield positioning.",
+    "weakness": "Slayer helmet bonus applies; mechanics matter more than a generic weakness.",
+    "monsterAttackStyle": "All styles across waves; Zuk is lethal without shield cover.",
+    "protectionPrayer": "Wave-specific switching; stay behind the moving shield at Zuk.",
+    "requiredItems": "Prior Inferno completion plus a complete Inferno setup.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Infernal cape, Zuk pet chance and very large Slayer XP."
+  },
+  {
+    "task": "Zulrah",
+    "assignedBy": "A boss task once Like a Boss is bought.",
+    "bestLocation": "Zul-Andra shrine.",
+    "multiOrSingle": "solo/boss encounter",
+    "killStyle": "Ranged and Magic switches by phase.",
+    "weakness": "Form-dependent; use the correct style for each phase.",
+    "monsterAttackStyle": "Ranged, Magic, venom clouds and snakelings.",
+    "protectionPrayer": "Switch Protect from Missiles/Magic by form and rotation.",
+    "requiredItems": "Regicide access, venom immunity and a learned rotation/position plan.",
+    "cannon": "not usable in the boss arena",
+    "hasSuperior": false,
+    "notableDrops": "Tanzanite/magic fangs, serpentine visage, scales and pet."
+  },
+  {
+    "task": "Venators",
+    "assignedBy": "Weight at each master: Mortimer 10. Needs 74 Slayer and combat level 60.",
+    "note": "They need The Blood Moon Rises.",
+    "bestLocation": "Virer Hunting Ground (12 spawns) or Apsul Hunting Ground (7 spawns) in Vampyrium.",
+    "multiOrSingle": "single",
+    "killStyle": "vampyrebane melee, crush preferred",
+    "weakness": "Vampyrebane weapon mandatory. Weak to crush, no elemental weakness.",
+    "monsterAttackStyle": "stab melee when adjacent, ranged otherwise, plus a charged shriek",
+    "protectionPrayer": "Protect from Melee when in melee range, Protect from Missiles at range. Melee hits heal the venator, so keep the right prayer up.",
+    "requiredItems": "Vampyrebane weapon (mandatory). Earmuffs or Slayer helmet cut shriek damage and duration.",
+    "cannon": "immune to cannons",
+    "hasSuperior": true,
+    "notableDrops": "Blood shard (1/860), venator fangs and teeth in stacks. Superior: Blood-starved venator.",
+    "rating": {
+      "xp": 2,
+      "gp": 5,
+      "speed": 1,
+      "basis": "Slaying venators about 2.3M/h (money making guide). Single combat with high HP, very slow (wiki Mortimer strategies)."
+    }
+  }
+]

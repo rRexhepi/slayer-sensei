@@ -1,0 +1,5 @@
+# Source and data are stored and checked out with LF on every platform. The Windows wrapper script keeps CRLF.
+* text=auto eol=lf
+*.bat text eol=crlf
+*.png binary
+*.jar binary

@@ -1,0 +1,303 @@
+{
+  "page": "Slayer training",
+  "section": "Task summary",
+  "url": "https://oldschool.runescape.wiki/w/Slayer_training",
+  "read": "2026-10-04",
+  "about": "The wiki table of Duradel's assignments, with its Recommendation and Approx. XP/h columns as the page gives them. forXp is how the plugin reads the column for XP: do, skip (skip or block), dontUnlock (should not be unlocked for XP), or none where it is conditional. task is the cache name the plugin uses.",
+  "tasks": [
+    {
+      "wiki": "Aberrant spectres",
+      "task": "Aberrant Spectres",
+      "recommendation": "Skip unless hunting for herbs/seeds",
+      "xpPerHour": "35,000",
+      "forXp": "skip"
+    },
+    {
+      "wiki": "Abyssal demons",
+      "task": "Abyssal Demons",
+      "recommendation": "Do for money; block for XP",
+      "xpPerHour": "80,000 (Magic);  53,000 (Venator Bow);  40,000 (Melee)",
+      "forXp": "skip"
+    },
+    {
+      "wiki": "Ankou",
+      "task": "Ankou",
+      "recommendation": "Do",
+      "xpPerHour": "55,000 (Magic)",
+      "forXp": "do"
+    },
+    {
+      "wiki": "Araxytes",
+      "task": "Araxytes",
+      "recommendation": "Do",
+      "xpPerHour": "100,000 (Cannon and Venator bow)",
+      "forXp": "do"
+    },
+    {
+      "wiki": "Aviansie",
+      "task": "Aviansies",
+      "recommendation": "Should not be unlocked",
+      "xpPerHour": "10,000",
+      "forXp": "dontUnlock"
+    },
+    {
+      "wiki": "Basilisks",
+      "task": "Basilisks",
+      "recommendation": "Don't unlock for XP; can unlock for profit or hunting the basilisk jaw on an ironman",
+      "xpPerHour": "15,000",
+      "forXp": "dontUnlock"
+    },
+    {
+      "wiki": "Bloodveld",
+      "task": "Bloodveld",
+      "recommendation": "Do",
+      "xpPerHour": "100,000 (Cannon and Venator Bow) 80,000 (Cannon and Melee)",
+      "forXp": "do"
+    },
+    {
+      "wiki": "Black demons",
+      "task": "Black Demons",
+      "recommendation": "Block/skip unless killing demonic gorillas for profit/uniques",
+      "xpPerHour": "45,000",
+      "forXp": "skip"
+    },
+    {
+      "wiki": "Black dragons",
+      "task": "Black Dragons",
+      "recommendation": "Do",
+      "xpPerHour": "30,000",
+      "forXp": "do"
+    },
+    {
+      "wiki": "Blue dragons",
+      "task": "Blue Dragons",
+      "recommendation": "Skip if not killing Vorkath for profit. (Compare vs. Salve amulet beforehand)",
+      "xpPerHour": "25,000",
+      "forXp": "skip"
+    },
+    {
+      "wiki": "Bosses",
+      "task": "Boss",
+      "recommendation": "Only unlock if you want the slayer helm bonus vs. bosses; XP can be very poor.",
+      "xpPerHour": "Generally poor, but varies",
+      "forXp": "dontUnlock"
+    },
+    {
+      "wiki": "Cave horrors",
+      "task": "Cave Horrors",
+      "recommendation": "Skip unless you are an ironman hunting for a black mask",
+      "xpPerHour": "25,000",
+      "forXp": "skip"
+    },
+    {
+      "wiki": "Cave kraken",
+      "task": "Cave Kraken",
+      "recommendation": "Block after achieving the kraken Combat Achievements",
+      "xpPerHour": "15,000",
+      "forXp": "skip"
+    },
+    {
+      "wiki": "Dagannoth",
+      "task": "Dagannoth",
+      "recommendation": "Do",
+      "xpPerHour": "85,000",
+      "forXp": "do"
+    },
+    {
+      "wiki": "Dark beasts",
+      "task": "Dark Beasts",
+      "recommendation": "Do",
+      "xpPerHour": "42,000",
+      "forXp": "do"
+    },
+    {
+      "wiki": "Drakes",
+      "task": "Drakes",
+      "recommendation": "Skip/Block unless you're an ironman hunting their uniques",
+      "xpPerHour": "35,000",
+      "forXp": "skip"
+    },
+    {
+      "wiki": "Dust devils",
+      "task": "Dust Devils",
+      "recommendation": "Do",
+      "xpPerHour": "100,000–110,000 (Magic);  60,000 (Venator bow);  35,000 (Melee)",
+      "forXp": "do"
+    },
+    {
+      "wiki": "Elves",
+      "task": "Elves",
+      "recommendation": "Skip",
+      "xpPerHour": "25,000",
+      "forXp": "skip"
+    },
+    {
+      "wiki": "Fire giants",
+      "task": "Fire Giants",
+      "recommendation": "Do for magic XP, otherwise skip",
+      "xpPerHour": "40,000",
+      "forXp": "none"
+    },
+    {
+      "wiki": "Fossil Island Wyverns",
+      "task": "Fossil Island Wyverns",
+      "recommendation": "Block with the unique unlock",
+      "xpPerHour": "15,000",
+      "forXp": "skip"
+    },
+    {
+      "wiki": "Frost dragons",
+      "task": "Frost Dragons",
+      "recommendation": "Do for profit; skip for XP",
+      "xpPerHour": "30,000",
+      "forXp": "skip"
+    },
+    {
+      "wiki": "Gargoyles",
+      "task": "Gargoyles",
+      "recommendation": "Do for profit; skip for XP",
+      "xpPerHour": "30,000",
+      "forXp": "skip"
+    },
+    {
+      "wiki": "Greater demons",
+      "task": "Greater Demons",
+      "recommendation": "Skip unless killing Tormented Demons or Kril for profit",
+      "xpPerHour": "38,000 (Regular) 50,000 (Tormented Demons)",
+      "forXp": "skip"
+    },
+    {
+      "wiki": "Gryphons",
+      "task": "Gryphons",
+      "recommendation": "Can be unlocked for XP. Should not be unlocked for profit.",
+      "xpPerHour": "50,000",
+      "forXp": "none"
+    },
+    {
+      "wiki": "Hellhounds",
+      "task": "Hellhounds",
+      "recommendation": "Block unless killing Cerberus for profit",
+      "xpPerHour": "40,000 (Regular);  25,000 (Cerberus)",
+      "forXp": "skip"
+    },
+    {
+      "wiki": "Kalphites",
+      "task": "Kalphites",
+      "recommendation": "Do",
+      "xpPerHour": "75,000",
+      "forXp": "do"
+    },
+    {
+      "wiki": "Kurask",
+      "task": "Kurask",
+      "recommendation": "Do for profit; skip for XP",
+      "xpPerHour": "20,000",
+      "forXp": "skip"
+    },
+    {
+      "wiki": "Lizardmen",
+      "task": "Lizardmen",
+      "recommendation": "Should not be unlocked",
+      "xpPerHour": "50,000",
+      "forXp": "dontUnlock"
+    },
+    {
+      "wiki": "Metal dragons",
+      "task": "Metal Dragons",
+      "recommendation": "Do for profit; block for XP",
+      "xpPerHour": "30,000 (Iron, Steel and Mithril) 15,000 (Adamant and Rune)",
+      "forXp": "skip"
+    },
+    {
+      "wiki": "Mutated Zygomites",
+      "task": "Mutated Zygomites",
+      "recommendation": "Skip",
+      "xpPerHour": "10,000",
+      "forXp": "skip"
+    },
+    {
+      "wiki": "Nechryael",
+      "task": "Nechryael",
+      "recommendation": "Do",
+      "xpPerHour": "100,000 (Magic)  55,000 (Cannon and Venator bow);  40,000 (Melee)",
+      "forXp": "do"
+    },
+    {
+      "wiki": "Red dragons",
+      "task": "Red Dragons",
+      "recommendation": "Should not be unlocked",
+      "xpPerHour": "30,000",
+      "forXp": "dontUnlock"
+    },
+    {
+      "wiki": "Skeletal Wyverns",
+      "task": "Skeletal Wyverns",
+      "recommendation": "Skip",
+      "xpPerHour": "15,000",
+      "forXp": "skip"
+    },
+    {
+      "wiki": "Smoke devils",
+      "task": "Smoke Devils",
+      "recommendation": "Do",
+      "xpPerHour": "150,000 (Magic);  55,000 (Melee)",
+      "forXp": "do"
+    },
+    {
+      "wiki": "Spiritual creatures",
+      "task": "Spiritual Creatures",
+      "recommendation": "Skip",
+      "xpPerHour": "25,000",
+      "forXp": "skip"
+    },
+    {
+      "wiki": "Suqah",
+      "task": "Suqahs",
+      "recommendation": "Do for XP; skip for profit",
+      "xpPerHour": "55,000",
+      "forXp": "do"
+    },
+    {
+      "wiki": "Trolls",
+      "task": "Trolls",
+      "recommendation": "Do for XP; skip for profit",
+      "xpPerHour": "50,000",
+      "forXp": "do"
+    },
+    {
+      "wiki": "TzHaar",
+      "task": "Tzhaar",
+      "recommendation": "Do if you have access to Blood Barrage/can consistently do Fight Caves. Otherwise, do not unlock.",
+      "xpPerHour": "100,000 (Magic);  Varies (Inferno/Fight Caves)",
+      "forXp": "none"
+    },
+    {
+      "wiki": "Vyrewatch",
+      "task": "Vampyres",
+      "recommendation": "Should not be unlocked for XP. Can be unlocked for profit.",
+      "xpPerHour": "15,000",
+      "forXp": "dontUnlock"
+    },
+    {
+      "wiki": "Warped creatures",
+      "task": "Warped Creatures",
+      "recommendation": "Should not be unlocked",
+      "xpPerHour": "55,000 (Cannon)",
+      "forXp": "dontUnlock"
+    },
+    {
+      "wiki": "Waterfiends",
+      "task": "Waterfiends",
+      "recommendation": "Skip",
+      "xpPerHour": "15,000",
+      "forXp": "skip"
+    },
+    {
+      "wiki": "Wyrms",
+      "task": "Wyrms",
+      "recommendation": "Skip unless you're an ironman hunting their uniques",
+      "xpPerHour": "53,000 (Wyrmlings Cannon and Venator bow) 35,000",
+      "forXp": "skip"
+    }
+  ]
+}

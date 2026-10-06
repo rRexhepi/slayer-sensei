@@ -1,0 +1,2168 @@
+{
+ "about": [
+  "Places where Slayer tasks can be done. Built by tools/wiki-extract/build_slayer_areas.py and safe to edit by hand.",
+  "key is the stable id used by the plugin. areaId is the game's own Slayer area id (SLAYER_AREA varp and SlayerArea COL_AREA_ID), set only for places the game knows as a Slayer area. Konar's assignments are matched on it.",
+  "Points are [x, y, plane] in real game coordinates. entrance is the world map marker point. tasks[].spots are spawn tiles used as Shortest Path targets.",
+  "cannon is yes or no, combat is multi, single or mixed. Leave a fact out when it is not known. Every point and fact needs a source.",
+  "taskLocations lists every place for a task in display order, the recommended one first. recommended is the place to suggest when the master leaves the place open: the place the dossier's best location names, else the first listed place with a verified point. The player can pick another listed place in the sidebar.",
+  "wildernessTaskLocations lists where each of Krystilia's tasks can be done, from her wiki page, which names only places in the Wilderness. Its marker points and kill spots replace the place's own: each one is checked to lie in the Wilderness, and the place's facts and notes still apply."
+ ],
+ "extraPages": [
+  "Dwarf multicannon",
+  "Konar quo Maten",
+  "Waterfall Dungeon",
+  "Mourner Tunnels",
+  "Brine Rat Cavern",
+  "Shed (Lumbridge Swamp)",
+  "Zanaris",
+  "Evil Chicken's Lair",
+  "Abyssal Area",
+  "Slashed tapestry",
+  "Meiyerditch Laboratories",
+  "Poison Waste Dungeon",
+  "Neypotzli",
+  "Crypt of Tonali",
+  "Tonali Cavern",
+  "Vampyrium",
+  "Lithkren Vault",
+  "Lizardman Canyon",
+  "Lizardman Settlement",
+  "Molch",
+  "Kebos Swamp",
+  "Battlefront",
+  "Death Plateau (location)",
+  "Darkmeyer",
+  "Slepe",
+  "Great Conch",
+  "Wyrmscraig",
+  "Charred Dungeon",
+  "Gryphons (dungeon)",
+  "Morytania Spider Cave",
+  "Uzer Mastaba",
+  "Stalker Den",
+  "Sophanem Dungeon",
+  "Canifis",
+  "Killerwatt plane",
+  "Braindeath Island",
+  "Mudskipper Point",
+  "Ynysdail Cavern",
+  "Grimstone Dungeon",
+  "Dorgesh-Kaan South Dungeon",
+  "Tarn's Lair",
+  "Mor Ul Rek"
+ ],
+ "tasks": [
+  {
+   "taskId": 41,
+   "task": "Aberrant spectres",
+   "page": "Slayer task/Aberrant spectres",
+   "monsters": [
+    "Aberrant spectre",
+    "Deviant spectre"
+   ]
+  },
+  {
+   "taskId": 42,
+   "task": "Abyssal demons",
+   "page": "Slayer task/Abyssal demons",
+   "monsters": [
+    "Abyssal demon"
+   ]
+  },
+  {
+   "taskId": 79,
+   "task": "Ankou",
+   "page": "Slayer task/Ankou",
+   "monsters": [
+    "Ankou"
+   ]
+  },
+  {
+   "taskId": 94,
+   "task": "Aviansies",
+   "page": "Slayer task/Aviansies",
+   "monsters": [
+    "Aviansie"
+   ]
+  },
+  {
+   "taskId": 43,
+   "task": "Basilisks",
+   "page": "Slayer task/Basilisks",
+   "monsters": [
+    "Basilisk",
+    "Basilisk Knight"
+   ]
+  },
+  {
+   "taskId": 30,
+   "task": "Black demons",
+   "page": "Slayer task/Black demons",
+   "monsters": [
+    "Black demon"
+   ]
+  },
+  {
+   "taskId": 27,
+   "task": "Black dragons",
+   "page": "Slayer task/Black dragons",
+   "monsters": [
+    "Black dragon",
+    "Baby black dragon",
+    "Brutal black dragon"
+   ]
+  },
+  {
+   "taskId": 48,
+   "task": "Bloodveld",
+   "page": "Slayer task/Bloodveld",
+   "monsters": [
+    "Bloodveld",
+    "Mutated Bloodveld"
+   ]
+  },
+  {
+   "taskId": 25,
+   "task": "Blue dragons",
+   "page": "Slayer task/Blue dragons",
+   "monsters": [
+    "Blue dragon",
+    "Baby blue dragon",
+    "Brutal blue dragon"
+   ]
+  },
+  {
+   "taskId": 84,
+   "task": "Brine rats",
+   "monsters": [
+    "Brine rat"
+   ]
+  },
+  {
+   "taskId": 92,
+   "task": "Cave kraken",
+   "monsters": [
+    "Cave kraken"
+   ]
+  },
+  {
+   "taskId": 35,
+   "task": "Dagannoth",
+   "page": "Slayer task/Dagannoth",
+   "monsters": [
+    "Dagannoth",
+    "Dagannoth (Waterbirth Island)"
+   ]
+  },
+  {
+   "taskId": 66,
+   "task": "Dark beasts",
+   "monsters": [
+    "Dark beast"
+   ]
+  },
+  {
+   "taskId": 112,
+   "task": "Drakes",
+   "page": "Slayer task/Drakes",
+   "monsters": [
+    "Drake"
+   ]
+  },
+  {
+   "taskId": 49,
+   "task": "Dust devils",
+   "page": "Slayer task/Dust devils",
+   "monsters": [
+    "Dust devil"
+   ]
+  },
+  {
+   "taskId": 16,
+   "task": "Fire giants",
+   "page": "Slayer task/Fire giants",
+   "monsters": [
+    "Fire giant"
+   ]
+  },
+  {
+   "taskId": 106,
+   "task": "Fossil Island wyverns",
+   "monsters": [
+    "Spitting Wyvern",
+    "Taloned Wyvern",
+    "Long-tailed Wyvern",
+    "Ancient Wyvern"
+   ]
+  },
+  {
+   "taskId": 46,
+   "task": "Gargoyles",
+   "page": "Slayer task/Gargoyles",
+   "monsters": [
+    "Gargoyle"
+   ],
+   "excludeRows": [
+    "\\(roof\\)"
+   ]
+  },
+  {
+   "taskId": 29,
+   "task": "Greater demons",
+   "page": "Slayer task/Greater demons",
+   "monsters": [
+    "Greater demon"
+   ]
+  },
+  {
+   "taskId": 31,
+   "task": "Hellhounds",
+   "page": "Slayer task/Hellhounds",
+   "monsters": [
+    "Hellhound"
+   ],
+   "excludeRows": [
+    "vet'?ion"
+   ]
+  },
+  {
+   "taskId": 113,
+   "task": "Hydras",
+   "page": "Slayer task/Hydras",
+   "monsters": [
+    "Hydra"
+   ]
+  },
+  {
+   "taskId": 50,
+   "task": "Jellies",
+   "page": "Slayer task/Jellies",
+   "monsters": [
+    "Jelly",
+    "Warped Jelly",
+    "Chilled jelly"
+   ]
+  },
+  {
+   "taskId": 53,
+   "task": "Kalphite",
+   "monsters": [
+    "Kalphite Worker",
+    "Kalphite Soldier",
+    "Kalphite Guardian"
+   ]
+  },
+  {
+   "taskId": 45,
+   "task": "Kurask",
+   "monsters": [
+    "Kurask"
+   ]
+  },
+  {
+   "taskId": 123,
+   "task": "Lesser Nagua",
+   "page": "Slayer task/Lesser Nagua",
+   "monsters": [
+    "Sulphur Nagua",
+    "Frost Nagua",
+    "Earthen Nagua"
+   ]
+  },
+  {
+   "taskId": 90,
+   "task": "Lizardmen",
+   "page": "Slayer task/Lizardmen",
+   "monsters": [
+    "Lizardman",
+    "Lizardman brute",
+    "Lizardman shaman"
+   ]
+  },
+  {
+   "taskId": 127,
+   "task": "Metal dragons",
+   "page": "Slayer task/Metal dragons",
+   "monsters": [
+    "Bronze dragon",
+    "Iron dragon",
+    "Steel dragon",
+    "Mithril dragon",
+    "Adamant dragon",
+    "Rune dragon"
+   ]
+  },
+  {
+   "taskId": 74,
+   "task": "Mutated zygomites",
+   "monsters": [
+    "Mutated Zygomite",
+    "Ancient Zygomite"
+   ],
+   "dossierName": "Zygomites"
+  },
+  {
+   "taskId": 52,
+   "task": "Nechryael",
+   "page": "Slayer task/Nechryael",
+   "monsters": [
+    "Nechryael",
+    "Greater Nechryael"
+   ]
+  },
+  {
+   "taskId": 26,
+   "task": "Red dragons",
+   "page": "Slayer task/Red dragons",
+   "monsters": [
+    "Red dragon",
+    "Baby red dragon",
+    "Brutal red dragon"
+   ]
+  },
+  {
+   "taskId": 72,
+   "task": "Skeletal wyverns",
+   "monsters": [
+    "Skeletal Wyvern"
+   ]
+  },
+  {
+   "taskId": 95,
+   "task": "Smoke devils",
+   "page": "Slayer task/Smoke devils",
+   "monsters": [
+    "Smoke devil"
+   ]
+  },
+  {
+   "taskId": 18,
+   "task": "Trolls",
+   "page": "Slayer task/Trolls",
+   "monsters": [
+    "Mountain troll",
+    "Ice troll",
+    "Ice troll runt",
+    "Ice troll male",
+    "Ice troll female",
+    "Ice troll grunt"
+   ]
+  },
+  {
+   "taskId": 36,
+   "task": "Turoth",
+   "page": "Slayer task/Turoth",
+   "monsters": [
+    "Turoth"
+   ]
+  },
+  {
+   "taskId": 34,
+   "task": "Vampyres",
+   "page": "Slayer task/Vampyres",
+   "monsters": [
+    "Feral Vampyre",
+    "Vampyre Juvinate",
+    "Vyrewatch",
+    "Vyrewatch Sentinel",
+    "Venator"
+   ]
+  },
+  {
+   "taskId": 122,
+   "task": "Warped creatures",
+   "page": "Slayer task/Warped creature",
+   "monsters": [
+    "Warped Terrorbird",
+    "Warped Tortoise"
+   ]
+  },
+  {
+   "taskId": 88,
+   "task": "Waterfiends",
+   "page": "Slayer task/Waterfiends",
+   "monsters": [
+    "Waterfiend"
+   ]
+  },
+  {
+   "taskId": 111,
+   "task": "Wyrms",
+   "page": "Slayer task/Wyrms",
+   "monsters": [
+    "Wyrm",
+    "Wyrmling",
+    "Lava Strykewyrm"
+   ]
+  },
+  {
+   "taskId": 1,
+   "task": "Monkeys",
+   "page": "Slayer task/Monkeys",
+   "placesFromGuide": true,
+   "monsters": [
+    "Monkey (monster)",
+    "Monkey Archer",
+    "Monkey Guard",
+    "Monkey Zombie",
+    "Maniacal monkey",
+    "Tortured gorilla",
+    "Demonic gorilla"
+   ]
+  },
+  {
+   "taskId": 2,
+   "task": "Goblins",
+   "page": "Slayer task/Goblins",
+   "placesFromGuide": true,
+   "monsters": [
+    "Goblin",
+    "Cave goblin (monster)",
+    "Cave goblin guard",
+    "Cave goblin miner"
+   ]
+  },
+  {
+   "taskId": 3,
+   "task": "Rats",
+   "page": "Slayer task/Rats",
+   "placesFromGuide": true,
+   "monsters": [
+    "Rat",
+    "Giant rat",
+    "Dungeon rat",
+    "Crypt rat",
+    "Giant crypt rat",
+    "Zombie rat"
+   ]
+  },
+  {
+   "taskId": 4,
+   "task": "Spiders",
+   "page": "Slayer task/Spiders",
+   "placesFromGuide": true,
+   "monsters": [
+    "Spider",
+    "Giant spider",
+    "Deadly red spider",
+    "Jungle spider",
+    "Poison spider",
+    "Shadow spider",
+    "Ice spider",
+    "Temple Spider",
+    "Blessed spider"
+   ]
+  },
+  {
+   "taskId": 5,
+   "task": "Birds",
+   "page": "Slayer task/Birds",
+   "placesFromGuide": true,
+   "monsters": [
+    "Chicken",
+    "Duck",
+    "Seagull",
+    "Terrorbird",
+    "Vulture",
+    "Rooster",
+    "Undead chicken",
+    "Penguin (monster)"
+   ]
+  },
+  {
+   "taskId": 6,
+   "task": "Cows",
+   "monsters": [
+    "Cow",
+    "Cow calf"
+   ]
+  },
+  {
+   "taskId": 7,
+   "task": "Scorpions",
+   "page": "Slayer task/Scorpions",
+   "placesFromGuide": true,
+   "monsters": [
+    "Scorpion",
+    "King Scorpion",
+    "Poison scorpion",
+    "Pit Scorpion",
+    "Grave scorpion",
+    "Lobstrosity"
+   ]
+  },
+  {
+   "taskId": 8,
+   "task": "Bats",
+   "page": "Slayer task/Bats",
+   "placesFromGuide": true,
+   "monsters": [
+    "Bat",
+    "Giant bat",
+    "Albino bat",
+    "Death wing"
+   ]
+  },
+  {
+   "taskId": 9,
+   "task": "Wolves",
+   "page": "Slayer task/Wolves",
+   "placesFromGuide": true,
+   "monsters": [
+    "Wolf",
+    "White wolf",
+    "Big Wolf",
+    "Desert Wolf",
+    "Dire Wolf",
+    "Ice wolf",
+    "Jungle wolf"
+   ]
+  },
+  {
+   "taskId": 10,
+   "task": "Zombies",
+   "page": "Slayer task/Zombies",
+   "placesFromGuide": true,
+   "monsters": [
+    "Zombie",
+    "Monkey Zombie",
+    "Undead cow",
+    "Undead chicken",
+    "Zombie (Tarn's Lair)"
+   ]
+  },
+  {
+   "taskId": 11,
+   "task": "Skeletons",
+   "page": "Slayer task/Skeletons",
+   "placesFromGuide": true,
+   "monsters": [
+    "Skeleton",
+    "Skeleton (Tarn's Lair)",
+    "Skeleton Mage",
+    "Skeleton (Ape Atoll)",
+    "Skogre"
+   ]
+  },
+  {
+   "taskId": 12,
+   "task": "Ghosts",
+   "page": "Slayer task/Ghosts",
+   "placesFromGuide": true,
+   "monsters": [
+    "Ghost",
+    "Tortured soul",
+    "Forgotten Soul"
+   ]
+  },
+  {
+   "taskId": 13,
+   "task": "Bears",
+   "page": "Slayer task/Bears",
+   "placesFromGuide": true,
+   "monsters": [
+    "Black bear",
+    "Grizzly bear",
+    "Grizzly bear cub",
+    "Bear cub"
+   ]
+  },
+  {
+   "taskId": 14,
+   "task": "Hill giants",
+   "page": "Slayer task/Hill giants",
+   "placesFromGuide": true,
+   "monsters": [
+    "Hill Giant",
+    "Cyclops"
+   ]
+  },
+  {
+   "taskId": 15,
+   "task": "Ice giants",
+   "page": "Slayer task/Ice giants",
+   "monsters": [
+    "Ice giant"
+   ]
+  },
+  {
+   "taskId": 17,
+   "task": "Moss giants",
+   "page": "Slayer task/Moss giants",
+   "placesFromGuide": true,
+   "monsters": [
+    "Moss giant"
+   ]
+  },
+  {
+   "taskId": 19,
+   "task": "Ice warriors",
+   "monsters": [
+    "Ice warrior"
+   ]
+  },
+  {
+   "taskId": 20,
+   "task": "Ogres",
+   "page": "Slayer task/Ogres",
+   "placesFromGuide": true,
+   "monsters": [
+    "Ogre",
+    "Ogress Warrior",
+    "Ogress Shaman",
+    "Mogre",
+    "Zogre",
+    "Skogre"
+   ]
+  },
+  {
+   "taskId": 21,
+   "task": "Hobgoblins",
+   "page": "Slayer task/Hobgoblins",
+   "placesFromGuide": true,
+   "monsters": [
+    "Hobgoblin"
+   ]
+  },
+  {
+   "taskId": 22,
+   "task": "Dogs",
+   "page": "Slayer task/Dogs",
+   "placesFromGuide": true,
+   "monsters": [
+    "Jackal",
+    "Wild dog",
+    "Guard dog",
+    "Shadow hound"
+   ]
+  },
+  {
+   "taskId": 23,
+   "task": "Ghouls",
+   "monsters": [
+    "Ghoul"
+   ]
+  },
+  {
+   "taskId": 28,
+   "task": "Lesser demons",
+   "page": "Slayer task/Lesser demon",
+   "placesFromGuide": true,
+   "monsters": [
+    "Lesser demon"
+   ]
+  },
+  {
+   "taskId": 32,
+   "task": "Shadow warriors",
+   "monsters": [
+    "Shadow warrior"
+   ]
+  },
+  {
+   "taskId": 33,
+   "task": "Werewolves",
+   "places": [
+    {
+     "text": "Canifis",
+     "link": "Canifis",
+     "note": "The werewolves walk around Canifis in human form and change when attacked.",
+     "noteSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Werewolf: werewolves are found in Canifis in human form"
+    }
+   ],
+   "monsters": [
+    "Werewolf"
+   ]
+  },
+  {
+   "taskId": 37,
+   "task": "Cave crawlers",
+   "monsters": [
+    "Cave crawler"
+   ]
+  },
+  {
+   "taskId": 38,
+   "task": "Banshees",
+   "page": "Slayer task/Banshees",
+   "monsters": [
+    "Banshee",
+    "Twisted Banshee"
+   ]
+  },
+  {
+   "taskId": 39,
+   "task": "Crawling hands",
+   "monsters": [
+    "Crawling Hand"
+   ]
+  },
+  {
+   "taskId": 40,
+   "task": "Infernal mages",
+   "monsters": [
+    "Infernal Mage"
+   ]
+  },
+  {
+   "taskId": 44,
+   "task": "Cockatrice",
+   "monsters": [
+    "Cockatrice"
+   ]
+  },
+  {
+   "taskId": 47,
+   "task": "Pyrefiends",
+   "page": "Slayer task/Pyrefiends",
+   "monsters": [
+    "Pyrefiend",
+    "Pyrelord"
+   ]
+  },
+  {
+   "taskId": 51,
+   "task": "Rockslugs",
+   "monsters": [
+    "Rockslug"
+   ]
+  },
+  {
+   "taskId": 55,
+   "task": "Otherworldly beings",
+   "monsters": [
+    "Otherworldly being"
+   ]
+  },
+  {
+   "taskId": 56,
+   "task": "Elves",
+   "page": "Slayer task/Elves",
+   "monsters": [
+    "Elf Warrior",
+    "Elf Archer",
+    "Iorwerth Warrior",
+    "Iorwerth Archer"
+   ]
+  },
+  {
+   "taskId": 57,
+   "task": "Dwarves",
+   "page": "Slayer task/Dwarves",
+   "placesFromGuide": true,
+   "monsters": [
+    "Dwarf",
+    "Black Guard",
+    "Chaos dwarf",
+    "Dwarf gang member"
+   ]
+  },
+  {
+   "taskId": 61,
+   "task": "Wall beasts",
+   "page": "Slayer task/Wall beast",
+   "monsters": [
+    "Wall beast"
+   ]
+  },
+  {
+   "taskId": 62,
+   "task": "Cave slimes",
+   "monsters": [
+    "Cave slime"
+   ]
+  },
+  {
+   "taskId": 63,
+   "task": "Cave bugs",
+   "monsters": [
+    "Cave bug"
+   ]
+  },
+  {
+   "taskId": 64,
+   "task": "Shades",
+   "page": "Slayer task/Shades",
+   "monsters": [
+    "Shade",
+    "Loar Shade",
+    "Phrin Shade",
+    "Riyl Shade",
+    "Asyn Shade",
+    "Fiyr Shade",
+    "Urium Shade"
+   ]
+  },
+  {
+   "taskId": 65,
+   "task": "Crocodiles",
+   "monsters": [
+    "Crocodile"
+   ]
+  },
+  {
+   "taskId": 67,
+   "task": "Mogres",
+   "monsters": [
+    "Mogre"
+   ]
+  },
+  {
+   "taskId": 68,
+   "task": "Lizards",
+   "page": "Slayer task/Lizards",
+   "monsters": [
+    "Lizard",
+    "Desert Lizard",
+    "Small Lizard",
+    "Sulphur Lizard"
+   ]
+  },
+  {
+   "taskId": 69,
+   "task": "Fever spiders",
+   "monsters": [
+    "Fever spider"
+   ]
+  },
+  {
+   "taskId": 70,
+   "task": "Harpie bug swarms",
+   "monsters": [
+    "Harpie Bug Swarm"
+   ]
+  },
+  {
+   "taskId": 71,
+   "task": "Sea snakes",
+   "page": "Slayer task/Sea snakes",
+   "monsters": [
+    "Sea snake hatchling",
+    "Sea snake young"
+   ]
+  },
+  {
+   "taskId": 73,
+   "task": "Killerwatts",
+   "monsters": [
+    "Killerwatt"
+   ]
+  },
+  {
+   "taskId": 75,
+   "task": "Icefiends",
+   "page": "Slayer task/Icefiends",
+   "monsters": [
+    "Icefiend"
+   ]
+  },
+  {
+   "taskId": 76,
+   "task": "Minotaurs",
+   "monsters": [
+    "Minotaur"
+   ]
+  },
+  {
+   "taskId": 77,
+   "task": "Fleshcrawlers",
+   "monsters": [
+    "Flesh Crawler"
+   ]
+  },
+  {
+   "taskId": 78,
+   "task": "Catablepon",
+   "monsters": [
+    "Catablepon"
+   ]
+  },
+  {
+   "taskId": 80,
+   "task": "Cave horrors",
+   "page": "Slayer task/Cave horrors",
+   "monsters": [
+    "Cave horror"
+   ]
+  },
+  {
+   "taskId": 81,
+   "task": "Jungle horrors",
+   "monsters": [
+    "Jungle horror"
+   ]
+  },
+  {
+   "taskId": 83,
+   "task": "Suqahs",
+   "page": "Slayer task/Suqah",
+   "excludeRows": [
+    "Lady Zay"
+   ],
+   "monsters": [
+    "Suqah"
+   ]
+  },
+  {
+   "taskId": 85,
+   "task": "Scabarites",
+   "page": "Slayer task/Scabarites",
+   "monsters": [
+    "Scarab Mage",
+    "Locust rider",
+    "Scarab swarm",
+    "Giant Scarab"
+   ]
+  },
+  {
+   "taskId": 86,
+   "task": "Terror dogs",
+   "monsters": [
+    "Terror dog"
+   ]
+  },
+  {
+   "taskId": 87,
+   "task": "Molanisks",
+   "page": "Slayer task/Molanisks",
+   "monsters": [
+    "Molanisk"
+   ]
+  },
+  {
+   "taskId": 89,
+   "task": "Spiritual creatures",
+   "page": "Slayer task/Spiritual creatures",
+   "monsters": [
+    "Spiritual ranger",
+    "Spiritual warrior",
+    "Spiritual mage"
+   ]
+  },
+  {
+   "taskId": 96,
+   "task": "TzHaar",
+   "page": "Slayer task/TzHaar",
+   "monsters": [
+    "TzHaar-Ket",
+    "TzHaar-Xil",
+    "TzHaar-Mej (monster)",
+    "TzHaar-Hur"
+   ]
+  },
+  {
+   "taskId": 121,
+   "task": "Sourhogs",
+   "monsters": [
+    "Sourhog"
+   ]
+  },
+  {
+   "taskId": 124,
+   "task": "Araxytes",
+   "page": "Slayer task/Araxytes",
+   "excludeRows": [
+    "Araxxor"
+   ],
+   "monsters": [
+    "Araxyte"
+   ]
+  },
+  {
+   "taskId": 125,
+   "task": "Crabs",
+   "page": "Slayer task/Crabs",
+   "placesFromGuide": true,
+   "monsters": [
+    "Sand Crab",
+    "Rock Crab",
+    "Ammonite Crab",
+    "Swamp Crab",
+    "Giant rock crab",
+    "King Sand Crab",
+    "Frost Crab"
+   ]
+  },
+  {
+   "taskId": 126,
+   "task": "Custodian stalkers",
+   "page": "Slayer task/Custodian stalker",
+   "monsters": [
+    "Juvenile custodian stalker",
+    "Mature custodian stalker",
+    "Elder custodian stalker"
+   ]
+  },
+  {
+   "taskId": 128,
+   "task": "Gryphons",
+   "page": "Slayer task/Gryphons",
+   "monsters": [
+    "Gryphon"
+   ]
+  },
+  {
+   "taskId": 129,
+   "task": "Aquanites",
+   "page": "Slayer task/Aquanites",
+   "monsters": [
+    "Aquanite"
+   ]
+  },
+  {
+   "taskId": 130,
+   "task": "Frost dragons",
+   "monsters": [
+    "Frost dragon"
+   ]
+  }
+ ],
+ "areaKeys": {
+  "SLAYERAREA_ZEAHCATACOMBS": {
+   "key": "catacombs_of_kourend",
+   "label": "Catacombs of Kourend"
+  },
+  "SLAYERAREA_STRONGHOLDDUNGEON": {
+   "key": "stronghold_slayer_dungeon",
+   "label": "Stronghold Slayer Dungeon"
+  },
+  "SLAYERAREA_BRIMSTONEDUNGEON": {
+   "key": "karuulm_slayer_dungeon",
+   "label": "Karuulm Slayer Dungeon"
+  },
+  "SLAYERAREA_CHASMOFFIRE": {
+   "key": "chasm_of_fire",
+   "label": "Chasm of Fire"
+  },
+  "SLAYERAREA_BRIMHAVENDUNGEON": {
+   "key": "brimhaven_dungeon",
+   "label": "Brimhaven Dungeon"
+  },
+  "SLAYERAREA_TAVERLEYDUNGEON": {
+   "key": "taverley_dungeon",
+   "label": "Taverley Dungeon"
+  },
+  "SLAYERAREA_WITCHHAVENDUNGEON": {
+   "key": "witchaven_dungeon",
+   "label": "Witchaven Dungeon"
+  },
+  "SLAYERAREA_WATERFALLDUNGEON": {
+   "key": "waterfall_dungeon",
+   "label": "Waterfall Dungeon"
+  },
+  "SLAYERAREA_SLAYERTOWER": {
+   "key": "slayer_tower",
+   "label": "Slayer Tower"
+  },
+  "SLAYERAREA_GODWARS": {
+   "key": "god_wars_dungeon",
+   "label": "God Wars Dungeon"
+  },
+  "SLAYERAREA_KALPHITELAIR": {
+   "key": "kalphite_lair",
+   "label": "Kalphite Lair"
+  },
+  "SLAYERAREA_KALPHITECAVE": {
+   "key": "kalphite_cave",
+   "label": "Kalphite Cave (task only)"
+  },
+  "SLAYERAREA_KRAKENCOVE": {
+   "key": "kraken_cove",
+   "label": "Kraken Cove"
+  },
+  "SLAYERAREA_LIGHTHOUSE": {
+   "key": "lighthouse",
+   "label": "Lighthouse"
+  },
+  "SLAYERAREA_WATERBIRTHISLAND": {
+   "key": "waterbirth_island",
+   "label": "Waterbirth Island"
+  },
+  "SLAYERAREA_LIZARDMANCANYON": {
+   "key": "lizardman_canyon",
+   "label": "Lizardman Canyon"
+  },
+  "SLAYERAREA_MOLCH": {
+   "key": "molch",
+   "label": "Molch"
+  },
+  "SLAYERAREA_LIZARDMANSETTLEMENT": {
+   "key": "lizardman_settlement",
+   "label": "Lizardman Settlement"
+  },
+  "SLAYERAREA_SMOKEDEVILDUNGEON": {
+   "key": "smoke_devil_dungeon",
+   "label": "Smoke Devil Dungeon"
+  },
+  "SLAYERAREA_SMOKEDUNGEON": {
+   "key": "smoke_dungeon",
+   "label": "Smoke Dungeon"
+  },
+  "SLAYERAREA_DEATHPLATEAU": {
+   "key": "death_plateau",
+   "label": "Death Plateau"
+  },
+  "SLAYERAREA_TROLLSTRONGHOLD": {
+   "key": "troll_stronghold",
+   "label": "Troll Stronghold"
+  },
+  "SLAYERAREA_KELDAGRIM": {
+   "key": "keldagrim",
+   "label": "Keldagrim"
+  },
+  "SLAYERAREA_SOUTHQUIDAMORTEM": {
+   "key": "south_of_mount_quidamortem",
+   "label": "South of Mount Quidamortem"
+  },
+  "SLAYERAREA_JATNEIT": {
+   "key": "fremennik_isles",
+   "label": "Fremennik Isles"
+  },
+  "SLAYERAREA_FREMDUNGEON": {
+   "key": "fremennik_slayer_dungeon",
+   "label": "Fremennik Slayer Dungeon"
+  },
+  "SLAYERAREA_MYTHSGUILD": {
+   "key": "myths_guild_dungeon",
+   "label": "Myths' Guild Dungeon"
+  },
+  "SLAYERAREA_MOURNERTUNNELS": {
+   "key": "mourner_tunnels",
+   "label": "Mourner Tunnels"
+  },
+  "SLAYERAREA_LITHKRENVAULT": {
+   "key": "lithkren_vault",
+   "label": "Lithkren Vault"
+  },
+  "SLAYERAREA_ANCIENTCAVERN": {
+   "key": "ancient_cavern",
+   "label": "Ancient Cavern"
+  },
+  "SLAYERAREA_SECURITYSTRONGHOLD": {
+   "key": "stronghold_of_security",
+   "label": "Stronghold of Security"
+  },
+  "SLAYERAREA_FOSSILISLAND": {
+   "key": "fossil_island",
+   "label": "Fossil Island"
+  },
+  "SLAYERAREA_ICEDUNGEON": {
+   "key": "asgarnian_ice_dungeon",
+   "label": "Asgarnian Ice Dungeon"
+  },
+  "SLAYERAREA_OGREENCLAVE": {
+   "key": "ogre_enclave",
+   "label": "Ogre Enclave"
+  },
+  "SLAYERAREA_BRINERATCAVERN": {
+   "key": "brine_rat_cavern",
+   "label": "Brine Rat Cavern"
+  },
+  "SLAYERAREA_ZANARIS": {
+   "key": "zanaris",
+   "label": "Zanaris"
+  },
+  "SLAYERAREA_EVILCHICKENLAIR": {
+   "key": "evil_chickens_lair",
+   "label": "Evil Chicken's Lair"
+  },
+  "SLAYERAREA_ABYSS": {
+   "key": "the_abyss",
+   "label": "The Abyss"
+  },
+  "SLAYERAREA_KEBOSSWAMP": {
+   "key": "kebos_swamp",
+   "label": "Kebos Swamp"
+  },
+  "SLAYERAREA_KEBOSBATTLEFRONT": {
+   "key": "the_battlefront",
+   "label": "The Battlefront"
+  },
+  "SLAYERAREA_HOSIDIUSDUNGEON": {
+   "key": "forthos_dungeon",
+   "label": "Forthos Dungeon"
+  },
+  "SLAYERAREA_IORWERTHDUNGEON": {
+   "key": "iorwerth_dungeon",
+   "label": "Iorwerth Dungeon"
+  },
+  "SLAYERAREA_JORMUNGANDPRISON": {
+   "key": "jormungands_prison",
+   "label": "Jormungand's Prison"
+  },
+  "SLAYERAREA_DARKMEYER": {
+   "key": "darkmeyer",
+   "label": "Darkmeyer"
+  },
+  "SLAYERAREA_SLEPE": {
+   "key": "slepe",
+   "label": "Slepe"
+  },
+  "SLAYERAREA_MEIYERDITCHLABS": {
+   "key": "meiyerditch_laboratories",
+   "label": "Meiyerditch Laboratories"
+  },
+  "SLAYERAREA_ISLEOFSOULS": {
+   "key": "isle_of_souls",
+   "label": "Isle of Souls"
+  },
+  "SLAYERAREA_GIANTSDEN": {
+   "key": "giants_den",
+   "label": "Giants' Den"
+  },
+  "SLAYERAREA_POISONWASTEDUNGEON": {
+   "key": "poison_waste_dungeon",
+   "label": "Poison Waste Dungeon"
+  },
+  "SLAYERAREA_PERILOUSMOONSDUNGEON": {
+   "key": "neypotzli",
+   "label": "Neypotzli"
+  },
+  "SLAYERAREA_TAPOYAUIK": {
+   "key": "ruins_of_tapoyauik",
+   "label": "Ruins of Tapoyauik"
+  },
+  "SLAYERAREA_CRYPTOFTONALI": {
+   "key": "crypt_of_tonali",
+   "label": "Crypt of Tonali"
+  },
+  "SLAYERAREA_WYRMSCRAIG": {
+   "key": "wyrmscraig",
+   "label": "Wyrmscraig"
+  },
+  "SLAYERAREA_GREATCONCH": {
+   "key": "great_conch",
+   "label": "The Great Conch"
+  },
+  "SLAYERAREA_CHARRED_ISLAND_DUNGEON": {
+   "key": "charred_dungeon",
+   "label": "Charred Dungeon"
+  },
+  "SLAYERAREA_VAMPYRIUM": {
+   "key": "vampyrium",
+   "label": "Vampyrium"
+  }
+ },
+ "extraLocations": [
+  {
+   "key": "mos_leharmless_cave",
+   "label": "Mos Le'Harmless Cave"
+  },
+  {
+   "key": "tzhaar_city",
+   "label": "TzHaar City"
+  },
+  {
+   "key": "wyvern_cave",
+   "label": "Wyvern Cave"
+  },
+  {
+   "key": "lizardman_caves",
+   "label": "Lizardman Caves"
+  },
+  {
+   "key": "lizardman_temple",
+   "label": "Lizardman Temple"
+  },
+  {
+   "key": "demonic_ruins",
+   "label": "Demonic Ruins"
+  },
+  {
+   "key": "edgeville_dungeon",
+   "label": "Edgeville Dungeon"
+  },
+  {
+   "key": "wilderness_slayer_cave",
+   "label": "Wilderness Slayer Cave"
+  },
+  {
+   "key": "wilderness_resource_area",
+   "label": "Outside the Wilderness Resource Area"
+  },
+  {
+   "key": "morytania_spider_cave",
+   "label": "Morytania Spider Cave"
+  },
+  {
+   "key": "stalker_den",
+   "label": "Stalker Den"
+  },
+  {
+   "key": "western_gryphon_dungeon",
+   "label": "Western gryphon dungeon"
+  },
+  {
+   "key": "eastern_gryphon_dungeon",
+   "label": "Eastern gryphon dungeon"
+  }
+ ],
+ "aliases": {
+  "Stronghold Slayer Cave": [
+   "stronghold_slayer_dungeon"
+  ],
+  "Abyssal Area": [
+   "the_abyss"
+  ],
+  "Abyssal Nexus": [
+   "the_abyss"
+  ],
+  "Lighthouse Dungeon": [
+   "lighthouse"
+  ],
+  "Waterbirth Island Dungeon": [
+   "waterbirth_island"
+  ],
+  "Isle of Souls Dungeon": [
+   "isle_of_souls"
+  ],
+  "Tonali Cavern": [
+   "crypt_of_tonali"
+  ],
+  "Wyvern Cave": [
+   "fossil_island",
+   "wyvern_cave"
+  ],
+  "Corsair Cove Dungeon": [
+   "myths_guild_dungeon"
+  ],
+  "Death Plateau (location)": [
+   "death_plateau"
+  ],
+  "Troll Stronghold (location)": [
+   "troll_stronghold"
+  ],
+  "Mount Quidamortem": [
+   "south_of_mount_quidamortem"
+  ],
+  "Jatizso": [
+   "fremennik_isles"
+  ],
+  "Battlefront": [
+   "the_battlefront"
+  ],
+  "Apsul Hunting Ground": [
+   "vampyrium"
+  ],
+  "Virer Hunting Ground": [
+   "vampyrium"
+  ],
+  "Wyrmscraig Cavern": [
+   "wyrmscraig"
+  ],
+  "Kalphite Cave": [
+   "kalphite_cave"
+  ],
+  "Edgeville Dungeon (Wilderness)": [
+   "edgeville_dungeon"
+  ],
+  "Wilderness (level 18-22, Wilderness Slayer Cave)": [
+   "wilderness_slayer_cave"
+  ],
+  "Wilderness near Demonic Ruins": [
+   "demonic_ruins"
+  ],
+  "Lizardman Caves, underneath Lizardman Settlement": [
+   "lizardman_caves"
+  ],
+  "Lizardman Caves, underneath Lizardman Settlement (Slayer task only)": [
+   "lizardman_caves"
+  ],
+  "Lizardman Temple, beneath Molch": [
+   "lizardman_temple"
+  ],
+  "Outside of the Wilderness Resource Area": [
+   "wilderness_resource_area"
+  ],
+  "Wilderness (Level 49-55), near the Resource Area": [
+   "wilderness_resource_area"
+  ],
+  "Fremennik Slayer Cave": [
+   "fremennik_slayer_dungeon"
+  ],
+  "Field south of Champions' Guild": [
+   "field_south_of_the_champions_guild"
+  ],
+  "Frozen Waste Plateau (Wilderness)": [
+   "frozen_waste_plateau"
+  ],
+  "White Wolf Mountain On top": [
+   "white_wolf_mountain"
+  ],
+  "Sepulchre of Death in Stronghold of Security": [
+   "stronghold_of_security"
+  ],
+  "North of Nardah": [
+   "kharidian_desert_north_of_nardah"
+  ],
+  "Mor Ul Rek": [
+   "tzhaar_city"
+  ],
+  "Mor Ul Rek (Ranged)": [
+   "tzhaar_city"
+  ],
+  "Mor Ul Rek (Melee)": [
+   "tzhaar_city"
+  ],
+  "Morytania Spider Cave main room": [
+   "morytania_spider_cave"
+  ],
+  "Morytania Spider Cave south-eastern room": [
+   "morytania_spider_cave"
+  ],
+  "Morytania Spider Cave eastern room": [
+   "morytania_spider_cave"
+  ],
+  "Morytania Spider Cave northern room": [
+   "morytania_spider_cave"
+  ],
+  "Morytania Spider Cave (task-only area)": [
+   "morytania_spider_cave"
+  ],
+  "Stalker Den (single-combat)": [
+   "stalker_den"
+  ],
+  "Stalker Den (multicombat)": [
+   "stalker_den"
+  ],
+  "Gryphons (dungeon)": [
+   "western_gryphon_dungeon"
+  ],
+  "Gryphons (task-only dungeon)": [
+   "eastern_gryphon_dungeon"
+  ],
+  "Western gryphon dungeon": [
+   "western_gryphon_dungeon"
+  ],
+  "Eastern gryphon dungeon": [
+   "eastern_gryphon_dungeon"
+  ]
+ },
+ "excludeLocationText": [
+  "unreachable",
+  "\\bduring\\b"
+ ],
+ "entrances": {
+  "catacombs_of_kourend": {
+   "runelite": "DungeonLocation.CATACOMBS_OF_KOUREND"
+  },
+  "stronghold_slayer_dungeon": {
+   "runelite": "DungeonLocation.STRONGHOLD_SLAYER"
+  },
+  "karuulm_slayer_dungeon": {
+   "runelite": "DungeonLocation.KARUULM_SLAYER"
+  },
+  "chasm_of_fire": {
+   "runelite": "DungeonLocation.CHASM_OF_FIRE"
+  },
+  "brimhaven_dungeon": {
+   "runelite": "DungeonLocation.BRIMHAVEN_N"
+  },
+  "taverley_dungeon": {
+   "runelite": "DungeonLocation.TAVERLEY"
+  },
+  "witchaven_dungeon": {
+   "runelite": "DungeonLocation.WITCHAVEN"
+  },
+  "waterfall_dungeon": {
+   "point": [
+    2512,
+    3464,
+    0
+   ],
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Waterfall_Dungeon map captioned 'The entrance to the dungeon.'"
+  },
+  "slayer_tower": {
+   "runelite": "DungeonLocation.SLAYER_TOWER"
+  },
+  "god_wars_dungeon": {
+   "runelite": "DungeonLocation.GOD_WARS"
+  },
+  "kalphite_lair": {
+   "runelite": "DungeonLocation.KALPHITE_LAIR"
+  },
+  "kalphite_cave": {
+   "runelite": "DungeonLocation.KALPHITE_CAVE"
+  },
+  "kraken_cove": {
+   "runelite": "DungeonLocation.KRAKEN_COVE"
+  },
+  "lighthouse": {
+   "runelite": "DungeonLocation.LIGHTHOUSE",
+   "label": "Lighthouse basement"
+  },
+  "waterbirth_island": {
+   "runelite": "DungeonLocation.WATERBIRTH",
+   "label": "Waterbirth Island Dungeon entrance"
+  },
+  "lizardman_canyon": {
+   "point": [
+    1503,
+    3704,
+    0
+   ],
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Lizardman_Canyon infobox map"
+  },
+  "molch": {
+   "point": [
+    1304,
+    3663,
+    0
+   ],
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Molch infobox map"
+  },
+  "lizardman_settlement": {
+   "point": [
+    1324,
+    3556,
+    0
+   ],
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Lizardman_Settlement infobox map"
+  },
+  "smoke_devil_dungeon": {
+   "runelite": "DungeonLocation.SMOKE_DEVIL"
+  },
+  "smoke_dungeon": {
+   "runelite": "DungeonLocation.SMOKE_DUNGEON"
+  },
+  "death_plateau": {
+   "point": [
+    2868,
+    3586,
+    0
+   ],
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Death_Plateau_(location) infobox map"
+  },
+  "troll_stronghold": {
+   "runelite": "DungeonLocation.TROLL_STRONGHOLD"
+  },
+  "keldagrim": {
+   "runelite": "DungeonLocation.KELDAGRIM",
+   "label": "Keldagrim entrance"
+  },
+  "south_of_mount_quidamortem": {
+   "spotsOfTask": 18
+  },
+  "fremennik_isles": {
+   "spotsOfTask": 18
+  },
+  "fremennik_slayer_dungeon": {
+   "runelite": "DungeonLocation.FREMENNIK_SLAYER"
+  },
+  "myths_guild_dungeon": {
+   "runelite": "DungeonLocation.MYTH_GUILD"
+  },
+  "mourner_tunnels": {
+   "point": [
+    2542,
+    3327,
+    0
+   ],
+   "label": "Trapdoor to the Mourner Tunnels",
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Mourner_Tunnels map captioned 'Trapdoor entrance to Mourner Tunnels.'"
+  },
+  "lithkren_vault": {
+   "runelite": "TransportationPointLocation.ROW_BOAT_LITHKREN",
+   "label": "Lithkren rowboat landing",
+   "source": "The vault is on Lithkren (OSRS Wiki https://oldschool.runescape.wiki/w/Lithkren_Vault)."
+  },
+  "ancient_cavern": {
+   "runelite": "DungeonLocation.ANCIENT_CAVERN"
+  },
+  "stronghold_of_security": {
+   "runelite": "DungeonLocation.STRONGHOLD_OF_SECURITY"
+  },
+  "fossil_island": {
+   "runelite": "TransportationPointLocation.DIGSITE_TO_FOSSIL.Target",
+   "label": "Fossil Island boat landing"
+  },
+  "asgarnian_ice_dungeon": {
+   "runelite": "DungeonLocation.ASGARNIAN_ICE"
+  },
+  "ogre_enclave": {
+   "runelite": "DungeonLocation.OGRE_ENCLAVE"
+  },
+  "brine_rat_cavern": {
+   "point": [
+    2748,
+    3732,
+    0
+   ],
+   "label": "Dig spot for the Brine Rat Cavern",
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Brine_Rat_Cavern map, marker 'Dig spot'"
+  },
+  "zanaris": {
+   "point": [
+    3204,
+    3169,
+    0
+   ],
+   "label": "Shed in Lumbridge Swamp",
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Shed_(Lumbridge_Swamp) infobox map. The Zanaris page says the entrance is in this shed."
+  },
+  "evil_chickens_lair": {
+   "point": [
+    3204,
+    3169,
+    0
+   ],
+   "label": "Shed in Lumbridge Swamp, through Zanaris",
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Shed_(Lumbridge_Swamp) infobox map. The Evil Chicken's Lair page says the lair is on Zanaris."
+  },
+  "the_abyss": {
+   "runelite": "FairyRingLocation.ALR",
+   "label": "Fairy ring ALR",
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Abyssal_Area says the area is reached with code ALR."
+  },
+  "kebos_swamp": {
+   "point": [
+    1270,
+    3616,
+    0
+   ],
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Kebos_Swamp infobox map"
+  },
+  "the_battlefront": {
+   "point": [
+    1368,
+    3716,
+    0
+   ],
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Battlefront infobox map"
+  },
+  "forthos_dungeon": {
+   "runelite": "DungeonLocation.FORTHOS_E"
+  },
+  "iorwerth_dungeon": {
+   "runelite": "DungeonLocation.IORWERTH"
+  },
+  "jormungands_prison": {
+   "runelite": "DungeonLocation.JORMUNGANDS_PRISON"
+  },
+  "darkmeyer": {
+   "point": [
+    3597,
+    3360,
+    0
+   ],
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Darkmeyer infobox map"
+  },
+  "slepe": {
+   "point": [
+    3724,
+    3335,
+    0
+   ],
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Slepe infobox map"
+  },
+  "meiyerditch_laboratories": {
+   "point": [
+    3638,
+    3304,
+    0
+   ],
+   "label": "House with the slashed tapestry",
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Slashed_tapestry infobox map. The Meiyerditch Laboratories page says the entrance is in this house."
+  },
+  "isle_of_souls": {
+   "runelite": "DungeonLocation.ISLE_OF_SOULS_DUNGEON",
+   "label": "Isle of Souls Dungeon entrance"
+  },
+  "giants_den": {
+   "runelite": "DungeonLocation.GIANTS_DEN"
+  },
+  "neypotzli": {
+   "runelite": "DungeonLocation.CAM_TORUM",
+   "label": "Cam Torum entrance",
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Neypotzli says it is entered from the north end of Cam Torum."
+  },
+  "ruins_of_tapoyauik": {
+   "runelite": "DungeonLocation.TWILIGHT_TEMPLE_S"
+  },
+  "crypt_of_tonali": {
+   "runelite": "DungeonLocation.TLATI_RAINFOREST_PIT",
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Crypt_of_Tonali lists 1309,3104 as an entrance."
+  },
+  "wyrmscraig": {
+   "point": [
+    2571,
+    2240,
+    0
+   ],
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Wyrmscraig infobox map"
+  },
+  "great_conch": {
+   "point": [
+    3200,
+    2435,
+    0
+   ],
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/The_Great_Conch infobox map"
+  },
+  "charred_dungeon": {
+   "point": [
+    2637,
+    2416,
+    0
+   ],
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Charred_Dungeon map captioned 'The entrance to the dungeon'"
+  },
+  "vampyrium": {
+   "runelite": "DungeonLocation.MYREQUE_HIDEOUT_CANIFIS",
+   "label": "Myreque Hideout in Canifis",
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Vampyrium says the hideout tunnels from Canifis lead to the portal in Castle Drakan."
+  },
+  "mos_leharmless_cave": {
+   "runelite": "DungeonLocation.MOS_LE_HARMLESS"
+  },
+  "tzhaar_city": {
+   "runelite": "DungeonLocation.KARAMJA_VOLCANO",
+   "label": "Karamja volcano entrance",
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Mor_Ul_Rek map captioned 'The entrance to the volcano.'"
+  },
+  "wyvern_cave": {
+   "runelite": "DungeonLocation.WYVERN_CAVE"
+  },
+  "western_gryphon_dungeon": {
+   "runelite": "DungeonLocation.GRYPHON_NORTH",
+   "label": "Western gryphon dungeon entrance",
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Gryphons_(dungeon) map captioned 'The entrances to the dungeon, with the regular area in the north-west and the task-only area in the south-east.'"
+  },
+  "eastern_gryphon_dungeon": {
+   "runelite": "DungeonLocation.GRYPHON_SOUTH",
+   "label": "Eastern gryphon dungeon entrance",
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Gryphons_(dungeon) map captioned 'The entrances to the dungeon, with the regular area in the north-west and the task-only area in the south-east.'"
+  },
+  "morytania_spider_cave": {
+   "runelite": "DungeonLocation.MORYTANIA_SPIDER_NEST",
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Morytania_Spider_Cave map captioned 'The entrance to the nest'"
+  },
+  "uzer_mastaba": {
+   "point": [
+    3490,
+    3021,
+    0
+   ],
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Uzer_Mastaba infobox map"
+  },
+  "sophanem_dungeon_cavern_level": {
+   "runelite": "DungeonLocation.SOPHANEM",
+   "label": "Sophanem Dungeon entrance"
+  },
+  "sophanem_dungeon_maze_level": {
+   "runelite": "DungeonLocation.SOPHANEM",
+   "label": "Sophanem Dungeon entrance"
+  },
+  "braindeath_island": {
+   "point": [
+    3679,
+    3537,
+    0
+   ],
+   "label": "Pirate Pete in Port Phasmatys",
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Braindeath_Island map captioned 'Location of Pirate Pete to go to Braindeath Island'"
+  },
+  "mudskipper_point": {
+   "point": [
+    2999,
+    3122,
+    0
+   ],
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Mudskipper_Point infobox map"
+  },
+  "ynysdail_cavern": {
+   "point": [
+    2218,
+    3477,
+    0
+   ],
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Ynysdail_Cavern map captioned 'The entrance to the cavern.'"
+  },
+  "grimstone_dungeon": {
+   "point": [
+    2912,
+    4066,
+    0
+   ],
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Grimstone_Dungeon map captioned 'The entrance to the dungeon.'"
+  },
+  "tarns_lair": {
+   "runelite": "DungeonLocation.ABANDONED_MINE",
+   "label": "Abandoned Mine entrance",
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Tarn%27s_Lair says its entrance is in the Abandoned Mine."
+  },
+  "canifis": {
+   "point": [
+    3493,
+    3488,
+    0
+   ],
+   "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Canifis infobox map"
+  }
+ },
+ "locationFacts": {
+  "catacombs_of_kourend": {
+   "cannon": "no",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon Prohibited areas: Catacombs of Kourend"
+  },
+  "slayer_tower": {
+   "cannon": "no",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon Prohibited areas: Slayer Tower"
+  },
+  "ancient_cavern": {
+   "cannon": "no",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon Prohibited areas: Ancient Cavern"
+  },
+  "forthos_dungeon": {
+   "cannon": "no",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon Prohibited areas: Forthos Dungeon"
+  },
+  "fremennik_slayer_dungeon": {
+   "cannon": "no",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon Prohibited areas: Fremennik Slayer Dungeon"
+  },
+  "kraken_cove": {
+   "cannon": "no",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon Prohibited areas: Kraken Cove"
+  },
+  "ruins_of_tapoyauik": {
+   "cannon": "no",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon Prohibited areas: Ruins of Tapoyauik"
+  },
+  "the_abyss": {
+   "cannon": "no",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon Prohibited areas: Abyssal Area and Abyssal Nexus"
+  },
+  "crypt_of_tonali": {
+   "cannon": "no",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Tonali_Cavern says a cannon cannot be set up in the cavern. Also listed on the Dwarf multicannon page."
+  },
+  "wyvern_cave": {
+   "cannon": "no",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon Prohibited areas: Wyvern Cave"
+  },
+  "brine_rat_cavern": {
+   "cannon": "yes",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Brine_Rat_Cavern says multicannons may be used here",
+   "combat": "single",
+   "combatSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Brine_Rat_Cavern says the entire cavern is a single combat zone"
+  },
+  "vampyrium": {
+   "note": "Go through the portal in Castle Drakan. Walk there through the Myreque Hideout tunnels from Canifis, or teleport with Drakan's medallion.",
+   "noteSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Vampyrium Transportation"
+  },
+  "neypotzli": {
+   "note": "The way in is at the north end of Cam Torum.",
+   "noteSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Neypotzli"
+  },
+  "zanaris": {
+   "note": "Enter the shed in Lumbridge Swamp with a dramen or lunar staff equipped.",
+   "noteSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Zanaris"
+  },
+  "evil_chickens_lair": {
+   "note": "Use a raw chicken on the Chicken Shrine in Zanaris.",
+   "noteSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Evil_Chicken%27s_Lair"
+  },
+  "meiyerditch_laboratories": {
+   "note": "Climb down the stairs in the house with the slashed tapestry in Meiyerditch.",
+   "noteSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Meiyerditch_Laboratories"
+  },
+  "poison_waste_dungeon": {
+   "note": "The entrance is west of the spirit tree, at the edge of the Poison Waste.",
+   "noteSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Poison_Waste_Dungeon"
+  },
+  "entrana": {
+   "cannon": "no",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon Prohibited areas: Entrana"
+  },
+  "nightmare_zone": {
+   "cannon": "no",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon Prohibited areas: Nightmare Zone"
+  },
+  "killerwatt_plane": {
+   "cannon": "no",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon Prohibited areas: Killerwatt Plane"
+  },
+  "scabaras_dungeon": {
+   "cannon": "no",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon Prohibited areas: Scabaras Dungeon"
+  },
+  "tzhaar_city": {
+   "cannon": "no",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon Prohibited areas: Mor Ul Rek"
+  },
+  "mortton": {
+   "cannon": "no",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon Prohibited areas: Mort'ton"
+  },
+  "uzer_mastaba": {
+   "cannon": "no",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon Prohibited areas: Uzer Mastaba"
+  },
+  "warriors_guild": {
+   "cannon": "no",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon Prohibited areas: Warriors' Guild"
+  },
+  "revenant_caves": {
+   "cannon": "no",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon Prohibited areas: Revenant Caves"
+  },
+  "jiggig": {
+   "cannon": "no",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon Prohibited areas: Jiggig"
+  },
+  "jiggig_dungeon": {
+   "cannon": "no",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon Prohibited areas: Jiggig Dungeon"
+  },
+  "dwarven_mine": {
+   "cannon": "no",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon Prohibited areas: Dwarven Mine"
+  },
+  "shellbane_gryphon_cave": {
+   "cannon": "no",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon Prohibited areas: Shellbane Gryphon Cave"
+  },
+  "ungael": {
+   "cannon": "no",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon Prohibited areas: Ungael (Vorkath area)"
+  }
+ },
+ "taskFacts": {
+  "karuulm_slayer_dungeon|113": {
+   "cannon": "yes",
+   "cannonNote": "Not in the Alchemical Hydra's lair.",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Slayer_task/Hydras location comparison: the hydra row is cannonable and the Alchemical Hydra row is not. Dwarf multicannon page: Karuulm Slayer Dungeon (wyrm and Alchemical Hydra areas)."
+  },
+  "smoke_dungeon|49": {
+   "note": "Cannons are not allowed in the task-only part of the dungeon.",
+   "noteSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon Prohibited areas: Smoke Dungeon (task-only area)"
+  },
+  "fossil_island|106": {
+   "cannon": "no",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon Prohibited areas: Wyvern Cave",
+   "note": "The wyverns live in the Wyvern Cave on the island.",
+   "noteSource": "OSRS Wiki wyvern LocLine tables list only the Wyvern Cave"
+  },
+  "iorwerth_dungeon|45": {
+   "note": "Kurask are immune to cannon damage.",
+   "noteSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon, Iorwerth Dungeon kurask area"
+  },
+  "crypt_of_tonali|123": {
+   "combat": "mixed",
+   "combatSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Slayer_task/Lesser_Nagua: Nagua in the Sun Chambers are multiway, the ones outside are singleway"
+  },
+  "wyrmscraig|111": {
+   "cannon": "yes",
+   "cannonNote": "Lava Strykewyrms are immune to cannon damage.",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Slayer_task/Wyrms, Wyrmscraig section"
+  },
+  "entrana|13": {
+   "cannon": "no",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon Prohibited areas: Entrana. The bears task guide row says yes."
+  },
+  "mortton|64": {
+   "cannon": "no",
+   "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Dwarf_multicannon Prohibited areas: Mort'ton. The shades task guide row says yes, the cannon page allows one only in the Shade Catacombs."
+  }
+ },
+ "dossierPrefixes": [
+  [
+   "catacombs of kourend",
+   "catacombs_of_kourend"
+  ],
+  [
+   "god wars dungeon",
+   "god_wars_dungeon"
+  ],
+  [
+   "jormungand",
+   "jormungands_prison"
+  ],
+  [
+   "taverley dungeon",
+   "taverley_dungeon"
+  ],
+  [
+   "mos le",
+   "mos_leharmless_cave"
+  ],
+  [
+   "kraken cove",
+   "kraken_cove"
+  ],
+  [
+   "lighthouse",
+   "lighthouse"
+  ],
+  [
+   "iorwerth",
+   "iorwerth_dungeon"
+  ],
+  [
+   "karuulm",
+   "karuulm_slayer_dungeon"
+  ],
+  [
+   "fremennik slayer",
+   "fremennik_slayer_dungeon"
+  ],
+  [
+   "kalphite cave",
+   "kalphite_cave"
+  ],
+  [
+   "ancient cavern",
+   "ancient_cavern"
+  ],
+  [
+   "smoke devil",
+   "smoke_devil_dungeon"
+  ],
+  [
+   "brimhaven dungeon",
+   "brimhaven_dungeon"
+  ],
+  [
+   "asgarnian ice",
+   "asgarnian_ice_dungeon"
+  ],
+  [
+   "slayer tower",
+   "slayer_tower"
+  ],
+  [
+   "stronghold slayer",
+   "stronghold_slayer_dungeon"
+  ],
+  [
+   "chasm of fire",
+   "chasm_of_fire"
+  ],
+  [
+   "mor ul rek",
+   "tzhaar_city"
+  ],
+  [
+   "wyvern cave",
+   "wyvern_cave"
+  ]
+ ],
+ "dossierPlaces": {
+  "Gryphons": "eastern_gryphon_dungeon"
+ },
+ "krystilia": {
+  "page": "Krystilia",
+  "tasks": {
+   "Abyssal demon": 42,
+   "Ankou": 79,
+   "Aviansie": 94,
+   "Bandit": 102,
+   "Bear": 13,
+   "Black demon": 30,
+   "Black dragon": 27,
+   "Black Knight": 119,
+   "Bloodveld": 48,
+   "Chaos druid": 110,
+   "Dark warrior": 103,
+   "Dust devil": 49,
+   "Earth warrior": 54,
+   "Ent": 101,
+   "Fire giant": 16,
+   "Greater demon": 29,
+   "Green dragon": 24,
+   "Hellhound": 31,
+   "Hill Giant": 14,
+   "Ice giant": 15,
+   "Ice warrior": 19,
+   "Jelly": 50,
+   "Lava dragon": 104,
+   "Lesser demon": 28,
+   "Magic axe": 91,
+   "Mammoth": 99,
+   "Moss giant": 17,
+   "Nechryael": 52,
+   "Pirate": 120,
+   "Revenant": 107,
+   "Rogue": 100,
+   "Scorpion": 7,
+   "Skeleton": 11,
+   "Spider": 4,
+   "Spiritual creature": 89,
+   "Zombie": 10
+  },
+  "monsters": {
+   "102": [
+    "Bandit"
+   ],
+   "119": [
+    "Black Knight"
+   ],
+   "110": [
+    "Chaos druid",
+    "Elder Chaos druid"
+   ],
+   "103": [
+    "Dark warrior"
+   ],
+   "54": [
+    "Earth warrior"
+   ],
+   "101": [
+    "Ent"
+   ],
+   "24": [
+    "Green dragon"
+   ],
+   "104": [
+    "Lava dragon"
+   ],
+   "91": [
+    "Magic axe"
+   ],
+   "99": [
+    "Mammoth"
+   ],
+   "120": [
+    "Pirate",
+    "Zombie pirate"
+   ],
+   "107": [
+    "Revenant imp",
+    "Revenant goblin",
+    "Revenant hobgoblin",
+    "Revenant cyclops",
+    "Revenant demon",
+    "Revenant knight",
+    "Revenant dragon"
+   ],
+   "100": [
+    "Rogue"
+   ],
+   "10": [
+    "Zombie pirate"
+   ]
+  },
+  "aliases": {
+   "Chaos Temple": [
+    "chaos_temple_wilderness"
+   ],
+   "Graveyard of Shadows": [
+    "graveyard_of_shadows_wilderness"
+   ],
+   "Eastern Ruins": [
+    "ruins_east_wilderness"
+   ],
+   "Bandit Camp": [
+    "wilderness_bandit_camp"
+   ]
+  },
+  "wholePlaces": {
+   "wilderness_slayer_cave": "https://oldschool.runescape.wiki/w/Wilderness_Slayer_Cave: a cave beneath the Wilderness, with its monsters between level 17 and 32 Wilderness"
+  }
+ },
+ "krystiliaNote": "Krystilia's tasks only count in the Wilderness. tasks maps the monster links of the Tasks table on her wiki page to task ids, monsters adds spawn pages for her own tasks, and aliases maps a place name on her page to a location key. wholePlaces names places whose wiki page says all of the place lies in the Wilderness, for tiles outside RuneLite's Wilderness areas.",
+ "dossierPlacesNote": "Task name to location key, for dossier best locations that name a place in words the automatic match cannot see. Gryphons: the dossier names the task-only eastern cave, which the gryphon guide calls the Eastern gryphon dungeon.",
+ "dossierPrefixesNote": "Mirror of TaskDestination.forTask in the plugin. SlayerLocationsTest fails when the two disagree.",
+ "aliasesNote": "Keys are wiki link targets or the cleaned location text of a table row or LocLine. Text matches win over link matches."
+}

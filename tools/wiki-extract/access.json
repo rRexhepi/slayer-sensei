@@ -1,0 +1,3533 @@
+{
+ "about": [
+  "What each place in slayer_areas.json needs before a player can get in and reach the task monsters, read from the OSRS Wiki. build_slayer_areas.py copies it into the place, or into the task at that place, as access.",
+  "locations holds, per location key, the quests that must be finished (questsFinished), the quests that must at least be started (questsStarted, for places the wiki opens during a quest or after partial completion), real skill levels (skills), and a note for a gate the plugin cannot check. The note is shown and never locks. tasks holds the same per task id when only that task's monsters lie behind a further gate.",
+  "Quest names are net.runelite.api.Quest constants and skill names are net.runelite.api.Skill constants.",
+  "Only hard gates the wiki states are kept. Optional shortcuts, entry fees and items to wear or carry are left out. A gate with another way around it, a skill level the wiki does not say cannot be boosted, and achievement diaries or Combat Achievements are notes at most.",
+  "sources names the wiki page and either the quoted sentence, as plain text without links or formatting, or an infobox field and the text it holds. The build checks each one against the cached page and leaves out an entry whose source it cannot find.",
+  "open lists the places the wiki shows to need nothing, each with the sentence that shows how the place is reached. A place in neither list is not settled."
+ ],
+ "locations": {
+  "waterfall_dungeon": {
+   "questsStarted": [
+    "WATERFALL_QUEST"
+   ],
+   "sources": [
+    {
+     "page": "Waterfall Dungeon",
+     "quote": "The dungeon can be accessed during and after the completion of the Waterfall Quest"
+    }
+   ]
+  },
+  "slayer_tower": {
+   "questsFinished": [
+    "PRIEST_IN_PERIL"
+   ],
+   "sources": [
+    {
+     "page": "Slayer Tower",
+     "field": "location",
+     "value": "Morytania"
+    },
+    {
+     "page": "Morytania",
+     "quote": "Players must complete the Priest in Peril quest to enter."
+    }
+   ]
+  },
+  "god_wars_dungeon": {
+   "note": "Needs part of Troll Stronghold or the easy Combat Achievements, and 60 Strength or 60 Agility.",
+   "sources": [
+    {
+     "page": "God Wars Dungeon",
+     "quote": "Accessing it requires partial completion of Troll Stronghold (defeating Dad) or full completion of the Easy Combat Achievements (in order to use the teleport on Ghommal's hilt 1) and either 60 Strength or 60 Agility."
+    }
+   ],
+   "tasks": {
+    "14": {
+     "skills": {
+      "STRENGTH": 70
+     },
+     "sources": [
+      {
+       "page": "Slayer task/Hill giants",
+       "quote": "Requires level 70 Strength and a hammer or dragon warhammer (and a rope the first time)."
+      },
+      {
+       "page": "God Wars Dungeon",
+       "quote": "Accessing the bases requires 70 in their respective stat, which cannot be boosted."
+      }
+     ]
+    }
+   }
+  },
+  "lighthouse": {
+   "questsStarted": [
+    "HORROR_FROM_THE_DEEP"
+   ],
+   "sources": [
+    {
+     "page": "Lighthouse",
+     "quote": "The Lighthouse can only be entered during and after the quest"
+    }
+   ]
+  },
+  "smoke_dungeon": {
+   "questsStarted": [
+    "DESERT_TREASURE_I"
+   ],
+   "sources": [
+    {
+     "page": "Smoke Dungeon",
+     "quote": "It is visited during the Desert Treasure I (must have progressed until beginning the search for the four diamonds to enter) quest"
+    }
+   ]
+  },
+  "troll_stronghold": {
+   "note": "Needs part of Troll Stronghold or the easy Combat Achievements.",
+   "sources": [
+    {
+     "page": "Troll Stronghold (location)",
+     "quote": "The main entrance to the stronghold is situated west of Trollheim"
+    },
+    {
+     "page": "Trollheim",
+     "quote": "All other methods of travelling to Trollheim require at least partial completion of the Troll Stronghold quest."
+    },
+    {
+     "page": "Trollheim",
+     "quote": "Players who have completed the Easy Combat Achievements can use Ghommal's hilt 1 to teleport to the entrance to the God Wars Dungeon, and reach Trollheim from there."
+    }
+   ]
+  },
+  "keldagrim": {
+   "tasks": {
+    "57": {
+     "questsStarted": [
+      "THE_GIANT_DWARF"
+     ],
+     "sources": [
+      {
+       "page": "Keldagrim",
+       "quote": "Travelling to Keldagrim requires starting The Giant Dwarf quest."
+      }
+     ]
+    }
+   }
+  },
+  "fremennik_isles": {
+   "questsFinished": [
+    "THE_FREMENNIK_TRIALS"
+   ],
+   "sources": [
+    {
+     "page": "Neitiznot",
+     "quote": "The Fremennik Trials is required to get here and therefore to start The Fremennik Isles."
+    },
+    {
+     "page": "Jatizso",
+     "quote": "It can be accessed by talking to Mord Gunnars (requires completion of The Fremennik Trials) on the north-easternmost pier in Rellekka."
+    },
+    {
+     "page": "Enchanted lyre",
+     "quote": "After the quest, the player can enchant their normal lyre into an enchanted lyre by charging it with Fossegrimen"
+    }
+   ]
+  },
+  "myths_guild_dungeon": {
+   "tasks": {
+    "25": {
+     "questsFinished": [
+      "DRAGON_SLAYER_II"
+     ],
+     "sources": [
+      {
+       "page": "Corsair Cove Dungeon",
+       "quote": "The western side of the dungeon, which is the Myths' Guild basement, is only accessible to members who have completed Dragon Slayer II."
+      }
+     ]
+    },
+    "26": {
+     "questsFinished": [
+      "DRAGON_SLAYER_II"
+     ],
+     "sources": [
+      {
+       "page": "Corsair Cove Dungeon",
+       "quote": "The western side of the dungeon, which is the Myths' Guild basement, is only accessible to members who have completed Dragon Slayer II."
+      }
+     ]
+    },
+    "27": {
+     "questsFinished": [
+      "DRAGON_SLAYER_II"
+     ],
+     "sources": [
+      {
+       "page": "Corsair Cove Dungeon",
+       "quote": "The western side of the dungeon, which is the Myths' Guild basement, is only accessible to members who have completed Dragon Slayer II."
+      }
+     ]
+    },
+    "20": {
+     "note": "Needs part of The Corsair Curse or 10 Agility to reach Corsair Cove.",
+     "sources": [
+      {
+       "page": "Slayer task/Ogres",
+       "quote": "Requires partial completion of The Corsair Curse or level 10 Agility."
+      }
+     ]
+    }
+   }
+  },
+  "mourner_tunnels": {
+   "questsStarted": [
+    "MOURNINGS_END_PART_II"
+   ],
+   "sources": [
+    {
+     "page": "Mourner Tunnels",
+     "quote": "During Mourning's End Part II, the Head Mourner gives the player the new key, which can be used to enter the tunnels from the basement."
+    }
+   ]
+  },
+  "lithkren_vault": {
+   "questsFinished": [
+    "DRAGON_SLAYER_II"
+   ],
+   "sources": [
+    {
+     "page": "Lithkren Vault",
+     "quote": "These barriers can only be entered once Dragon Slayer II has been completed."
+    }
+   ]
+  },
+  "ancient_cavern": {
+   "questsStarted": [
+    "BARBARIAN_TRAINING"
+   ],
+   "sources": [
+    {
+     "page": "Ancient Cavern",
+     "quote": "The cavern can only be accessed after the player has completed the first part of Barbarian Firemaking, requiring level 35 Firemaking."
+    }
+   ]
+  },
+  "fossil_island": {
+   "questsFinished": [
+    "BONE_VOYAGE"
+   ],
+   "sources": [
+    {
+     "page": "Fossil Island",
+     "quote": "In order to reach the island, players must have completed the Bone Voyage quest."
+    }
+   ]
+  },
+  "ogre_enclave": {
+   "questsStarted": [
+    "WATCHTOWER"
+   ],
+   "sources": [
+    {
+     "page": "Ogre Enclave",
+     "quote": "is one of several locations containing Blue dragons, and is visited during the Watchtower Quest."
+    },
+    {
+     "page": "Slayer task/Blue dragons",
+     "quote": "The Ogre Enclave requires completion of Watchtower to access."
+    }
+   ]
+  },
+  "brine_rat_cavern": {
+   "questsStarted": [
+    "OLAFS_QUEST"
+   ],
+   "sources": [
+    {
+     "page": "Brine Rat Cavern",
+     "quote": "is a dungeon accessible during and after Olaf's Quest."
+    }
+   ]
+  },
+  "zanaris": {
+   "questsFinished": [
+    "LOST_CITY"
+   ],
+   "sources": [
+    {
+     "page": "Zanaris",
+     "quote": "The Lost City quest is a pre-requisite to visiting Zanaris."
+    }
+   ]
+  },
+  "evil_chickens_lair": {
+   "questsFinished": [
+    "LOST_CITY"
+   ],
+   "questsStarted": [
+    "RECIPE_FOR_DISASTER__SIR_AMIK_VARZE"
+   ],
+   "sources": [
+    {
+     "page": "Evil Chicken's Lair",
+     "quote": "It is accessible during and after the Recipe for Disaster subquest Freeing Sir Amik Varze"
+    },
+    {
+     "page": "Evil Chicken's Lair",
+     "quote": "The Evil Chicken's Lair is located on Zanaris"
+    },
+    {
+     "page": "Zanaris",
+     "quote": "The Lost City quest is a pre-requisite to visiting Zanaris."
+    }
+   ]
+  },
+  "the_abyss": {
+   "questsStarted": [
+    "FAIRYTALE_II__CURE_A_QUEEN"
+   ],
+   "sources": [
+    {
+     "page": "Abyssal Area",
+     "quote": "The Abyssal Area can be accessed by using the code ALR in the fairy rings network (must have started Fairytale II - Cure a Queen)."
+    }
+   ]
+  },
+  "iorwerth_dungeon": {
+   "questsFinished": [
+    "SONG_OF_THE_ELVES"
+   ],
+   "sources": [
+    {
+     "page": "Iorwerth Dungeon",
+     "quote": "Players have access to the dungeon after the completion of Song of the Elves quest"
+    }
+   ]
+  },
+  "jormungands_prison": {
+   "questsFinished": [
+    "THE_FREMENNIK_EXILES"
+   ],
+   "sources": [
+    {
+     "page": "Slayer task/Dagannoth",
+     "quote": "Only accessible after completing The Fremennik Exiles."
+    },
+    {
+     "page": "Slayer task/Basilisks",
+     "quote": "Only accessible after completion of The Fremennik Exiles."
+    }
+   ]
+  },
+  "darkmeyer": {
+   "questsFinished": [
+    "PRIEST_IN_PERIL"
+   ],
+   "questsStarted": [
+    "SINS_OF_THE_FATHER"
+   ],
+   "sources": [
+    {
+     "page": "Darkmeyer",
+     "field": "location",
+     "value": "Morytania"
+    },
+    {
+     "page": "Morytania",
+     "quote": "Players must complete the Priest in Peril quest to enter."
+    },
+    {
+     "page": "Darkmeyer",
+     "quote": "The city can be entered with partial completion of the quest Sins of the Father"
+    }
+   ]
+  },
+  "slepe": {
+   "questsFinished": [
+    "PRIEST_IN_PERIL"
+   ],
+   "sources": [
+    {
+     "page": "Slepe",
+     "field": "location",
+     "value": "Morytania"
+    },
+    {
+     "page": "Morytania",
+     "quote": "Players must complete the Priest in Peril quest to enter."
+    }
+   ]
+  },
+  "meiyerditch_laboratories": {
+   "questsFinished": [
+    "PRIEST_IN_PERIL"
+   ],
+   "sources": [
+    {
+     "page": "Meiyerditch Laboratories",
+     "field": "location",
+     "value": "Morytania"
+    },
+    {
+     "page": "Morytania",
+     "quote": "Players must complete the Priest in Peril quest to enter."
+    }
+   ],
+   "tasks": {
+    "48": {
+     "questsStarted": [
+      "SINS_OF_THE_FATHER"
+     ],
+     "sources": [
+      {
+       "page": "Meiyerditch Laboratories",
+       "quote": "Access to the bloodvelds is only possible after killing the mutated bloodveld that appears during the Sins of the Father quest, as otherwise the door will not open."
+      }
+     ]
+    }
+   }
+  },
+  "poison_waste_dungeon": {
+   "questsStarted": [
+    "THE_PATH_OF_GLOUPHRIE"
+   ],
+   "sources": [
+    {
+     "page": "Poison Waste Dungeon",
+     "quote": "Partial completion of The Path of Glouphrie is required to access the dungeon."
+    }
+   ]
+  },
+  "neypotzli": {
+   "questsStarted": [
+    "PERILOUS_MOONS"
+   ],
+   "sources": [
+    {
+     "page": "Neypotzli",
+     "quote": "Accessing Neypotzli requires having gained access during the Perilous Moons quest"
+    }
+   ]
+  },
+  "ruins_of_tapoyauik": {
+   "questsStarted": [
+    "THE_HEART_OF_DARKNESS"
+   ],
+   "sources": [
+    {
+     "page": "Ruins of Tapoyauik",
+     "quote": "They are visited during the quest The Heart of Darkness, after completion of which the ruins become populated with a variety of monsters"
+    },
+    {
+     "page": "Slayer task/Crabs",
+     "quote": "Requires partial completion of The Heart of Darkness"
+    }
+   ],
+   "tasks": {
+    "15": {
+     "questsFinished": [
+      "THE_HEART_OF_DARKNESS"
+     ],
+     "sources": [
+      {
+       "page": "Slayer task/Ice giants",
+       "quote": "Ruins of Tapoyauik giants requires completion of The Heart of Darkness in order to access."
+      }
+     ]
+    },
+    "25": {
+     "questsFinished": [
+      "THE_HEART_OF_DARKNESS"
+     ],
+     "sources": [
+      {
+       "page": "Slayer task/Blue dragons",
+       "quote": "The Ruins of Tapoyauik requires completion of The Heart of Darkness to access."
+      }
+     ]
+    },
+    "75": {
+     "questsFinished": [
+      "THE_HEART_OF_DARKNESS"
+     ],
+     "sources": [
+      {
+       "page": "Slayer task/Icefiends",
+       "quote": "Ruins of Tapoyauik icefiends require completion of The Heart of Darkness in order to access."
+      }
+     ]
+    }
+   }
+  },
+  "crypt_of_tonali": {
+   "questsFinished": [
+    "THE_FINAL_DAWN"
+   ],
+   "sources": [
+    {
+     "page": "Tonali Cavern",
+     "quote": "Accessing it requires completion of the The Final Dawn quest."
+    }
+   ]
+  },
+  "wyrmscraig": {
+   "skills": {
+    "SAILING": 62
+   },
+   "sources": [
+    {
+     "page": "Wyrmscraig",
+     "quote": "Wyrmscraig is an island in The Lonely Sea located in the Unquiet Ocean that requires 62 Sailing to access."
+    },
+    {
+     "page": "Mooring point",
+     "quote": "Disembarking at a mooring point is not boostable."
+    }
+   ]
+  },
+  "great_conch": {
+   "questsStarted": [
+    "TROUBLED_TORTUGANS"
+   ],
+   "sources": [
+    {
+     "page": "The Great Conch",
+     "quote": "Starting Troubled Tortugans, the first quest in the series, is required to access the Great Conch."
+    }
+   ]
+  },
+  "charred_dungeon": {
+   "skills": {
+    "SAILING": 60
+   },
+   "sources": [
+    {
+     "page": "Charred Dungeon",
+     "quote": "It is accessible by climbing down the dark hole on Charred Island, which requires level 60 Sailing to dock at."
+    },
+    {
+     "page": "Slayer task/Wyrms",
+     "quote": "This location requires level 60 Sailing (not boostable) to access."
+    }
+   ]
+  },
+  "vampyrium": {
+   "questsStarted": [
+    "THE_BLOOD_MOON_RISES"
+   ],
+   "sources": [
+    {
+     "page": "Vampyrium",
+     "field": "requirement",
+     "value": "The Blood Moon Rises"
+    }
+   ],
+   "tasks": {
+    "34": {
+     "questsFinished": [
+      "THE_BLOOD_MOON_RISES"
+     ],
+     "sources": [
+      {
+       "page": "Slayer task/Vampyres",
+       "quote": "Only found in Vampyrium, which is accessed in the quest The Blood Moon Rises. Completion of the quest is required to kill them."
+      }
+     ]
+    }
+   }
+  },
+  "mos_leharmless_cave": {
+   "questsFinished": [
+    "CABIN_FEVER"
+   ],
+   "sources": [
+    {
+     "page": "Mos Le'Harmless Cave",
+     "quote": "which players can reach only after completing the Cabin Fever quest."
+    }
+   ]
+  },
+  "wyvern_cave": {
+   "questsFinished": [
+    "BONE_VOYAGE"
+   ],
+   "sources": [
+    {
+     "page": "Wyvern Cave",
+     "quote": "The Wyvern Cave is a pair of ancient caverns found on Fossil Island."
+    },
+    {
+     "page": "Fossil Island",
+     "quote": "In order to reach the island, players must have completed the Bone Voyage quest."
+    }
+   ]
+  },
+  "morytania_spider_cave": {
+   "questsFinished": [
+    "PRIEST_IN_PERIL"
+   ],
+   "sources": [
+    {
+     "page": "Port Phasmatys",
+     "quote": "South of the town is the Morytania spider cave"
+    },
+    {
+     "page": "Port Phasmatys",
+     "field": "location",
+     "value": "Morytania"
+    },
+    {
+     "page": "Morytania",
+     "quote": "Players must complete the Priest in Peril quest to enter."
+    }
+   ]
+  },
+  "stalker_den": {
+   "questsFinished": [
+    "SHADOWS_OF_CUSTODIA"
+   ],
+   "sources": [
+    {
+     "page": "Stalker Den",
+     "quote": "Limited access to the den is gained during Shadows of Custodia quest, but full access to the area and monsters requires its full completion."
+    }
+   ]
+  },
+  "western_gryphon_dungeon": {
+   "questsStarted": [
+    "TROUBLED_TORTUGANS"
+   ],
+   "sources": [
+    {
+     "page": "Gryphons (dungeon)",
+     "quote": "Gryphons are found in two caves on The Great Conch."
+    },
+    {
+     "page": "The Great Conch",
+     "quote": "Starting Troubled Tortugans, the first quest in the series, is required to access the Great Conch."
+    }
+   ]
+  },
+  "eastern_gryphon_dungeon": {
+   "questsStarted": [
+    "TROUBLED_TORTUGANS"
+   ],
+   "sources": [
+    {
+     "page": "Gryphons (dungeon)",
+     "quote": "Gryphons are found in two caves on The Great Conch."
+    },
+    {
+     "page": "The Great Conch",
+     "quote": "Starting Troubled Tortugans, the first quest in the series, is required to access the Great Conch."
+    }
+   ]
+  },
+  "deepfin_mine": {
+   "skills": {
+    "SAILING": 67
+   },
+   "sources": [
+    {
+     "page": "Deepfin Mine",
+     "quote": "It is accessible by entering the cave on Deepfin Point, which requires level 67 Sailing to dock at (unboostable)."
+    },
+    {
+     "page": "Deepfin Mine",
+     "field": "requirement",
+     "value": "67 Sailing"
+    }
+   ]
+  },
+  "wilderness_god_wars_dungeon": {
+   "note": "Needs 60 Strength or 60 Agility, boosts count.",
+   "sources": [
+    {
+     "page": "Wilderness God Wars Dungeon",
+     "quote": "As the dungeon is located within the Wilderness, players must go through the Wilderness to get to the Wilderness God Wars Dungeon."
+    },
+    {
+     "page": "Wilderness God Wars Dungeon",
+     "quote": "Running directly to the dungeon from Edgeville."
+    },
+    {
+     "page": "Wilderness God Wars Dungeon",
+     "quote": "Temporary skill boosts can be used to bypass the requirements."
+    },
+    {
+     "page": "Slayer task/Spiritual creatures",
+     "quote": "In the Wilderness dungeon, only one requirement of either 60 Agility or Strength is required."
+    }
+   ]
+  },
+  "crash_site_cavern": {
+   "questsStarted": [
+    "MONKEY_MADNESS_II"
+   ],
+   "sources": [
+    {
+     "page": "Slayer task/Monkeys",
+     "quote": "Requires partial completion of Monkey Madness II."
+    },
+    {
+     "page": "Crash Site Cavern",
+     "quote": "It is visited during Monkey Madness II, where the final battle is fought."
+    },
+    {
+     "page": "Crash Site Cavern",
+     "quote": "It remains accessible after completing the quest, after talking to Steve, where it is inhabited by tortured and demonic gorillas"
+    },
+    {
+     "page": "Slayer task/Black demons",
+     "quote": "Requires completion of Monkey Madness II"
+    }
+   ],
+   "tasks": {
+    "30": {
+     "questsFinished": [
+      "MONKEY_MADNESS_II"
+     ],
+     "sources": [
+      {
+       "page": "Slayer task/Black demons",
+       "quote": "Requires completion of Monkey Madness II"
+      },
+      {
+       "page": "Crash Site Cavern",
+       "quote": "It remains accessible after completing the quest, after talking to Steve, where it is inhabited by tortured and demonic gorillas"
+      }
+     ]
+    }
+   }
+  },
+  "mynydd": {
+   "questsFinished": [
+    "SONG_OF_THE_ELVES"
+   ],
+   "sources": [
+    {
+     "page": "Tirannwn",
+     "quote": "Mynydd, a lone mountain located just north-west of Prifddinas. Contains a single Black Dragon. Can be accessed upon completing Song of the Elves."
+    },
+    {
+     "page": "Slayer task/Black dragons",
+     "quote": "Mynydd requires completion of Song of the Elves"
+    },
+    {
+     "page": "Mynydd",
+     "field": "location",
+     "value": "Tirannwn"
+    }
+   ]
+  },
+  "buccaneers_laboratory": {
+   "skills": {
+    "SAILING": 76
+   },
+   "sources": [
+    {
+     "page": "Buccaneers' Laboratory",
+     "quote": "Buccaneers' Laboratory is located on Buccaneers' Haven, therefore requiring 76 Sailing to access."
+    },
+    {
+     "page": "Buccaneers' Laboratory",
+     "field": "requirement",
+     "value": "76 Sailing"
+    },
+    {
+     "page": "Mooring point",
+     "quote": "Disembarking at a mooring point is not boostable."
+    }
+   ]
+  },
+  "dragon_nest": {
+   "questsFinished": [
+    "CHILDREN_OF_THE_SUN"
+   ],
+   "sources": [
+    {
+     "page": "Dragon Nest",
+     "quote": "Completion of Children of the Sun is required to access the Rainforest, but the Nest has no other requirements to access."
+    },
+    {
+     "page": "Dragon Nest",
+     "field": "location",
+     "value": "Tlati Rainforest"
+    },
+    {
+     "page": "Varlamore",
+     "quote": "Varlamore can only be accessed upon completion of Children of the Sun"
+    }
+   ]
+  },
+  "heroes_guild_basement": {
+   "questsFinished": [
+    "HEROES_QUEST"
+   ],
+   "sources": [
+    {
+     "page": "Heroes' Guild",
+     "quote": "The guild is only accessible to members who have completed the Heroes' Quest."
+    },
+    {
+     "page": "Heroes' Guild",
+     "field": "requirement",
+     "value": "Heroes' Quest"
+    },
+    {
+     "page": "Heroes' Guild",
+     "quote": "It contains 2 monsters - 5 giant bats, as well as a caged blue dragon"
+    },
+    {
+     "page": "Slayer task/Blue dragons",
+     "quote": "The Heroes' Guild requires completion of Heroes' Quest to access."
+    }
+   ]
+  },
+  "ungael": {
+   "questsStarted": [
+    "DRAGON_SLAYER_II"
+   ],
+   "sources": [
+    {
+     "page": "Rellekka",
+     "quote": "During and after Dragon Slayer II, players may fight Vorkath on this island, only accessible through the port Torfinn is on."
+    },
+    {
+     "page": "Slayer task/Zombies",
+     "quote": "Vorkath is the highest level alternative to this task, and can only be accessed during and after Dragon Slayer II."
+    },
+    {
+     "page": "Slayer task/Zombies",
+     "quote": "Requires partial completion of Dragon Slayer II."
+    }
+   ]
+  },
+  "sisterhood_sanctuary": {
+   "questsFinished": [
+    "PRIEST_IN_PERIL"
+   ],
+   "sources": [
+    {
+     "page": "Sisterhood Sanctuary",
+     "field": "location",
+     "value": "Slepe"
+    },
+    {
+     "page": "Slepe",
+     "field": "location",
+     "value": "Morytania"
+    },
+    {
+     "page": "Morytania",
+     "quote": "Players must complete the Priest in Peril quest to enter."
+    }
+   ]
+  },
+  "grimstone_dungeon": {
+   "skills": {
+    "SAILING": 87
+   },
+   "sources": [
+    {
+     "page": "Frost dragon",
+     "quote": "Frost dragons are a type of adult dragon located in the dungeon on the island of Grimstone, requiring 87 Sailing to access."
+    },
+    {
+     "page": "Chilled jelly",
+     "quote": "They also require either completion of The Heart of Darkness or level 87 Sailing to reach, due to their locations: within the Ruins of Tapoyauik and inside the dungeon on Grimstone."
+    },
+    {
+     "page": "Grimstone Dungeon",
+     "quote": "This fairy ring is only accessible once the player has moored on the island at least once."
+    },
+    {
+     "page": "Mooring point",
+     "quote": "Disembarking at a mooring point is not boostable."
+    }
+   ]
+  },
+  "ynysdail_cavern": {
+   "skills": {
+    "SAILING": 73
+   },
+   "sources": [
+    {
+     "page": "Slayer task/Aquanites",
+     "quote": "They require level 78 Slayer to fight, and accessing Ynysdail itself requires 73 Sailing and a boat equipped with an adamant keel or better."
+    },
+    {
+     "page": "Slayer task/Aquanites",
+     "quote": "The first time traveling to Ynysdail, you must sail there manually, using a boat equipped with an adamant keel or better."
+    },
+    {
+     "page": "Mooring point",
+     "quote": "Disembarking at a mooring point is not boostable."
+    }
+   ]
+  },
+  "kurask_lair": {
+   "skills": {
+    "SAILING": 58
+   },
+   "sources": [
+    {
+     "page": "Kurask Lair",
+     "field": "location",
+     "value": "Laguna Aurorae"
+    },
+    {
+     "page": "Laguna Aurorae",
+     "quote": "Laguna Aurorae is an island located in the Sunset Ocean, requiring level 58 Sailing to moor at."
+    },
+    {
+     "page": "Laguna Aurorae",
+     "quote": "Spirit tree (requires having moored at the island, but does not require talking to the tree first)"
+    },
+    {
+     "page": "Mooring point",
+     "quote": "Disembarking at a mooring point is not boostable."
+    }
+   ]
+  },
+  "enchanted_valley": {
+   "questsStarted": [
+    "FAIRYTALE_II__CURE_A_QUEEN"
+   ],
+   "sources": [
+    {
+     "page": "Enchanted Valley",
+     "quote": "The Enchanted Valley is a hidden realm that is only accessible by fairy ring, using code BKQ."
+    },
+    {
+     "page": "Brine Rat Cavern",
+     "quote": "Use of the fairy rings requires players to complete at least part of the Fairytale II - Cure a Queen quest."
+    }
+   ]
+  },
+  "north_of_the_troll_arena": {
+   "note": "Needs part of Troll Stronghold or the easy Combat Achievements.",
+   "sources": [
+    {
+     "page": "Troll arena",
+     "quote": "The arena is on one route to Trollheim and the Troll Stronghold. Players can enter the area during and after the Troll Stronghold quest."
+    },
+    {
+     "page": "Trollheim",
+     "quote": "All other methods of travelling to Trollheim require at least partial completion of the Troll Stronghold quest."
+    },
+    {
+     "page": "Trollheim",
+     "quote": "Players who have completed the Easy Combat Achievements can use Ghommal's hilt 1 to teleport to the entrance to the God Wars Dungeon, and reach Trollheim from there."
+    }
+   ]
+  },
+  "tunnel_between_troll_arena_and_trollheim": {
+   "note": "Needs part of Troll Stronghold or the easy Combat Achievements.",
+   "sources": [
+    {
+     "page": "God Wars Dungeon",
+     "quote": "From there, enter the cave to the north and follow the map route up to the north."
+    },
+    {
+     "page": "Troll arena",
+     "quote": "The arena is on one route to Trollheim and the Troll Stronghold. Players can enter the area during and after the Troll Stronghold quest."
+    },
+    {
+     "page": "Trollheim",
+     "quote": "All other methods of travelling to Trollheim require at least partial completion of the Troll Stronghold quest."
+    },
+    {
+     "page": "Trollheim",
+     "quote": "Players who have completed the Easy Combat Achievements can use Ghommal's hilt 1 to teleport to the entrance to the God Wars Dungeon, and reach Trollheim from there."
+    }
+   ]
+  },
+  "ice_path": {
+   "questsStarted": [
+    "DESERT_TREASURE_I"
+   ],
+   "sources": [
+    {
+     "page": "Ice Path",
+     "quote": "The entrance to the path is barred with a gate and players may only pass if they have given the troll child a (chocolate) cake during the Desert Treasure I quest."
+    },
+    {
+     "page": "Ice Path",
+     "quote": "After that, the player can freely go through the gate at any time."
+    },
+    {
+     "page": "Ice troll",
+     "quote": "If the player is killing ice trolls located beyond the ice gate, the use of super restore potions or restore potions and Prayer potions are needed in order to mitigate the stat drain."
+    }
+   ]
+  },
+  "trollweiss_dungeon": {
+   "note": "Needs part of Troll Stronghold or the easy Combat Achievements.",
+   "sources": [
+    {
+     "page": "Trollweiss Dungeon",
+     "quote": "The entrance to the dungeon is located by the Ice Gate, a few steps north-west of the troll child and his parents."
+    },
+    {
+     "page": "Ice Path",
+     "quote": "West of the Ice Gate is the entrance to Trollweiss Dungeon."
+    },
+    {
+     "page": "Trollheim",
+     "quote": "All other methods of travelling to Trollheim require at least partial completion of the Troll Stronghold quest."
+    },
+    {
+     "page": "Trollheim",
+     "quote": "Players who have completed the Easy Combat Achievements can use Ghommal's hilt 1 to teleport to the entrance to the God Wars Dungeon, and reach Trollheim from there."
+    }
+   ]
+  },
+  "ice_troll_caves": {
+   "questsStarted": [
+    "THE_FREMENNIK_ISLES"
+   ],
+   "sources": [
+    {
+     "page": "Ice Troll Caves",
+     "quote": "To enter the caves, players need to have completed parts of The Fremennik Isles quest."
+    }
+   ]
+  },
+  "jatizso_mine": {
+   "questsStarted": [
+    "THE_FREMENNIK_ISLES"
+   ],
+   "sources": [
+    {
+     "page": "Jatizso mine",
+     "quote": "The Fremennik Isles quest has to be started in order to go in the mine."
+    },
+    {
+     "page": "Jatizso mine",
+     "quote": "It is more dangerous than most mines, as it is inhabited by aggressive ice trolls - male, female and runts in the northern half of the mine."
+    }
+   ]
+  },
+  "burgh_de_rott": {
+   "questsFinished": [
+    "PRIEST_IN_PERIL"
+   ],
+   "questsStarted": [
+    "IN_AID_OF_THE_MYREQUE"
+   ],
+   "sources": [
+    {
+     "page": "Burgh de Rott",
+     "field": "location",
+     "value": "Morytania"
+    },
+    {
+     "page": "Morytania",
+     "quote": "Players must complete the Priest in Peril quest to enter."
+    },
+    {
+     "page": "Burgh de Rott",
+     "quote": "Players must have started In Aid of the Myreque in order to access the town."
+    }
+   ]
+  },
+  "haunted_woods": {
+   "questsFinished": [
+    "PRIEST_IN_PERIL"
+   ],
+   "sources": [
+    {
+     "page": "Haunted Woods",
+     "field": "location",
+     "value": "Morytania"
+    },
+    {
+     "page": "Morytania",
+     "quote": "Players must complete the Priest in Peril quest to enter."
+    }
+   ]
+  },
+  "meiyerditch": {
+   "questsFinished": [
+    "PRIEST_IN_PERIL"
+   ],
+   "questsStarted": [
+    "DARKNESS_OF_HALLOWVALE"
+   ],
+   "sources": [
+    {
+     "page": "Meiyerditch",
+     "field": "location",
+     "value": "Morytania"
+    },
+    {
+     "page": "Morytania",
+     "quote": "Players must complete the Priest in Peril quest to enter."
+    },
+    {
+     "page": "Meiyerditch",
+     "quote": "The player must begin the Darkness of Hallowvale quest before they may travel to Meiyerditch."
+    }
+   ]
+  },
+  "west_of_burgh_de_rott": {
+   "questsFinished": [
+    "PRIEST_IN_PERIL"
+   ],
+   "sources": [
+    {
+     "page": "Burgh de Rott",
+     "field": "location",
+     "value": "Morytania"
+    },
+    {
+     "page": "Morytania",
+     "quote": "Players must complete the Priest in Peril quest to enter."
+    }
+   ]
+  },
+  "ver_sinhaza": {
+   "questsFinished": [
+    "PRIEST_IN_PERIL"
+   ],
+   "sources": [
+    {
+     "page": "Ver Sinhaza",
+     "field": "location",
+     "value": "Morytania"
+    },
+    {
+     "page": "Morytania",
+     "quote": "Players must complete the Priest in Peril quest to enter."
+    }
+   ]
+  },
+  "east_of_burgh_de_rott": {
+   "questsFinished": [
+    "PRIEST_IN_PERIL"
+   ],
+   "sources": [
+    {
+     "page": "Burgh de Rott",
+     "field": "location",
+     "value": "Morytania"
+    },
+    {
+     "page": "Morytania",
+     "quote": "Players must complete the Priest in Peril quest to enter."
+    }
+   ]
+  },
+  "ape_atoll_dungeon": {
+   "questsStarted": [
+    "MONKEY_MADNESS_I"
+   ],
+   "sources": [
+    {
+     "page": "Ape Atoll",
+     "quote": "It is only accessible to players who have partially or fully completed the Monkey Madness I quest."
+    },
+    {
+     "page": "Ape Atoll Dungeon",
+     "field": "location",
+     "value": "Ape Atoll"
+    },
+    {
+     "page": "Slayer task/Monkeys",
+     "quote": "Requires partial completion of Monkey Madness I."
+    }
+   ]
+  },
+  "marim": {
+   "questsStarted": [
+    "MONKEY_MADNESS_I"
+   ],
+   "sources": [
+    {
+     "page": "Marim",
+     "quote": "It is only accessible to players who have partially or fully completed the Monkey Madness I quest, and most of the quest takes place there."
+    },
+    {
+     "page": "Slayer task/Monkeys",
+     "quote": "Requires partial completion of Monkey Madness I."
+    }
+   ]
+  },
+  "marim_gates": {
+   "questsStarted": [
+    "MONKEY_MADNESS_I"
+   ],
+   "sources": [
+    {
+     "page": "Ape Atoll",
+     "quote": "It is only accessible to players who have partially or fully completed the Monkey Madness I quest."
+    },
+    {
+     "page": "Marim",
+     "quote": "takes players to the inside of the entrance to Ape Atoll Dungeon, a little ways south from the entrance gates to Marim."
+    },
+    {
+     "page": "Slayer task/Monkeys",
+     "quote": "Requires partial completion of Monkey Madness I."
+    }
+   ]
+  },
+  "mos_leharmless": {
+   "questsFinished": [
+    "CABIN_FEVER"
+   ],
+   "sources": [
+    {
+     "page": "Mos Le'Harmless",
+     "quote": "You must complete Cabin Fever to access the island."
+    },
+    {
+     "page": "Jungle horror",
+     "quote": "Players must have completed Cabin Fever to gain access to the island."
+    },
+    {
+     "page": "Slayer task/Monkeys",
+     "quote": "Requires completion of Cabin Fever."
+    }
+   ]
+  },
+  "temple_of_marimbo": {
+   "questsStarted": [
+    "MONKEY_MADNESS_I"
+   ],
+   "sources": [
+    {
+     "page": "Temple of Marimbo",
+     "quote": "The temple is only accessible during and after Monkey Madness I."
+    },
+    {
+     "page": "Slayer task/Monkeys",
+     "quote": "Requires partial completion of Monkey Madness I."
+    }
+   ]
+  },
+  "temple_of_marimbo_dungeon": {
+   "questsStarted": [
+    "MONKEY_MADNESS_I"
+   ],
+   "sources": [
+    {
+     "page": "Temple of Marimbo Dungeon",
+     "field": "location",
+     "value": "Ape Atoll"
+    },
+    {
+     "page": "Ape Atoll",
+     "quote": "It is only accessible to players who have partially or fully completed the Monkey Madness I quest."
+    },
+    {
+     "page": "Slayer task/Zombies",
+     "quote": "Requires partial completion of Monkey Madness I."
+    }
+   ]
+  },
+  "dorgeshuun_mines": {
+   "questsStarted": [
+    "THE_LOST_TRIBE"
+   ],
+   "sources": [
+    {
+     "page": "Dorgesh-Kaan mine",
+     "quote": "it requires The Lost Tribe quest to be started to use"
+    },
+    {
+     "page": "Slayer task/Goblins",
+     "quote": "Requires starting The Lost Tribe"
+    }
+   ]
+  },
+  "clock_tower_dungeon": {
+   "note": "Most of the dungeon needs Clock Tower started.",
+   "sources": [
+    {
+     "page": "Clock Tower dungeon",
+     "quote": "Players must start the quest before they can access most of the dungeon."
+    },
+    {
+     "page": "Clock Tower dungeon",
+     "quote": "This area consists of a long tunnel in the east part of the dungeon containing a few goblins, which leads to fake wall which can be pushed to access the prison cell containing the blue cog and a dungeon rat."
+    },
+    {
+     "page": "Clock Tower dungeon",
+     "quote": "Taking the south-east exit of the tile room leads to a room with three ogres and the red cog."
+    },
+    {
+     "page": "Slayer task/Rats",
+     "quote": "Requires partial completion of Clock Tower to access."
+    }
+   ]
+  },
+  "melzars_maze": {
+   "questsStarted": [
+    "DRAGON_SLAYER_I"
+   ],
+   "sources": [
+    {
+     "page": "Melzar's Maze",
+     "quote": "To enter the building, players must obtain the Maze key from the Guildmaster of the Champions' Guild during the quest."
+    },
+    {
+     "page": "Slayer task/Ghosts",
+     "quote": "Partial completion of Dragon Slayer I required."
+    },
+    {
+     "page": "Slayer task/Rats",
+     "quote": "Requires starting Dragon Slayer I."
+    },
+    {
+     "page": "Slayer task/Zombies",
+     "quote": "Requires partial completion of Dragon Slayer I."
+    }
+   ]
+  },
+  "barrows_crypt": {
+   "questsFinished": [
+    "PRIEST_IN_PERIL"
+   ],
+   "questsStarted": [
+    "HIS_FAITHFUL_SERVANTS"
+   ],
+   "sources": [
+    {
+     "page": "Barrows",
+     "quote": "Completion of Priest in Peril is required to enter Morytania."
+    },
+    {
+     "page": "Barrows",
+     "quote": "Started His Faithful Servants to begin digging into the crypts."
+    }
+   ]
+  },
+  "underground_pass": {
+   "questsStarted": [
+    "PLAGUE_CITY"
+   ],
+   "sources": [
+    {
+     "page": "West Ardougne",
+     "quote": "It is first accessible to players during the Plague City quest."
+    },
+    {
+     "page": "Ardougne",
+     "quote": "The entrance to the Underground Pass is at the west end."
+    },
+    {
+     "page": "Underground Pass (dungeon)",
+     "quote": "When you are ready to enter the Underground Pass, head to West Ardougne, and enter the cave."
+    }
+   ]
+  },
+  "corsair_cove": {
+   "note": "Needs part of The Corsair Curse or 10 Agility to reach Corsair Cove.",
+   "sources": [
+    {
+     "page": "Corsair Cove",
+     "quote": "With 10 Agility, players can access Corsair Cove via the Feldip Hills by climbing the rocks south of the Feldip Hunter area."
+    },
+    {
+     "page": "Corsair Cove",
+     "quote": "Unlike most of the western part of the world map, the cove is accessible to free-to-play players, after starting The Corsair Curse quest."
+    }
+   ]
+  },
+  "north_west_of_prifddinas_gwenith": {
+   "questsFinished": [
+    "SONG_OF_THE_ELVES"
+   ],
+   "sources": [
+    {
+     "page": "Tirannwn",
+     "quote": "Gwenith, a small village north of Prifddinas. Can be accessed upon completing Song of the Elves."
+    },
+    {
+     "page": "Prifddinas",
+     "quote": "The city has exits to the north and west, leading to the town of Gwenith and a dock respectively."
+    }
+   ]
+  },
+  "stonecutter_outpost_temple_east_of_colossal_wyrm_remains": {
+   "questsFinished": [
+    "CHILDREN_OF_THE_SUN"
+   ],
+   "sources": [
+    {
+     "page": "Stonecutter Outpost temple",
+     "field": "location",
+     "value": "Stonecutter Outpost"
+    },
+    {
+     "page": "Avium Savannah",
+     "quote": "Alongside the Hunter Guild, the savannah also contains the Locus Oasis, the Stonecutter Outpost, as well as a large diversity of hunter creatures."
+    },
+    {
+     "page": "Avium Savannah",
+     "field": "location",
+     "value": "Varlamore"
+    },
+    {
+     "page": "Varlamore",
+     "quote": "Varlamore can only be accessed upon completion of Children of the Sun"
+    },
+    {
+     "page": "Varlamore",
+     "quote": "There are several ways to reach Varlamore, but all require the player to first travel via Regulus Cento, located near the east Varrock gates, after completing Children of the Sun before other transportation methods become usable."
+    }
+   ]
+  },
+  "abandoned_mine_level_1": {
+   "questsFinished": [
+    "PRIEST_IN_PERIL"
+   ],
+   "sources": [
+    {
+     "page": "Abandoned Mine",
+     "field": "location",
+     "value": "Morytania"
+    },
+    {
+     "page": "Morytania",
+     "quote": "Players must complete the Priest in Peril quest to enter."
+    },
+    {
+     "page": "Morytania",
+     "quote": "If a player somehow enters Morytania without completing Priest in Peril, Abidor Crank will appear"
+    }
+   ]
+  },
+  "abandoned_mine_level_4": {
+   "questsFinished": [
+    "PRIEST_IN_PERIL"
+   ],
+   "sources": [
+    {
+     "page": "Abandoned Mine",
+     "field": "location",
+     "value": "Morytania"
+    },
+    {
+     "page": "Morytania",
+     "quote": "Players must complete the Priest in Peril quest to enter."
+    },
+    {
+     "page": "Morytania",
+     "quote": "If a player somehow enters Morytania without completing Priest in Peril, Abidor Crank will appear"
+    }
+   ]
+  },
+  "legends_guild_basement": {
+   "questsFinished": [
+    "LEGENDS_QUEST"
+   ],
+   "sources": [
+    {
+     "page": "Legends' Guild",
+     "quote": "However, to enter the actual building, players must have completed the entire quest."
+    },
+    {
+     "page": "Legends' Guild",
+     "quote": "Downstairs is a dungeon which has giant bats, pit scorpions, and shadow warriors."
+    },
+    {
+     "page": "Legends' Guild",
+     "field": "requirement",
+     "value": "Legends' Quest"
+    }
+   ]
+  },
+  "temple_of_ikov": {
+   "tasks": {
+    "28": {
+     "questsStarted": [
+      "TEMPLE_OF_IKOV"
+     ],
+     "sources": [
+      {
+       "page": "Slayer task/Lesser demon",
+       "quote": "Requires shiny key and partial completion of Temple of Ikov"
+      }
+     ]
+    }
+   }
+  },
+  "the_underground_pass_part_1": {
+   "questsStarted": [
+    "PLAGUE_CITY"
+   ],
+   "sources": [
+    {
+     "page": "West Ardougne",
+     "quote": "It is first accessible to players during the Plague City quest."
+    },
+    {
+     "page": "Ardougne",
+     "quote": "The entrance to the Underground Pass is at the west end."
+    },
+    {
+     "page": "Underground Pass (dungeon)",
+     "quote": "When you are ready to enter the Underground Pass, head to West Ardougne, and enter the cave."
+    }
+   ]
+  },
+  "the_underground_pass_part_2": {
+   "questsStarted": [
+    "PLAGUE_CITY"
+   ],
+   "sources": [
+    {
+     "page": "West Ardougne",
+     "quote": "It is first accessible to players during the Plague City quest."
+    },
+    {
+     "page": "Ardougne",
+     "quote": "The entrance to the Underground Pass is at the west end."
+    },
+    {
+     "page": "Underground Pass (dungeon)",
+     "quote": "When you are ready to enter the Underground Pass, head to West Ardougne, and enter the cave."
+    }
+   ]
+  },
+  "chaos_druid_tower_dungeon": {
+   "note": "Needs 46 Thieving to open the tower door.",
+   "sources": [
+    {
+     "page": "Chaos Druid Tower",
+     "quote": "The door is locked, requiring level 46 Thieving to open, and granting 37.5 experience when successful."
+    },
+    {
+     "page": "Chaos Druid Tower",
+     "quote": "The dungeon itself is also inhabited by 5 giant bats and 7 ogres."
+    }
+   ]
+  },
+  "grand_tree_mine": {
+   "questsFinished": [
+    "THE_GRAND_TREE"
+   ],
+   "sources": [
+    {
+     "page": "Grand Tree mine",
+     "quote": "The Grand Tree mine is an area in the northern part of the Grand Tree Tunnels and is only accessible after The Grand Tree quest."
+    }
+   ]
+  },
+  "shaman_caves": {
+   "questsStarted": [
+    "LEGENDS_QUEST"
+   ],
+   "note": "Needs 50 Agility to squeeze into the cave entrance.",
+   "sources": [
+    {
+     "page": "Shaman Caves",
+     "quote": "They play a large role in Legends' Quest, which must be started in order to access the caves."
+    },
+    {
+     "page": "Kharazi Jungle",
+     "quote": "it is necessary to start the quest in order to enter the jungle"
+    },
+    {
+     "page": "Slayer task/Bats",
+     "quote": "Partial completion of Legends' Quest required."
+    }
+   ]
+  },
+  "white_wolf_mountain": {
+   "tasks": {
+    "15": {
+     "note": "Needs 50 Mining to reach the ice giants on foot.",
+     "sources": [
+      {
+       "page": "Slayer task/Ice giants",
+       "quote": "Requires 50 Mining to access."
+      }
+     ]
+    }
+   }
+  },
+  "alices_farm_west_of_the_ectofuntus": {
+   "questsFinished": [
+    "PRIEST_IN_PERIL"
+   ],
+   "sources": [
+    {
+     "page": "Alice",
+     "field": "location",
+     "value": "Farm west of Port Phasmatys"
+    },
+    {
+     "page": "Port Phasmatys",
+     "field": "location",
+     "value": "Morytania"
+    },
+    {
+     "page": "Morytania",
+     "quote": "Players must complete the Priest in Peril quest to enter."
+    }
+   ]
+  },
+  "braindeath_island": {
+   "questsStarted": [
+    "RUM_DEAL"
+   ],
+   "sources": [
+    {
+     "page": "Braindeath Island",
+     "quote": "can only be accessed after starting Rum Deal."
+    }
+   ]
+  },
+  "glarials_tomb": {
+   "questsStarted": [
+    "WATERFALL_QUEST"
+   ],
+   "sources": [
+    {
+     "page": "Glarial's Tomb",
+     "quote": "To enter, the player needs Glarial's pebble, which is obtained during the Waterfall Quest, and must not have any weapons, armour or runes either equipped or in their inventory."
+    },
+    {
+     "page": "Slayer task/Zombies",
+     "quote": "Requires partial completion of Waterfall Quest."
+    }
+   ]
+  },
+  "harmony_island": {
+   "questsStarted": [
+    "THE_GREAT_BRAIN_ROBBERY"
+   ],
+   "sources": [
+    {
+     "page": "Harmony Island",
+     "quote": "can only be accessed after starting The Great Brain Robbery."
+    }
+   ]
+  },
+  "harmony_island_ship": {
+   "questsStarted": [
+    "THE_GREAT_BRAIN_ROBBERY"
+   ],
+   "sources": [
+    {
+     "page": "Harmony Island",
+     "quote": "can only be accessed after starting The Great Brain Robbery."
+    }
+   ]
+  },
+  "harmony_island_underground": {
+   "questsStarted": [
+    "THE_GREAT_BRAIN_ROBBERY"
+   ],
+   "sources": [
+    {
+     "page": "Harmony Island",
+     "quote": "can only be accessed after starting The Great Brain Robbery."
+    }
+   ]
+  },
+  "jiggig": {
+   "questsStarted": [
+    "ZOGRE_FLESH_EATERS"
+   ],
+   "sources": [
+    {
+     "page": "Jiggig",
+     "quote": "The first guards the barricade which blocks the way into Jiggig itself, and will let the player in during the Zogre Flesh Eaters quest."
+    },
+    {
+     "page": "Slayer task/Ogres",
+     "quote": "Requires the starting of Zogre Flesh Eaters."
+    },
+    {
+     "page": "Slayer task/Skeletons",
+     "quote": "Requires partial completion of Zogre Flesh Eaters."
+    }
+   ]
+  },
+  "magic_guilds_dungeon": {
+   "note": "Needs 66 Magic to enter the guild, boosts count.",
+   "sources": [
+    {
+     "page": "Slayer task/Zombies",
+     "quote": "Level 66 Magic is required to enter the guild. These zombies cannot be killed with melee."
+    },
+    {
+     "page": "Wizards' Guild",
+     "quote": "You must have level 66 Magic to enter. Boosts, such as a wizard's mind bomb at level 63, can be used to enter."
+    }
+   ]
+  },
+  "shilo_village_entrance": {
+   "questsStarted": [
+    "SHILO_VILLAGE"
+   ],
+   "sources": [
+    {
+     "page": "Slayer task/Zombies",
+     "quote": "Requires partial completion of Shilo Village."
+    },
+    {
+     "page": "Slayer task/Zombies",
+     "quote": "Requires completion of Shilo Village."
+    },
+    {
+     "page": "Shilo Village (location)",
+     "quote": "The only monsters found in Shilo Village are the undead ones, found right at its gates."
+    }
+   ]
+  },
+  "west_ardougne_cemetery": {
+   "questsStarted": [
+    "PLAGUE_CITY"
+   ],
+   "sources": [
+    {
+     "page": "Slayer task/Zombies",
+     "quote": "Requires partial completion of Plague City."
+    },
+    {
+     "page": "West Ardougne",
+     "quote": "It is first accessible to players during the Plague City quest."
+    },
+    {
+     "page": "West Ardougne",
+     "quote": "There is a large graveyard filled with ghosts and zombies, south of the main residential area."
+    }
+   ]
+  },
+  "barrows": {
+   "questsFinished": [
+    "PRIEST_IN_PERIL"
+   ],
+   "questsStarted": [
+    "HIS_FAITHFUL_SERVANTS"
+   ],
+   "sources": [
+    {
+     "page": "Barrows",
+     "quote": "Completion of Priest in Peril is required to enter Morytania."
+    },
+    {
+     "page": "Barrows",
+     "quote": "Started His Faithful Servants to begin digging into the crypts."
+    },
+    {
+     "page": "Slayer task/Skeletons",
+     "quote": "Skeletons found in the Barrows minigame"
+    }
+   ]
+  },
+  "digsite_dungeon": {
+   "questsStarted": [
+    "THE_DIG_SITE"
+   ],
+   "sources": [
+    {
+     "page": "Digsite Dungeon",
+     "quote": "The Digsite Dungeon is below the Digsite and can only be accessed during and after The Dig Site quest."
+    },
+    {
+     "page": "Slayer task/Skeletons",
+     "quote": "Requires partial completion of The Digsite (and its pre-requisites) to access the dungeon"
+    },
+    {
+     "page": "Digsite Dungeon",
+     "quote": "During The Dig Site quest, the large chamber to the south is blocked by bricks and piles of rocks. The player demolishes this barrier during the quest"
+    }
+   ]
+  },
+  "tarns_lair": {
+   "questsFinished": [
+    "PRIEST_IN_PERIL"
+   ],
+   "questsStarted": [
+    "HAUNTED_MINE"
+   ],
+   "sources": [
+    {
+     "page": "Tarn's Lair",
+     "field": "location",
+     "value": "Morytania"
+    },
+    {
+     "page": "Morytania",
+     "quote": "Players must complete the Priest in Peril quest to enter."
+    },
+    {
+     "page": "Tarn's Lair",
+     "quote": "The Haunted Mine quest is required to access Tarn's Lair."
+    }
+   ]
+  },
+  "tarns_lair_abandoned_mine": {
+   "questsFinished": [
+    "PRIEST_IN_PERIL"
+   ],
+   "questsStarted": [
+    "HAUNTED_MINE"
+   ],
+   "sources": [
+    {
+     "page": "Tarn's Lair",
+     "field": "location",
+     "value": "Morytania"
+    },
+    {
+     "page": "Morytania",
+     "quote": "Players must complete the Priest in Peril quest to enter."
+    },
+    {
+     "page": "Tarn's Lair",
+     "quote": "The Haunted Mine quest is required to access Tarn's Lair."
+    }
+   ]
+  },
+  "death_altar": {
+   "questsStarted": [
+    "MOURNINGS_END_PART_II"
+   ],
+   "sources": [
+    {
+     "page": "Slayer task/Ghosts",
+     "quote": "Completion of Mourning's End Part II required."
+    },
+    {
+     "page": "Death Altar",
+     "quote": "After completion of Mourning's End Part II, the altar can also be accessed through the Abyss."
+    },
+    {
+     "page": "Death Altar",
+     "quote": "The run takes around 2 minutes and doesn't require a Crystal trinket, but does require partial completion of Mourning's End Part II."
+    }
+   ]
+  },
+  "outside_ectofuntus": {
+   "questsFinished": [
+    "PRIEST_IN_PERIL"
+   ],
+   "sources": [
+    {
+     "page": "Ectofuntus",
+     "field": "location",
+     "value": "Port Phasmatys"
+    },
+    {
+     "page": "Port Phasmatys",
+     "field": "location",
+     "value": "Morytania"
+    },
+    {
+     "page": "Morytania",
+     "quote": "Players must complete the Priest in Peril quest to enter."
+    }
+   ]
+  },
+  "west_ardougne": {
+   "questsStarted": [
+    "PLAGUE_CITY"
+   ],
+   "sources": [
+    {
+     "page": "Slayer task/Ghosts",
+     "quote": "Partial completion of Plague City required."
+    },
+    {
+     "page": "West Ardougne",
+     "quote": "It is first accessible to players during the Plague City quest."
+    }
+   ]
+  },
+  "west_of_port_phasmatys": {
+   "questsFinished": [
+    "PRIEST_IN_PERIL"
+   ],
+   "sources": [
+    {
+     "page": "Port Phasmatys",
+     "field": "location",
+     "value": "Morytania"
+    },
+    {
+     "page": "Morytania",
+     "quote": "Players must complete the Priest in Peril quest to enter."
+    }
+   ]
+  },
+  "isafdar": {
+   "questsStarted": [
+    "REGICIDE"
+   ],
+   "sources": [
+    {
+     "page": "Tyras Camp",
+     "quote": "Isafdar and the camp can only be accessed after starting the Regicide quest."
+    },
+    {
+     "page": "Tirannwn",
+     "quote": "It can initially only be accessed via the Underground Pass after starting Regicide."
+    },
+    {
+     "page": "Slayer task/Bears",
+     "quote": "Requires partial completion of Regicide."
+    }
+   ]
+  },
+  "north_east_of_tyras_camp_instanced": {
+   "questsStarted": [
+    "SONG_OF_THE_ELVES"
+   ],
+   "sources": [
+    {
+     "page": "Slayer task/Bears",
+     "quote": "Requires partial completion of Song of the Elves."
+    }
+   ]
+  },
+  "prifddinas_outside_the_city": {
+   "questsStarted": [
+    "REGICIDE"
+   ],
+   "sources": [
+    {
+     "page": "Tirannwn",
+     "quote": "It can initially only be accessed via the Underground Pass after starting Regicide."
+    },
+    {
+     "page": "Prifddinas",
+     "field": "location",
+     "value": "Tirannwn"
+    },
+    {
+     "page": "Slayer task/Bears",
+     "quote": "Requires partial completion of Regicide."
+    }
+   ]
+  },
+  "south_of_prifddinas_instanced": {
+   "questsStarted": [
+    "SONG_OF_THE_ELVES"
+   ],
+   "sources": [
+    {
+     "page": "Slayer task/Bears",
+     "quote": "Requires partial completion of Song of the Elves."
+    }
+   ]
+  },
+  "west_of_lletya": {
+   "questsStarted": [
+    "REGICIDE"
+   ],
+   "sources": [
+    {
+     "page": "Tirannwn",
+     "quote": "It can initially only be accessed via the Underground Pass after starting Regicide."
+    },
+    {
+     "page": "Lletya",
+     "field": "location",
+     "value": "Tirannwn"
+    },
+    {
+     "page": "Slayer task/Bears",
+     "quote": "Requires partial completion of Regicide."
+    }
+   ]
+  },
+  "warriors_guild": {
+   "note": "Needs combined Attack and Strength of 130, or 99 in either, boosts do not count.",
+   "sources": [
+    {
+     "page": "Warriors' Guild",
+     "quote": "Only players with a combined Attack and Strength level of at least 130 (or level 99 in either skill), are allowed entry"
+    },
+    {
+     "page": "Warriors' Guild",
+     "quote": "Temporary boosts cannot be used."
+    }
+   ]
+  },
+  "warriors_guild_basement": {
+   "note": "Needs a rune defender from the Warriors' Guild.",
+   "sources": [
+    {
+     "page": "Slayer task/Hill giants",
+     "quote": "Requires access to the Warriors' Guild and showing a rune defender to Lorelai."
+    },
+    {
+     "page": "Warriors' Guild",
+     "quote": "Once the player has obtained the rune defender, they will be able to access the room in the basement where level 106 cyclopes roam."
+    }
+   ]
+  },
+  "avium_savannah": {
+   "questsFinished": [
+    "CHILDREN_OF_THE_SUN"
+   ],
+   "sources": [
+    {
+     "page": "Avium Savannah",
+     "field": "location",
+     "value": "Varlamore"
+    },
+    {
+     "page": "Avium Savannah",
+     "quote": "The player must first travel to Civitas illa Fortis via Regulus Cento after completing Children of the Sun before other transportation methods become usable."
+    },
+    {
+     "page": "Varlamore",
+     "quote": "Varlamore can only be accessed upon completion of Children of the Sun"
+    }
+   ]
+  },
+  "ice_queens_lair": {
+   "note": "Needs 50 Mining to clear the rock slide at the entrance.",
+   "sources": [
+    {
+     "page": "Ice Queen's Lair",
+     "quote": "The entrance is blocked by a rock slide requiring a pickaxe and level 50 Mining to remove."
+    },
+    {
+     "page": "Slayer task/Ice giants",
+     "quote": "Requires 50 Mining to access."
+    }
+   ]
+  },
+  "crandor": {
+   "questsStarted": [
+    "DRAGON_SLAYER_I"
+   ],
+   "sources": [
+    {
+     "page": "Crandor",
+     "quote": "Crandor is first accessed by boat during the Dragon Slayer I quest."
+    },
+    {
+     "page": "Crandor",
+     "quote": "After the quest, Crandor can only be accessed via a secret door in the Crandor and Karamja Dungeon."
+    }
+   ]
+  },
+  "laguna_aurorae": {
+   "skills": {
+    "SAILING": 58
+   },
+   "sources": [
+    {
+     "page": "Laguna Aurorae",
+     "quote": "Laguna Aurorae is an island located in the Sunset Ocean, requiring level 58 Sailing to moor at."
+    },
+    {
+     "page": "Slayer task/Moss giants",
+     "quote": "58 Sailing required to access the island. Once the spirit tree on the island has been spoken to, the location can be quickly accessed without a boat."
+    },
+    {
+     "page": "Mooring point",
+     "quote": "Disembarking at a mooring point is not boostable."
+    }
+   ]
+  },
+  "pirates_cove": {
+   "note": "Needs part of Lunar Diplomacy, or 76 Sailing to build a rowboat at Buccaneers' Haven.",
+   "sources": [
+    {
+     "page": "Pirates' Cove",
+     "quote": "Because the cove requires partial completion of the Lunar Diplomacy quest and is fairly isolated, it is typically fairly devoid of players."
+    },
+    {
+     "page": "Slayer task/Moss giants",
+     "quote": "Requires partial completion of Lunar Diplomacy."
+    },
+    {
+     "page": "Pirates' Cove",
+     "quote": "With 76 Sailing, a rowboat may be built at the Buccaneers' Haven to access this island."
+    }
+   ]
+  },
+  "combat_training_camp": {
+   "questsFinished": [
+    "BIOHAZARD"
+   ],
+   "sources": [
+    {
+     "page": "Combat Training Camp",
+     "quote": "The Combat Training Camp is a combat training facility which players may access upon completion of the Biohazard quest."
+    },
+    {
+     "page": "Slayer task/Ogres",
+     "quote": "Requires completion of Biohazard."
+    }
+   ]
+  },
+  "gutanoth": {
+   "questsStarted": [
+    "WATCHTOWER"
+   ],
+   "sources": [
+    {
+     "page": "Gu'Tanoth",
+     "quote": "Players need to progress far enough into the Watchtower quest in order to enter."
+    }
+   ]
+  },
+  "mudskipper_point": {
+   "questsFinished": [
+    "SKIPPY_AND_THE_MOGRES"
+   ],
+   "sources": [
+    {
+     "page": "Slayer task/Ogres",
+     "quote": "Requires completion of Skippy and the Mogres and 32 Slayer."
+    },
+    {
+     "page": "Mogre",
+     "quote": "Previously, they could only be killed by players who had completed the Skippy and the Mogres miniquest."
+    }
+   ]
+  },
+  "underground_pass_dungeon": {
+   "questsStarted": [
+    "PLAGUE_CITY"
+   ],
+   "sources": [
+    {
+     "page": "Slayer task/Ogres",
+     "quote": "Requires completion of Plague City."
+    },
+    {
+     "page": "West Ardougne",
+     "quote": "It is first accessible to players during the Plague City quest."
+    },
+    {
+     "page": "Ardougne",
+     "quote": "The entrance to the Underground Pass is at the west end."
+    }
+   ]
+  },
+  "north_of_mort_myre_swamp": {
+   "questsFinished": [
+    "PRIEST_IN_PERIL"
+   ],
+   "sources": [
+    {
+     "page": "Mort Myre Swamp",
+     "field": "location",
+     "value": "Morytania"
+    },
+    {
+     "page": "Morytania",
+     "quote": "Players must complete the Priest in Peril quest to enter."
+    }
+   ]
+  },
+  "viyeldi_caves": {
+   "questsStarted": [
+    "LEGENDS_QUEST"
+   ],
+   "sources": [
+    {
+     "page": "Viyeldi caves",
+     "quote": "They play a major role in Legends' Quest, of which partial completion is required for access to the caves."
+    },
+    {
+     "page": "Slayer task/Lesser demon",
+     "quote": "Requires a pickaxe, a lockpick, an unpowered orb, runes to cast an enchantment spell, an axe, a machete, and partial completion of Legends' Quest."
+    }
+   ]
+  },
+  "legends_guild_dungeon": {
+   "questsFinished": [
+    "LEGENDS_QUEST"
+   ],
+   "sources": [
+    {
+     "page": "Legends' Guild",
+     "quote": "However, to enter the actual building, players must have completed the entire quest."
+    },
+    {
+     "page": "Legends' Guild",
+     "quote": "Downstairs is a dungeon which has giant bats, pit scorpions, and shadow warriors."
+    },
+    {
+     "page": "Shadow warrior",
+     "quote": "Shadow warriors are monsters that can be found in the dungeon beneath the Legends' Guild."
+    }
+   ]
+  },
+  "canifis": {
+   "questsFinished": [
+    "PRIEST_IN_PERIL"
+   ],
+   "sources": [
+    {
+     "page": "Canifis",
+     "quote": "The town is only accessible to players who have completed the Priest in Peril quest."
+    }
+   ]
+  },
+  "dorgesh_kaan_south_dungeon": {
+   "questsFinished": [
+    "DEATH_TO_THE_DORGESHUUN"
+   ],
+   "sources": [
+    {
+     "page": "Dorgesh-Kaan South Dungeon",
+     "quote": "Entry to the dungeon requires completion of the Death to the Dorgeshuun quest."
+    },
+    {
+     "page": "Cave bug",
+     "quote": "can only be accessed after the completion of the Death to the Dorgeshuun quest through fairy ring AJQ"
+    }
+   ]
+  },
+  "iorwerth_camp": {
+   "questsStarted": [
+    "REGICIDE"
+   ],
+   "note": "Needs 45 Agility to cross the forest, boosts count.",
+   "sources": [
+    {
+     "page": "Iorwerth Camp",
+     "quote": "The Regicide quest needs to be started to access it, as well as at least 45 Agility (boostable) to pass obstacles along the way through the forest."
+    },
+    {
+     "page": "Slayer task/Elves",
+     "quote": "Elves wielding bows, available after starting Regicide."
+    }
+   ]
+  },
+  "lletya": {
+   "questsStarted": [
+    "MOURNINGS_END_PART_I"
+   ],
+   "sources": [
+    {
+     "page": "Lletya",
+     "quote": "is a small village that can be accessed after starting Mourning's End Part I."
+    },
+    {
+     "page": "Slayer task/Elves",
+     "quote": "Elves wielding bows, only available after starting Mourning's End Part I."
+    }
+   ]
+  },
+  "mourner_headquarters_downstairs": {
+   "questsStarted": [
+    "MOURNINGS_END_PART_I"
+   ],
+   "note": "The elves here leave during Song of the Elves.",
+   "sources": [
+    {
+     "page": "Slayer task/Elves",
+     "quote": "Only available after starting Mourning's End Part I and until the Ardougne Revolution during Song of the Elves."
+    },
+    {
+     "page": "Slayer task/Elves",
+     "quote": "Elves wielding halberds, only available during and after Mourning's End Part I, but not after Song of the Elves."
+    }
+   ]
+  },
+  "prifddinas_south_gate": {
+   "questsFinished": [
+    "SONG_OF_THE_ELVES"
+   ],
+   "sources": [
+    {
+     "page": "Prifddinas",
+     "quote": "In order to enter the city, the quest Song of the Elves must be completed."
+    },
+    {
+     "page": "Slayer task/Elves",
+     "quote": "Elves wielding halberds, available after Song of the Elves."
+    }
+   ]
+  },
+  "prifddinas_east_gate": {
+   "questsFinished": [
+    "SONG_OF_THE_ELVES"
+   ],
+   "sources": [
+    {
+     "page": "Prifddinas",
+     "quote": "In order to enter the city, the quest Song of the Elves must be completed."
+    },
+    {
+     "page": "Slayer task/Elves",
+     "quote": "Elves wielding halberds, available after Song of the Elves."
+    }
+   ]
+  },
+  "prifddinas_north_gate": {
+   "questsFinished": [
+    "SONG_OF_THE_ELVES"
+   ],
+   "sources": [
+    {
+     "page": "Prifddinas",
+     "quote": "In order to enter the city, the quest Song of the Elves must be completed."
+    },
+    {
+     "page": "Slayer task/Elves",
+     "quote": "Elves wielding halberds, available after Song of the Elves."
+    }
+   ]
+  },
+  "prifddinas_west_gate": {
+   "questsFinished": [
+    "SONG_OF_THE_ELVES"
+   ],
+   "sources": [
+    {
+     "page": "Prifddinas",
+     "quote": "In order to enter the city, the quest Song of the Elves must be completed."
+    },
+    {
+     "page": "Slayer task/Elves",
+     "quote": "Elves wielding halberds, available after Song of the Elves."
+    }
+   ]
+  },
+  "tower_of_voices": {
+   "questsFinished": [
+    "SONG_OF_THE_ELVES"
+   ],
+   "sources": [
+    {
+     "page": "Tower of Voices",
+     "field": "location",
+     "value": "Prifddinas"
+    },
+    {
+     "page": "Prifddinas",
+     "quote": "In order to enter the city, the quest Song of the Elves must be completed."
+    },
+    {
+     "page": "Slayer task/Elves",
+     "quote": "Elves wielding halberds, available after Song of the Elves."
+    }
+   ]
+  },
+  "prifddinas_market_place": {
+   "questsFinished": [
+    "SONG_OF_THE_ELVES"
+   ],
+   "sources": [
+    {
+     "page": "Prifddinas",
+     "quote": "In order to enter the city, the quest Song of the Elves must be completed."
+    },
+    {
+     "page": "Slayer task/Elves",
+     "quote": "Elves wielding halberds, available after Song of the Elves."
+    }
+   ]
+  },
+  "white_wolf_mountain_tunnels": {
+   "questsFinished": [
+    "FISHING_CONTEST"
+   ],
+   "sources": [
+    {
+     "page": "White Wolf Mountain",
+     "quote": "Once a player has completed the Fishing Contest quest, a tunnel that travels underneath the mountain becomes accessible."
+    },
+    {
+     "page": "Dwarven Mine",
+     "quote": "From the cart station in Keldagrim it is also possible to travel to White Wolf Mountain and the Grand Exchange, provided that the Fishing Contest quest has been completed."
+    }
+   ]
+  },
+  "mortton": {
+   "questsFinished": [
+    "PRIEST_IN_PERIL"
+   ],
+   "sources": [
+    {
+     "page": "Mort'ton",
+     "field": "location",
+     "value": "Morytania"
+    },
+    {
+     "page": "Morytania",
+     "quote": "Players must complete the Priest in Peril quest to enter."
+    }
+   ]
+  },
+  "shade_catacombs": {
+   "questsFinished": [
+    "PRIEST_IN_PERIL",
+    "SHADES_OF_MORTTON"
+   ],
+   "sources": [
+    {
+     "page": "Shade Catacombs",
+     "field": "location",
+     "value": "Morytania"
+    },
+    {
+     "page": "Morytania",
+     "quote": "Players must complete the Priest in Peril quest to enter."
+    },
+    {
+     "page": "Shade Catacombs",
+     "quote": "To access it you need to have completed Shades of Mort'ton and have a bronze shade key or better."
+    }
+   ]
+  },
+  "east_of_the_colossal_wyrm_remains": {
+   "questsFinished": [
+    "CHILDREN_OF_THE_SUN"
+   ],
+   "sources": [
+    {
+     "page": "Colossal Wyrm Remains",
+     "field": "location",
+     "value": "Avium Savannah"
+    },
+    {
+     "page": "Colossal Wyrm Remains",
+     "quote": "It remains today as a famous landmark in Varlamore, found at the southern end of the savannah"
+    },
+    {
+     "page": "Varlamore",
+     "quote": "Varlamore can only be accessed upon completion of Children of the Sun"
+    },
+    {
+     "page": "Varlamore",
+     "quote": "There are several ways to reach Varlamore, but all require the player to first travel via Regulus Cento, located near the east Varrock gates, after completing Children of the Sun before other transportation methods become usable."
+    }
+   ]
+  },
+  "miscellania_and_etceteria_dungeon": {
+   "questsStarted": [
+    "ROYAL_TROUBLE"
+   ],
+   "sources": [
+    {
+     "page": "Miscellania and Etceteria dungeon",
+     "quote": "The player cannot access the settlement until permitted to enter the dungeon during the quest Royal Trouble."
+    },
+    {
+     "page": "Sea snake young",
+     "quote": "Sea snake young are found in the Miscellania and Etceteria dungeon, which can be entered during and after the Royal Trouble quest."
+    },
+    {
+     "page": "Sea snake hatchling",
+     "quote": "Sea snake hatchlings are found in the Miscellania and Etceteria dungeon, which can be entered during and after the Royal Trouble quest."
+    }
+   ]
+  },
+  "killerwatt_plane": {
+   "questsFinished": [
+    "ERNEST_THE_CHICKEN"
+   ],
+   "sources": [
+    {
+     "page": "Killerwatt plane",
+     "quote": "It is accessed by Professor Oddenstein's portal machine, found atop Draynor Manor after completion of the quest Ernest the Chicken."
+    }
+   ]
+  },
+  "ralos_rise": {
+   "questsFinished": [
+    "CHILDREN_OF_THE_SUN"
+   ],
+   "sources": [
+    {
+     "page": "Ralos' Rise",
+     "field": "location",
+     "value": "Varlamore"
+    },
+    {
+     "page": "Ralos' Rise",
+     "quote": "Ralos' Rise is a mountain found west of Civitas illa Fortis in Varlamore."
+    },
+    {
+     "page": "Varlamore",
+     "quote": "Varlamore can only be accessed upon completion of Children of the Sun"
+    },
+    {
+     "page": "Varlamore",
+     "quote": "There are several ways to reach Varlamore, but all require the player to first travel via Regulus Cento, located near the east Varrock gates, after completing Children of the Sun before other transportation methods become usable."
+    }
+   ]
+  },
+  "mons_gratia": {
+   "questsFinished": [
+    "CHILDREN_OF_THE_SUN"
+   ],
+   "sources": [
+    {
+     "page": "Mons Gratia",
+     "field": "location",
+     "value": "Varlamore"
+    },
+    {
+     "page": "Varlamore",
+     "quote": "Varlamore can only be accessed upon completion of Children of the Sun"
+    },
+    {
+     "page": "Varlamore",
+     "quote": "There are several ways to reach Varlamore, but all require the player to first travel via Regulus Cento, located near the east Varrock gates, after completing Children of the Sun before other transportation methods become usable."
+    }
+   ]
+  },
+  "north_lunar_isle": {
+   "questsStarted": [
+    "LUNAR_DIPLOMACY"
+   ],
+   "sources": [
+    {
+     "page": "Lunar Isle",
+     "quote": "The island becomes accessible to members who have progressed far enough into the Lunar Diplomacy quest."
+    },
+    {
+     "page": "Lunar Isle",
+     "quote": "Players can dock at the Lunar Isle with level 76 Sailing, provided they have also completed Lunar Diplomacy."
+    },
+    {
+     "page": "Slayer task/Suqah",
+     "field": "otherreq",
+     "value": "Partial completion of Lunar Diplomacy"
+    }
+   ]
+  },
+  "south_east_lunar_isle": {
+   "questsStarted": [
+    "LUNAR_DIPLOMACY"
+   ],
+   "sources": [
+    {
+     "page": "Lunar Isle",
+     "quote": "The island becomes accessible to members who have progressed far enough into the Lunar Diplomacy quest."
+    },
+    {
+     "page": "Lunar Isle",
+     "quote": "Players can dock at the Lunar Isle with level 76 Sailing, provided they have also completed Lunar Diplomacy."
+    },
+    {
+     "page": "Slayer task/Suqah",
+     "field": "otherreq",
+     "value": "Partial completion of Lunar Diplomacy"
+    }
+   ]
+  },
+  "south_lunar_isle": {
+   "questsStarted": [
+    "LUNAR_DIPLOMACY"
+   ],
+   "sources": [
+    {
+     "page": "Lunar Isle",
+     "quote": "The island becomes accessible to members who have progressed far enough into the Lunar Diplomacy quest."
+    },
+    {
+     "page": "Lunar Isle",
+     "quote": "Players can dock at the Lunar Isle with level 76 Sailing, provided they have also completed Lunar Diplomacy."
+    },
+    {
+     "page": "Slayer task/Suqah",
+     "field": "otherreq",
+     "value": "Partial completion of Lunar Diplomacy"
+    }
+   ]
+  },
+  "sophanem_dungeon_cavern_level": {
+   "questsStarted": [
+    "CONTACT"
+   ],
+   "sources": [
+    {
+     "page": "Sophanem Dungeon",
+     "quote": "Players must have partially completed Contact! to enter the dungeon, with access to the bank itself requiring full completion of the quest."
+    }
+   ]
+  },
+  "uzer_mastaba": {
+   "questsStarted": [
+    "THE_CURSE_OF_ARRAV"
+   ],
+   "sources": [
+    {
+     "page": "Uzer Mastaba",
+     "quote": "Access requires starting The Curse of Arrav, with the lower level containing small scarabs requiring partial completion."
+    },
+    {
+     "page": "Slayer task/Scabarites",
+     "quote": "Requires partial completion of The Curse of Arrav."
+    }
+   ]
+  },
+  "scabaras_dungeon": {
+   "questsFinished": [
+    "BENEATH_CURSED_SANDS"
+   ],
+   "sources": [
+    {
+     "page": "Ruins of Ullek",
+     "quote": "After the Beneath Cursed Sands quest, the lower level of the Scabaras Dungeon contains many locust riders (both ranged and melee) and scarab mages."
+    },
+    {
+     "page": "Scabaras Dungeon",
+     "quote": "After the quest, this area contains many locust riders (both ranged and melee) and scarab mages."
+    }
+   ]
+  },
+  "sophanem_dungeon_maze_level": {
+   "questsStarted": [
+    "CONTACT"
+   ],
+   "sources": [
+    {
+     "page": "Sophanem Dungeon",
+     "quote": "Players must have partially completed Contact! to enter the dungeon, with access to the bank itself requiring full completion of the quest."
+    }
+   ]
+  },
+  "crabclaw_caves": {
+   "questsStarted": [
+    "THE_DEPTHS_OF_DESPAIR"
+   ],
+   "sources": [
+    {
+     "page": "Crabclaw Caves",
+     "quote": "Access to the caves requires partial completion of The Depths of Despair quest. If players attempt to enter the cave without starting the quest, they will not be able to enter."
+    }
+   ]
+  },
+  "outer_fortis": {
+   "questsFinished": [
+    "CHILDREN_OF_THE_SUN"
+   ],
+   "sources": [
+    {
+     "page": "Outer Fortis",
+     "quote": "Outer Fortis is a part of Civitas illa Fortis found outside the main walls."
+    },
+    {
+     "page": "Varlamore",
+     "quote": "The capital and largest settlement in Varlamore, Civitas illa Fortis is a large port city on Varlamore's north-east coast."
+    },
+    {
+     "page": "Varlamore",
+     "quote": "Varlamore can only be accessed upon completion of Children of the Sun"
+    },
+    {
+     "page": "Varlamore",
+     "quote": "There are several ways to reach Varlamore, but all require the player to first travel via Regulus Cento, located near the east Varrock gates, after completing Children of the Sun before other transportation methods become usable."
+    }
+   ]
+  },
+  "shellbane_gryphon_cave": {
+   "questsStarted": [
+    "TROUBLED_TORTUGANS"
+   ],
+   "sources": [
+    {
+     "page": "Shellbane Gryphon Cave",
+     "field": "location",
+     "value": "The Great Conch"
+    },
+    {
+     "page": "The Great Conch",
+     "quote": "Starting Troubled Tortugans, the first quest in the series, is required to access the Great Conch."
+    },
+    {
+     "page": "The Great Conch",
+     "quote": "After starting the quest Troubled Tortugans and giving the bandage to Floopa, the Great Conch can be visited by:"
+    }
+   ]
+  },
+  "magic_axe_hut": {
+   "note": "Needs 23 Thieving to open the hut doors.",
+   "sources": [
+    {
+     "page": "Magic Axe Hut",
+     "quote": "Pull the lever in either Ardougne or Edgeville to teleport to the Deserted Keep. Run north and slash the web, then run east to the hut."
+    },
+    {
+     "page": "Magic Axe Hut",
+     "quote": "A lockpick and level 23 Thieving are required to unlock either of the doors to the hut."
+    }
+   ]
+  },
+  "pirates_hideout": {
+   "note": "Needs 39 Thieving to pick the door lock.",
+   "sources": [
+    {
+     "page": "Pirates' Hideout",
+     "quote": "Pull the lever in either Ardougne or Edgeville to teleport to the Deserted Keep. Run north and slash the web, then run west."
+    },
+    {
+     "page": "Pirates' Hideout",
+     "quote": "A lockpick and 39 Thieving are required to pick the door lock and gain entry."
+    }
+   ]
+  },
+  "wilderness_agility_course": {
+   "note": "Needs 52 Agility to enter the course, boosts count.",
+   "sources": [
+    {
+     "page": "Wilderness Agility Course",
+     "quote": "The Wilderness Agility Course is a training area located deep in the Wilderness, requiring level 52 Agility (boostable) to enter, and 49 Agility (boostable) to complete the first obstacle inside."
+    },
+    {
+     "page": "Wilderness Agility Course",
+     "quote": "In addition to the risk of player-killers, there are multiple level 18 and 25 skeletons roaming the course and underground respectively that will attack any player near them."
+    }
+   ]
+  }
+ },
+ "open": {
+  "catacombs_of_kourend": {
+   "page": "Catacombs of Kourend",
+   "quote": "The main entrance is found by investigating the statue of King Rada I in the courtyard of Kourend Castle."
+  },
+  "stronghold_slayer_dungeon": {
+   "page": "Stronghold Slayer Cave",
+   "quote": "Anyone can enter the dungeon, but players can only attack the Slayer monster they were assigned"
+  },
+  "karuulm_slayer_dungeon": {
+   "page": "Karuulm Slayer Dungeon",
+   "quote": "The Karuulm Slayer Dungeon is a dungeon located beneath Mount Karuulm, which is located just west of Lovakengj."
+  },
+  "chasm_of_fire": {
+   "page": "Chasm of Fire",
+   "quote": "The Chasm of Fire is a dungeon located in the north-west corner of Shayzien"
+  },
+  "taverley_dungeon": {
+   "page": "Taverley Dungeon",
+   "quote": "Access to this area requires a dusty key, or at least 70 Agility to use the obstacle pipe."
+  },
+  "witchaven_dungeon": {
+   "page": "Witchaven Dungeon",
+   "quote": "It can be accessed via the old ruin entrance."
+  },
+  "kalphite_lair": {
+   "page": "Kalphite Lair",
+   "quote": "Players will need a rope to enter the lair and another to enter the area containing the Kalphite Queen."
+  },
+  "kalphite_cave": {
+   "page": "Kalphite Cave",
+   "quote": "Unlike the Kalphite Lair, a rope is not required to access the cave."
+  },
+  "kraken_cove": {
+   "page": "Kraken Cove",
+   "quote": "Players may enter without a Slayer task"
+  },
+  "waterbirth_island": {
+   "page": "Waterbirth Island",
+   "quote": "the player does not have to start or complete The Fremennik Trials; costs 1,000 coins each time if the quest is not complete"
+  },
+  "lizardman_canyon": {
+   "page": "Lizardman Canyon",
+   "quote": "The Lizardman Canyon is a valley in the west portion of Great Kourend, between Lovakengj and Shayzien."
+  },
+  "molch": {
+   "page": "Molch",
+   "quote": "Molch is a small settlement found in the Kebos Swamp, a swamp in the Kebos Lowlands."
+  },
+  "lizardman_settlement": {
+   "page": "Lizardman Settlement",
+   "quote": "Players going to the Chambers of Xeric for the first time will need to pass through this area."
+  },
+  "smoke_devil_dungeon": {
+   "page": "Smoke Devil Dungeon",
+   "quote": "Players may enter without a slayer assignment"
+  },
+  "death_plateau": {
+   "page": "Troll Country",
+   "quote": "A dangerous plateau in the south part of the region where mountain trolls have recently spread to."
+  },
+  "south_of_mount_quidamortem": {
+   "page": "Mount Quidamortem",
+   "quote": "It can also be quickly accessed via the Lovakengj Minecart Network, and then running north."
+  },
+  "fremennik_slayer_dungeon": {
+   "page": "Fremennik Slayer Dungeon",
+   "quote": "is a cave system found south-east of Rellekka, featuring slayer monsters that can only be killed by players with the appropriate Slayer level."
+  },
+  "stronghold_of_security": {
+   "page": "Stronghold of Security",
+   "quote": "The Stronghold of Security is a dungeon, found at the heart of the Barbarian Village mine, west of Varrock."
+  },
+  "asgarnian_ice_dungeon": {
+   "page": "Asgarnian Ice Dungeon",
+   "quote": "It is found south of Port Sarim and north of Mudskipper Point"
+  },
+  "kebos_swamp": {
+   "page": "Kebos Swamp",
+   "quote": "The Kebos Swamp is a swamp located in the Kebos Lowlands north of Mount Quidamortem."
+  },
+  "the_battlefront": {
+   "page": "Battlefront",
+   "quote": "The Battlefront is a large battlefield just outside the western border of Great Kourend."
+  },
+  "forthos_dungeon": {
+   "page": "Forthos Dungeon",
+   "quote": "can be accessed from the staircase in the Forthos Ruin itself or the smaller ruins just east."
+  },
+  "isle_of_souls": {
+   "page": "Isle of Souls",
+   "quote": "Entering the Soul Wars Portal near the Edgeville ruins."
+  },
+  "giants_den": {
+   "page": "Giants' Den",
+   "quote": "All of the giants can be killed with or without a Slayer task."
+  },
+  "tzhaar_city": {
+   "page": "Mor Ul Rek",
+   "quote": "The TzHaar allow all JalYt to enter this area."
+  },
+  "lizardman_caves": {
+   "page": "Lizardman Caves",
+   "quote": "Players may enter without a Slayer assignment"
+  },
+  "lizardman_temple": {
+   "page": "Lizardman Temple",
+   "quote": "The Lizardman Temple is a temple dedicated to Xeric found beneath Molch."
+  },
+  "demonic_ruins": {
+   "page": "Demonic Ruins",
+   "quote": "is a ruined fortress that is located in level 44-48 Wilderness."
+  },
+  "edgeville_dungeon": {
+   "page": "Edgeville Dungeon",
+   "quote": "It is a trapdoor by a coffin marked by a dungeon icon"
+  },
+  "wilderness_slayer_cave": {
+   "page": "Wilderness Slayer Cave",
+   "quote": "The Wilderness Slayer Cave is a cave located beneath the Wilderness."
+  },
+  "wilderness_resource_area": {
+   "page": "Resource Area",
+   "quote": "The Resource Area is a small enclosure located east of the Deserted Keep."
+  },
+  "the_forgotten_cemetery": {
+   "page": "The Forgotten Cemetery",
+   "quote": "The Forgotten Cemetery is a minor area in the Wilderness at around level 30."
+  },
+  "lava_maze_dungeon": {
+   "page": "Lava Maze Dungeon",
+   "quote": "The dungeon's eastern entrance is in the centre of the Lava Maze, level 42 to 43 Wilderness in a metal fenced area."
+  },
+  "king_black_dragon_lair": {
+   "page": "King Black Dragon Lair",
+   "quote": "The dungeon may be accessed via a ladder in a fenced area on the west end of the Lava Maze containing four lesser demons."
+  },
+  "deep_wilderness_dungeon": {
+   "page": "Deep Wilderness Dungeon",
+   "quote": "The entrance is via stairs in a broken house west of the Mage Arena."
+  },
+  "entrana_dungeon": {
+   "page": "Entrana Dungeon",
+   "quote": "The Entrana Dungeon is found on the north-west corner of Entrana."
+  },
+  "shayziens_wall": {
+   "page": "Shayziens' Wall",
+   "quote": "Shayziens' Wall, also known as the Shayzien Outpost, is a wall located west of Shayzien."
+  },
+  "south_of_xerics_shrine": {
+   "page": "Xeric's Shrine",
+   "quote": "Xeric's Shrine is a temple housed north-east of Mount Quidamortem, north of the Lizardman Settlement in the Kebos Lowlands."
+  },
+  "ardougne_zoo": {
+   "page": "Ardougne Zoo",
+   "quote": "The animals are all caged and (with exception to the parrots, camels, some penguins, some monkeys, and the ferret) may be fought by either using a halberd or by using Magic or Ranged attacks."
+  },
+  "around_brimhaven": {
+   "page": "Brimhaven",
+   "quote": "Players may also take the Karamja ship in Port Sarim used for Dragon Slayer I and Pirates Treasure for 30 coins, then walk west past the volcano. There are no requirements on the gate."
+  },
+  "east_of_tai_bwo_wannai": {
+   "page": "Tai Bwo Wannai",
+   "quote": "Tai Bwo Wannai, meaning 'small clearing in the jungle', is a village located south of Brimhaven in the jungle of Karamja."
+  },
+  "karamja_near_the_volcano": {
+   "page": "Karamja Volcano",
+   "quote": "Several low-level monsters, such as imps, scorpions, snakes, and monkeys can be found roaming around."
+  },
+  "north_east_of_shilo_village": {
+   "page": "Karamja",
+   "quote": "Travel is from either Brimhaven to the north-west, by a gnome glider route that lands players south of the Ship Yard, by fairy ring code CKR, by the charter ship, or by the agility shortcut from Musa Point."
+  },
+  "north_west_of_shilo_village": {
+   "page": "Karamja",
+   "quote": "Travel is from either Brimhaven to the north-west, by a gnome glider route that lands players south of the Ship Yard, by fairy ring code CKR, by the charter ship, or by the agility shortcut from Musa Point."
+  },
+  "south_east_karamja": {
+   "page": "Karamja",
+   "quote": "Travel is from either Brimhaven to the north-west, by a gnome glider route that lands players south of the Ship Yard, by fairy ring code CKR, by the charter ship, or by the agility shortcut from Musa Point."
+  },
+  "lumbridge": {
+   "page": "Lumbridge",
+   "quote": "Lumbridge is a large town where players begin their Old School RuneScape journey."
+  },
+  "lumbridge_swamp_caves": {
+   "page": "Lumbridge Swamp Caves",
+   "quote": "From the swamp near the candle seller, requiring a rope to enter. After one rope has been used, further ropes are not required."
+  },
+  "observatory_dungeon": {
+   "page": "Observatory Dungeon",
+   "quote": "The Observatory Dungeon leads from the Goblin settlement found north-east of the Observatory, to the Observatory."
+  },
+  "goblin_cave": {
+   "page": "Goblin Cave",
+   "quote": "The Goblin Cave, known to the goblins as the Plain of Mud, is a dungeon filled with goblins located east of the Fishing Guild and south of Hemenster."
+  },
+  "goblin_village": {
+   "page": "Goblin Village",
+   "quote": "The only entrance to Goblin Village is from the south, along the path that runs from the gate to Taverley."
+  },
+  "west_of_fishing_guild": {
+   "page": "Fishing Guild",
+   "quote": "Teleporting to Camelot and running west through Seers' Village and then south-west through Hemenster."
+  },
+  "outside_of_port_sarim": {
+   "page": "Port Sarim",
+   "quote": "Port Sarim is a small port in south-eastern Asgarnia."
+  },
+  "tree_gnome_village_maze": {
+   "page": "Gnome maze",
+   "quote": "The gnome maze is a large hedge maze that makes up the exterior part of the Tree Gnome Village."
+  },
+  "in_and_around_lumbridge": {
+   "page": "Lumbridge",
+   "quote": "Lumbridge is a large town where players begin their Old School RuneScape journey."
+  },
+  "rimmington": {
+   "page": "Rimmington",
+   "quote": "Rimmington is a small village in south-west Asgarnia."
+  },
+  "behind_lumbridge_castle": {
+   "page": "Lumbridge",
+   "quote": "Lumbridge is a large town where players begin their Old School RuneScape journey."
+  },
+  "lumbridge_swamp": {
+   "page": "Lumbridge Swamp",
+   "quote": "It can be accessed via a small gateway at the back of the graveyard behind Lumbridge Church."
+  },
+  "ardougne_sewers": {
+   "page": "Ardougne Sewers",
+   "quote": "Players can enter the eastern sewers through Jimmy Dazzler's house after the completion of Ratcatchers or through the manhole near the Estate agent's building."
+  },
+  "varrock_sewers": {
+   "page": "Varrock Sewers",
+   "quote": "The Varrock Sewers can be accessed via a manhole just east of Varrock Palace."
+  },
+  "arceuus_outside_the_tower_of_magic": {
+   "page": "Arceuus",
+   "field": "location",
+   "value": "Great Kourend"
+  },
+  "gnome_maze": {
+   "page": "Gnome maze",
+   "quote": "The gnome maze is a large hedge maze that makes up the exterior part of the Tree Gnome Village."
+  },
+  "port_piscarilius": {
+   "page": "Port Piscarilius",
+   "quote": "It can be accessed by travelling by boat by talking to Veos in Port Sarim."
+  },
+  "farmer_freds_chicken_pen": {
+   "page": "Fred the Farmer",
+   "quote": "Players can find Fred at the farmhouse north-west of Lumbridge, south of the windmill and to the west of the Lumbridge sheep pen."
+  },
+  "along_the_river_lum_south_of_varrock": {
+   "page": "River Lum",
+   "quote": "The river has a small array of wildlife. Ducks being the only animal that swims here."
+  },
+  "along_the_river_lum_north_of_lumbridge": {
+   "page": "River Lum",
+   "quote": "The river has a small array of wildlife. Ducks being the only animal that swims here."
+  },
+  "port_sarim": {
+   "page": "Port Sarim",
+   "quote": "Port Sarim is a small port in south-eastern Asgarnia."
+  },
+  "lumbridge_east_farm": {
+   "page": "Lumbridge",
+   "quote": "Groats' farm, a massive farm featuring cows, chickens, and farming patches."
+  },
+  "ardougne_farm": {
+   "page": "Ardougne",
+   "quote": "Ardougne's banks are located near the north farm and the east of the zoo."
+  },
+  "kebos_lowlands_gordons_farm": {
+   "page": "Kebos Lowlands",
+   "quote": "There is a small farm south of the Farming Guild owned by Gordon and Mary where the quest Getting Ahead takes place."
+  },
+  "field_south_of_the_champions_guild": {
+   "page": "Champions' Guild",
+   "quote": "The Champions' Guild is located south of Varrock"
+  },
+  "sinclair_mansion": {
+   "page": "Sinclair Mansion",
+   "quote": "It is located north of Camelot, along the path that leads from Seers' Village to Rellekka."
+  },
+  "nightmare_zone": {
+   "page": "Nightmare Zone",
+   "quote": "The Nightmare Zone is a combat-based minigame located north-west of Yanille bank."
+  },
+  "north_of_hosidius_town_square": {
+   "page": "Hosidius",
+   "quote": "To the north of the Hosidius, there is a small cow farm, which features 5 cows, 3 cow calfs, a dairy cow, and a Master Farmer who overlooks them."
+  },
+  "crafting_guild": {
+   "page": "Crafting Guild",
+   "quote": "borders a cow pen. Entry to the guild is not required to access it."
+  },
+  "west_of_nightmare_zone": {
+   "page": "Nightmare Zone",
+   "quote": "The Nightmare Zone is a combat-based minigame located north-west of Yanille bank."
+  },
+  "south_falador_farm": {
+   "page": "South Falador Farm",
+   "quote": "As well as this, there is also a large pasture containing several cows"
+  },
+  "kebos_lowlands_keiths_farm": {
+   "page": "Kebos Lowlands",
+   "quote": "Players can travel to the Kebos Lowlands by walking to the Battlefront north-west of Shayzien or by traversing the rocky terrain south-west of Lovakengj."
+  },
+  "lumbridge_west_farm": {
+   "page": "Lumbridge",
+   "quote": "Fred's farm, a large farm where players can shear sheep to obtain wool which may be spun at the castle."
+  },
+  "al_kharid_mine": {
+   "page": "Al Kharid Mine",
+   "quote": "The Al Kharid mine (also called Scorpion mine or Al Kharid Mining pit) is a Mining area located just north of the desert city of Al Kharid."
+  },
+  "dwarven_mine": {
+   "page": "Dwarven Mine",
+   "quote": "It contains a variety of ores and can be accessed from the entrance south of Ice Mountain or from the two entrances located in Falador."
+  },
+  "scorpion_pit": {
+   "page": "Scorpion Pit",
+   "quote": "The Scorpion Pit is a valley in the northern portion of the Wilderness extending from level 53 to 55."
+  },
+  "scorpion_pit_cave": {
+   "page": "Wilderness",
+   "quote": "Scorpia resides in a cavern under the Scorpion Pit in level 53 to 55 Wilderness, although no special mechanics are associated with entering/exiting her lair."
+  },
+  "silvarea": {
+   "page": "Silvarea",
+   "quote": "Silvarea is a small area in the north-eastern corner of Misthalin."
+  },
+  "graveyard_of_heroes": {
+   "page": "Graveyard of Heroes",
+   "quote": "The Graveyard of Heroes is located in the south-western part of Shayzien."
+  },
+  "yanille_agility_dungeon_north_entrance": {
+   "page": "Yanille Agility Dungeon",
+   "quote": "To come further than the giant bats when you enter the dungeon, you need an Agility level of at least 40."
+  },
+  "yanille_agility_dungeon_south_entrance": {
+   "page": "Yanille Agility Dungeon",
+   "quote": "Players can access this house and its basement, but the door connecting the basement to the rest of the dungeon is locked."
+  },
+  "outside_keep_le_faye": {
+   "page": "Keep Le Faye",
+   "quote": "Keep Le Faye is a tower south of Camelot Castle, and directly east of Sorcerer's Tower."
+  },
+  "coal_trucks_area": {
+   "page": "Coal Trucks",
+   "quote": "The Coal Trucks are located north of the Fishing Guild and west of McGrubor's Wood."
+  },
+  "deep_wilderness_west_of_mage_arena": {
+   "page": "Deep Wilderness Dungeon",
+   "quote": "Using the wilderness lever from Edgeville or Ardougne and running West past the Mage Arena, approximately 150 tiles in total."
+  },
+  "karamja_volcano_dungeon": {
+   "page": "Crandor",
+   "quote": "In it are more skeletons, lesser demons, and Elvarg, as well as some giant bats and deadly red spiders on the Karamjan side."
+  },
+  "west_of_dark_altar_path_towards_fairy_ring": {
+   "page": "Dark Altar",
+   "quote": "The Dark Altar is an artefact located north of Arceuus."
+  },
+  "east_of_dark_altar_path_towards_soul_altar": {
+   "page": "Dark Altar",
+   "quote": "The Dark Altar is an artefact located north of Arceuus."
+  },
+  "south_of_dark_altar_path_towards_blood_altar": {
+   "page": "Dark Altar",
+   "quote": "The Dark Altar is an artefact located north of Arceuus."
+  },
+  "mount_karuulm_north_side": {
+   "page": "Mount Karuulm",
+   "quote": "Mount Karuulm is a volcano found in the northern edge of the Kebos Lowlands."
+  },
+  "mount_karuulm_south_east_side": {
+   "page": "Mount Karuulm",
+   "quote": "Mount Karuulm is a volcano found in the northern edge of the Kebos Lowlands."
+  },
+  "north_of_hosidius_mine_south_of_hosidius_plows": {
+   "page": "Hosidius mine",
+   "quote": "The Hosidius mine is located west of the Tithe farm and north of Crabclaw Isle."
+  },
+  "goblin_cave_east_of_the_fishing_guild": {
+   "page": "Goblin Cave",
+   "quote": "The Goblin Cave, known to the goblins as the Plain of Mud, is a dungeon filled with goblins located east of the Fishing Guild and south of Hemenster."
+  },
+  "arandar_entrance": {
+   "page": "Arandar",
+   "quote": "Prior to completion, the huge gate is a one-way exit, leading to the forest south-west of the Tree Gnome Stronghold."
+  },
+  "feldip_hills": {
+   "page": "Feldip Hills",
+   "quote": "The Feldip Hills are a tropical and marshy area positioned to the south of Yanille and Kandarin generally."
+  },
+  "inside_the_tree_gnome_village_maze": {
+   "page": "Tree Gnome Village (location)",
+   "quote": "To enter the village, navigate the gnome maze and then squeeze through the loose railing."
+  },
+  "path_between_seers_village_and_rellekka": {
+   "page": "Sinclair Mansion",
+   "quote": "It is located north of Camelot, along the path that leads from Seers' Village to Rellekka."
+  },
+  "south_of_rellekka": {
+   "page": "Rellekka",
+   "quote": "Camelot, a very long run south of the village."
+  },
+  "south_of_west_ardougne": {
+   "page": "Slayer task/Wolves",
+   "quote": "South of West Ardougne"
+  },
+  "west_of_sinclair_mansion": {
+   "page": "Sinclair Mansion",
+   "quote": "It is located north of Camelot, along the path that leads from Seers' Village to Rellekka."
+  },
+  "west_of_the_outpost": {
+   "page": "Outpost",
+   "quote": "Teleports to the Ardougne area. From East Ardougne, players must walk north-west to exit the city and then west to the Outpost."
+  },
+  "wilderness_south_east_of_the_deserted_keep": {
+   "page": "Deserted Keep",
+   "quote": "There are levers in East Ardougne and Edgeville that teleport the player to the Deserted Keep when pulled."
+  },
+  "chaos_temple_wilderness": {
+   "page": "Chaos Temple (Wilderness)",
+   "quote": "Run north from Varrock or north-east from the Grand Exchange, crossing the wilderness ditch."
+  },
+  "draynor_sewers": {
+   "page": "Draynor Sewers",
+   "quote": "The dungeon is located underneath a trapdoor north-west of Draynor (or north of the marketplace), and through an entrance west of the jailhouse."
+  },
+  "edgeville_dungeon_mine": {
+   "page": "Edgeville Dungeon mine",
+   "quote": "The long way: From the dungeon entrance at Edgeville, through the dungeon."
+  },
+  "graveyard_of_shadows_wilderness": {
+   "page": "Graveyard of Shadows",
+   "quote": "Run north from Ferox Enclave."
+  },
+  "ruins_east_wilderness": {
+   "page": "Ruins (east)",
+   "quote": "The eastern ruins, commonly referred to simply as the ruins or sometimes the farm, are the remains of a village in the eastern Wilderness."
+  },
+  "south_of_the_graveyard_of_heroes": {
+   "page": "Graveyard of Heroes",
+   "quote": "The Graveyard of Heroes is located in the south-western part of Shayzien."
+  },
+  "tree_gnome_village_dungeon": {
+   "page": "Tree Gnome Village dungeon",
+   "quote": "Its surface entrance is in the maze just south of the main village area."
+  },
+  "draynor_manor": {
+   "page": "Draynor Manor",
+   "quote": "Draynor Manor is a large, haunted, mansion located north of Draynor Village owned by Count Draynor Drakan."
+  },
+  "wilderness": {
+   "page": "Wilderness",
+   "quote": "Currently, players passing the ditch are presented with a screen confirming that they want to enter the Wilderness."
+  },
+  "crumbling_tower": {
+   "page": "Crumbling Tower",
+   "quote": "The Crumbling Tower is a tower located on a small island off the north-west coast of Isle of Souls, which can be reached by using the fairy ring code BJP and running westward."
+  },
+  "grave_of_scorpius": {
+   "page": "Grave of Scorpius",
+   "quote": "Otherwise, players can use a ring of dueling to teleport to Castle Wars and run north, or teleport to the Khazard Battlefield via the spirit tree (or Ardougne Cloak) and run west."
+  },
+  "north_east_of_dense_essence_mine": {
+   "page": "dense essence mine",
+   "quote": "The dense essence mine is located north-east of Arceuus."
+  },
+  "north_east_of_chaos_temple_wilderness": {
+   "page": "Chaos Temple (Wilderness)",
+   "quote": "Run north from Varrock or north-east from the Grand Exchange, crossing the wilderness ditch."
+  },
+  "north_west_of_ferox_enclave": {
+   "page": "Ferox Enclave",
+   "quote": "A ring of dueling will teleport directly here."
+  },
+  "temple_in_the_golem": {
+   "page": "The Golem",
+   "quote": "Head east into the temple by climbing down the stairs behind the golem."
+  },
+  "revenant_caves": {
+   "page": "Revenant Caves",
+   "quote": "To get to the caves, players will have to traverse the Wilderness."
+  },
+  "east_of_varrock_palace_accessible_via_varrock_sewers": {
+   "page": "Varrock Palace",
+   "quote": "In the north-east corner of the compound is a cage with a grizzly bear and a ladder leading to the Varrock sewers."
+  },
+  "entrana": {
+   "page": "Entrana",
+   "quote": "Via a ship in Port Sarim by talking to the monks on the dock"
+  },
+  "fremennik_province_woods_outside_of_rellekka": {
+   "page": "Fremennik Province",
+   "quote": "The Fremennik Province is a region of various settlements ruled by the Fremennik and barbarians, found north of Kandarin."
+  },
+  "great_kourend_north_of_lands_end": {
+   "page": "Great Kourend",
+   "quote": "Doing so will take players to either Port Piscarilius, the easternmost section of the city, or Land's End, the south-western docks near the Kourend Woodland."
+  },
+  "great_kourend_farming_guild": {
+   "page": "Great Kourend",
+   "quote": "Great Kourend can be accessed via ship from Port Sarim"
+  },
+  "kebos_lowlands_south_of_mount_quidamortem": {
+   "page": "Kebos Lowlands",
+   "quote": "Players can also reach the region by walking past the Shayziens' Wall, but this is not recommended unless they are travelling to Mount Quidamortem"
+  },
+  "north_east_of_ardougne": {
+   "page": "Ardougne",
+   "quote": "It is divided into East Ardougne and West Ardougne."
+  },
+  "north_east_of_the_observatory": {
+   "page": "Observatory",
+   "quote": "Ring of dueling teleport to Castle Wars and go north"
+  },
+  "north_west_of_dark_warriors_fortress": {
+   "page": "Dark Warriors' Fortress",
+   "quote": "Run west from Ferox Enclave."
+  },
+  "outside_of_the_mind_altar": {
+   "page": "Mind Altar",
+   "quote": "The entrance to the altar can be found between Ice Mountain and Goblin Village"
+  },
+  "south_east_of_dark_warriors_fortress": {
+   "page": "Dark Warriors' Fortress",
+   "quote": "Run west from Ferox Enclave."
+  },
+  "south_east_of_gutanoth": {
+   "page": "Feldip Hills",
+   "quote": "The Feldip Hills are a tropical and marshy area positioned to the south of Yanille and Kandarin generally."
+  },
+  "west_of_tree_gnome_village": {
+   "page": "Tree Gnome Village (location)",
+   "quote": "Ring of dueling, from Castle Wars--this is a longer walk but has no skill or quest requirements."
+  },
+  "south_west_of_tree_gnome_stronghold": {
+   "page": "Tree Gnome Stronghold",
+   "quote": "Necklace of passage - Teleport to the Outpost, south of the stronghold."
+  },
+  "varrock_south_east_mine": {
+   "page": "Varrock",
+   "quote": "Players looking to train the Mining skill will find tin, copper, and iron rocks in the south-east Varrock mine south-east of the city"
+  },
+  "west_of_the_graveyard_of_shadows": {
+   "page": "Graveyard of Shadows",
+   "quote": "Run north from Ferox Enclave."
+  },
+  "lava_maze": {
+   "page": "Lava Maze",
+   "quote": "Using a burning amulet's Lava Maze teleport is the fastest method, and will teleport you directly to the maze's entrance on the west side."
+  },
+  "giant_pit_south_of_chasm_of_fire": {
+   "page": "Giant Pit",
+   "quote": "The Giant Pit is a small enclosure found north-west of Shayzien."
+  },
+  "north_of_the_observatory": {
+   "page": "Observatory",
+   "quote": "Ring of dueling teleport to Castle Wars and go north"
+  },
+  "bone_yard_hunter_area": {
+   "page": "Bone Yard Hunter area",
+   "quote": "Enter the Wilderness from Varrock and run north-east."
+  },
+  "giants_plateau": {
+   "page": "Giants' Plateau",
+   "quote": "Amulet of glory to teleport to Al Kharid, then run east through the gate."
+  },
+  "settlement_ruins": {
+   "page": "Settlement Ruins",
+   "quote": "The Settlement Ruins are a village found south-west of the Wintertodt Camp in the Northern Tundras."
+  },
+  "frozen_waste_plateau": {
+   "page": "Frozen Waste Plateau",
+   "quote": "The Frozen Waste Plateau, also known as Ice Plateau (or historically Ghorrock), is located in the north-west corner of the Wilderness."
+  },
+  "kourend_woodland": {
+   "page": "Kourend Woodland",
+   "quote": "Take the boat from Veos to Land's End."
+  },
+  "moss_giant_island_west_of_brimhaven": {
+   "page": "Moss Giant Island",
+   "quote": "Moss Giant Island is a small island located west of Brimhaven, accessed by using a rope swing (Rope not needed) requiring 10 Agility."
+  },
+  "wilderness_by_the_pond_reachable_using_a_canoe": {
+   "page": "Wilderness",
+   "quote": "the pond in level 35 Wilderness, east of a Wilderness Obelisk."
+  },
+  "southern_frozen_waste_plateau": {
+   "page": "Frozen Waste Plateau",
+   "quote": "It contains ice giants and ice warriors in the free-to-play area."
+  },
+  "northern_frozen_waste_plateau": {
+   "page": "Frozen Waste Plateau",
+   "quote": "The area spans both free-to-play and members areas."
+  },
+  "west_of_yanille": {
+   "page": "Yanille",
+   "quote": "Ogre (x14) - west of Yanille"
+  },
+  "bandit_camp_mine": {
+   "page": "Bandit Camp mine",
+   "quote": "The Bandit Camp mine (or the Hobgoblin Mine) is a mining site found north-east of the Bandit Camp in the Wilderness from levels 32 to 35 and east of the Wilderness God Wars Dungeon."
+  },
+  "peninsula_north_east_of_the_hosidius_vinery": {
+   "page": "Hosidius",
+   "quote": "Travel south of the Rusty Anchor Inn (and north of the Monks of Entrana) in Port Sarim and find Veos on the dock."
+  },
+  "peninsula_west_of_the_crafting_guild": {
+   "page": "Crafting Guild",
+   "quote": "The Crafting Guild is located south-west of Falador and north of Rimmington."
+  },
+  "outpost": {
+   "page": "Outpost",
+   "quote": "Teleports to the Ardougne area. From East Ardougne, players must walk north-west to exit the city and then west to the Outpost."
+  },
+  "hosidius_marketplace": {
+   "page": "Hosidius",
+   "quote": "Travel south of the Rusty Anchor Inn (and north of the Monks of Entrana) in Port Sarim and find Veos on the dock."
+  },
+  "west_of_nardah": {
+   "page": "Nardah",
+   "quote": "The magic carpet system can be also used to travel to Nardah from south Pollnivneach."
+  },
+  "handelmort_mansion_in_east_ardougne": {
+   "page": "Handelmort Mansion",
+   "quote": "Handelmort Mansion is a mansion found in East Ardougne, just west of Ardougne market."
+  },
+  "cage_on_the_top_floor_of_kourend_castle": {
+   "page": "Kourend Castle",
+   "quote": "Two dark wizards and a lesser demon are caged in the south."
+  },
+  "cage_on_the_top_floor_of_wizards_tower": {
+   "page": "Wizards' Tower",
+   "quote": "there is a caged level 82 lesser demon free for players to battle with"
+  },
+  "councillor_hughes_house_in_kingstown": {
+   "page": "Slayer task/Lesser demon",
+   "quote": "Councillor Hughes' house in Kingstown"
+  },
+  "crandor_and_karamja_dungeon": {
+   "page": "Crandor and Karamja Dungeon",
+   "quote": "The Karamja entrance to the dungeon can be accessed by travelling to Musa Point or Brimhaven via ship, then walking west or east, respectively, to the Karamja Volcano."
+  },
+  "dwarven_mine_entrance_ice_mountain": {
+   "page": "Dwarven Mine",
+   "quote": "Main entrance: In the foothills of the Ice Mountain, north of the Falador-to-Barbarian Village road."
+  },
+  "ice_mountain": {
+   "page": "Ice Mountain",
+   "quote": "Players can walk there fairly easily from Falador (go north and north-east) and from the region of Barbarian Village and Edgeville (go west)."
+  },
+  "falador_mining_guild": {
+   "page": "Falador",
+   "quote": "South of the east bank is the Mining Guild. It is very close to the bank, making it a convenient guild."
+  },
+  "falador_near_the_mining_guild_ladders": {
+   "page": "Falador",
+   "quote": "Falador is the capital city of the Kingdom of Asgarnia."
+  },
+  "lovakengj": {
+   "page": "Lovakengj",
+   "field": "location",
+   "value": "Great Kourend"
+  },
+  "lovakengj_buildings": {
+   "page": "Lovakengj",
+   "field": "location",
+   "value": "Great Kourend"
+  },
+  "north_of_wilderness_bandit_camp": {
+   "page": "Wilderness God Wars Dungeon",
+   "quote": "Using a burning amulet teleport to the Bandit Camp and running west then north."
+  },
+  "south_east_of_lava_dragon_isle": {
+   "page": "Lava Dragon Isle",
+   "quote": "The Lava Dragon Isle is a members-only section of the Wilderness which stretches from level 36 to level 42."
+  },
+  "south_of_yanille": {
+   "page": "Yanille",
+   "quote": "Dwarf (x4) - to the south of the city."
+  },
+  "south_of_coal_trucks": {
+   "page": "Coal Trucks",
+   "quote": "The Coal Trucks are located north of the Fishing Guild and west of McGrubor's Wood."
+  },
+  "along_the_river_elid": {
+   "page": "River Elid",
+   "quote": "The section of the river south of Pollnivneach is home to the crocodiles, a possible Slayer assignment from Vannaka."
+  },
+  "near_the_ruins_of_unkah": {
+   "page": "Ruins of Unkah",
+   "quote": "The Ruins of Unkah can be reached from Al Kharid by boarding Ferryman Sathwood's ferry."
+  },
+  "near_the_ruins_of_ullek": {
+   "page": "Ruins of Ullek",
+   "quote": "The Ruins of Ullek is a ruined ancient city located in the deep south of the Kharidian Desert."
+  },
+  "kharidian_desert_north_of_nardah": {
+   "page": "Nardah",
+   "quote": "The magic carpet system can be also used to travel to Nardah from south Pollnivneach."
+  },
+  "kharidian_desert": {
+   "page": "Shantay Pass",
+   "quote": "Players will need to have 5 coins to buy a pass from Shantay, or have completed the elite Desert Diary, if they wish to enter the desert."
+  },
+  "south_east_of_shantay_pass": {
+   "page": "Shantay Pass",
+   "quote": "The Shantay Pass is a small area that separates Al Kharid from the Kharidian Desert."
+  },
+  "west_of_ruins_of_ullek": {
+   "page": "Ruins of Ullek",
+   "quote": "West of the ruins lies a mining site, which has a number of iron, coal, clay, and a single adamantite rock."
+  },
+  "north_east_of_tai_bwo_wannai": {
+   "page": "Harpie Bug Swarm",
+   "quote": "You can also use the Ardougne cloak's teleport to the monastery, run north-east to Captain Barnaby, take the boat to Brimhaven and run south and east to reach the swarms."
+  },
+  "sourhog_cave": {
+   "page": "Sourhog Cave",
+   "quote": "Located just east of Draynor Manor, the cave serves as a battleground for the A Porcine of Interest quest."
+  },
+  "north_of_rellekka": {
+   "page": "Rellekka",
+   "quote": "Camelot, a very long run south of the village."
+  },
+  "crabclaw_isle": {
+   "page": "Crabclaw Isle",
+   "quote": "Players can reach the island by paying Sandicrahb 10,000 coins."
+  },
+  "east_of_the_hosidius_vinery": {
+   "page": "Vinery",
+   "field": "location",
+   "value": "Hosidius"
+  },
+  "hosidius_southern_coast": {
+   "page": "Hosidius",
+   "quote": "Hosidius is one of the five cities in the Kingdom of Great Kourend."
+  },
+  "wilderness_bandit_camp": {
+   "page": "Wilderness Bandit Camp",
+   "quote": "It is most commonly visited to kill bandits for a Krystilia Slayer task, and to sell items to the general store."
+  },
+  "north_west_of_the_ferox_enclave": {
+   "page": "Ferox Enclave",
+   "quote": "A ring of dueling will teleport directly here."
+  },
+  "south_of_the_western_ruins": {
+   "page": "Ruins (west)",
+   "quote": "The ruins are located west of the Bandit Camp and south of the Forgotten Cemetery."
+  },
+  "south_of_silk_chasm": {
+   "page": "Krystilia",
+   "quote": "South of Silk Chasm, Lava Maze"
+  },
+  "dark_warriors_fortress": {
+   "page": "Dark Warriors' Fortress",
+   "quote": "Run west from Ferox Enclave."
+  },
+  "forests_north_and_east_of_the_chaos_temple": {
+   "page": "Ent",
+   "quote": "Ents are monsters found in the dungeon beneath the Woodcutting Guild and in the forests north and east of the Chaos Temple."
+  },
+  "west_of_the_dark_warriors_fortress": {
+   "page": "Dark Warriors' Fortress",
+   "quote": "Run west from Ferox Enclave."
+  },
+  "north_of_the_graveyard_of_shadows": {
+   "page": "Graveyard of Shadows",
+   "quote": "Run north from Ferox Enclave."
+  },
+  "south_of_the_lava_maze": {
+   "page": "Lava Maze",
+   "quote": "The level 35 Wilderness Obelisk, the Wilderness canoe stop, and the Revenant cave teleport scroll all take the player near the south-east side of the lava maze"
+  },
+  "south_west_of_the_bone_yard": {
+   "page": "Bone Yard",
+   "quote": "Ring of dueling to Ferox Enclave and run north-east."
+  },
+  "north_east_of_the_deserted_keep": {
+   "page": "Deserted Keep",
+   "quote": "There are levers in East Ardougne and Edgeville that teleport the player to the Deserted Keep when pulled."
+  },
+  "near_the_bone_yard_hunter_area": {
+   "page": "Bone Yard Hunter area",
+   "quote": "Enter the Wilderness from Varrock and run north-east."
+  },
+  "lava_dragon_isle": {
+   "page": "Lava Dragon Isle",
+   "quote": "The main entrance is located at the northern point of the isle, and players can reach it either by using a Revenant cave teleport and heading north-east, or the Annakarl Teleport to the Demonic Ruins and heading south-west."
+  },
+  "muddy_chest": {
+   "page": "Muddy chest",
+   "quote": "A slash weapon is necessary to cut through the web that allows access to the maze centre (Aranea boots may also be used), or 82 Agility to use the stepping stone shortcut north of the fenced area."
+  },
+  "king_black_dragon_lair_cage": {
+   "page": "King Black Dragon Lair",
+   "quote": "The dungeon may be accessed via a ladder in a fenced area on the west end of the Lava Maze containing four lesser demons."
+  },
+  "west_of_the_chaos_temple": {
+   "page": "Chaos Temple (Wilderness)",
+   "quote": "Ring of dueling teleport to Ferox Enclave, and run east."
+  },
+  "south_east_of_the_lava_maze": {
+   "page": "Lava Maze",
+   "quote": "The level 35 Wilderness Obelisk, the Wilderness canoe stop, and the Revenant cave teleport scroll all take the player near the south-east side of the lava maze"
+  },
+  "rogues_castle": {
+   "page": "Rogues' Castle",
+   "quote": "The Rogues' Castle is a building located in the deep Wilderness, specifically in levels 52-56."
+  },
+  "east_of_the_mage_arena": {
+   "page": "Mage Arena",
+   "quote": "Use the Ardougne Wilderness teleport lever with a knife or slash weapon, slash through the web to the north. Walk west to the arena"
+  },
+  "west_of_the_air_obelisk": {
+   "page": "Air Obelisk",
+   "quote": "The Obelisk of Air is located in level 7 Wilderness, and can be reached by climbing the ladder north of the Black demons in Edgeville Dungeon."
+  },
+  "southern_wilderness_mine": {
+   "page": "Southern Wilderness mine",
+   "quote": "The south Wilderness mine is a small mine located in level 6 Wilderness, near the Air Obelisk hill."
+  },
+  "south_west_wilderness_mine": {
+   "page": "South-west Wilderness mine",
+   "quote": "The south-west Wilderness mine is located in level 9 Wilderness, just north-west of Edgeville, north of the Black Knights' Fortress, and south of the Dark Warriors' Fortress."
+  },
+  "bone_yard": {
+   "page": "Bone Yard",
+   "quote": "The Bone Yard is located in level 32 Wilderness, and is populated by aggressive level 25 skeletons."
+  },
+  "north_west_of_lava_dragon_isle": {
+   "page": "Krystilia",
+   "quote": "North-west of Lava Dragon Isle, south of Callisto, Eastern Ruins, Edgeville Dungeon, Lava Maze Dungeon (also by the King Black Dragon Lair lever)"
+  },
+  "south_of_callisto": {
+   "page": "Krystilia",
+   "quote": "North-west of Lava Dragon Isle, south of Callisto, Eastern Ruins, Edgeville Dungeon, Lava Maze Dungeon (also by the King Black Dragon Lair lever)"
+  }
+ }
+}

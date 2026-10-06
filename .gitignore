@@ -1,0 +1,28 @@
+# Gradle and build output
+.gradle
+build
+out/
+*.class
+
+# IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.project
+.settings/
+.classpath
+nbactions.xml
+nb-configuration.xml
+nbproject/
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Data tool caches and outputs, rebuilt by the tools
+tools/wiki-extract/cache/
+tools/wiki-extract/work/
+tools/cache-dump/build/
+tools/cache-dump/out/

@@ -1,0 +1,41 @@
+plugins {
+	id 'java'
+	id 'application'
+}
+
+repositories {
+	maven {
+		url = 'https://repo.runelite.net'
+	}
+	mavenCentral()
+}
+
+// Match the client the plugin runs against, so the gameval names line up with the cache.
+def runeLiteVersion = providers.gradleProperty('runeLiteVersion').getOrElse('1.13.1')
+
+dependencies {
+	implementation "net.runelite:cache:${runeLiteVersion}"
+	implementation "net.runelite:runelite-api:${runeLiteVersion}"
+	implementation 'com.google.code.gson:gson:2.8.5'
+	runtimeOnly 'org.slf4j:slf4j-simple:1.7.36'
+}
+
+sourceCompatibility = '11'
+
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+application {
+	mainClass = 'com.slayercompanion.tools.SlayerCacheDump'
+}
+
+tasks.named('run') {
+	systemProperty 'runelite.version', runeLiteVersion
+	// Optional: ./gradlew run -Pcache=DIR -Pout=FILE -Pfixture=FILE
+	def runArgs = []
+	if (project.hasProperty('cache')) runArgs += ['--cache', project.property('cache')]
+	if (project.hasProperty('out')) runArgs += ['--out', project.property('out')]
+	if (project.hasProperty('fixture')) runArgs += ['--fixture', project.property('fixture')]
+	args = runArgs
+}

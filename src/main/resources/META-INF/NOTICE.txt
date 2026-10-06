@@ -1,0 +1,16 @@
+Slayer Sensei
+Copyright (c) 2026, rRexhepi
+The plugin's code is under the BSD 2-Clause License.
+
+Data in this plugin
+
+The task notes (slayer_tasks.json and slayer_tasks_supplement.json) and the places data (slayer_areas.json)
+were written from pages of the Old School RuneScape Wiki, https://oldschool.runescape.wiki
+Wiki content is licensed under CC BY-NC-SA 3.0, https://creativecommons.org/licenses/by-nc-sa/3.0/
+The wiki's licensing terms are at https://meta.weirdgloop.org/w/Licensing
+The source fields in slayer_areas.json name the wiki page each point and fact came from.
+
+Entrance points also come from the world map data of the RuneLite client, https://github.com/runelite/runelite
+RuneLite is under the BSD 2-Clause License.
+
+Slayer Sensei is a fan-made plugin. It is not affiliated with Jagex or with the RuneLite developers.

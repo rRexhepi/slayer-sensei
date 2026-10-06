@@ -1,0 +1,1041 @@
+[
+  {
+    "task": "Aberrant spectres",
+    "assignedBy": "Weight at each master: Vannaka 8, Chaeldar 8, Konar 6, Nieve/Steve 6, Duradel/Kuradal 7 and Mortimer 10. Needs 60 Slayer and combat level 65.",
+    "bestLocation": "Catacombs of Kourend (multi, barrage) for XP/points, or Stronghold Slayer Cave (single, cannon). Slayer Tower and Deepfin Mine also spawn them.",
+    "multiOrSingle": "multi in the Catacombs of Kourend only",
+    "killStyle": "barrage (Catacombs) or cannon+melee (Stronghold Slayer Cave)",
+    "weakness": "Air spells: 50% elemental weakness.",
+    "monsterAttackStyle": "magic",
+    "protectionPrayer": "Protect from Magic",
+    "requiredItems": "Nose peg or Slayer helmet mandatory (without it they use an always-hitting stat-draining special). Slayer helm covers this.",
+    "cannon": "great",
+    "hasSuperior": true,
+    "notableDrops": "Grimy herbs in bulk (ranarr, snapdragon), ranarr/snapdragon seeds, gem drop table. Superior Abhorrent spectre drops.",
+    "rating": {
+      "xp": 3,
+      "gp": 2,
+      "speed": 3,
+      "basis": "Wiki Slayer training: about 35k XP/h with a cannon, herbs and seeds cover the cannon. Skip unless after herbs.",
+      "xpAdvice": "SKIP"
+    }
+  },
+  {
+    "task": "Abyssal demons",
+    "assignedBy": "Weight at each master: Vannaka 5, Chaeldar 12, Konar 9, Nieve/Steve 9, Duradel/Kuradal 12, Krystilia 5 and Mortimer 8. Krystilia needs I Wildy More Slayer first. Needs 85 Slayer and combat level 85. Krystilia's version is in the Wilderness.",
+    "bestLocation": "Catacombs of Kourend (multi, barrage for XP/points) or Slayer Tower top floor (single, best for whip farming with thralls). Also Wilderness Slayer Cave.",
+    "multiOrSingle": "both",
+    "killStyle": "melee (Slayer Tower) or barrage (Catacombs)",
+    "weakness": "Demonbane weapons receive their usual bonuses.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee",
+    "requiredItems": "None beyond 85 Slayer; they cannot be safespotted (they teleport on hit).",
+    "cannon": "ok",
+    "hasSuperior": true,
+    "notableDrops": "Abyssal whip (1/512), abyssal dagger (~1/32k), abyssal head (elite CA), rune items. Superior Greater abyssal demon (unsired for Abyssal bludgeon).",
+    "rating": {
+      "xp": 5,
+      "gp": 3,
+      "speed": 3,
+      "basis": "Wiki Slayer training: 80k XP/h barraging, 53k with the Venator bow, 40k with melee. Whip drops give decent profit. A long and common task.",
+      "wilderness": {
+        "xp": 4,
+        "gp": 3,
+        "speed": 4,
+        "basis": "Krystilia: Wilderness Slayer Cave allows barrage with a cannon. PK risk."
+      },
+      "xpAdvice": "SKIP"
+    }
+  },
+  {
+    "task": "Adamant dragons",
+    "assignedBy": "Not assigned on its own since August 2025. Metal dragons: Weight at each master: Konar 15, Nieve/Steve 12 and Duradel/Kuradal 14. Needs combat level 85.",
+    "note": "Not a task of its own since August 2025. A metal dragon task counts any metal dragon, adamant ones included. Adamant dragons need Dragon Slayer II.",
+    "bestLocation": "Lithkren Vault (only viable spot; single combat, ~5 spawns).",
+    "multiOrSingle": "single",
+    "killStyle": "melee with extended/super antifire (ranged with ruby/diamond bolts also used)",
+    "weakness": "Earth spells: 50% elemental weakness. Dragonbane weapons also receive their usual bonuses.",
+    "monsterAttackStyle": "mixed (melee, ranged, magic, dragonfire; has a life-draining ranged special)",
+    "protectionPrayer": "Protect from Magic when meleeing (Protect from Missiles only if ranging); use antifire for dragonfire. Note: the Blood Forfeit special hits through prayer.",
+    "requiredItems": "Anti-dragon shield or dragonfire shield and extended/super antifire potion; Dragon Slayer II completed. Keeping HP ~40-50 minimises the % HP-based special.",
+    "cannon": "single-no",
+    "hasSuperior": false,
+    "notableDrops": "Draconic visage (~1/9k), dragon metal slice (~1/5k), dragon limbs (~1/1k), adamant bars, runes."
+  },
+  {
+    "task": "Ankou",
+    "assignedBy": "Weight at each master: Vannaka 8, Konar 5, Nieve/Steve 5, Duradel/Kuradal 5 and Krystilia 6. Needs combat level 40. Krystilia's version is in the Wilderness.",
+    "bestLocation": "Catacombs of Kourend (multi, barrage/burst) or Stronghold Slayer Cave (single, cannon). Stronghold of Security is the F2P/low option.",
+    "multiOrSingle": "multi in the Catacombs of Kourend and the Wilderness Slayer Cave, single elsewhere",
+    "killStyle": "barrage or cannon+melee (40% weak to Air spells, so magic is strong)",
+    "weakness": "Air spells: 40% elemental weakness.",
+    "monsterAttackStyle": "melee (crush); Stronghold of Security variants also use ranged/magic",
+    "protectionPrayer": "Protect from Melee (Protect from Missiles/Magic in Stronghold of Security)",
+    "requiredItems": "None. Ectoplasmator optional for bonus Prayer XP.",
+    "cannon": "great",
+    "hasSuperior": false,
+    "notableDrops": "Death runes, blood runes, left skull half (Skull sceptre), medium clue scrolls.",
+    "rating": {
+      "xp": 4,
+      "gp": 2,
+      "speed": 5,
+      "basis": "Wiki Slayer training: 55k XP/h barraging in the Catacombs at a loss, fast task. Money making guide: about 130k/h with melee.",
+      "wilderness": {
+        "xp": 4,
+        "gp": 2,
+        "speed": 5,
+        "basis": "Krystilia: up to 90k XP/h barraging in the Wilderness Slayer Cave and drops pay for blighted sacks (wiki Slayer training). PK risk."
+      },
+      "xpAdvice": "DO"
+    }
+  },
+  {
+    "task": "Aviansies",
+    "assignedBy": "Weight at each master: Chaeldar 9, Konar 6, Nieve/Steve 6, Duradel/Kuradal 8 and Krystilia 7. Chaeldar, Konar, Nieve/Steve, Duradel/Kuradal and Krystilia need Watch the Birdie first. Needs 60 Strength or 60 Agility. Krystilia's version is in the Wilderness.",
+    "note": "Kree'arra and his bodyguards count toward the task.",
+    "bestLocation": "God Wars Dungeon main courtyard (multi, cannon + chins/ranged; also builds Armadyl killcount). Wilderness God Wars Dungeon for Krystilia.",
+    "multiOrSingle": "multi",
+    "killStyle": "ranged (chinchompas or bolts) or cannon; they fly, so melee needs a halberd/salamander",
+    "weakness": "Air spells: most standard Aviansies have a 45% elemental weakness. Ordinary melee cannot reach them.",
+    "monsterAttackStyle": "ranged",
+    "protectionPrayer": "Protect from Missiles",
+    "requiredItems": "A ranged or magic weapon (cannot be hit by normal melee as they fly). No mandatory protective item.",
+    "cannon": "great",
+    "hasSuperior": false,
+    "notableDrops": "Adamantite bars, rune items, grimy ranarr and other herbs, coins/alchables; builds GWD killcount.",
+    "rating": {
+      "xp": 1,
+      "gp": 2,
+      "speed": 2,
+      "basis": "Wiki Slayer training: 10k XP/h, should not be unlocked. Money making guide: about 300k/h. Kree'arra counts but is not rated.",
+      "wilderness": {
+        "xp": 1,
+        "gp": 2,
+        "speed": 1,
+        "basis": "Krystilia: Wilderness God Wars Dungeon only, an extremely long task (wiki Krystilia strategies)."
+      },
+      "xpAdvice": "DONT_UNLOCK"
+    }
+  },
+  {
+    "task": "Banshees",
+    "assignedBy": "Weight at each master: Turael/Aya 8, Spria 8, Mazchna/Achtryn 8 and Mortimer 10. Needs 15 Slayer and combat level 20.",
+    "bestLocation": "Catacombs of Kourend (twisted banshees, multi, burstable) or Slayer Tower ground floor (single, safespots available).",
+    "multiOrSingle": "both",
+    "killStyle": "melee, or barrage twisted banshees in the Catacombs",
+    "monsterAttackStyle": "magic",
+    "protectionPrayer": "None strictly needed (low damage); Protect from Magic optional. Ranged armour advised for magic defence.",
+    "requiredItems": "Earmuffs or Slayer helmet mandatory (their scream deals ~6 damage and drains stats). Slayer helm covers this.",
+    "cannon": "ok",
+    "hasSuperior": true,
+    "notableDrops": "Mystic gloves (dark) (1/512), grimy herbs, pure essence, gem drop table. Superior Screaming banshee.",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Low level. A fast skip task near a Slayer ring teleport (wiki Mortimer strategies).",
+      "filler": {
+        "minutes": 9,
+        "basis": "Judgment from the wiki's Turael task completion tips (Slayer reward point): needs earmuffs or a Slayer helmet, with the Slayer ring to the Slayer Tower."
+      }
+    }
+  },
+  {
+    "task": "Basilisks",
+    "assignedBy": "Weight at each master: Vannaka 8, Chaeldar 7, Konar 5, Nieve/Steve 6, Duradel/Kuradal 7 and Mortimer 10. Konar, Nieve/Steve and Duradel/Kuradal need Basilocked first. Needs 40 Slayer, 20 Defence and combat level 25.",
+    "note": "Basilisk knights count and drop the basilisk jaw for the Neitiznot faceguard.",
+    "bestLocation": "Jormungand's Prison (Basilisk Knights, single; needs Basilocked + The Fremennik Exiles) for the jaw, or Fremennik Slayer Dungeon (regular basilisks).",
+    "multiOrSingle": "single",
+    "killStyle": "melee; crush weapons (e.g. dragon mace, zombie axe) are notably effective",
+    "weakness": "Crush attacks are their weakest melee defence; use a crush weapon.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee (reduces damage but does not stop the stat drain - the shield does)",
+    "requiredItems": "Mirror shield or V's shield mandatory (otherwise stats drain every hit). Basilocked unlock for the high-master/Knight variants.",
+    "cannon": "banned",
+    "hasSuperior": true,
+    "notableDrops": "Basilisk jaw (Basilisk Knights, for Neitiznot faceguard), nature runes, herbs, uncut gems. Superior Monstrous basilisk.",
+    "rating": {
+      "xp": 1,
+      "gp": 4,
+      "speed": 1,
+      "basis": "Wiki Slayer training: 15k XP/h. At most 100 kills an hour (wiki task page). Basilisk knights about 1.1M/h (money making guide).",
+      "xpAdvice": "DONT_UNLOCK"
+    }
+  },
+  {
+    "task": "Black demons",
+    "assignedBy": "Weight at each master: Chaeldar 10, Konar 9, Nieve/Steve 9, Duradel/Kuradal 8 and Krystilia 7. Needs combat level 80. Krystilia's version is in the Wilderness.",
+    "note": "Demonic gorillas and Skotizo also count toward the task.",
+    "bestLocation": "Chasm of Fire (single combat, cannonable, safespots) or Taverley Dungeon (many spawns, cannonable). Catacombs of Kourend is multi but does not allow cannons and its black demons are stronger.",
+    "multiOrSingle": "both (Chasm/Taverley single; Catacombs multi)",
+    "killStyle": "cannon plus demonbane melee/ranged/Magic at Chasm or Taverley; demonbane or water Magic in Catacombs (no cannon)",
+    "weakness": "Water spells: 40% elemental weakness. Demonbane weapons also receive their usual bonuses.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee",
+    "requiredItems": "None. Demonbane weapon (e.g. Arclight/emberlight) optional for faster kills; halberd if safespotting.",
+    "cannon": "great at Chasm of Fire or Taverley Dungeon; banned in Catacombs of Kourend",
+    "hasSuperior": false,
+    "notableDrops": "Hard clue scrolls (~1/128), malicious ashes (always), rune items, dragon med helm / dragonstone (rare).",
+    "rating": {
+      "xp": 3,
+      "gp": 2,
+      "speed": 3,
+      "basis": "Wiki Slayer training: 45k XP/h, long task, cannon runs at a loss. Block or skip unless killing demonic gorillas.",
+      "wilderness": {
+        "xp": 2,
+        "gp": 2,
+        "speed": 2,
+        "basis": "Krystilia: long time to complete with mediocre XP, block (wiki Krystilia strategies)."
+      },
+      "xpAdvice": "SKIP"
+    }
+  },
+  {
+    "task": "Black dragons",
+    "assignedBy": "Weight at each master: Konar 6, Nieve/Steve 6, Duradel/Kuradal 9 and Krystilia 4. Needs combat level 80. Krystilia's version is in the Wilderness.",
+    "note": "Baby and brutal black dragons and the King Black Dragon count toward the task.",
+    "bestLocation": "Taverley Dungeon (task-only black dragon area) or Catacombs of Kourend (brutal black dragons count and drop more). Myths' Guild/Evil Chicken's Lair also. Baby/brutal black dragons count.",
+    "multiOrSingle": "both",
+    "killStyle": "melee with antifire (ranged with bolts also common)",
+    "weakness": "Water spells: 50% elemental weakness on standard Black dragons. Dragonbane weapons also receive their usual bonuses.",
+    "monsterAttackStyle": "mixed (melee slash plus dragonfire; dragonfire up to ~50 unprotected)",
+    "protectionPrayer": "Protect from Melee, plus antifire for the dragonfire",
+    "requiredItems": "Anti-dragon shield or dragonfire shield and an antifire potion mandatory to survive dragonfire.",
+    "cannon": "ok",
+    "hasSuperior": false,
+    "notableDrops": "Dragon bones, black dragonhide, ensouled dragon head (~1/35), draconic visage (rare, notably from brutal black dragons).",
+    "rating": {
+      "xp": 2,
+      "gp": 4,
+      "speed": 5,
+      "basis": "Wiki Slayer training: 30k XP/h, very fast unextended on babies. Brutal black dragons about 1.6M/h with 77 Slayer (money making guide).",
+      "wilderness": {
+        "xp": 2,
+        "gp": 3,
+        "speed": 4,
+        "basis": "Krystilia: adult black dragons in the deep Wilderness, about 420k/h (money making guide). Short task with PK risk."
+      },
+      "xpAdvice": "DO"
+    }
+  },
+  {
+    "task": "Bloodveld",
+    "assignedBy": "Weight at each master: Vannaka 8, Chaeldar 8, Konar 9, Nieve/Steve 9, Duradel/Kuradal 8, Krystilia 4 and Mortimer 8. Needs 50 Slayer and combat level 50. Krystilia's version is in the Wilderness.",
+    "note": "Mutated bloodveld count too. Krystilia's bloodveld are only in the Wilderness God Wars Dungeon.",
+    "bestLocation": "Meiyerditch Laboratories (multi, dense, ideal for cannon) or Catacombs of Kourend (multi, burst). Also Iorwerth Dungeon, GWD, Slayer Tower.",
+    "multiOrSingle": "multi",
+    "killStyle": "cannon+melee or barrage; use armour with high magic defence",
+    "weakness": "Demonbane weapons (such as Arclight or Emberlight). Mutated Bloodvelds have no elemental weakness; both variants have low conventional Defence.",
+    "monsterAttackStyle": "melee (magic-based: rolls against your Magic defence)",
+    "protectionPrayer": "Protect from Melee",
+    "requiredItems": "None mandatory; dragonhide or other high magic-defence armour recommended for their accuracy.",
+    "cannon": "great",
+    "hasSuperior": true,
+    "notableDrops": "Vile ashes (always), blood/fire runes, ensouled bloodveld head (~1/35), hard/elite clue scrolls. Superior Insatiable/Insatiable Mutated bloodveld.",
+    "rating": {
+      "xp": 5,
+      "gp": 2,
+      "speed": 4,
+      "basis": "Wiki Slayer training: 100k XP/h with cannon and venator bow in Meiyerditch, 80k with cannon and melee. Drops cover part of the cannon.",
+      "wilderness": {
+        "xp": 2,
+        "gp": 1,
+        "speed": 1,
+        "basis": "Krystilia: Wilderness God Wars Dungeon only, extremely long, block (wiki Krystilia strategies)."
+      },
+      "xpAdvice": "DO"
+    }
+  },
+  {
+    "task": "Blue dragons",
+    "assignedBy": "Weight at each master: Vannaka 7, Chaeldar 8, Konar 4, Nieve/Steve 4 and Duradel/Kuradal 4. Needs combat level 65.",
+    "note": "Baby blue dragons count, and so does Vorkath after Dragon Slayer II.",
+    "bestLocation": "Taverley Dungeon (multi) or Ogre Enclave (multi, safespots). Isle of Souls Dungeon, Myths' Guild basement also.",
+    "multiOrSingle": "multi",
+    "killStyle": "melee with antifire",
+    "weakness": "Water spells: 50% elemental weakness on standard Blue dragons (the Ruins of Tapoyauik variants are instead weak to Fire). Dragonbane weapons also work.",
+    "monsterAttackStyle": "mixed (melee slash plus dragonfire)",
+    "protectionPrayer": "Protect from Melee, plus antifire for the dragonfire",
+    "requiredItems": "Anti-dragon shield or dragonfire shield and antifire potion mandatory (super antifire gives full immunity).",
+    "cannon": "ok",
+    "hasSuperior": false,
+    "notableDrops": "Dragon bones, blue dragonhide (both always), ensouled dragon head (~1/50), runes/herbs.",
+    "rating": {
+      "xp": 2,
+      "gp": 3,
+      "speed": 3,
+      "basis": "Wiki Slayer training: 25k XP/h, skip unless killing Vorkath. Adults about 600k/h (money making guide).",
+      "xpAdvice": "SKIP"
+    }
+  },
+  {
+    "task": "Brine rats",
+    "assignedBy": "Weight at each master: Vannaka 7, Chaeldar 7, Konar 2 and Nieve/Steve 3. Needs 47 Slayer and combat level 45.",
+    "note": "The Brine Rat Cavern needs Olaf's Quest.",
+    "bestLocation": "Brine Rat Cavern (only location; single combat, ~7 spawns).",
+    "multiOrSingle": "single",
+    "killStyle": "melee",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee (damage is low; often no prayer needed)",
+    "requiredItems": "Spade to enter Brine Rat Cavern; Olaf's Quest completed. No protective item required.",
+    "cannon": "single-no",
+    "hasSuperior": false,
+    "notableDrops": "Brine sabre (1/512), seeds, medium clue scrolls.",
+    "rating": {
+      "xp": 2,
+      "gp": 3,
+      "speed": 4,
+      "basis": "Money making guide: about 570k/h. Konar strategies call the drops and XP fairly poor. Short trip to the Brine Rat Cavern."
+    }
+  },
+  {
+    "task": "Cave horrors",
+    "assignedBy": "Weight at each master: Chaeldar 10, Nieve/Steve 5, Duradel/Kuradal 4 and Mortimer 10. Needs 58 Slayer and combat level 85.",
+    "note": "The Mos Le'Harmless Cave needs Cabin Fever.",
+    "bestLocation": "Mos Le'Harmless Cave (70 spawns; requires Cabin Fever)",
+    "multiOrSingle": "single",
+    "killStyle": "melee",
+    "monsterAttackStyle": "melee (magical melee, max 9)",
+    "protectionPrayer": "Protect from Melee",
+    "requiredItems": "Witchwood icon to block their light-based special (or use Protect from Melee); Slayer helmet does not cover this",
+    "cannon": "single-no",
+    "hasSuperior": true,
+    "notableDrops": "Black mask (10) 1/512, ensouled horror head 1/30, hard clue 1/128, mahogany/teak logs",
+    "rating": {
+      "xp": 2,
+      "gp": 3,
+      "speed": 4,
+      "basis": "Wiki Slayer training: 25k XP/h, fast task, drops cover the cannon. About 870k/h with the black mask chance (money making guide).",
+      "xpAdvice": "SKIP"
+    }
+  },
+  {
+    "task": "Cave kraken (Kraken)",
+    "assignedBy": "Weight at each master: Chaeldar 12, Konar 9, Nieve/Steve 6 and Duradel/Kuradal 9. Needs 87 Slayer, 50 Magic and combat level 80.",
+    "note": "The Kraken boss counts toward the task.",
+    "bestLocation": "Kraken Cove (25 spawns)",
+    "multiOrSingle": "single",
+    "killStyle": "magic",
+    "monsterAttackStyle": "magic (prayable; unlike the Kraken boss which is typeless)",
+    "protectionPrayer": "Protect from Magic",
+    "requiredItems": "none (magic gear; trident/powered staff). 50% weak to earth spells (2025)",
+    "cannon": "banned",
+    "hasSuperior": false,
+    "notableDrops": "Kraken tentacle 1/1200, uncharged trident 1/200, gem/rune drops",
+    "rating": {
+      "xp": 1,
+      "gp": 3,
+      "speed": 2,
+      "basis": "Wiki Slayer training: 15k XP/h and regular kraken lose money. The Kraken boss on task is about 920k/h (money making guide).",
+      "xpAdvice": "SKIP"
+    }
+  },
+  {
+    "task": "Dagannoth",
+    "assignedBy": "Weight at each master: Vannaka 7, Chaeldar 11, Konar 8, Nieve/Steve 8 and Duradel/Kuradal 9. Needs combat level 75.",
+    "note": "The Dagannoth Kings count toward the task too.",
+    "bestLocation": "Lighthouse basement (ranged variants, cannon) or Jormungand's Prison (melee, cannon; after The Fremennik Exiles). Catacombs of Kourend has no cannon.",
+    "multiOrSingle": "multi",
+    "killStyle": "cannon + melee (Jormungand) or cannon + ranged (Lighthouse)",
+    "monsterAttackStyle": "mixed (ranged at Lighthouse, melee at level-92 spawns)",
+    "protectionPrayer": "varies (Protect from Missiles at Lighthouse, Protect from Melee at Jormungand)",
+    "requiredItems": "none; 35% weak to earth spells",
+    "cannon": "great",
+    "hasSuperior": false,
+    "notableDrops": "Snapdragon seed, ranarr/kwuarm seeds, dagannoth hide, low-value overall",
+    "rating": {
+      "xp": 5,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Wiki Slayer training: 85k XP/h, cannon runs at a loss.",
+      "xpAdvice": "DO"
+    }
+  },
+  {
+    "task": "Dark beasts",
+    "assignedBy": "Weight at each master: Konar 5, Nieve/Steve 5, Duradel/Kuradal 11 and Mortimer 10. Needs 90 Slayer and combat level 90.",
+    "note": "Masters only assign them once Mourning's End Part II is started.",
+    "bestLocation": "Iorwerth Dungeon, Prifddinas (crystal shards 1/24) or Mourner Tunnels",
+    "multiOrSingle": "single",
+    "killStyle": "melee (crush) or magic (earth)",
+    "weakness": "Crush attacks and Earth spells are their most effective options.",
+    "monsterAttackStyle": "mixed (crush melee + magic)",
+    "protectionPrayer": "Protect from Melee",
+    "requiredItems": "none; 60% weak to earth spells (2025)",
+    "cannon": "single-no",
+    "hasSuperior": true,
+    "notableDrops": "Dark bow 1/512, death talisman 1/128, crystal shards (Iorwerth only), gem drop table",
+    "rating": {
+      "xp": 3,
+      "gp": 2,
+      "speed": 5,
+      "basis": "Wiki Slayer training: 42k XP/h, fast unextended task of 10 to 20 kills, do it. Dark bow drops.",
+      "xpAdvice": "DO"
+    }
+  },
+  {
+    "task": "Drakes",
+    "assignedBy": "Weight at each master: Konar 10, Nieve/Steve 7, Duradel/Kuradal 8 and Mortimer 10. Needs 84 Slayer.",
+    "bestLocation": "Karuulm Slayer Dungeon, middle (lava) level",
+    "multiOrSingle": "single",
+    "killStyle": "ranged (dragon hunter crossbow) with Protect from Missiles",
+    "weakness": "Earth spells are their elemental weakness; dragonbane weapons receive their usual bonuses.",
+    "monsterAttackStyle": "mixed (ranged, ranged-melee, dragonfire)",
+    "protectionPrayer": "Protect from Missiles (blocks normal ranged attack)",
+    "requiredItems": "Boots of stone / boots of brimstone / granite boots for the hot floor (or elite Kourend & Kebos Diary). 50% weak to water spells; dragonbane weapons effective",
+    "cannon": "single-no",
+    "hasSuperior": true,
+    "notableDrops": "Drake's tooth 1/512, Drake's claw 1/512, dragon knives/thrownaxes 1/2000, Brimstone key 1/65 (Konar only)",
+    "rating": {
+      "xp": 3,
+      "gp": 3,
+      "speed": 2,
+      "basis": "Wiki Slayer training: 35k XP/h and a long task, block. About 720k/h (money making guide).",
+      "xpAdvice": "SKIP"
+    }
+  },
+  {
+    "task": "Dust devils",
+    "assignedBy": "Weight at each master: Vannaka 8, Chaeldar 9, Konar 6, Nieve/Steve 6, Duradel/Kuradal 5, Krystilia 5 and Mortimer 8. Krystilia needs I Wildy More Slayer first. Needs 65 Slayer and combat level 70. Krystilia's version is in the Wilderness.",
+    "bestLocation": "Catacombs of Kourend (SE multi, barrage) or Smoke Dungeon multi area",
+    "multiOrSingle": "both",
+    "killStyle": "barrage/burst (magic) in multi; melee viable single",
+    "monsterAttackStyle": "melee (ranged-based melee)",
+    "protectionPrayer": "Protect from Melee (only effective when wearing a face mask)",
+    "requiredItems": "Face mask (Slayer helmet covers this); without it 16s per hit + stat drain. 35% weak to air spells",
+    "cannon": "ok",
+    "hasSuperior": true,
+    "notableDrops": "Dust battlestaff 1/4000, Dragon chainbody 1/32768, runes/herbs/gems",
+    "rating": {
+      "xp": 5,
+      "gp": 2,
+      "speed": 4,
+      "basis": "Wiki Slayer training: 100k to 110k XP/h barraging in the Catacombs, 60k with the Venator bow, 35k with melee. Drops cover the runes.",
+      "wilderness": {
+        "xp": 4,
+        "gp": 2,
+        "speed": 5,
+        "basis": "Krystilia: Wilderness Slayer Cave, multi with a cannon. PK risk."
+      },
+      "xpAdvice": "DO"
+    }
+  },
+  {
+    "task": "Fever spiders",
+    "assignedBy": "Weight at each master: Vannaka 7 and Chaeldar 7. Needs 42 Slayer and combat level 40.",
+    "note": "Braindeath Island needs Rum Deal started.",
+    "bestLocation": "Braindeath Island brewery basement (11 spawns)",
+    "multiOrSingle": "single",
+    "killStyle": "melee",
+    "monsterAttackStyle": "melee (stab)",
+    "protectionPrayer": "none needed at low HP (Protect from Melee optional)",
+    "requiredItems": "Slayer gloves to avoid disease + 12.5% HP damage (a separate item; Slayer helmet does not cover it). Ranged/magic can safespot without gloves. 25% weak to fire spells",
+    "cannon": "single-no",
+    "hasSuperior": false,
+    "notableDrops": "Grimy kwuarm, raw bass, gems; no valuable uniques",
+    "rating": {
+      "xp": 2,
+      "gp": 2,
+      "speed": 3,
+      "basis": "About 330k/h (money making guide). Braindeath Island is out of the way."
+    }
+  },
+  {
+    "task": "Fire giants",
+    "assignedBy": "Weight at each master: Vannaka 7, Chaeldar 12, Konar 9, Nieve/Steve 9, Duradel/Kuradal 7 and Krystilia 7. Needs combat level 65. Krystilia's version is in the Wilderness.",
+    "bestLocation": "Catacombs of Kourend (multi, bursting) or Stronghold Slayer Cave / Waterfall Dungeon (single, AFK cannon)",
+    "multiOrSingle": "both",
+    "killStyle": "melee, cannon (AFK single) or burst (Catacombs multi)",
+    "weakness": "Water spells are particularly effective against Fire giants.",
+    "monsterAttackStyle": "melee (slash)",
+    "protectionPrayer": "Protect from Melee",
+    "requiredItems": "none; 100% weak to water spells (strong for water spells/bursting)",
+    "cannon": "ok",
+    "hasSuperior": false,
+    "notableDrops": "Rune scimitar 1/128, fire battlestaff 1/128, runes/herbs, occasional dragon drops",
+    "rating": {
+      "xp": 3,
+      "gp": 2,
+      "speed": 3,
+      "basis": "Wiki Slayer training: 40k XP/h, cannon runs at a loss. Good Magic XP with water spells.",
+      "wilderness": {
+        "xp": 2,
+        "gp": 2,
+        "speed": 3,
+        "basis": "Krystilia: somewhat long and in the deep Wilderness (wiki Krystilia strategies)."
+      }
+    }
+  },
+  {
+    "task": "Fossil island wyverns",
+    "assignedBy": "Weight at each master: Chaeldar 7, Konar 5, Nieve/Steve 5 and Duradel/Kuradal 7. Needs 66 Slayer and combat level 60.",
+    "note": "Fossil Island needs Bone Voyage. Ancient wyverns need 82 Slayer.",
+    "bestLocation": "Wyvern Cave, Fossil Island (Spitting/Taloned/Long-tailed/Ancient)",
+    "multiOrSingle": "single",
+    "killStyle": "ranged (safespot / Protect from Missiles); melee for Long-tailed",
+    "monsterAttackStyle": "mixed (melee + icy breath; Taloned uses typeless magic)",
+    "protectionPrayer": "varies (Protect from Missiles for Spitting, Protect from Melee for Long-tailed); icy breath not fully prayable",
+    "requiredItems": "Elemental / mind / dragonfire shield / dragonfire ward / ancient wyvern shield required to reduce icy breath (Slayer helmet does not cover). Ancient wyvern shield also stops freezing",
+    "cannon": "banned",
+    "hasSuperior": false,
+    "notableDrops": "Draconic visage (rare), granite legs, granite maul, fossils, long/curved bones",
+    "rating": {
+      "xp": 1,
+      "gp": 3,
+      "speed": 3,
+      "basis": "Wiki Slayer training: 15k XP/h, block with Stop the Wyvern. Spitting wyverns about 1.2M/h (money making guide), the guide calls profit mediocre.",
+      "xpAdvice": "SKIP"
+    }
+  },
+  {
+    "task": "Gargoyles",
+    "assignedBy": "Weight at each master: Vannaka 5, Chaeldar 11, Konar 6, Nieve/Steve 6, Duradel/Kuradal 8 and Mortimer 10. Needs 75 Slayer and combat level 80.",
+    "note": "The Grotesque Guardians count toward the task once you have used a brittle key on their door.",
+    "bestLocation": "Slayer Tower top floor (8 spawns) or basement (task-only, 12 spawns)",
+    "multiOrSingle": "single",
+    "killStyle": "melee (crush - granite maul / bludgeon exploits -20 crush def)",
+    "weakness": "Crush attacks exploit their lowest melee defence. Earth spells are their elemental weakness.",
+    "monsterAttackStyle": "melee (slash)",
+    "protectionPrayer": "Protect from Melee",
+    "requiredItems": "Rock hammer / rock thrownhammer / granite hammer required to finish them at <=9 HP (Slayer helmet does not cover). Granite hammer auto-finishes if equipped. 40% weak to earth spells",
+    "cannon": "single-no",
+    "hasSuperior": true,
+    "notableDrops": "Granite maul 1/256, mystic robe top (dark) 1/512, rune items, granite/mithril bars, alchables",
+    "rating": {
+      "xp": 2,
+      "gp": 3,
+      "speed": 3,
+      "basis": "Wiki Slayer training: 30k XP/h, do for profit. About 900k/h (money making guide).",
+      "xpAdvice": "SKIP"
+    }
+  },
+  {
+    "task": "Greater demons",
+    "assignedBy": "Weight at each master: Chaeldar 9, Konar 7, Nieve/Steve 7, Duradel/Kuradal 9 and Krystilia 8. Needs combat level 70. Krystilia's version is in the Wilderness.",
+    "note": "Tormented demons, K'ril Tsutsaroth and Skotizo also count toward the task.",
+    "bestLocation": "Catacombs of Kourend (multi, bursting; no cannon), Chasm of Fire (single, cannonable), or Wilderness Slayer Cave (multi, cannonable with PK risk).",
+    "multiOrSingle": "both",
+    "killStyle": "burst/barrage in Catacombs; cannon plus melee/ranged in Chasm of Fire; cannon plus AoE in Wilderness Slayer Cave",
+    "weakness": "Water spells and demonbane weapons.",
+    "monsterAttackStyle": "melee (slash)",
+    "protectionPrayer": "Protect from Melee",
+    "requiredItems": "none; 40% weak to water spells",
+    "cannon": "good in Chasm of Fire or Wilderness Slayer Cave; banned in Catacombs of Kourend",
+    "hasSuperior": false,
+    "notableDrops": "Rune full helm 1/128, ensouled demon head 1/40, hard clue 1/128",
+    "rating": {
+      "xp": 3,
+      "gp": 2,
+      "speed": 4,
+      "basis": "Wiki Slayer training: 38k XP/h, 50k on tormented demons, fast unextended. Skip unless killing tormented demons or K'ril.",
+      "wilderness": {
+        "xp": 3,
+        "gp": 2,
+        "speed": 2,
+        "basis": "Krystilia: long and very common, but good XP per hour (wiki Krystilia strategies)."
+      },
+      "xpAdvice": "SKIP"
+    }
+  },
+  {
+    "task": "Green dragons",
+    "assignedBy": "Weight at each master: Krystilia 4. Needs combat level 52. Krystilia's version is in the Wilderness.",
+    "note": "Only Krystilia gives them, so only kills in the Wilderness count.",
+    "bestLocation": "Wilderness (Graveyard of Shadows, Boneyard, Lava Maze) or Wilderness Slayer Cave (multi). Safe Myths' Guild basement / Corsair Cove Dungeon does not count for the task.",
+    "multiOrSingle": "both",
+    "killStyle": "melee, or ranged/magic safespot",
+    "weakness": "Water spells: 50% elemental weakness. Dragonbane weapons also receive their usual bonuses.",
+    "monsterAttackStyle": "mixed (slash melee + dragonfire, max 50)",
+    "protectionPrayer": "Protect from Melee (dragonfire is blocked by shield/potion, not prayer)",
+    "requiredItems": "Anti-dragon shield or dragonfire shield (with an antifire potion blocks dragonfire completely). Slayer helmet does not cover dragonfire. 50% weak to water spells",
+    "cannon": "ok",
+    "hasSuperior": false,
+    "notableDrops": "Dragon bones (always), green dragonhide (always)",
+    "rating": {
+      "xp": 2,
+      "gp": 3,
+      "speed": 2,
+      "basis": "Wilderness green dragons, bones and hides about 950k/h (money making guide). Long time to complete (wiki Krystilia strategies)."
+    }
+  },
+  {
+    "task": "Hellhounds",
+    "assignedBy": "Weight at each master: Vannaka 7, Chaeldar 9, Konar 8, Nieve/Steve 8, Duradel/Kuradal 10 and Krystilia 7. Needs combat level 75. Krystilia's version is in the Wilderness.",
+    "note": "Cerberus counts toward the task at 91 Slayer.",
+    "bestLocation": "Stronghold Slayer Cave beside Nieve/Steve (multi, cannonable) for fast normal kills. Catacombs of Kourend is multi and AFK but does not allow cannons; use it for shards/totem pieces. At 91 Slayer, Cerberus is the boss alternative.",
+    "multiOrSingle": "both",
+    "killStyle": "cannon plus melee/ranged in Stronghold Slayer Cave; melee, venator bow, or water Magic in Catacombs (no cannon)",
+    "weakness": "Water spells: 50% elemental weakness. Demonbane weapons also receive their usual bonuses.",
+    "monsterAttackStyle": "melee",
+    "protectionPrayer": "Protect from Melee (nullifies their attacks)",
+    "requiredItems": "none (Slayer helm optional). Demonbane weapons hit harder as they are demonic.",
+    "cannon": "great in Stronghold Slayer Cave; banned in Catacombs of Kourend and Cerberus's Lair",
+    "hasSuperior": false,
+    "notableDrops": "Poor loot: hard clue scrolls, ensouled hellhound heads, smouldering stone (very rare). Real value comes from Cerberus (crystals for primordial/pegasian/eternal boots).",
+    "rating": {
+      "xp": 3,
+      "gp": 2,
+      "speed": 3,
+      "basis": "Wiki Slayer training: 40k XP/h, 25k on Cerberus, common and long, block unless killing Cerberus. Hard clue scrolls.",
+      "wilderness": {
+        "xp": 3,
+        "gp": 2,
+        "speed": 4,
+        "basis": "Krystilia: Wilderness Slayer Cave hellhounds with cannon and venator bow, or Vet'ion's hellhounds (wiki Krystilia strategies)."
+      },
+      "xpAdvice": "SKIP"
+    }
+  },
+  {
+    "task": "Hydras (regular Hydra + Alchemical Hydra)",
+    "assignedBy": "Weight at each master: Konar 10 and Mortimer 10. Needs 95 Slayer.",
+    "note": "The Alchemical Hydra counts at 95 Slayer and can only be fought on task.",
+    "bestLocation": "Karuulm Slayer Dungeon (Mount Karuulm). Regular hydras roam the lower level; the Alchemical Hydra boss is in the instanced room at the far end (lower level).",
+    "multiOrSingle": "single",
+    "killStyle": "ranged with dragon hunter crossbow (standard for Alchemical Hydra) or melee with dragon hunter lance. Lure over matching-colour vents each phase to strip its 75% damage reduction.",
+    "monsterAttackStyle": "mixed (ranged and magic, alternating every 3 attacks; also poison)",
+    "protectionPrayer": "alternate Protect from Missiles / Protect from Magic to match its attack rotation each phase",
+    "requiredItems": "Boots of stone, boots of brimstone, or granite boots to walk the hot dungeon floor (unless elite Kourend & Kebos Diary done); antivenom+ for passive poison. Slayer helm does not cover the floor damage.",
+    "cannon": "single-no",
+    "hasSuperior": true,
+    "notableDrops": "Hydra's claw (dragon hunter lance), hydra leather (ferocious gloves), hydra tail (bonecrusher), brimstone ring pieces (hydra's eye/fang/heart), Ikkle hydra pet.",
+    "rating": {
+      "xp": 2,
+      "gp": 4,
+      "speed": 1,
+      "basis": "Regular hydras about 1.1M/h (money making guide), the Alchemical Hydra about 3.9M/h. High HP and the longest task (wiki Mortimer strategies)."
+    }
+  },
+  {
+    "task": "Iron dragons",
+    "assignedBy": "Not assigned on its own since August 2025. Metal dragons: Weight at each master: Konar 15, Nieve/Steve 12 and Duradel/Kuradal 14. Needs combat level 85.",
+    "note": "Not a task of its own since August 2025. A metal dragon task counts any metal dragon.",
+    "bestLocation": "Catacombs of Kourend (multi-combat, level 215, 2 spawns) or Brimhaven Dungeon (13 spawns, single). Isle of Souls Dungeon also has them.",
+    "multiOrSingle": "both",
+    "killStyle": "ranged or melee with antifire up; magic is effective (50% weakness to earth spells) and their high melee defence makes ranged/magic efficient.",
+    "weakness": "Earth spells: 50% elemental weakness. Dragonbane weapons also receive their usual bonuses.",
+    "monsterAttackStyle": "mixed (melee slash + dragonfire)",
+    "protectionPrayer": "Protect from Melee in melee range. Note: Protect from Magic does not reduce metallic dragonfire. You must use antifire for the fire.",
+    "requiredItems": "Antifire protection: super antifire potion, or dragonfire shield + regular antifire potion, or anti-dragon shield + antifire potion.",
+    "cannon": "ok",
+    "hasSuperior": false,
+    "notableDrops": "Draconic visage (1/10,000), dragon platelegs/plateskirt (1/1,024), dragon bones and iron bars (always)."
+  },
+  {
+    "task": "Jellies",
+    "assignedBy": "Weight at each master: Vannaka 8, Chaeldar 10, Konar 6, Krystilia 5 and Mortimer 10. Krystilia needs I Wildy More Slayer first. Needs 52 Slayer and combat level 57. Krystilia's version is in the Wilderness.",
+    "bestLocation": "Catacombs of Kourend for barraging warped jellies (multi, no cannon), or Wilderness Slayer Cave for cannon/AoE with PK risk. Fremennik Slayer Dungeon is the quiet single-combat option and also forbids cannons.",
+    "multiOrSingle": "both",
+    "killStyle": "barrage warped jellies in Catacombs, or cannon plus AoE in Wilderness Slayer Cave; melee normal jellies in Fremennik Slayer Dungeon",
+    "monsterAttackStyle": "melee (magic-based melee: accuracy rolls against Magic defence, but classed as melee for prayer)",
+    "protectionPrayer": "Protect from Melee (blocks all damage despite the attack being magic-based)",
+    "requiredItems": "none required; dragonhide / high magic-defence gear recommended (avoid metal armour).",
+    "cannon": "great only in Wilderness Slayer Cave; banned in Catacombs of Kourend and Fremennik Slayer Dungeon",
+    "hasSuperior": true,
+    "notableDrops": "Gem drop table access, mithril boots, rune full helm, hard clue scrolls. Superior variant is the Vitreous Jelly.",
+    "rating": {
+      "xp": 3,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Warped jellies barraged in the Catacombs (wiki task page). Lower XP than the other barrage tasks (wiki Mortimer strategies). Poor drops.",
+      "wilderness": {
+        "xp": 3,
+        "gp": 1,
+        "speed": 4,
+        "basis": "Krystilia: nine jellies in a multi area of the Wilderness Slayer Cave (wiki task page). PK risk."
+      }
+    }
+  },
+  {
+    "task": "Kalphites",
+    "assignedBy": "Weight at each master: Turael/Aya 6, Spria 6, Mazchna/Achtryn 6, Vannaka 7, Chaeldar 11, Konar 9, Nieve/Steve 9 and Duradel/Kuradal 9. Needs combat level 15.",
+    "note": "Any kalphite counts, the Kalphite Queen included.",
+    "bestLocation": "Kalphite Cave east of Shantay Pass (~20 spawns, tight multi-combat chamber, ideal for cannon). Kalphite Lair is the off-task alternative.",
+    "multiOrSingle": "multi",
+    "killStyle": "cannon + melee (best XP). Stack the chamber and cannon.",
+    "weakness": "Crush attacks are especially effective against their chitin.",
+    "monsterAttackStyle": "melee (crush) for workers/soldiers/guardians. Kalphite Queen: first form ranged/magic, second form melee.",
+    "protectionPrayer": "Protect from Melee for the standard kalphites (Queen: switch prayers per form).",
+    "requiredItems": "none (bring desert-appropriate supplies if using the Lair route; soldiers drop waterskins). Slayer helm optional.",
+    "cannon": "great",
+    "hasSuperior": false,
+    "notableDrops": "Gem drop table, brimstone keys (Konar tasks), ensouled kalphite heads. Kalphite Queen (optional): dragon chainbody, dragon 2h sword, Jar of sand, Kalphite Princess pet.",
+    "rating": {
+      "xp": 4,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Wiki Slayer training: 75k XP/h cannoning soldiers, low effort. Cannon runs at a loss.",
+      "filler": {
+        "minutes": 7,
+        "basis": "Judgment from the wiki's Turael task completion tips (Slayer reward point): cannonable, by fairy ring, desert amulet or glory."
+      },
+      "xpAdvice": "DO"
+    }
+  },
+  {
+    "task": "Kurask",
+    "assignedBy": "Weight at each master: Vannaka 7, Chaeldar 12, Konar 3, Nieve/Steve 3, Duradel/Kuradal 4 and Mortimer 10. Needs 70 Slayer and combat level 65.",
+    "bestLocation": "Iorwerth Dungeon, Prifddinas (14 spawns, drops crystal shards) or Fremennik Slayer Dungeon task-only area (9 spawns). Kurask Lair is the off-task spot.",
+    "multiOrSingle": "single",
+    "killStyle": "melee with a leaf-bladed weapon (sword/spear/battleaxe), or broad bolts/arrows, or the Magic Dart spell. Nothing else deals any damage.",
+    "weakness": "Restricted target: only leaf-bladed weapons, broad ammunition, or Magic Dart can damage Kurask.",
+    "monsterAttackStyle": "melee (crush; low accuracy, moderate max hit ~11)",
+    "protectionPrayer": "none needed usually (low accuracy); Protect from Melee if the King kurask superior spawns.",
+    "requiredItems": "Required to deal damage: a leaf-bladed weapon (sword/spear/battleaxe), broad bolts/arrows, or Magic Dart. Regular weapons do 0 damage.",
+    "cannon": "banned",
+    "hasSuperior": true,
+    "notableDrops": "Leaf-bladed battleaxe (1/1,026, exclusive), leaf-bladed sword (1/384), mystic robe top (light, 1/512), herbs and seeds. Superior is King kurask.",
+    "rating": {
+      "xp": 2,
+      "gp": 4,
+      "speed": 2,
+      "basis": "Wiki Slayer training: 20k XP/h, leaf-bladed weapons only. About 1.2M/h (money making guide).",
+      "xpAdvice": "SKIP"
+    }
+  },
+  {
+    "task": "Lizardmen (incl. brutes and shamans)",
+    "assignedBy": "Weight at each master: Chaeldar 8, Konar 8, Nieve/Steve 8 and Duradel/Kuradal 10. Chaeldar, Konar, Nieve/Steve and Duradel/Kuradal need Reptile Got Ripped first.",
+    "note": "Brutes and shamans count, and shamans drop the dragon warhammer.",
+    "bestLocation": "Lizardman Canyon in the Kebos Lowlands (west side is multi-combat; NPC soldiers tank aggro). For shamans/DWH: Lizardman Settlement, Molch, or the Canyon.",
+    "multiOrSingle": "both",
+    "killStyle": "cannon + melee/ranged for basic lizardmen in the multi canyon. For shamans, melee or ranged and step out of the acidic-pool special.",
+    "monsterAttackStyle": "mixed (crush melee + ranged for lizardmen/brutes; shamans use magic and drop poison/acid pools). Poisonous.",
+    "protectionPrayer": "varies: Protect from Missiles vs the ranged lizardmen; Protect from Magic near shamans. No single prayer covers all.",
+    "requiredItems": "none required; antipoison useful. Xeric's talisman speeds travel to Kebos.",
+    "cannon": "great",
+    "hasSuperior": false,
+    "notableDrops": "Dragon warhammer (shamans, ~1/5,000), Xeric's talisman (inert), lizardman fang (dragon sword / Kodai insignia), Xerician fabric, brimstone keys (Konar).",
+    "rating": {
+      "xp": 3,
+      "gp": 4,
+      "speed": 4,
+      "basis": "Wiki Slayer training: 50k XP/h with a cannon, fast task. Shamans about 1.1M/h (money making guide).",
+      "xpAdvice": "DONT_UNLOCK"
+    }
+  },
+  {
+    "task": "Mithril dragons",
+    "assignedBy": "Not assigned on its own since August 2025. Metal dragons: Weight at each master: Konar 15, Nieve/Steve 12 and Duradel/Kuradal 14. Needs combat level 85.",
+    "note": "Not a task of its own since August 2025. A metal dragon task counts any metal dragon. Mithril dragons drop the dragon full helm.",
+    "bestLocation": "Ancient Cavern, upper level (7 spawns, single-combat, no cannon).",
+    "multiOrSingle": "single",
+    "killStyle": "ranged or melee with antifire up (no cannon here). Super antifire + a defender gives higher DPS; it picks physical 60% / magic 40%, with a 20% dragonfire chance on ranged/magic picks.",
+    "weakness": "Earth spells and dragonbane weapons.",
+    "monsterAttackStyle": "mixed (melee, ranged, magic, and dragonfire)",
+    "protectionPrayer": "Protect from Melee when meleeing (or Protect from Missiles at range), combined with antifire for the dragonfire.",
+    "requiredItems": "Antifire protection: super antifire, or anti-dragon shield / dragonfire shield + antifire potion.",
+    "cannon": "banned",
+    "hasSuperior": false,
+    "notableDrops": "Dragon full helm (1/32,768, only source), draconic visage, dragon platelegs/plateskirt, chewed bones (3/128), dragon bones."
+  },
+  {
+    "task": "Nechryael",
+    "assignedBy": "Weight at each master: Vannaka 5, Chaeldar 12, Konar 7, Nieve/Steve 7, Duradel/Kuradal 9, Krystilia 5 and Mortimer 8. Krystilia needs I Wildy More Slayer first. Needs 80 Slayer and combat level 85. Krystilia's version is in the Wilderness.",
+    "note": "Greater nechryael in the Catacombs of Kourend count toward the task.",
+    "bestLocation": "Catacombs of Kourend: greater nechryael in a multi-combat spot (stack and barrage/burst). Alternatives: Slayer Tower basement/top floor (single) and Charred Dungeon.",
+    "multiOrSingle": "both",
+    "killStyle": "Ice Barrage / Ice Burst multi in the Catacombs for max XP; alternatively cannon + melee, or Emberlight melee (they are demonic).",
+    "weakness": "Demonbane weapons receive their usual bonuses.",
+    "monsterAttackStyle": "melee (crush, max hit ~11). Summons death spawns that can hit through Protect from Melee.",
+    "protectionPrayer": "Protect from Melee (note: their summoned death spawns hit through it).",
+    "requiredItems": "none required. Emberlight/demonbane and a Slayer helm help. Freezing gear if barraging.",
+    "cannon": "great",
+    "hasSuperior": true,
+    "notableDrops": "Rune boots, herbs and seeds, combat runes; greater/superior variants drop malicious ashes; imbued heart obtainable via the superior. Superior is the Nechryarch.",
+    "rating": {
+      "xp": 5,
+      "gp": 3,
+      "speed": 4,
+      "basis": "Wiki Slayer training: 100k XP/h barraging in the Catacombs, 55k with a cannon and the Venator bow, 40k with melee. Decent profit with melee or venator bow.",
+      "wilderness": {
+        "xp": 4,
+        "gp": 2,
+        "speed": 4,
+        "basis": "Krystilia: Wilderness Slayer Cave, multi with a cannon. PK risk."
+      },
+      "xpAdvice": "DO"
+    }
+  },
+  {
+    "task": "Nechryarch (superior of Nechryael)",
+    "assignedBy": "Not assigned. It can appear on any nechryael task once Bigger and Badder is bought.",
+    "note": "A superior that can appear on nechryael tasks once Bigger and Badder is bought. It can drop the imbued heart and the eternal gem.",
+    "bestLocation": "Wherever the Nechryael task is being done: Catacombs of Kourend (greater nechryael, multi) or the Slayer Tower.",
+    "multiOrSingle": "both",
+    "killStyle": "melee (Protect from Melee) or continue barraging; it summons 3 chaotic death spawns that attack with magic, ranged, and melee (they despawn when it dies).",
+    "weakness": "Demonbane weapons receive their usual bonuses.",
+    "monsterAttackStyle": "melee (crush, max hit ~27, very high damage) plus the mixed-style chaotic death spawns it summons",
+    "protectionPrayer": "Protect from Melee (the chaotic death spawns still hit through it; kill or tank them).",
+    "requiredItems": "none required; demonbane/Emberlight and food help due to its high damage.",
+    "cannon": "ok",
+    "hasSuperior": false,
+    "notableDrops": "Imbued heart (~1/440), eternal gem (~1/440), guaranteed malicious ashes, brimstone keys (on Konar tasks). It is the superior (no further superior)."
+  },
+  {
+    "task": "Red dragons",
+    "assignedBy": "Weight at each master: Konar 5, Nieve/Steve 5 and Duradel/Kuradal 8. Konar, Nieve/Steve and Duradel/Kuradal need Seeing Red first. Needs combat level 68.",
+    "note": "Baby and brutal red dragons count toward the task.",
+    "bestLocation": "Brimhaven Dungeon (16 spawns, single combat, cannonable; safespot by the black-demon pipe agility shortcut; Karamja Elite Diary notes the hides). Catacombs of Kourend (brutal red dragons) is a multi alternative.",
+    "multiOrSingle": "single",
+    "killStyle": "melee (Protect from Melee) or ranged; cannon to speed kills at Brimhaven",
+    "weakness": "Water spells: 50% elemental weakness. Dragonbane weapons also receive their usual bonuses.",
+    "monsterAttackStyle": "melee (slash) + dragonfire",
+    "protectionPrayer": "Protect from Melee (dragonfire still requires antifire protection)",
+    "requiredItems": "Anti-dragon shield or antifire potion (or both) for dragonfire. Not covered by a Slayer helmet.",
+    "cannon": "ok",
+    "hasSuperior": false,
+    "notableDrops": "Dragon bones + red dragonhide (always), dragon javelin heads (1/128 post-MM2), ensouled dragon head",
+    "rating": {
+      "xp": 2,
+      "gp": 2,
+      "speed": 3,
+      "basis": "Wiki Slayer training: 30k XP/h, should not be unlocked, far from a bank. About 240k/h, brutal reds 440k/h (money making guide).",
+      "xpAdvice": "DONT_UNLOCK"
+    }
+  },
+  {
+    "task": "Rune dragons",
+    "assignedBy": "Not assigned on its own since August 2025. Metal dragons: Weight at each master: Konar 15, Nieve/Steve 12 and Duradel/Kuradal 14. Needs combat level 85.",
+    "note": "Not a task of its own since August 2025. A metal dragon task counts any metal dragon. Rune dragons need Dragon Slayer II.",
+    "bestLocation": "Lithkren Vault eastern chamber (5 spawns, single combat). Access via rowboat or digsite pendant after Dragon Slayer II.",
+    "multiOrSingle": "single",
+    "killStyle": "melee (Protect from Missiles) or ranged; insulated boots to blunt the electric special",
+    "weakness": "Earth spells and dragonbane weapons.",
+    "monsterAttackStyle": "mixed - melee, ranged, magic, dragonfire, plus a life-leech ranged special and an electric-bolt DoT",
+    "protectionPrayer": "Protect from Missiles (mitigates the life-leech ranged special)",
+    "requiredItems": "Antifire protection for dragonfire; insulated boots strongly recommended to cut electric-bolt damage. Not covered by a Slayer helmet.",
+    "cannon": "ok",
+    "hasSuperior": false,
+    "notableDrops": "Draconic visage (1/8,000), dragon limbs (1/800), dragon metal lump (1/5,000), rune bars/dragon gear"
+  },
+  {
+    "task": "Skeletal wyverns",
+    "assignedBy": "Weight at each master: Chaeldar 7, Konar 5, Nieve/Steve 5 and Duradel/Kuradal 7. Needs 72 Slayer and combat level 70.",
+    "bestLocation": "Asgarnian Ice Dungeon (22 spawns, single combat). Safespot available; 82 Agility (77 w/ summer pie) shortcut nearby.",
+    "multiOrSingle": "single",
+    "killStyle": "ranged or melee; safespot with ranged to avoid the icy breath",
+    "monsterAttackStyle": "mixed - melee, ranged, and icy (magic) breath",
+    "protectionPrayer": "Protect from Missiles (or safespot to avoid attacks entirely)",
+    "requiredItems": "Mandatory: elemental/mind/dragonfire shield, dragonfire ward, or ancient wyvern shield (cuts icy breath from 50+ to 10; ancient wyvern shield also gives freeze immunity). Not covered by a Slayer helmet.",
+    "cannon": "ok",
+    "hasSuperior": false,
+    "notableDrops": "Draconic visage (1/10,000), granite legs (1/512), dragon platelegs/plateskirt (1/512), magic logs, battlestaves",
+    "rating": {
+      "xp": 1,
+      "gp": 4,
+      "speed": 3,
+      "basis": "Wiki Slayer training: 15k XP/h. About 1.4M/h (money making guide).",
+      "xpAdvice": "SKIP"
+    }
+  },
+  {
+    "task": "Smoke devils",
+    "assignedBy": "Weight at each master: Konar 7, Nieve/Steve 7, Duradel/Kuradal 9 and Mortimer 8. Needs 93 Slayer and combat level 85.",
+    "note": "The Thermonuclear smoke devil counts toward the task.",
+    "bestLocation": "Smoke Devil Dungeon (multi-combat) - place cannon centrally and barrage stacks. Thermonuclear smoke devil boss also counts toward the task.",
+    "multiOrSingle": "multi",
+    "killStyle": "barrage/burst (magic) with a cannon to lure",
+    "monsterAttackStyle": "magic-based ranged (max 20)",
+    "protectionPrayer": "Protect from Missiles (negates their attacks)",
+    "requiredItems": "Mandatory: facemask, Slayer helmet, or Slayer helmet (i) to deal any damage. A Slayer helmet covers this.",
+    "cannon": "great",
+    "hasSuperior": true,
+    "notableDrops": "Occult necklace (1/512), dragon chainbody (1/32,768); Smoke battlestaff only from the boss",
+    "rating": {
+      "xp": 5,
+      "gp": 3,
+      "speed": 4,
+      "basis": "Wiki Slayer training: 150k XP/h barraging, 55k with melee, the best XP in the game. Drops cover the runes, occult necklace.",
+      "xpAdvice": "DO"
+    }
+  },
+  {
+    "task": "Spiritual creatures",
+    "assignedBy": "Weight at each master: Vannaka 8, Chaeldar 12, Nieve/Steve 6, Duradel/Kuradal 7 and Krystilia 6. Needs 63 Slayer and combat level 60, and 60 Strength or 60 Agility. Krystilia's version is in the Wilderness.",
+    "note": "The God Wars Dungeon needs Death Plateau. Spiritual rangers need 63 Slayer, warriors 68 and mages 83.",
+    "bestLocation": "God Wars Dungeon - Zamorak's Fortress or the Zaros/Ancient Prison room (Zaros variants need The Frozen Door). Wear god-aligned items so that faction ignores you.",
+    "multiOrSingle": "multi",
+    "killStyle": "melee/ranged/magic (no cannon allowed in GWD)",
+    "monsterAttackStyle": "mixed by type - warriors melee, rangers ranged, mages magic",
+    "protectionPrayer": "Protect from the relevant style of the variant you target (Melee/Missiles/Magic)",
+    "requiredItems": "God-aligned equipment (e.g. Zamorakian items) to avoid that faction's aggression. The Frozen Door miniquest for Zaros variants. Nothing needed to deal damage.",
+    "cannon": "banned",
+    "hasSuperior": false,
+    "notableDrops": "Dragon boots (Spiritual mages only), assorted god-themed and low-value drops",
+    "rating": {
+      "xp": 2,
+      "gp": 2,
+      "speed": 3,
+      "basis": "Wiki Slayer training: 25k XP/h, skip. Spiritual mages about 370k/h (money making guide).",
+      "wilderness": {
+        "xp": 2,
+        "gp": 2,
+        "speed": 1,
+        "basis": "Krystilia: Wilderness God Wars Dungeon only, extremely long, block (wiki Krystilia strategies)."
+      },
+      "xpAdvice": "SKIP"
+    }
+  },
+  {
+    "task": "Steel dragons",
+    "assignedBy": "Not assigned on its own since August 2025. Metal dragons: Weight at each master: Konar 15, Nieve/Steve 12 and Duradel/Kuradal 14. Needs combat level 85.",
+    "note": "Not a task of its own since August 2025. A metal dragon task counts any metal dragon.",
+    "bestLocation": "Brimhaven Dungeon slayer-only area (9 spawns, cannonable) or general dungeon (4). Catacombs of Kourend (2, level 274, not cannonable).",
+    "multiOrSingle": "single",
+    "killStyle": "ranged/magic (they won't chase) or melee w/ Protect from Melee; cannon works in Brimhaven",
+    "weakness": "Earth spells and dragonbane weapons.",
+    "monsterAttackStyle": "melee (slash) + dragonfire",
+    "protectionPrayer": "Protect from Melee (plus antifire for the breath)",
+    "requiredItems": "Anti-dragon or dragonfire shield + antifire potion for dragonfire. Not covered by a Slayer helmet.",
+    "cannon": "ok",
+    "hasSuperior": false,
+    "notableDrops": "Draconic visage (1/10,000), dragon platelegs/plateskirt (1/512), steel bars (noted with Karamja Elite Diary)"
+  },
+  {
+    "task": "Suqahs",
+    "assignedBy": "Weight at each master: Nieve/Steve 8 and Duradel/Kuradal 8. Needs combat level 85.",
+    "note": "Lunar Isle needs Lunar Diplomacy started.",
+    "bestLocation": "Lunar Isle - northern spawns (multi, cannon + ranged safespot next to the hill) or the southern melee-only Suqah (Guthan's for zero food).",
+    "multiOrSingle": "multi",
+    "killStyle": "ranged + cannon (north) or melee (south)",
+    "monsterAttackStyle": "mixed - stab (melee) and weak water/ice magic (hybrid variant)",
+    "protectionPrayer": "Protect from Magic vs hybrid variants (or Melee for the melee-only ones)",
+    "requiredItems": "Seal of passage to use the bank unless Dream Mentor is done or Elite Fremennik Diary earned. Nothing needed to deal damage.",
+    "cannon": "great",
+    "hasSuperior": false,
+    "notableDrops": "Suqah hide, Suqah tooth, big bones, gem-table access (uncut gems, loop/tooth key halves)",
+    "rating": {
+      "xp": 4,
+      "gp": 1,
+      "speed": 4,
+      "basis": "Wiki Slayer training: 55k XP/h with a cannon, fast unextended. Drops do not cover the cannon.",
+      "xpAdvice": "DO"
+    }
+  },
+  {
+    "task": "Trolls",
+    "assignedBy": "Weight at each master: Vannaka 7, Chaeldar 11, Konar 6, Nieve/Steve 6 and Duradel/Kuradal 6. Needs combat level 60.",
+    "bestLocation": "Mountain trolls at Death Plateau (games necklace teleport) or Trollheim; ice trolls at northern Jatizso/Neitiznot (multi-combat, better drops, 100% fire weakness).",
+    "multiOrSingle": "both",
+    "killStyle": "melee/ranged with a cannon (trolls have short aggression range); fire spells shine on ice trolls",
+    "monsterAttackStyle": "mainly melee (clubs); some thrown-rock ranged",
+    "protectionPrayer": "Protect from Melee (mountain trolls)",
+    "requiredItems": "None mandatory. Neitiznot shield helps vs ice troll females. Cannon highly recommended.",
+    "cannon": "great",
+    "hasSuperior": false,
+    "notableDrops": "Big bones, ensouled troll head, assorted low-value drops",
+    "rating": {
+      "xp": 3,
+      "gp": 2,
+      "speed": 3,
+      "basis": "Wiki Slayer training: 50k XP/h cannoning ice trolls, the trip to Jatizso is slow. Drops cover part of the cannon.",
+      "xpAdvice": "DO"
+    }
+  },
+  {
+    "task": "Turoth",
+    "assignedBy": "Weight at each master: Vannaka 8, Chaeldar 10, Konar 3, Nieve/Steve 3 and Mortimer 10. Needs 55 Slayer and combat level 60.",
+    "bestLocation": "Fremennik Slayer Dungeon (the only location). Fastest access is a Slayer ring teleport; fairy ring AJR is the next-best route. The level-61 Agility shortcut from the basilisk chamber reaches the Turoth chamber, and the east-wall rocks/path to Kurasks can be used as safespots.",
+    "multiOrSingle": "single",
+    "killStyle": "Leaf-bladed battleaxe + defender is the best simple melee setup and can train Strength on an aggressive style; broad/amethyst broad bolts or broad arrows are easy safespot alternatives; Magic Dart also works.",
+    "weakness": "Leafy restriction: ordinary weapons, ammunition and spells deal no damage. Use a leaf-bladed melee weapon, broad/amethyst broad ammunition, or Magic Dart. The leaf-bladed battleaxe also gains 17.5% damage against Turoth and stacks with a black mask/Slayer helmet.",
+    "monsterAttackStyle": "melee (stab)",
+    "protectionPrayer": "Protect from Melee, or take no damage by safespotting with an allowed ranged or Magic Dart setup.",
+    "requiredItems": "Mandatory: leaf-bladed battleaxe/sword/spear, broad or amethyst broad bolts/arrows, or Magic Dart with a compatible staff. Normal weapons such as an abyssal dagger or whip cannot damage Turoth.",
+    "cannon": "banned (the Fremennik Slayer Dungeon does not permit cannons)",
+    "hasSuperior": true,
+    "notableDrops": "Leaf-bladed sword, light mystic robe bottom, herbs and farming seeds, hard clue scrolls. Superior Spiked Turoth can roll superior uniques.",
+    "rating": {
+      "xp": 1,
+      "gp": 2,
+      "speed": 3,
+      "basis": "Leaf-bladed weapons, broad ammo or Magic Dart only (wiki task page). Herb drops. A slow single combat task (wiki Mortimer strategies)."
+    }
+  },
+  {
+    "task": "TzHaar",
+    "assignedBy": "Weight at each master: Chaeldar 8, Nieve/Steve 10 and Duradel/Kuradal 10. Chaeldar, Nieve/Steve and Duradel/Kuradal need Hot Stuff first.",
+    "note": "You can fight TzTok-Jad instead, or TzKal-Zuk once you have killed him. Failing the attempt cancels the task.",
+    "bestLocation": "Mor Ul Rek inner city (Fire Cape needed to enter) - barrage TzHaar-Ket; or safespot melee Ket/Xil in the outer city.",
+    "multiOrSingle": "multi",
+    "killStyle": "barrage/burst (magic) on stacked Ket, or melee/ranged safespot",
+    "weakness": "Water spells are effective against many TzHaar variants; exact strength varies by creature.",
+    "monsterAttackStyle": "mixed - Hur/Ket melee, Xil melee or ranged, Mej magic",
+    "protectionPrayer": "Protect from Melee (when bursting TzHaar-Ket)",
+    "requiredItems": "Fire Cape to enter the inner city. Nothing needed to deal damage; Slayer helmet not required.",
+    "cannon": "banned",
+    "hasSuperior": false,
+    "notableDrops": "Obsidian armour (from level-221 TzHaar-Ket), tokkul, uncut gems, onyx bolt tips (with Ring of Wealth)",
+    "rating": {
+      "xp": 5,
+      "gp": 2,
+      "speed": 5,
+      "basis": "Wiki Slayer training: 100k XP/h with blood barrage, drops cover the runes. Entering and leaving the Fight Caves ends the task early."
+    }
+  },
+  {
+    "task": "Vampyres / Vyrewatch",
+    "assignedBy": "Weight at each master: Mazchna/Achtryn 6, Vannaka 7, Chaeldar 6, Konar 4, Nieve/Steve 6 and Duradel/Kuradal 8. Chaeldar, Konar, Nieve/Steve and Duradel/Kuradal need Actual Vampyre Slayer first. Needs combat level 35.",
+    "note": "Vyrewatch need A Taste of Hope, and vyrewatch sentinels need Sins of the Father.",
+    "bestLocation": "Vyrewatch Sentinels in Darkmeyer (19 spawns, blood shards) - best. Slepe (10, safespottable) or Meiyerditch (61) as alternatives.",
+    "multiOrSingle": "single",
+    "killStyle": "melee, with a tier 3 flail for vyrewatch and sentinels",
+    "weakness": "Vampyre-specific weapons: Ivandis or Blisterwood flails bypass their damage restrictions; ordinary weapons are ineffective against higher-tier Vyrewatch.",
+    "monsterAttackStyle": "mixed - melee and magic/ranged",
+    "protectionPrayer": "varies (Protect from Melee generally); no single prayer negates them",
+    "requiredItems": "Depends on the vampyre. Feral vampyres take damage from any weapon. Vampyre juvinates need a silver weapon, or any weapon at half damage with Efaritay's aid. Vyrewatch, Vyrewatch Sentinels and venators need a tier 3 weapon: the Ivandis flail, a blisterwood flail, sickle or stakes, the hallowed flail or the sunspear. Efaritay's aid and a Slayer helmet do not cover them.",
+    "cannon": "single-no",
+    "hasSuperior": false,
+    "notableDrops": "Blood shard (Vyrewatch Sentinels, high value), vampyre dust, coins",
+    "rating": {
+      "xp": 1,
+      "gp": 3,
+      "speed": 1,
+      "basis": "Wiki Slayer training: 15k XP/h with special weapons only. Vyrewatch sentinels about 930k/h (money making guide).",
+      "xpAdvice": "DONT_UNLOCK"
+    }
+  },
+  {
+    "task": "Wyrms",
+    "assignedBy": "Weight at each master: Chaeldar 6, Konar 10, Nieve/Steve 7, Duradel/Kuradal 8 and Mortimer 10. Needs 62 Slayer.",
+    "note": "With 62 Sailing, Wyrmscraig Cavern lets you cannon them.",
+    "bestLocation": "Karuulm Slayer Dungeon lower level (single combat, no cannon). Neypotzli wyrmlings is a multi/cannonable alternative but drops only wyrmling bones.",
+    "multiOrSingle": "single",
+    "killStyle": "ranged with Protect from Magic (wyrms only use magic when hit from range)",
+    "weakness": "Earth spells: 50% elemental weakness on standard Wyrms. Dragonbane weapons also receive their usual bonuses.",
+    "monsterAttackStyle": "mixed - magic (at range) and slash (melee)",
+    "protectionPrayer": "Protect from Magic",
+    "requiredItems": "Mandatory: boots of stone, boots of brimstone, or granite boots to survive the dungeon floor heat (unless Elite Kourend & Kebos Diary is done). Not covered by a Slayer helmet.",
+    "cannon": "banned",
+    "hasSuperior": true,
+    "notableDrops": "Dragon harpoon (1/2,000 on task, 1/10,000 off), dragon sword, wyrm bones (~2k ea)",
+    "rating": {
+      "xp": 3,
+      "gp": 3,
+      "speed": 3,
+      "basis": "Wiki Slayer training: 35k XP/h, 53k cannoning in Wyrmscraig Cavern with 62 Sailing. About 700k/h (money making guide).",
+      "xpAdvice": "SKIP"
+    }
+  },
+  {
+    "task": "Zygomites",
+    "assignedBy": "Weight at each master: Chaeldar 7, Konar 2, Nieve/Steve 2 and Duradel/Kuradal 2. Needs 57 Slayer and combat level 60.",
+    "bestLocation": "Ancient zygomites in the Mushroom Forest, Fossil Island (27 spawns, cannonable, safespot). Zanaris zygomites (levels 74/86) are alternatives.",
+    "multiOrSingle": "single",
+    "killStyle": "ranged/magic in high-magic-defence gear (+ cannon); finish each one with fungicide spray",
+    "monsterAttackStyle": "mixed - magic (spores) and melee headbutt",
+    "protectionPrayer": "Protect from Melee (their melee is the more accurate attack)",
+    "requiredItems": "Mandatory: fungicide spray - spray a zygomite once it drops below ~8 HP or it revives. Refills from Slayer masters. Not covered by a Slayer helmet.",
+    "cannon": "ok",
+    "hasSuperior": false,
+    "notableDrops": "Grimy ranarr weed (lvl 74) / grimy snapdragon (lvl 86), nature runes, supercompost, brimstone key (Konar tasks)",
+    "rating": {
+      "xp": 1,
+      "gp": 1,
+      "speed": 5,
+      "basis": "Wiki Slayer training: 10k XP/h, fast task, skip.",
+      "xpAdvice": "SKIP"
+    }
+  }
+]

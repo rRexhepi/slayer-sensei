@@ -1,0 +1,321 @@
+Konar areas: 55. With a verified entrance: 54.
+Konar areas without an entrance: Poison Waste Dungeon
+Konar (task, area) pairs: 111. With kill spots: 67.
+Pairs without kill spots: Lesser Nagua at Neypotzli, Lesser Nagua at Tapoyauik, Lesser Nagua at Crypt of Tonali, Warped Creatures at Poison Waste Dungeon, Vampyres at Vampyrium, Brine Rats at Brine Rat Cavern, Waterfiends at Kraken Cove, Waterfiends at Iorwerth Dungeon, Kurask at Iorwerth Dungeon, Blue Dragons at Ogre Enclave, Blue Dragons at Isle of Souls, Blue Dragons at Tapoyauik, Ankou at Stronghold of Security, Dark Beasts at Iorwerth Dungeon, Black Dragons at Evil Chicken's Lair, Jellies at Tapoyauik, Trolls at Keldagrim, Trolls at Wyrmscraig, Aviansies at God Wars Dungeon, Greater Demons at Karuulm Slayer Dungeon, Greater Demons at Chasm of Fire, Greater Demons at Brimhaven Dungeon, Greater Demons at Isle of Souls, Smoke Devils at Smoke Devil Dungeon, Nechryael at Iorwerth Dungeon, Hellhounds at Karuulm Slayer Dungeon, Hellhounds at Witchaven Dungeon, Dagannoth at Waterbirth Island, Wyrms at Karuulm Slayer Dungeon, Wyrms at Neypotzli, Wyrms at Charred Dungeon, Wyrms at Wyrmscraig, Drakes at Karuulm Slayer Dungeon, Hydras at Karuulm Slayer Dungeon, Cave Kraken at Kraken Cove, Fire Giants at Karuulm Slayer Dungeon, Fire Giants at Waterfall Dungeon, Fire Giants at Isle of Souls, Kalphites at Kalphite Lair, Kalphites at task-only Kalphite Cave, Bloodveld at God Wars Dungeon, Bloodveld at Iorwerth Dungeon, Black Demons at Chasm of Fire, Metal Dragons at Isle of Souls
+
+Coverage Turael: 24 tasks. Two or more places: 23. One place: 1. None: 0
+Coverage Spria: 25 tasks. Two or more places: 23. One place: 2. None: 0
+Coverage Mazchna: 30 tasks. Two or more places: 24. One place: 6. None: 0
+Coverage Vannaka: 46 tasks. Two or more places: 33. One place: 13. None: 0
+Coverage Chaeldar: 40 tasks. Two or more places: 28. One place: 12. None: 0
+Coverage Nieve: 46 tasks. Two or more places: 31. One place: 14. None: 1 (Boss)
+Coverage Duradel: 43 tasks. Two or more places: 31. One place: 11. None: 1 (Boss)
+Coverage Konar: 39 tasks. Two or more places: 29. One place: 9. None: 1 (Boss)
+Coverage Krystilia: 37 tasks. Two or more places: 23. One place: 0. None: 14 (Pirates, Black Knights, Chaos Druids, Revenants, Lava Dragons, Green Dragons, Dark Warriors, Bandits, Ents, Rogues, Mammoths, Earth Warriors, Magic Axes, Boss)
+Coverage Mortimer: 29 tasks. Two or more places: 16. One place: 12. None: 1 (Venators)
+Coverage Krystilia, Wilderness places only: 37 tasks. Two or more places: 18. One place: 18. With a marker or route: 33. None: 1 (Boss)
+
+DROPPED for Drakes at karuulm_slayer_dungeon: Drake LocLine 'Karuulm Slayer Dungeon': 0 of 13 tiles walkable
+DROPPED for Fire giants at karuulm_slayer_dungeon: Fire giant LocLine 'Karuulm Slayer Dungeon': 0 of 13 tiles walkable
+DROPPED for Greater demons at karuulm_slayer_dungeon: Greater demon LocLine 'Karuulm Slayer Dungeon': 0 of 9 tiles walkable
+DROPPED for Hellhounds at karuulm_slayer_dungeon: Hellhound LocLine 'Karuulm Slayer Dungeon': 1 of 12 tiles walkable
+CANNON CONFLICT karuulm_slayer_dungeon / Hydras: 'Karuulm Slayer Dungeon'=yes, 'Karuulm Slayer Dungeon (Alchemical Hydra room)'=no
+DROPPED for Hydras at karuulm_slayer_dungeon: Hydra LocLine 'Karuulm Slayer Dungeon': Shortest Path cannot reach any of its 17 walkable tiles
+DROPPED for Wyrms at karuulm_slayer_dungeon: Wyrm LocLine 'Karuulm Slayer Dungeon - lower level': Shortest Path cannot reach any of its 9 walkable tiles
+DROPPED for Wyrms at karuulm_slayer_dungeon: Wyrm LocLine 'Karuulm Slayer Dungeon - lower level (task-only)': Shortest Path cannot reach any of its 7 walkable tiles
+DROPPED for Lizards at karuulm_slayer_dungeon: Sulphur Lizard LocLine 'Karuulm Slayer Dungeon': 0 of 13 tiles walkable
+DROPPED for Black demons at chasm_of_fire: Black demon LocLine 'Chasm of Fire (Bottom Level)': 0 of 16 tiles walkable
+DROPPED for Greater demons at chasm_of_fire: Greater demon LocLine 'Chasm of Fire': 0 of 17 tiles walkable
+DROPPED for Lesser demons at chasm_of_fire: Lesser demon LocLine 'Chasm of Fire': 0 of 9 tiles walkable
+DROPPED for Fire giants at brimhaven_dungeon: Fire giant LocLine 'Brimhaven Dungeon': 0 of 8 tiles walkable
+DROPPED for Greater demons at brimhaven_dungeon: Greater demon LocLine 'Brimhaven Dungeon upper level': 0 of 7 tiles walkable
+DROPPED for Metal dragons at brimhaven_dungeon: Bronze dragon LocLine 'Brimhaven Dungeon (Task only area)': Shortest Path cannot reach any of its 5 walkable tiles
+DROPPED for Metal dragons at brimhaven_dungeon: Iron dragon LocLine 'Brimhaven Dungeon (Task only area)': Shortest Path cannot reach any of its 8 walkable tiles
+DROPPED for Metal dragons at brimhaven_dungeon: Steel dragon LocLine 'Brimhaven Dungeon (Task only area)': Shortest Path cannot reach any of its 9 walkable tiles
+DROPPED for Black dragons at taverley_dungeon: Black dragon LocLine 'Taverley Dungeon (Upper Level)': 0 of 12 tiles walkable
+DROPPED for Hellhounds at witchaven_dungeon: Hellhound LocLine 'Witchaven Dungeon': Shortest Path cannot reach any of its 8 walkable tiles
+DROPPED for Ogres at witchaven_dungeon: Ogre LocLine 'Witchaven Dungeon': Shortest Path cannot reach any of its 6 walkable tiles
+DROPPED for Fire giants at waterfall_dungeon: Fire giant LocLine 'Waterfall Dungeon': Shortest Path cannot reach any of its 11 walkable tiles
+DROPPED for Skeletons at waterfall_dungeon: Skeleton LocLine 'Waterfall Dungeon': Shortest Path cannot reach any of its 3 walkable tiles
+DROPPED for Skeletons at waterfall_dungeon: Skeleton Mage LocLine 'Waterfall Dungeon': Shortest Path cannot reach any of its 4 walkable tiles
+DROPPED for Abyssal demons at slayer_tower: Abyssal demon LocLine 'Slayer Tower (basement)': 0 of 14 tiles walkable
+DROPPED for Bloodveld at slayer_tower: Bloodveld LocLine 'Slayer Tower (basement)': 0 of 12 tiles walkable
+DROPPED for Gargoyles at slayer_tower: Gargoyle LocLine 'Slayer Tower basement (Slayer task only)': 0 of 12 tiles walkable
+DROPPED for Nechryael at slayer_tower: Nechryael LocLine 'Slayer Tower Basement': 0 of 12 tiles walkable
+DROPPED for Aviansies at god_wars_dungeon: Aviansie LocLine 'God Wars Dungeon': 0 of 36 tiles walkable
+DROPPED for Bloodveld at god_wars_dungeon: Bloodveld LocLine 'God Wars Dungeon': 0 of 19 tiles walkable
+DROPPED for Hellhounds at god_wars_dungeon: Hellhound LocLine 'God Wars Dungeon': 0 of 5 tiles walkable
+DROPPED for Vampyres at god_wars_dungeon: Feral Vampyre LocLine 'God Wars Dungeon': 0 of 13 tiles walkable
+CANNON CONFLICT god_wars_dungeon / Goblins: 'God Wars Dungeon'=unclear:{{NA|Unknown}}
+DROPPED for Ogres at god_wars_dungeon: Ogre LocLine 'God Wars Dungeon': 0 of 3 tiles walkable
+DROPPED for Werewolves at god_wars_dungeon: Werewolf LocLine 'God Wars Dungeon': 0 of 33 tiles walkable
+DROPPED for Pyrefiends at god_wars_dungeon: Pyrefiend LocLine 'God Wars Dungeon': 0 of 4 tiles walkable
+DROPPED for Icefiends at god_wars_dungeon: Icefiend LocLine 'God Wars Dungeon': 0 of 5 tiles walkable
+DROPPED for Spiritual creatures at god_wars_dungeon: Spiritual ranger LocLine 'God Wars Dungeon - Ancient Prison': Shortest Path cannot reach any of its 9 walkable tiles
+DROPPED for Spiritual creatures at god_wars_dungeon: Spiritual warrior LocLine 'God Wars Dungeon - Ancient Prison': Shortest Path cannot reach any of its 9 walkable tiles
+DROPPED for Spiritual creatures at god_wars_dungeon: Spiritual mage LocLine 'God Wars Dungeon - Ancient Prison': Shortest Path cannot reach any of its 5 walkable tiles
+DROPPED for Kalphite at kalphite_lair: Kalphite Worker LocLine 'Kalphite Lair': 0 of 13 tiles walkable
+DROPPED for Kalphite at kalphite_lair: Kalphite Soldier LocLine 'Kalphite Lair': 0 of 7 tiles walkable
+DROPPED for Kalphite at kalphite_lair: Kalphite Guardian LocLine 'Kalphite Lair': 0 of 4 tiles walkable
+DROPPED for Kalphite at kalphite_cave: Kalphite Worker LocLine 'Kalphite Cave (on Slayer task)': 0 of 18 tiles walkable
+DROPPED for Kalphite at kalphite_cave: Kalphite Soldier LocLine 'Kalphite Cave (on Slayer task)': 0 of 20 tiles walkable
+DROPPED for Kalphite at kalphite_cave: Kalphite Guardian LocLine 'Kalphite Cave (on Slayer task)': 0 of 5 tiles walkable
+DROPPED for Cave kraken at kraken_cove: Cave kraken LocLine 'Kraken Cove': 1 of 25 tiles walkable
+DROPPED for Waterfiends at kraken_cove: Waterfiend LocLine 'Kraken Cove (Slayer Task Only)': Shortest Path cannot reach any of its 15 walkable tiles
+DROPPED for Dagannoth at waterbirth_island: Dagannoth (Waterbirth Island) LocLine 'Waterbirth Island Dungeon (Entrance Hall)': Shortest Path cannot reach any of its 54 walkable tiles
+DROPPED for Dagannoth at waterbirth_island: Dagannoth (Waterbirth Island) LocLine 'Waterbirth Island Dungeon (Southern Path)': Shortest Path cannot reach any of its 39 walkable tiles
+DROPPED for Dagannoth at waterbirth_island: Dagannoth (Waterbirth Island) LocLine 'Waterbirth Island Dungeon (Area before Dagannoth Kings)': Shortest Path cannot reach any of its 6 walkable tiles
+DROPPED for Dagannoth at waterbirth_island: Dagannoth (Waterbirth Island) LocLine 'Waterbirth Island Dungeon (Sub Levels)': 2 of 5 tiles walkable
+DROPPED for Dagannoth at waterbirth_island: Dagannoth (Waterbirth Island) LocLine 'Waterbirth Island Dungeon (Sub Levels)': 0 of 10 tiles walkable
+DROPPED for Dagannoth at waterbirth_island: Dagannoth (Waterbirth Island) LocLine 'Waterbirth Island Dungeon (Sub Levels)': 5 of 9 tiles walkable
+DROPPED for Dagannoth at waterbirth_island: Dagannoth (Waterbirth Island) LocLine 'Waterbirth Island Dungeon (Sub Levels)': 0 of 9 tiles walkable
+DROPPED for Dagannoth at waterbirth_island: Dagannoth (Waterbirth Island) LocLine 'Waterbirth Island Dungeon (Sub Levels)': 0 of 3 tiles walkable
+DROPPED for Crabs at waterbirth_island: Rock Crab LocLine 'Waterbirth Island Dungeon': Shortest Path cannot reach any of its 18 walkable tiles
+DROPPED for Crabs at waterbirth_island: Giant Rock Crab LocLine 'Waterbirth Island Dungeon sublevel 1': Shortest Path cannot reach any of its 27 walkable tiles
+DROPPED for Lizardmen at lizardman_canyon: Lizardman LocLine 'Lizardman Canyon, west side': Shortest Path cannot reach any of its 4 walkable tiles
+DROPPED for Lizardmen at lizardman_canyon: Lizardman shaman LocLine 'Lizardman Canyon, west side': Shortest Path cannot reach any of its 3 walkable tiles
+DROPPED for Smoke devils at smoke_devil_dungeon: Smoke devil LocLine 'Smoke Devil Dungeon': Shortest Path cannot reach any of its 36 walkable tiles
+CANNON CONFLICT smoke_dungeon / Dust devils: 'Smoke Dungeon'=unclear:{{Maybe}}
+DROPPED for Trolls at troll_stronghold: Mountain troll LocLine 'Troll Stronghold (Underground)': 0 of 16 tiles walkable
+DROPPED for Trolls at keldagrim: Mountain troll LocLine 'Tunnel entrance to Keldagrim': 3 of 7 tiles walkable
+DROPPED for Black dragons at myths_guild_dungeon: Black dragon LocLine "Corsair Cove Dungeon/Myths' Guild (basement)": 0 of 2 tiles walkable
+DROPPED for Ogres at myths_guild_dungeon: Ogress Warrior LocLine 'Corsair Cove Dungeon': 0 of 16 tiles walkable
+DROPPED for Ogres at myths_guild_dungeon: Ogress Shaman LocLine 'Corsair Cove Dungeon': 0 of 16 tiles walkable
+DROPPED for Metal dragons at ancient_cavern: Mithril dragon LocLine 'Ancient Cavern (upper level)': 0 of 7 tiles walkable
+DROPPED for Ankou at stronghold_of_security: Ankou LocLine 'Stronghold of Security: Sepulchre of Death': 0 of 23 tiles walkable
+DROPPED for Ankou at stronghold_of_security: Ankou LocLine 'Stronghold of Security: Sepulchre of Death': 0 of 9 tiles walkable
+DROPPED for Rats at stronghold_of_security: Giant rat LocLine 'Stronghold of Security': 0 of 10 tiles walkable
+DROPPED for Spiders at stronghold_of_security: Spider LocLine 'Stronghold of Security, Pit of Pestilence (level 3)': Shortest Path cannot reach any of its 35 walkable tiles
+DROPPED for Spiders at stronghold_of_security: Giant spider LocLine 'Stronghold of Security: Pit of Pestilence': Shortest Path cannot reach any of its 40 walkable tiles
+DROPPED for Ghosts at stronghold_of_security: Ghost LocLine 'Stronghold of Security:Sepulchre of Death': 11 of 31 tiles walkable
+DROPPED for Shades at stronghold_of_security: Shade LocLine 'Sepulchre of Death in Stronghold of Security': 0 of 4 tiles walkable
+DROPPED for Fleshcrawlers at stronghold_of_security: Flesh Crawler LocLine 'Stronghold of Security: Catacomb of Famine': 0 of 5 tiles walkable
+DROPPED for Fleshcrawlers at stronghold_of_security: Flesh Crawler LocLine 'Stronghold of Security: Catacomb of Famine': 0 of 8 tiles walkable
+DROPPED for Fleshcrawlers at stronghold_of_security: Flesh Crawler LocLine 'Stronghold of Security: Catacomb of Famine': 0 of 7 tiles walkable
+DROPPED for Fleshcrawlers at stronghold_of_security: Flesh Crawler LocLine 'Stronghold of Security: Catacomb of Famine': 0 of 6 tiles walkable
+DROPPED for Catablepon at stronghold_of_security: Catablepon LocLine 'Stronghold of Security: Pit of Pestilence': Shortest Path cannot reach any of its 8 walkable tiles
+DROPPED for Catablepon at stronghold_of_security: Catablepon LocLine 'Stronghold of Security: Pit of Pestilence': Shortest Path cannot reach any of its 4 walkable tiles
+DROPPED for Catablepon at stronghold_of_security: Catablepon LocLine 'Stronghold of Security: Pit of Pestilence': 8 of 14 tiles walkable
+DROPPED for Fossil Island wyverns at fossil_island: Spitting Wyvern LocLine 'Wyvern Cave': Shortest Path cannot reach any of its 4 walkable tiles
+DROPPED for Fossil Island wyverns at fossil_island: Taloned Wyvern LocLine 'Wyvern Cave': Shortest Path cannot reach any of its 4 walkable tiles
+DROPPED for Fossil Island wyverns at fossil_island: Long-tailed Wyvern LocLine 'Wyvern Cave (Slayer task only)': Shortest Path cannot reach any of its 4 walkable tiles
+DROPPED for Fossil Island wyverns at fossil_island: Ancient Wyvern LocLine 'Wyvern Cave (Slayer task only)': Shortest Path cannot reach any of its 3 walkable tiles
+DROPPED for Fossil Island wyverns at fossil_island: Ancient Wyvern LocLine 'Wyvern Cave': Shortest Path cannot reach any of its 2 walkable tiles
+DROPPED for Blue dragons at ogre_enclave: Blue dragon LocLine 'Ogre Enclave': Shortest Path cannot reach any of its 6 walkable tiles
+DROPPED for Greater demons at ogre_enclave: Greater demon LocLine 'Ogre Enclave': Shortest Path cannot reach any of its 5 walkable tiles
+DROPPED for Spiders at ogre_enclave: Spider LocLine 'Ogre Enclave': Shortest Path cannot reach any of its 10 walkable tiles
+DROPPED for Brine rats at brine_rat_cavern: Brine rat LocLine 'Brine Rat Cavern': Shortest Path cannot reach any of its 7 walkable tiles
+DROPPED for Crabs at brine_rat_cavern: Rock Crab LocLine 'Brine Rat Cavern': Shortest Path cannot reach any of its 4 walkable tiles
+DROPPED for Black dragons at evil_chickens_lair: Black dragon LocLine "Evil Chicken's Lair": Shortest Path cannot reach any of its 4 walkable tiles
+DROPPED for Black dragons at evil_chickens_lair: Baby black dragon LocLine "Evil Chicken's Lair": Shortest Path cannot reach any of its 1 walkable tiles
+DROPPED for Bloodveld at iorwerth_dungeon: Mutated Bloodveld LocLine 'Iorwerth Dungeon': Shortest Path cannot reach any of its 12 walkable tiles
+DROPPED for Dark beasts at iorwerth_dungeon: Dark beast LocLine 'Iorwerth Dungeon': Shortest Path cannot reach any of its 10 walkable tiles
+DROPPED for Kurask at iorwerth_dungeon: Kurask LocLine 'Iorwerth Dungeon': Shortest Path cannot reach any of its 14 walkable tiles
+DROPPED for Nechryael at iorwerth_dungeon: Greater Nechryael LocLine 'Iorwerth Dungeon': Shortest Path cannot reach any of its 16 walkable tiles
+DROPPED for Waterfiends at iorwerth_dungeon: Waterfiend LocLine 'Iorwerth Dungeon': Shortest Path cannot reach any of its 20 walkable tiles
+DROPPED for Elves at iorwerth_dungeon: Iorwerth Warrior LocLine 'Iorwerth Dungeon': Shortest Path cannot reach any of its 13 walkable tiles
+DROPPED for Blue dragons at isle_of_souls: Blue dragon LocLine 'Isle of Souls Dungeon': Shortest Path cannot reach any of its 4 walkable tiles
+DROPPED for Blue dragons at isle_of_souls: Baby blue dragon LocLine 'Isle of Souls Dungeon': Shortest Path cannot reach any of its 3 walkable tiles
+DROPPED for Fire giants at isle_of_souls: Fire giant LocLine 'Isle of Souls Dungeon': Shortest Path cannot reach any of its 8 walkable tiles
+DROPPED for Greater demons at isle_of_souls: Greater demon LocLine 'Isle of Souls Dungeon': Shortest Path cannot reach any of its 7 walkable tiles
+DROPPED for Metal dragons at isle_of_souls: Iron dragon LocLine 'Isle of Souls Dungeon': Shortest Path cannot reach any of its 3 walkable tiles
+DROPPED for Warped creatures at poison_waste_dungeon: Warped Terrorbird LocLine 'Poison Waste Dungeon - main level': Shortest Path cannot reach any of its 33 walkable tiles
+DROPPED for Warped creatures at poison_waste_dungeon: Warped Terrorbird LocLine 'Poison Waste Dungeon - lower level': Shortest Path cannot reach any of its 3 walkable tiles
+DROPPED for Warped creatures at poison_waste_dungeon: Warped Tortoise LocLine 'Poison Waste Dungeon - main level': Shortest Path cannot reach any of its 13 walkable tiles
+DROPPED for Warped creatures at poison_waste_dungeon: Warped Tortoise LocLine 'Poison Waste Dungeon - lower level': Shortest Path cannot reach any of its 3 walkable tiles
+DROPPED for Lesser Nagua at neypotzli: Sulphur Nagua LocLine 'Neypotzli - Ancient Prison': Shortest Path cannot reach any of its 14 walkable tiles
+DROPPED for Wyrms at neypotzli: Wyrmling LocLine 'Neypotzli - Earthbound Cavern': Shortest Path cannot reach any of its 6 walkable tiles
+DROPPED for Blue dragons at ruins_of_tapoyauik: Blue dragon LocLine 'Ruins of Tapoyauik (Bottom floor)': Shortest Path cannot reach any of its 7 walkable tiles
+DROPPED for Blue dragons at ruins_of_tapoyauik: Baby blue dragon LocLine 'Ruins of Tapoyauik': Shortest Path cannot reach any of its 7 walkable tiles
+DROPPED for Blue dragons at ruins_of_tapoyauik: Brutal blue dragon LocLine 'Ruins of Tapoyauik': Shortest Path cannot reach any of its 5 walkable tiles
+DROPPED for Jellies at ruins_of_tapoyauik: Chilled jelly LocLine 'Ruins of Tapoyauik': Shortest Path cannot reach any of its 10 walkable tiles
+DROPPED for Lesser Nagua at ruins_of_tapoyauik: Frost Nagua LocLine 'Ruins of Tapoyauik': Shortest Path cannot reach any of its 11 walkable tiles
+DROPPED for Ice giants at ruins_of_tapoyauik: Ice giant LocLine 'Ruins of Tapoyauik': Shortest Path cannot reach any of its 14 walkable tiles
+DROPPED for Ice warriors at ruins_of_tapoyauik: Ice warrior LocLine 'Ruins of Tapoyauik - middle level': Shortest Path cannot reach any of its 4 walkable tiles
+DROPPED for Ice warriors at ruins_of_tapoyauik: Ice warrior LocLine 'Ruins of Tapoyauik - lower level': Shortest Path cannot reach any of its 3 walkable tiles
+DROPPED for Cave crawlers at ruins_of_tapoyauik: Cave crawler LocLine 'Ruins of Tapoyauik - top level': Shortest Path cannot reach any of its 7 walkable tiles
+DROPPED for Icefiends at ruins_of_tapoyauik: Icefiend LocLine 'Ruins of Tapoyauik': Shortest Path cannot reach any of its 15 walkable tiles
+DROPPED for Crabs at ruins_of_tapoyauik: Frost Crab LocLine 'Ruins of Tapoyauik bottom floor': Shortest Path cannot reach any of its 7 walkable tiles
+DROPPED for Crabs at ruins_of_tapoyauik: Frost Crab LocLine 'Ruins of Tapoyauik middle floor': Shortest Path cannot reach any of its 16 walkable tiles
+DROPPED for Lesser Nagua at crypt_of_tonali: Earthen Nagua LocLine 'Tonali Cavern - Southern Cavern (middle floor)': Shortest Path cannot reach any of its 8 walkable tiles
+DROPPED for Lesser Nagua at crypt_of_tonali: Earthen Nagua LocLine 'Tonali Cavern - Southern Cavern (bottom floor)': Shortest Path cannot reach any of its 9 walkable tiles
+DROPPED for Lesser Nagua at crypt_of_tonali: Earthen Nagua LocLine 'Tonali Cavern - Sun Chamber': Shortest Path cannot reach any of its 8 walkable tiles
+DROPPED for Rockslugs at crypt_of_tonali: Rockslug LocLine 'Tonali Cavern': Shortest Path cannot reach any of its 6 walkable tiles
+DROPPED for Trolls at wyrmscraig: Mountain troll LocLine 'Wyrmscraig Cavern': Shortest Path cannot reach any of its 7 walkable tiles
+CANNON CONFLICT wyrmscraig / Wyrms: 'Wyrmscraig'=yes, 'Wyrmscraig Cavern'=yes, 'Wyrmscraig Cavern'=no
+DROPPED for Wyrms at wyrmscraig: Wyrm LocLine 'Wyrmscraig Cavern': Shortest Path cannot reach any of its 5 walkable tiles
+DROPPED for Wyrms at wyrmscraig: Wyrmling LocLine 'Wyrmscraig': Shortest Path cannot reach any of its 6 walkable tiles
+DROPPED for Wyrms at wyrmscraig: Lava Strykewyrm LocLine 'Wyrmscraig Cavern': Shortest Path cannot reach any of its 3 walkable tiles
+DROPPED for Black demons at charred_dungeon: Black demon LocLine 'Charred Dungeon': Shortest Path cannot reach any of its 3 walkable tiles
+DROPPED for Black dragons at charred_dungeon: Black dragon LocLine 'Charred Dungeon': Shortest Path cannot reach any of its 5 walkable tiles
+DROPPED for Black dragons at charred_dungeon: Baby black dragon LocLine 'Charred Dungeon': Shortest Path cannot reach any of its 7 walkable tiles
+DROPPED for Fire giants at charred_dungeon: Fire giant LocLine 'Charred Dungeon': Shortest Path cannot reach any of its 6 walkable tiles
+DROPPED for Hellhounds at charred_dungeon: Hellhound LocLine 'Charred Dungeon': Shortest Path cannot reach any of its 5 walkable tiles
+DROPPED for Nechryael at charred_dungeon: Nechryael LocLine 'Charred Dungeon': Shortest Path cannot reach any of its 11 walkable tiles
+DROPPED for Red dragons at charred_dungeon: Red dragon LocLine 'Charred Dungeon': Shortest Path cannot reach any of its 4 walkable tiles
+DROPPED for Wyrms at charred_dungeon: Lava Strykewyrm LocLine 'Charred Dungeon': Shortest Path cannot reach any of its 12 walkable tiles
+DROPPED for Vampyres at vampyrium: Venator LocLine 'Apsul Hunting Ground': Shortest Path cannot reach any of its 7 walkable tiles
+DROPPED for Vampyres at vampyrium: Venator LocLine 'Virer Hunting Ground': Shortest Path cannot reach any of its 12 walkable tiles
+DROPPED for Fossil Island wyverns at wyvern_cave: Spitting Wyvern LocLine 'Wyvern Cave': Shortest Path cannot reach any of its 4 walkable tiles
+DROPPED for Fossil Island wyverns at wyvern_cave: Taloned Wyvern LocLine 'Wyvern Cave': Shortest Path cannot reach any of its 4 walkable tiles
+DROPPED for Fossil Island wyverns at wyvern_cave: Long-tailed Wyvern LocLine 'Wyvern Cave (Slayer task only)': Shortest Path cannot reach any of its 4 walkable tiles
+DROPPED for Fossil Island wyverns at wyvern_cave: Ancient Wyvern LocLine 'Wyvern Cave (Slayer task only)': Shortest Path cannot reach any of its 3 walkable tiles
+DROPPED for Fossil Island wyverns at wyvern_cave: Ancient Wyvern LocLine 'Wyvern Cave': Shortest Path cannot reach any of its 2 walkable tiles
+DROPPED for Lizardmen at lizardman_caves: Lizardman shaman LocLine 'Lizardman Caves, underneath Lizardman Settlement (Slayer task only)': 1 of 8 tiles walkable
+DROPPED for Lizardmen at lizardman_temple: Lizardman shaman LocLine 'Lizardman Temple, beneath Molch': Shortest Path cannot reach any of its 6 walkable tiles
+DROPPED for Araxytes at morytania_spider_cave: Araxyte LocLine 'Morytania Spider Cave': Shortest Path cannot reach any of its 15 walkable tiles
+DROPPED for Araxytes at morytania_spider_cave: Araxyte LocLine 'Morytania Spider Cave (task-only area)': Shortest Path cannot reach any of its 12 walkable tiles
+DROPPED for Araxytes at morytania_spider_cave: Araxyte LocLine 'Morytania Spider Cave': Shortest Path cannot reach any of its 7 walkable tiles
+DROPPED for Araxytes at morytania_spider_cave: Araxyte LocLine 'Morytania Spider Cave (task-only area)': Shortest Path cannot reach any of its 20 walkable tiles
+DROPPED for Custodian stalkers at stalker_den: Mature custodian stalker LocLine 'Stalker Den (multicombat)': Shortest Path cannot reach any of its 13 walkable tiles
+DROPPED for Gryphons at western_gryphon_dungeon: Gryphon LocLine 'Gryphons (dungeon)': Shortest Path cannot reach any of its 15 walkable tiles
+DROPPED for Gryphons at eastern_gryphon_dungeon: Gryphon LocLine 'Gryphons (task-only dungeon)': Shortest Path cannot reach any of its 14 walkable tiles
+DROPPED for Aberrant spectres at deepfin_mine: Aberrant spectre LocLine 'Deepfin Mine': Shortest Path cannot reach any of its 7 walkable tiles
+DROPPED for Ankou at deepfin_mine: Ankou LocLine 'Deepfin Mine': Shortest Path cannot reach any of its 10 walkable tiles
+DROPPED for Aviansies at wilderness_god_wars_dungeon: Aviansie LocLine 'Wilderness God Wars Dungeon': 0 of 8 tiles walkable
+DROPPED for Bloodveld at wilderness_god_wars_dungeon: Bloodveld LocLine 'Wilderness God Wars Dungeon': 0 of 5 tiles walkable
+DROPPED for Vampyres at wilderness_god_wars_dungeon: Feral Vampyre LocLine 'Wilderness God Wars Dungeon': 0 of 2 tiles walkable
+DROPPED for Ogres at wilderness_god_wars_dungeon: Ogre LocLine 'Wilderness God Wars Dungeon': 0 of 1 tiles walkable
+DROPPED for Werewolves at wilderness_god_wars_dungeon: Werewolf LocLine 'Wilderness God Wars Dungeon': 0 of 2 tiles walkable
+DROPPED for Pyrefiends at wilderness_god_wars_dungeon: Pyrefiend LocLine 'Wilderness God Wars Dungeon': 0 of 2 tiles walkable
+DROPPED for Icefiends at wilderness_god_wars_dungeon: Icefiend LocLine 'Wilderness God Wars Dungeon': 0 of 2 tiles walkable
+DROPPED for Spiritual creatures at wilderness_god_wars_dungeon: Spiritual ranger LocLine 'Wilderness God Wars Dungeon': Shortest Path cannot reach any of its 12 walkable tiles
+DROPPED for Spiritual creatures at wilderness_god_wars_dungeon: Spiritual warrior LocLine 'Wilderness God Wars Dungeon': Shortest Path cannot reach any of its 11 walkable tiles
+DROPPED for Spiritual creatures at wilderness_god_wars_dungeon: Spiritual mage LocLine 'Wilderness God Wars Dungeon': Shortest Path cannot reach any of its 13 walkable tiles
+DROPPED for Monkeys at crash_site_cavern: Tortured gorilla LocLine 'Crash Site Cavern': Shortest Path cannot reach any of its 8 walkable tiles
+DROPPED for Monkeys at crash_site_cavern: Demonic gorilla LocLine 'Crash Site Cavern': Shortest Path cannot reach any of its 28 walkable tiles
+DROPPED for Black dragons at mynydd: Black dragon LocLine 'Mynydd': Shortest Path cannot reach any of its 1 walkable tiles
+DROPPED for Ghosts at mynydd: Ghost LocLine 'Mynydd': Shortest Path cannot reach any of its 5 walkable tiles
+DROPPED for Bloodveld at buccaneers_laboratory: Mutated Bloodveld LocLine "Buccaneers' Laboratory": Shortest Path cannot reach any of its 8 walkable tiles
+DROPPED for Hellhounds at buccaneers_laboratory: Hellhound LocLine "Buccaneers' Laboratory": Shortest Path cannot reach any of its 5 walkable tiles
+DROPPED for Blue dragons at dragon_nest: Blue dragon LocLine 'Dragon Nest': Shortest Path cannot reach any of its 5 walkable tiles
+DROPPED for Blue dragons at dragon_nest: Baby blue dragon LocLine 'Dragon Nest': Shortest Path cannot reach any of its 2 walkable tiles
+DROPPED for Red dragons at dragon_nest: Red dragon LocLine 'Dragon Nest': Shortest Path cannot reach any of its 5 walkable tiles
+DROPPED for Red dragons at dragon_nest: Baby red dragon LocLine 'Dragon Nest': Shortest Path cannot reach any of its 2 walkable tiles
+DROPPED for Blue dragons at heroes_guild_basement: Blue dragon LocLine "Heroes' Guild Basement": Shortest Path cannot reach any of its 1 walkable tiles
+DROPPED for Greater demons at entrana_dungeon: Greater demon LocLine 'Entrana Dungeon': Shortest Path cannot reach any of its 2 walkable tiles
+DROPPED for Greater demons at sisterhood_sanctuary: Greater demon LocLine 'Sisterhood Sanctuary': 0 of 4 tiles walkable
+DROPPED for Jellies at grimstone_dungeon: Chilled jelly LocLine 'Grimstone Dungeon': Shortest Path cannot reach any of its 10 walkable tiles
+DROPPED for Frost dragons at grimstone_dungeon: Frost dragon LocLine 'Grimstone Dungeon': Shortest Path cannot reach any of its 20 walkable tiles
+DROPPED for Jellies at ynysdail_cavern: Jelly LocLine 'Ynysdail Cavern': Shortest Path cannot reach any of its 9 walkable tiles
+DROPPED for Rockslugs at ynysdail_cavern: Rockslug LocLine 'Ynysdail Cavern': Shortest Path cannot reach any of its 8 walkable tiles
+DROPPED for Aquanites at ynysdail_cavern: Aquanite LocLine 'Ynysdail Cavern': Shortest Path cannot reach any of its 16 walkable tiles
+DROPPED for Kurask at kurask_lair: Kurask LocLine 'Kurask Lair': Shortest Path cannot reach any of its 8 walkable tiles
+DROPPED for Trolls at ice_troll_caves: Ice troll runt LocLine 'Ice Troll Caves': 0 of 2 tiles walkable
+DROPPED for Trolls at ice_troll_caves: Ice troll male LocLine 'Ice Troll Caves': 0 of 2 tiles walkable
+DROPPED for Trolls at ice_troll_caves: Ice troll female LocLine 'Ice Troll Caves': 0 of 2 tiles walkable
+DROPPED for Trolls at ice_troll_caves: Ice troll grunt LocLine 'Ice Troll Caves': 0 of 3 tiles walkable
+DROPPED for Vampyres at meiyerditch: Vyrewatch LocLine 'Meiyerditch': 5 of 33 tiles walkable
+DROPPED for Vampyres at meiyerditch: Vyrewatch LocLine 'Meiyerditch': 0 of 5 tiles walkable
+DROPPED for Vampyres at meiyerditch: Vyrewatch LocLine 'Meiyerditch': 1 of 2 tiles walkable
+DROPPED for Monkeys at ardougne_zoo: Monkey (monster) LocLine 'Ardougne Zoo': Shortest Path cannot reach any of its 10 walkable tiles
+DROPPED for Scorpions at ardougne_zoo: Scorpion LocLine 'Ardougne Zoo': Shortest Path cannot reach any of its 3 walkable tiles
+DROPPED for Scorpions at ardougne_zoo: Pit Scorpion LocLine 'Ardougne Zoo': Shortest Path cannot reach any of its 4 walkable tiles
+DROPPED for Wolves at ardougne_zoo: Wolf LocLine 'Ardougne Zoo': Shortest Path cannot reach any of its 2 walkable tiles
+DROPPED for Bears at ardougne_zoo: Grizzly bear LocLine 'Ardougne Zoo': Shortest Path cannot reach any of its 2 walkable tiles
+DROPPED for Monkeys at marim: Monkey Archer LocLine 'Marim': 0 of 19 tiles walkable
+DROPPED for Monkeys at marim: Monkey Archer LocLine 'Marim': Shortest Path cannot reach any of its 2 walkable tiles
+DROPPED for Monkeys at marim: Monkey Archer LocLine 'Marim': Shortest Path cannot reach any of its 4 walkable tiles
+DROPPED for Monkeys at north_east_karamja_instanced: Monkey (monster) LocLine 'North-east Karamja (Instanced)': Shortest Path cannot reach any of its 7 walkable tiles
+DROPPED for Monkeys at temple_of_marimbo: Monkey Guard LocLine 'Temple of Marimbo': Shortest Path cannot reach any of its 3 walkable tiles
+DROPPED for Monkeys at temple_of_marimbo_dungeon: Monkey Zombie LocLine 'Temple of Marimbo Dungeon': Shortest Path cannot reach any of its 41 walkable tiles
+DROPPED for Zombies at temple_of_marimbo_dungeon: Monkey Zombie LocLine 'Temple of Marimbo Dungeon': Shortest Path cannot reach any of its 41 walkable tiles
+DROPPED for Wall beasts at lumbridge_swamp_caves: Wall beast LocLine 'Lumbridge Swamp Caves': 0 of 7 tiles walkable
+CANNON CONFLICT clock_tower_dungeon / Goblins: 'Clock Tower Dungeon'=unclear:{{NA|Unknown}}
+CANNON CONFLICT outside_of_port_sarim / Goblins: 'Outside of Port Sarim'=unclear:{{NA|Unknown}}
+CANNON CONFLICT tree_gnome_village_maze / Goblins: 'Tree Gnome Village maze'=unclear:{{NA|Unknown}}
+DROPPED for Rats at melzars_maze: Rat LocLine "Melzar's Maze (1st Floor)": Shortest Path cannot reach any of its 2 walkable tiles
+DROPPED for Rats at melzars_maze: Rat LocLine "Melzar's Maze (2nd Floor)": 1 of 2 tiles walkable
+DROPPED for Rats at melzars_maze: Rat LocLine "Melzar's Maze Basement": Shortest Path cannot reach any of its 3 walkable tiles
+DROPPED for Rats at ardougne_sewers: Giant rat LocLine 'Ardougne Sewers': Shortest Path cannot reach any of its 8 walkable tiles
+DROPPED for Rats at ardougne_sewers: Dungeon rat LocLine 'Ardougne Sewers': Shortest Path cannot reach any of its 1 walkable tiles
+DROPPED for Zombies at ardougne_sewers: Zombie LocLine 'Ardougne Sewers': Shortest Path cannot reach any of its 3 walkable tiles
+CANNON CONFLICT gnome_maze / Hill giants: 'Gnome Maze'=unclear:{{NA|Unknown}}
+DROPPED for Spiders at underground_pass: Spider LocLine 'Underground Pass (dungeon) (During Song of the Elves)': Shortest Path cannot reach any of its 49 walkable tiles
+DROPPED for Spiders at underground_pass: Blessed spider LocLine "Underground Pass (Kalrag's Lair during Song of the Elves)": Shortest Path cannot reach any of its 32 walkable tiles
+DROPPED for Spiders at underground_pass: Blessed spider LocLine 'Underground Pass (Part 1)': Shortest Path cannot reach any of its 14 walkable tiles
+DROPPED for Birds at along_the_river_lum_south_of_varrock: Duck LocLine 'Along the River Lum south of Varrock': 0 of 41 tiles walkable
+DROPPED for Birds at along_the_river_lum_north_of_lumbridge: Duck LocLine 'Along the River Lum north of Lumbridge': 0 of 28 tiles walkable
+CANNON CONFLICT scorpion_pit_cave / Scorpions: 'Scorpion Pit (Cave)'=unclear:{{NA|Unknown}}
+DROPPED for Bats at legends_guild_basement: Giant bat LocLine "Legends' Guild Basement": Shortest Path cannot reach any of its 5 walkable tiles
+DROPPED for Bats at temple_of_ikov: Giant bat LocLine 'Temple of Ikov': Shortest Path cannot reach any of its 3 walkable tiles
+DROPPED for Lesser demons at temple_of_ikov: Lesser demon LocLine 'Temple of Ikov': Shortest Path cannot reach any of its 3 walkable tiles
+DROPPED for Bats at chaos_druid_tower_dungeon: Giant bat LocLine 'Chaos Druid Tower Dungeon': Shortest Path cannot reach any of its 5 walkable tiles
+DROPPED for Ogres at chaos_druid_tower_dungeon: Ogre LocLine 'Chaos Druid Tower Dungeon (requires 46 Thieving)': Shortest Path cannot reach any of its 7 walkable tiles
+DROPPED for Bats at shaman_caves: Death wing LocLine 'Shaman Caves': Shortest Path cannot reach any of its 8 walkable tiles
+DROPPED for Wolves at arandar_entrance: Wolf LocLine 'Arandar entrance': Shortest Path cannot reach any of its 4 walkable tiles
+DROPPED for Fever spiders at braindeath_island: Fever spider LocLine 'Braindeath Island': Shortest Path cannot reach any of its 11 walkable tiles
+DROPPED for Zombies at glarials_tomb: Zombie LocLine "Glarial's Tomb": Shortest Path cannot reach any of its 5 walkable tiles
+DROPPED for Ogres at jiggig_dungeon: Zogre LocLine 'Jiggig Dungeon (lower level)': Shortest Path cannot reach any of its 4 walkable tiles
+DROPPED for Zombies at magic_guilds_dungeon: Zombie LocLine "Magic Guild's dungeon (Magic only)": Shortest Path cannot reach any of its 8 walkable tiles
+DROPPED for Skeletons at digsite_dungeon: Skeleton LocLine 'Digsite Dungeon (During The Dig Site)': Shortest Path cannot reach any of its 10 walkable tiles
+DROPPED for Skeletons at digsite_dungeon: Skeleton LocLine 'Digsite Dungeon (After The Dig Site)': Shortest Path cannot reach any of its 10 walkable tiles
+DROPPED for Terror dogs at tarns_lair: Terror dog LocLine "Tarn's Lair": 4 of 9 tiles walkable
+DROPPED for Ghosts at crumbling_tower: Forgotten Soul LocLine 'Crumbling Tower': Shortest Path cannot reach any of its 4 walkable tiles
+DROPPED for Ghosts at crumbling_tower: Forgotten Soul LocLine 'Crumbling Tower': Shortest Path cannot reach any of its 4 walkable tiles
+DROPPED for Ghosts at west_of_port_phasmatys: Tortured soul LocLine 'West of Port Phasmatys': 1 of 2 tiles walkable
+DROPPED for Bears at east_of_varrock_palace_accessible_via_varrock_sewers: Grizzly bear LocLine 'East of Varrock Palace, accessible via Varrock Sewers': Shortest Path cannot reach any of its 1 walkable tiles
+CANNON CONFLICT north_of_the_observatory / Hill giants: 'North of the Observatory'=unclear:{{NA|Unknown}}
+CANNON CONFLICT bone_yard_hunter_area / Hill giants: 'Bone Yard Hunter area'=unclear:{{NA|Unknown}}
+DROPPED for Hill giants at warriors_guild_basement: Cyclops LocLine "Warriors' Guild (basement)": 0 of 23 tiles walkable
+DROPPED for Ogres at mudskipper_point: Mogre LocLine 'Mudskipper Point': 0 of 3 tiles walkable
+DROPPED for Mogres at mudskipper_point: Mogre LocLine 'Mudskipper Point': 0 of 3 tiles walkable
+DROPPED for Ogres at underground_pass_dungeon: Ogre LocLine 'Underground Pass (dungeon)': Shortest Path cannot reach any of its 2 walkable tiles
+DROPPED for Lesser demons at cage_on_the_top_floor_of_kourend_castle: Lesser demon LocLine 'Kourend Castle - Cage on the top floor': Shortest Path cannot reach any of its 1 walkable tiles
+DROPPED for Lesser demons at cage_on_the_top_floor_of_wizards_tower: Lesser demon LocLine "Wizards' Tower - Cage on the top floor": Shortest Path cannot reach any of its 1 walkable tiles
+DROPPED for Shadow warriors at legends_guild_dungeon: Shadow warrior LocLine "Legends' Guild Dungeon": Shortest Path cannot reach any of its 19 walkable tiles
+DROPPED for Elves at lletya: Elf Archer LocLine 'Lletya': Shortest Path cannot reach any of its 1 walkable tiles
+DROPPED for Dwarves at lovakengj_buildings: Dwarf LocLine 'Lovakengj ( buildings)': Shortest Path cannot reach any of its 8 walkable tiles
+DROPPED for Shades at shade_catacombs: Phrin Shade LocLine 'Shade Catacombs': Shortest Path cannot reach any of its 12 walkable tiles
+DROPPED for Shades at shade_catacombs: Riyl Shade LocLine 'Shade Catacombs': Shortest Path cannot reach any of its 28 walkable tiles
+DROPPED for Shades at shade_catacombs: Asyn Shade LocLine 'Shade Catacombs': Shortest Path cannot reach any of its 15 walkable tiles
+DROPPED for Shades at shade_catacombs: Fiyr Shade LocLine 'Shade Catacombs': Shortest Path cannot reach any of its 10 walkable tiles
+DROPPED for Shades at shade_catacombs: Urium Shade LocLine 'Shade Catacombs': Shortest Path cannot reach any of its 11 walkable tiles
+DROPPED for Killerwatts at killerwatt_plane: Killerwatt LocLine 'Killerwatt plane': 0 of 26 tiles walkable
+DROPPED for Scabarites at sophanem_dungeon_cavern_level: Scarab Mage LocLine 'Sophanem Dungeon (cavern level)': Shortest Path cannot reach any of its 18 walkable tiles
+DROPPED for Scabarites at sophanem_dungeon_cavern_level: Locust rider LocLine 'Sophanem Dungeon (cavern level)': Shortest Path cannot reach any of its 27 walkable tiles
+DROPPED for Scabarites at scabaras_dungeon: Scarab Mage LocLine 'Scabaras Dungeon': Shortest Path cannot reach any of its 11 walkable tiles
+DROPPED for Scabarites at scabaras_dungeon: Locust rider LocLine 'Scabaras Dungeon': Shortest Path cannot reach any of its 11 walkable tiles
+DROPPED for Sourhogs at sourhog_cave: Sourhog LocLine 'Sourhog Cave': Shortest Path cannot reach any of its 8 walkable tiles
+GUIDE ONLY Monkeys: left out 2 places that only spawn lists name
+GUIDE ONLY Goblins: left out 10 places that only spawn lists name
+GUIDE ONLY Rats: kept varrock_sewers, the place the dossier names
+GUIDE ONLY Rats: left out 91 places that only spawn lists name
+GUIDE ONLY Spiders: left out 65 places that only spawn lists name
+GUIDE ONLY Birds: kept lumbridge_east_farm, the place the dossier names
+GUIDE ONLY Birds: left out 57 places that only spawn lists name
+GUIDE ONLY Scorpions: left out 24 places that only spawn lists name
+GUIDE ONLY Bats: left out 20 places that only spawn lists name
+GUIDE ONLY Wolves: left out 18 places that only spawn lists name
+GUIDE ONLY Zombies: left out 3 places that only spawn lists name
+GUIDE ONLY Skeletons: left out 25 places that only spawn lists name
+GUIDE ONLY Ghosts: left out 1 places that only spawn lists name
+GUIDE ONLY Bears: left out 11 places that only spawn lists name
+GUIDE ONLY Moss giants: left out 4 places that only spawn lists name
+GUIDE ONLY Hobgoblins: left out 12 places that only spawn lists name
+GUIDE ONLY Dogs: left out 10 places that only spawn lists name
+GUIDE ONLY Lesser demons: left out 6 places that only spawn lists name
+GUIDE ONLY Dwarves: left out 2 places that only spawn lists name
+GUIDE ONLY Crabs: left out 10 places that only spawn lists name
+KRYSTILIA: no task id for 'Wilderness boss', skipped
+UNREACHABLE ENTRANCE waterfall_dungeon [2512, 3464, 0]: Shortest Path cannot get within 8 tiles
+UNREACHABLE ENTRANCE kebos_swamp [1270, 3616, 0]: Shortest Path cannot get within 8 tiles
+UNREACHABLE ENTRANCE wyrmscraig [2571, 2240, 0]: Shortest Path cannot get within 8 tiles
+UNREACHABLE ENTRANCE scabaras_dungeon [3407, 2848, 0]: Shortest Path cannot get within 8 tiles
+DROPPED for Krystilia Aviansies at wilderness_god_wars_dungeon: Aviansie LocLine 'Wilderness God Wars Dungeon': 0 of 8 tiles walkable
+KRYSTILIA Black Demons at edgeville_dungeon: entrance [3096, 3469, 0] is outside the Wilderness, no marker there
+DROPPED for Krystilia Bloodveld at wilderness_god_wars_dungeon: Bloodveld LocLine 'Wilderness God Wars Dungeon': 0 of 5 tiles walkable
+KRYSTILIA Chaos Druids at edgeville_dungeon: entrance [3096, 3469, 0] is outside the Wilderness, no marker there
+DROPPED for Krystilia Dark Warriors at dark_warriors_fortress: Dark warrior LocLine "Dark Warriors' Fortress": Shortest Path cannot reach any of its 8 walkable tiles
+KRYSTILIA Earth Warriors at edgeville_dungeon: entrance [3096, 3469, 0] is outside the Wilderness, no marker there
+DROPPED for Krystilia Magic Axes at magic_axe_hut: Magic axe LocLine 'Magic axe hut (23 Thieving and lockpick required)': Shortest Path cannot reach any of its 9 walkable tiles
+DROPPED for Krystilia Rogues at rogues_castle: Rogue LocLine "Rogues' Castle": Shortest Path cannot reach any of its 6 walkable tiles
+DROPPED for Krystilia Skeletons at edgeville_dungeon: Skeleton LocLine 'Edgeville Dungeon': none of its 18 tiles lies in the RuneLite 1.13.1 Wilderness areas (NpcAggroAreaPlugin WILDERNESS_ABOVE_GROUND 2944,3523 448x448 and WILDERNESS_UNDERGROUND 2944,9918 320x442)
+KRYSTILIA Skeletons at edgeville_dungeon: entrance [3096, 3469, 0] is outside the Wilderness, no marker there
+DROPPED for Krystilia Spiders at edgeville_dungeon: Giant spider LocLine 'Edgeville Dungeon': none of its 2 tiles lies in the RuneLite 1.13.1 Wilderness areas (NpcAggroAreaPlugin WILDERNESS_ABOVE_GROUND 2944,3523 448x448 and WILDERNESS_UNDERGROUND 2944,9918 320x442)
+KRYSTILIA Spiders at edgeville_dungeon: entrance [3096, 3469, 0] is outside the Wilderness, no marker there
+DROPPED for Krystilia Spiritual Creatures at wilderness_god_wars_dungeon: Spiritual ranger LocLine 'Wilderness God Wars Dungeon': Shortest Path cannot reach any of its 12 walkable tiles
+DROPPED for Krystilia Spiritual Creatures at wilderness_god_wars_dungeon: Spiritual warrior LocLine 'Wilderness God Wars Dungeon': Shortest Path cannot reach any of its 11 walkable tiles
+DROPPED for Krystilia Spiritual Creatures at wilderness_god_wars_dungeon: Spiritual mage LocLine 'Wilderness God Wars Dungeon': Shortest Path cannot reach any of its 13 walkable tiles
+Access: 138 places can lock (4 only for some tasks), 17 carry a note only, 210 need nothing, 5 not settled.
+Access not settled: brimhaven_dungeon, north_east_karamja_instanced, jiggig_dungeon, shayzien_crypts, wizards_tower

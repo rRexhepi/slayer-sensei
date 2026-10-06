@@ -1,0 +1,2 @@
+// Standalone build. Keeps the cache library out of the plugin's own build.
+rootProject.name = 'cache-dump'
