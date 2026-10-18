@@ -18,8 +18,19 @@ public class SlayerTask
 	private String note;
 	private String bestLocation;
 	private String multiOrSingle;
+	/**
+	 * The style to fight it with in a few words, such as "Melee or magic (barrage)" or "Ranged", read from the kill
+	 * style. Empty for a task the dossier does not cover.
+	 */
+	private String style;
 	private String killStyle;
 	private String weakness;
+	/**
+	 * The elemental weakness of the task's monsters, such as "Water 40%", "Air 30 to 50%", or each element with the
+	 * monsters it is for. tools/wiki-extract/build_fight_fields.py writes it from their wiki infoboxes, so it is fixed
+	 * there rather than by hand. Empty when they have none, null when it is not known.
+	 */
+	private String elementalWeakness;
 	private String monsterAttackStyle;
 	private String protectionPrayer;
 	private String requiredItems;

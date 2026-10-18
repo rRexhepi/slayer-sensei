@@ -86,8 +86,9 @@ Laboratories add a pickaxe to the items to bring, for the quick way in through t
 
 ### Fight notes
 
-Short notes for the fight. They give the style to kill it with, its weakness, how it attacks, a prayer
-line, whether a cannon suits the place and whether a superior can appear.
+Short notes for the fight. They suggest melee, ranged or magic, and give its weakness, its elemental
+weakness with the percentage from the wiki, how it attacks, a prayer line, whether a cannon suits the place
+and whether a superior can appear.
 
 ### Advice on the task in progress
 
@@ -222,7 +223,7 @@ The plugin bundles three data files in `src/main/resources`.
 
 | File | What it holds | Where it came from |
 | --- | --- | --- |
-| `slayer_tasks.json` and `slayer_tasks_supplement.json` | Notes for each task on where to go, how to fight it, the items it needs and notable drops. Rough XP, profit and speed ratings. A fallback line with each master's weight for the task. | The notes and ratings were written from OSRS Wiki pages, mainly the Slayer task, monster and location pages, the Slayer training guide and money making guides. The weights come from the game cache's Slayer tables. When the plugin can read those tables in the client, it shows their values. |
+| `slayer_tasks.json` and `slayer_tasks_supplement.json` | Notes for each task on where to go, how to fight it, the items it needs and notable drops. Rough XP, profit and speed ratings. A fallback line with each master's weight for the task. | The notes and ratings were written from OSRS Wiki pages, mainly the Slayer task, monster and location pages, the Slayer training guide and money making guides. The weights come from the game cache's Slayer tables. When the plugin can read those tables in the client, it shows their values. The elemental weakness of each task is read from its monsters' wiki infoboxes by `tools/wiki-extract/build_fight_fields.py`, from the monster pages listed in `tools/wiki-extract/fight_monsters.json`. |
 | `slayer_areas.json` | Places where tasks can be done, with world map points, kill spots for Shortest Path, cannon and multicombat facts, what each place needs to get in, and the list of places for each task. | Built by `tools/wiki-extract` from OSRS Wiki pages (task location tables, monster spawn tables and location pages), from RuneLite's world map data (dungeon, transport and fairy ring locations in RuneLite 1.13.1) and from the game cache (the ids and names of the areas Konar assigns, read with `tools/cache-dump`). Every point and fact names its source. What each place needs comes from the wiki's location, region and Slayer task pages, each with the sentence or infobox field it was read from (`tools/wiki-extract/access.json`). |
 
 Kill spots were also checked against Shortest Path's collision map so that a route can reach them. No

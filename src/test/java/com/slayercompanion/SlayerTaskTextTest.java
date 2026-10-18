@@ -184,10 +184,13 @@ public class SlayerTaskTextTest
 		assertNull(SlayerTaskText.prayerItem(null));
 
 		assertEquals("Weak: demonbane", SlayerTaskText.weaknessItem("Demonbane weapons receive their usual bonuses."));
-		assertEquals("Weak: water spells, demonbane",
-				SlayerTaskText.weaknessItem("Water spells: 50% elemental weakness. Demonbane weapons also receive their usual bonuses."));
 		assertEquals("Weak: crush", SlayerTaskText.weaknessItem("Very low crush Defence; resistant to slash/stab and many ranged setups."));
-		assertEquals("Weak: earth spells, crush", SlayerTaskText.weaknessItem("Crush attacks and Earth spells are their most effective options."));
+		assertEquals("Weak: dragonbane", SlayerTaskText.weaknessItem("Draconic, so dragonbane weapons receive their normal bonus."));
+		// Spells are the elemental item's, so the weakness names only weapons and melee styles
+		assertEquals("Weak: demonbane",
+				SlayerTaskText.weaknessItem("Water spells: 50% elemental weakness. Demonbane weapons also receive their usual bonuses."));
+		assertEquals("Weak: crush", SlayerTaskText.weaknessItem("Crush attacks and Earth spells are their most effective options."));
+		assertNull(SlayerTaskText.weaknessItem("Fire spells exploit their elemental weakness."));
 		assertNull(SlayerTaskText.weaknessItem("No special weakness needed."));
 		assertNull(SlayerTaskText.weaknessItem("Normal spiders need no special weapon; several bosses favour crush."));
 
@@ -198,6 +201,23 @@ public class SlayerTaskTextTest
 		assertEquals("Attacks: melee (slash)", SlayerTaskText.attacksItem("melee (slash)"));
 		assertNull("too long for one line", SlayerTaskText.attacksItem("melee (magical melee, max 9)"));
 		assertNull(SlayerTaskText.attacksItem("mixed - melee and magic/ranged"));
+
+		// The dossier's style, lower case at the start, and the kill style only for an entry without one
+		assertEquals("Style: melee or magic (barrage)", SlayerTaskText.styleItem("Melee or magic (barrage)",
+				"melee (Slayer Tower) or barrage (Catacombs)"));
+		assertEquals("Style: any (demonbane)", SlayerTaskText.styleItem("Any (demonbane)", "melee or ranged"));
+		assertEquals("Style: melee or ranged", SlayerTaskText.styleItem("", "melee or ranged"));
+		assertEquals("Style: magic", SlayerTaskText.styleItem(null, "Magic."));
+		assertNull(SlayerTaskText.styleItem(" ", "melee (Slayer Tower) or barrage (Catacombs)"));
+
+		// The elemental weakness on a line, and when it names the monsters each element is for, too long for one
+		assertEquals("Elemental: water 40%", SlayerTaskText.elementalItem("Water 40%"));
+		assertEquals("Elemental: air 30 to 50%", SlayerTaskText.elementalItem("Air 30 to 50%"));
+		assertEquals("Elemental: fire 30% (Callisto)", SlayerTaskText.elementalItem("Fire 30% (Callisto)"));
+		assertEquals(SlayerTaskText.ELEMENTAL_VARIES, SlayerTaskText.elementalItem("Fire 50% (ice trolls), Earth 50% (mountain trolls)"));
+		assertEquals("Elemental: varies by type", SlayerTaskText.ELEMENTAL_VARIES);
+		assertNull("the monsters have none", SlayerTaskText.elementalItem(""));
+		assertNull("not known", SlayerTaskText.elementalItem(null));
 
 		assertEquals("Catacombs of Kourend", SlayerTaskText.placeItem("Catacombs of Kourend (multi, barrage) for XP/points, or Stronghold"
 				+ " Slayer Cave (single, cannon)."));
@@ -225,6 +245,33 @@ public class SlayerTaskTextTest
 		assertNull(SlayerTaskText.cannonItem("not worth setting up", null));
 	}
 
+	/** The fight items of a few dossier entries, as the compact sidebar shows them under FIGHT. */
+	@Test
+	public void theFightItemsOfDossierEntries()
+	{
+		final SlayerTask demons = DATASET.lookup("Black demons");
+		assertEquals("Style: any (demonbane)", SlayerTaskText.styleItem(demons.getStyle(), demons.getKillStyle()));
+		assertEquals("Weak: demonbane", SlayerTaskText.weaknessItem(demons.getWeakness()));
+		assertEquals("Elemental: water 40%", SlayerTaskText.elementalItem(demons.getElementalWeakness()));
+		final SlayerTask giants = DATASET.lookup("Fire giants");
+		assertEquals("Style: melee or magic (burst)", SlayerTaskText.styleItem(giants.getStyle(), giants.getKillStyle()));
+		assertNull(SlayerTaskText.weaknessItem(giants.getWeakness()));
+		assertEquals("Elemental: water 100%", SlayerTaskText.elementalItem(giants.getElementalWeakness()));
+		// Ice trolls and one mountain troll are weak to fire, the other mountain troll to earth
+		final SlayerTask trolls = DATASET.lookup("Trolls");
+		assertEquals("Style: melee or ranged", SlayerTaskText.styleItem(trolls.getStyle(), trolls.getKillStyle()));
+		assertEquals(SlayerTaskText.ELEMENTAL_VARIES, SlayerTaskText.elementalItem(trolls.getElementalWeakness()));
+		assertEquals("Fire 35 to 100% (level 69 mountain trolls, ice trolls), Earth 50% (level 71 mountain trolls)",
+				trolls.getElementalWeakness());
+		final SlayerTask vorkath = DATASET.lookup("Vorkath");
+		assertEquals("Weak: dragonbane", SlayerTaskText.weaknessItem(vorkath.getWeakness()));
+		// None for abyssal demons, so no item
+		final SlayerTask abyssal = DATASET.lookup("Abyssal demons");
+		assertEquals("Style: melee or magic (barrage)", SlayerTaskText.styleItem(abyssal.getStyle(), abyssal.getKillStyle()));
+		assertEquals("", abyssal.getElementalWeakness());
+		assertNull(SlayerTaskText.elementalItem(abyssal.getElementalWeakness()));
+	}
+
 	/** Every compact item from the dossier fits on a line and uses plain punctuation, for every task, goal and master. */
 	@Test
 	public void compactDossierItemsAreShortAndPlain()
@@ -237,7 +284,11 @@ public class SlayerTaskTextTest
 			if (task == null) continue;
 			final List<String> items = new java.util.ArrayList<>(java.util.Arrays.asList(SlayerTaskText.prayerItem(task.getProtectionPrayer()),
 					SlayerTaskText.weaknessItem(task.getWeakness()), SlayerTaskText.styleItem(task.getKillStyle()),
+					SlayerTaskText.styleItem(task.getStyle(), task.getKillStyle()), SlayerTaskText.elementalItem(task.getElementalWeakness()),
 					SlayerTaskText.attacksItem(task.getMonsterAttackStyle()), SlayerTaskText.placeItem(task.getBestLocation()), SlayerTaskText.cannonItem(task.getCannon(), task.getMultiOrSingle())));
+			// The style and the elemental weakness show for every task the cache knows, the elemental one when it has one
+			assertTrue(name, SlayerTaskText.styleItem(task.getStyle(), task.getKillStyle()) != null);
+			assertEquals(name, task.getElementalWeakness().isEmpty(), SlayerTaskText.elementalItem(task.getElementalWeakness()) == null);
 			for (SlayerGoal goal : SlayerGoal.values())
 			{
 				for (SlayerAssigner master : new SlayerAssigner[]{null, SlayerAssigner.TURAEL, SlayerAssigner.KONAR, SlayerAssigner.KRYSTILIA})

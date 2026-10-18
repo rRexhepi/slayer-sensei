@@ -83,6 +83,8 @@ public class SlayerCompanionPanel extends PluginPanel
 	static final String KRYSTILIA_NOTE = "Krystilia's tasks only count in the Wilderness.";
 	static final String WILDERNESS_ITEM = "Wilderness only";
 	static final String NO_ROUTE_ITEM = "No route";
+	/** The detailed sidebar's elemental weakness when the monsters have none. */
+	static final String NO_ELEMENTAL = "None";
 	private static final String NO_TASK = "No active Slayer task detected.";
 	private static final String NOT_IN_DOSSIER = "This task is not in the dossier yet. Streak and points still show.";
 	private static final String NO_MAP_POINT = "No verified map point for this area yet.";
@@ -373,8 +375,10 @@ public class SlayerCompanionPanel extends PluginPanel
 			final boolean assigned = destination != null && destination.getOrigin() == Destination.Origin.ASSIGNED;
 			addWhereToGo(rows, task, destination, places, assigned);
 			rows.field("Combat area", combatLine(destination, places, task), TEXT_COLOR);
+			rows.field("Style", task.getStyle(), TEXT_COLOR);
 			rows.field("Kill style", task.getKillStyle(), TEXT_COLOR);
 			rows.field("Weakness", task.getWeakness(), TEXT_COLOR);
+			rows.field("Elemental weakness", elementalLine(task), TEXT_COLOR);
 			rows.field("Enemy attacks", task.getMonsterAttackStyle(), TEXT_COLOR);
 			rows.field("Prayer", task.getProtectionPrayer(), TEXT_COLOR);
 			rows.field("Required items", task.getRequiredItems(), TEXT_COLOR);
@@ -927,12 +931,13 @@ public class SlayerCompanionPanel extends PluginPanel
 		final String combat = combatLine(destination, places, task);
 		final String prayer = SlayerTaskText.prayerItem(task.getProtectionPrayer());
 		// Without a gear section the dossier's required items go with the fight's details
-		rows.heading("FIGHT", fields("Kill style", task.getKillStyle(), "Weakness", task.getWeakness(), "Enemy attacks",
-				task.getMonsterAttackStyle(), "Prayer", task.getProtectionPrayer(), "Combat area", combat, "Cannon", cannon, "Superior",
-				superiorText(task), "Required items", gearShown ? null : required));
+		rows.heading("FIGHT", fields("Style", task.getStyle(), "Kill style", task.getKillStyle(), "Weakness", task.getWeakness(),
+				"Elemental weakness", elementalLine(task), "Enemy attacks", task.getMonsterAttackStyle(), "Prayer", task.getProtectionPrayer(),
+				"Combat area", combat, "Cannon", cannon, "Superior", superiorText(task), "Required items", gearShown ? null : required));
 		rows.item(prayer, TEXT_COLOR, task.getProtectionPrayer());
+		rows.item(SlayerTaskText.styleItem(task.getStyle(), task.getKillStyle()), TEXT_COLOR, task.getKillStyle());
 		rows.item(SlayerTaskText.weaknessItem(task.getWeakness()), TEXT_COLOR, task.getWeakness());
-		rows.item(SlayerTaskText.styleItem(task.getKillStyle()), TEXT_COLOR, task.getKillStyle());
+		rows.item(SlayerTaskText.elementalItem(task.getElementalWeakness()), TEXT_COLOR, task.getElementalWeakness());
 		// The prayer already says how it attacks
 		if (prayer == null) rows.item(SlayerTaskText.attacksItem(task.getMonsterAttackStyle()), TEXT_COLOR, task.getMonsterAttackStyle());
 		rows.item(SlayerTaskText.cannonItem(cannon, combat), TEXT_COLOR, fields("Cannon", cannon, "Combat area", combat));
@@ -1217,6 +1222,17 @@ public class SlayerCompanionPanel extends PluginPanel
 	private static String combatLine(Destination destination, TaskPlaces places, SlayerTask task)
 	{
 		return TaskPlaces.factLine(destination, places, destination == null ? null : destination.getCombat(), task.getMultiOrSingle());
+	}
+
+	/**
+	 * The elemental weakness, or {@link #NO_ELEMENTAL} when the monsters have none. Null when it is not known, so a task
+	 * the dossier does not cover, whose weakness says so, has no line.
+	 */
+	static String elementalLine(SlayerTask task)
+	{
+		final String elemental = task.getElementalWeakness();
+		if (elemental == null) return null;
+		return elemental.trim().isEmpty() ? NO_ELEMENTAL : elemental.trim();
 	}
 
 	private static String superiorText(SlayerTask task)

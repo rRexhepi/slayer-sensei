@@ -451,6 +451,64 @@ public class SlayerCompanionPanelTest
 		}
 	}
 
+	// ---- the fight ----
+
+	/** Under FIGHT the prayer, then the style, the weakness and the elemental weakness, each with its sentence as the tooltip. */
+	@Test
+	public void theFightSectionGivesTheStyleAndTheElementalWeakness() throws Throwable
+	{
+		final SlayerTask demons = DATASET.lookup("Black demons");
+		final Sidebar sidebar = Sidebar.task(SidebarDetail.COMPACT, "Black demons", SlayerAssigner.DURADEL);
+		final List<String> texts = sidebar.texts();
+		final int fight = texts.indexOf("FIGHT");
+		assertEquals(texts.toString(), Arrays.asList("- Pray melee", "- Style: any (demonbane)", "- Weak: demonbane", "- Elemental: water 40%"),
+				texts.subList(fight + 1, fight + 5));
+		assertEquals(SlayerCompanionPanel.tooltip(demons.getKillStyle()), sidebar.tooltip("- Style: any (demonbane)"));
+		assertEquals(SlayerCompanionPanel.tooltip(demons.getWeakness()), sidebar.tooltip("- Weak: demonbane"));
+		assertEquals(SlayerCompanionPanel.tooltip("Water 40%"), sidebar.tooltip("- Elemental: water 40%"));
+		// The heading's tooltip holds both fields, in the detailed sidebar's order
+		final String heading = sidebar.tooltip("FIGHT");
+		assertTrue(heading, heading.contains("Style: Any (demonbane)<br>Kill style: "));
+		assertTrue(heading, heading.contains("<br>Elemental weakness: Water 40%<br>Enemy attacks: "));
+
+		// Too long for a line: the item says it varies, and the tooltip has the full field
+		final SlayerTask trolls = DATASET.lookup("Trolls");
+		final Sidebar varied = Sidebar.task(SidebarDetail.COMPACT, "Trolls", SlayerAssigner.VANNAKA);
+		assertEquals(SlayerCompanionPanel.tooltip(trolls.getElementalWeakness()), varied.tooltip("- Elemental: varies by type"));
+		final List<String> trollTexts = varied.texts();
+		assertEquals(trollTexts.indexOf("- Style: melee or ranged") + 1, trollTexts.indexOf("- Elemental: varies by type"));
+
+		// Abyssal demons have none: no item, and the heading's tooltip says None
+		final Sidebar none = Sidebar.konarTask(SidebarDetail.COMPACT);
+		for (String text : none.texts()) assertFalse(text, text.startsWith("- Elemental"));
+		assertTrue(none.texts().contains("- Style: melee or magic (barrage)"));
+		assertTrue(none.tooltip("FIGHT"), none.tooltip("FIGHT").contains("<br>Elemental weakness: None<br>"));
+	}
+
+	/** The detailed sidebar: Style before Kill style, and Elemental weakness after Weakness, None when there is none. */
+	@Test
+	public void theDetailedFightLinesGiveTheStyleAndTheElementalWeakness() throws Throwable
+	{
+		final SlayerTask demons = DATASET.lookup("Black demons");
+		List<String> texts = Sidebar.task(SidebarDetail.DETAILED, "Black demons", SlayerAssigner.DURADEL).texts();
+		final int style = texts.indexOf("Style");
+		assertTrue(texts.toString(), style >= 0);
+		assertEquals(texts.toString(), Arrays.asList("Style", "Any (demonbane)", "Kill style", demons.getKillStyle(), "Weakness",
+				demons.getWeakness(), "Elemental weakness", "Water 40%", "Enemy attacks"), texts.subList(style, style + 9));
+
+		texts = Sidebar.konarTask(SidebarDetail.DETAILED).texts();
+		assertEquals("Melee or magic (barrage)", texts.get(texts.indexOf("Style") + 1));
+		assertEquals(SlayerCompanionPanel.NO_ELEMENTAL, texts.get(texts.indexOf("Elemental weakness") + 1));
+		assertEquals("None", SlayerCompanionPanel.NO_ELEMENTAL);
+		assertEquals(texts.indexOf("Weakness") + 2, texts.indexOf("Elemental weakness"));
+
+		// A task the dossier does not cover yet says its weakness is not known, and no None beside it
+		texts = Sidebar.task(SidebarDetail.DETAILED, "A future beast", SlayerAssigner.DURADEL).texts();
+		assertTrue(texts.toString(), texts.contains("Not known yet. Do not assume an elemental weakness."));
+		assertFalse(texts.toString(), texts.contains("Elemental weakness"));
+		assertFalse(texts.toString(), texts.contains("Style"));
+	}
+
 	// ---- the panel's own words ----
 
 	@Test
@@ -520,6 +578,17 @@ public class SlayerCompanionPanelTest
 					SlayerAssigner.NIEVE, account);
 			sidebar.set("places", places);
 			sidebar.set("destination", destination);
+			sidebar.set("taskInitialAmount", "150");
+			sidebar.kill(112, 38);
+			sidebar.show();
+			return sidebar;
+		}
+
+		/** A task from a master, from the dossier or its general advice, 112 of 150 left, with no place picked. */
+		static Sidebar task(SidebarDetail detail, String name, SlayerAssigner master) throws Throwable
+		{
+			final SlayerPointsPlannerTest.Account account = SlayerPointsPlannerTest.exampleWithKonarBlocks().onTask(master, 47);
+			final Sidebar sidebar = new Sidebar(detail, name, DATASET.lookupOrFallback(name), master, account);
 			sidebar.set("taskInitialAmount", "150");
 			sidebar.kill(112, 38);
 			sidebar.show();

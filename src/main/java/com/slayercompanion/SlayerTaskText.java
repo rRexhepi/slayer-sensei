@@ -25,8 +25,9 @@ final class SlayerTaskText
 	/** The longest start of the dossier's place the compact sidebar shows. */
 	static final int SHORT_PLACE = 34;
 	static final String SUPERIOR_ITEM = "Superior possible";
+	/** The elemental item when the dossier's elemental weakness is too long for a line. */
+	static final String ELEMENTAL_VARIES = "Elemental: varies by type";
 	private static final Pattern PRAYER = Pattern.compile("\\b(Melee|Missiles|Magic)\\b");
-	private static final Pattern SPELLS = Pattern.compile("\\b(air|water|earth|fire) spells\\b");
 	private static final Pattern ATTACK = Pattern.compile("\\b(?:weak(?:est)? to|low) (crush|slash|stab)\\b|\\b(crush|slash|stab) attacks\\b");
 	/** Where the name of a place ends in the dossier's text. */
 	private static final Pattern PLACE_END = Pattern.compile("[(,;.]| or | for ");
@@ -278,16 +279,14 @@ final class SlayerTaskText
 	}
 
 	/**
-	 * "Weak: demonbane" or "Weak: water spells, demonbane": up to two of the spells, slayer weapons and melee styles the
-	 * dossier's weakness names as working. Null when it names none of them.
+	 * "Weak: demonbane" or "Weak: dragonbane, crush": up to two of the slayer weapons and melee styles the dossier's
+	 * weakness names as working. Null when it names none of them. Spells are left to {@link #elementalItem}.
 	 */
 	static String weaknessItem(String text)
 	{
 		if (text == null) return null;
 		final String t = text.toLowerCase(Locale.ROOT);
 		final List<String> found = new ArrayList<>();
-		final Matcher spells = SPELLS.matcher(t);
-		if (spells.find()) found.add(spells.group(1) + " spells");
 		if (t.contains("demonbane")) found.add("demonbane");
 		if (t.contains("dragonbane")) found.add("dragonbane");
 		final Matcher attack = ATTACK.matcher(t);
@@ -300,6 +299,26 @@ final class SlayerTaskText
 	{
 		final String style = shortField(text);
 		return style == null ? null : item("Style: ", lower(style));
+	}
+
+	/**
+	 * "Style: melee or magic (barrage)" from the dossier's style. Without one, the kill style when it takes a few words,
+	 * as {@link #styleItem(String)} gives it.
+	 */
+	static String styleItem(String style, String killStyle)
+	{
+		return style == null || style.trim().isEmpty() ? styleItem(killStyle) : item("Style: ", lower(style.trim()));
+	}
+
+	/**
+	 * "Elemental: water 40%" from the dossier's elemental weakness, or {@link #ELEMENTAL_VARIES} when it is too long for
+	 * a line, as when it names the monsters each element is for. Null when the monsters have none or it is not known.
+	 */
+	static String elementalItem(String text)
+	{
+		if (text == null || text.trim().isEmpty()) return null;
+		final String item = item("Elemental: ", lower(text.trim()));
+		return item != null ? item : ELEMENTAL_VARIES;
 	}
 
 	/** "Attacks: melee" when the dossier's enemy attacks take a few words, else null. */

@@ -1,0 +1,1476 @@
+{
+ "about": [
+  "The wiki monster pages of every dossier entry. build_fight_fields.py reads their infoboxes to write the entry's elementalWeakness, and fetch_pages.py fetches them.",
+  "monsters maps each kind of monster to its pages. The field names the kinds only when their weakness differs. Page#Name takes the versions of the page whose infobox tab or version name is Name, such as Zaros or Lvl 29, and the plain page takes its other versions.",
+  "source says where the list of pages came from."
+ ],
+ "tasks": {
+  "Aberrant spectres": {
+   "monsters": {
+    "aberrant spectres": [
+     "Aberrant spectre"
+    ],
+    "deviant spectres": [
+     "Deviant spectre"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Abyssal demons": {
+   "monsters": {
+    "abyssal demons": [
+     "Abyssal demon"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Adamant dragons": {
+   "monsters": {
+    "adamant dragons": [
+     "Adamant dragon"
+    ]
+   },
+   "source": "The dragon's page. Adamant dragons are a metal dragon task now."
+  },
+  "Ankou": {
+   "monsters": {
+    "ankou": [
+     "Ankou"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Aviansies": {
+   "monsters": {
+    "aviansies": [
+     "Aviansie"
+    ]
+   },
+   "source": "curated.json, the task's monster pages."
+  },
+  "Banshees": {
+   "monsters": {
+    "banshees": [
+     "Banshee"
+    ],
+    "twisted banshees": [
+     "Twisted Banshee"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Basilisks": {
+   "monsters": {
+    "basilisks": [
+     "Basilisk",
+     "Basilisk Knight"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Black demons": {
+   "monsters": {
+    "black demons": [
+     "Black demon"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Black dragons": {
+   "monsters": {
+    "black dragons": [
+     "Black dragon",
+     "Baby black dragon",
+     "Brutal black dragon"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Bloodveld": {
+   "monsters": {
+    "bloodveld": [
+     "Mutated Bloodveld",
+     "Bloodveld"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Blue dragons": {
+   "monsters": {
+    "blue dragons": [
+     "Blue dragon",
+     "Baby blue dragon",
+     "Brutal blue dragon"
+    ],
+    "blue dragons in the Ruins of Tapoyauik": [
+     "Blue dragon#Ruins of Tapoyauik",
+     "Baby blue dragon#Ruins of Tapoyauik",
+     "Brutal blue dragon#Ruins of Tapoyauik"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from. The Ruins of Tapoyauik versions are a kind of their own, since their weakness differs."
+  },
+  "Brine rats": {
+   "monsters": {
+    "brine rats": [
+     "Brine rat"
+    ]
+   },
+   "source": "curated.json, the task's monster pages."
+  },
+  "Cave horrors": {
+   "monsters": {
+    "cave horrors": [
+     "Cave horror"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Cave kraken (Kraken)": {
+   "monsters": {
+    "cave kraken": [
+     "Cave kraken#Cave kraken"
+    ],
+    "the Kraken": [
+     "Kraken#Kraken"
+    ]
+   },
+   "source": "curated.json, the task's monster pages, and the Kraken page, since the entry includes the boss. Only the surfaced version of each. The Whirlpool version is the kraken before it surfaces."
+  },
+  "Dagannoth": {
+   "monsters": {
+    "dagannoth": [
+     "Dagannoth"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Dark beasts": {
+   "monsters": {
+    "dark beasts": [
+     "Dark beast"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Drakes": {
+   "monsters": {
+    "drakes": [
+     "Drake"
+    ]
+   },
+   "source": "curated.json, the task's monster pages."
+  },
+  "Dust devils": {
+   "monsters": {
+    "dust devils": [
+     "Dust devil"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Fever spiders": {
+   "monsters": {
+    "fever spiders": [
+     "Fever spider"
+    ]
+   },
+   "source": "curated.json, the task's monster pages."
+  },
+  "Fire giants": {
+   "monsters": {
+    "fire giants": [
+     "Fire giant"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Fossil island wyverns": {
+   "monsters": {
+    "Fossil Island wyverns": [
+     "Spitting Wyvern",
+     "Taloned Wyvern",
+     "Long-tailed Wyvern"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Gargoyles": {
+   "monsters": {
+    "gargoyles": [
+     "Gargoyle"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Greater demons": {
+   "monsters": {
+    "greater demons": [
+     "Greater demon"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Green dragons": {
+   "monsters": {
+    "green dragons": [
+     "Green dragon"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages Krystilia's Wilderness kill spots come from."
+  },
+  "Hellhounds": {
+   "monsters": {
+    "hellhounds": [
+     "Hellhound"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Hydras (regular Hydra + Alchemical Hydra)": {
+   "monsters": {
+    "hydras": [
+     "Hydra"
+    ],
+    "the Alchemical Hydra": [
+     "Alchemical Hydra"
+    ]
+   },
+   "source": "curated.json, the task's monster pages, and the Alchemical Hydra page, since the entry includes it."
+  },
+  "Iron dragons": {
+   "monsters": {
+    "iron dragons": [
+     "Iron dragon"
+    ]
+   },
+   "source": "The dragon's page. Iron dragons are a metal dragon task now."
+  },
+  "Jellies": {
+   "monsters": {
+    "jellies": [
+     "Warped Jelly",
+     "Jelly"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Kalphites": {
+   "monsters": {
+    "kalphites": [
+     "Kalphite Worker",
+     "Kalphite Soldier",
+     "Kalphite Guardian"
+    ]
+   },
+   "source": "curated.json, the task's monster pages."
+  },
+  "Kurask": {
+   "monsters": {
+    "kurask": [
+     "Kurask"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Lizardmen (incl. brutes and shamans)": {
+   "monsters": {
+    "lizardmen": [
+     "Lizardman",
+     "Lizardman brute"
+    ],
+    "lizardman shamans": [
+     "Lizardman shaman"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from, and the Lizardman shaman page, since the entry includes shamans."
+  },
+  "Mithril dragons": {
+   "monsters": {
+    "mithril dragons": [
+     "Mithril dragon"
+    ]
+   },
+   "source": "The dragon's page. Mithril dragons are a metal dragon task now."
+  },
+  "Nechryael": {
+   "monsters": {
+    "nechryael": [
+     "Greater Nechryael",
+     "Nechryael"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Nechryarch (superior of Nechryael)": {
+   "monsters": {
+    "the Nechryarch": [
+     "Nechryarch"
+    ]
+   },
+   "source": "The superior's page."
+  },
+  "Red dragons": {
+   "monsters": {
+    "red dragons": [
+     "Brutal red dragon",
+     "Red dragon",
+     "Baby red dragon"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Rune dragons": {
+   "monsters": {
+    "rune dragons": [
+     "Rune dragon"
+    ]
+   },
+   "source": "The dragon's page. Rune dragons are a metal dragon task now."
+  },
+  "Skeletal wyverns": {
+   "monsters": {
+    "skeletal wyverns": [
+     "Skeletal Wyvern"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Smoke devils": {
+   "monsters": {
+    "smoke devils": [
+     "Smoke devil"
+    ]
+   },
+   "source": "curated.json, the task's monster pages."
+  },
+  "Spiritual creatures": {
+   "monsters": {
+    "spiritual creatures": [
+     "Spiritual ranger",
+     "Spiritual warrior",
+     "Spiritual mage"
+    ],
+    "Zarosian spiritual creatures": [
+     "Spiritual ranger#Zaros",
+     "Spiritual warrior#Zaros",
+     "Spiritual mage#Zaros"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from. The Zaros versions in the Ancient Prison are a kind of their own, since their weakness differs."
+  },
+  "Steel dragons": {
+   "monsters": {
+    "steel dragons": [
+     "Steel dragon"
+    ]
+   },
+   "source": "The dragon's page. Steel dragons are a metal dragon task now."
+  },
+  "Suqahs": {
+   "monsters": {
+    "suqahs": [
+     "Suqah"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Trolls": {
+   "monsters": {
+    "level 69 mountain trolls": [
+     "Mountain troll#Level 69"
+    ],
+    "level 71 mountain trolls": [
+     "Mountain troll#Level 71"
+    ],
+    "ice trolls": [
+     "Ice troll",
+     "Ice troll runt",
+     "Ice troll male",
+     "Ice troll female",
+     "Ice troll grunt"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from. The two mountain troll versions are kinds of their own, since their weakness differs."
+  },
+  "Turoth": {
+   "monsters": {
+    "turoth": [
+     "Turoth"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "TzHaar": {
+   "monsters": {
+    "TzHaar": [
+     "TzHaar-Ket",
+     "TzHaar-Xil",
+     "TzHaar-Mej",
+     "TzHaar-Hur"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Vampyres / Vyrewatch": {
+   "monsters": {
+    "vampyres and vyrewatch": [
+     "Vampyre Juvinate",
+     "Vyrewatch",
+     "Vyrewatch Sentinel",
+     "Feral Vampyre"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Wyrms": {
+   "monsters": {
+    "wyrms": [
+     "Wyrm",
+     "Wyrmling"
+    ],
+    "lava strykewyrms": [
+     "Lava Strykewyrm"
+    ]
+   },
+   "source": "curated.json, the task's monster pages."
+  },
+  "Zygomites": {
+   "monsters": {
+    "zygomites": [
+     "Ancient Zygomite",
+     "Zygomite"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Bandits": {
+   "monsters": {
+    "bandits": [
+     "Bandit"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages Krystilia's Wilderness kill spots come from."
+  },
+  "Bats": {
+   "monsters": {
+    "bats": [
+     "Giant bat",
+     "Bat",
+     "Albino bat"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Bears": {
+   "monsters": {
+    "bears": [
+     "Black bear",
+     "Grizzly bear",
+     "Grizzly bear cub",
+     "Bear Cub"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Birds": {
+   "monsters": {
+    "chickens": [
+     "Chicken"
+    ],
+    "seagulls": [
+     "Seagull"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Black Knights": {
+   "monsters": {
+    "Black Knights": [
+     "Black Knight"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages Krystilia's Wilderness kill spots come from."
+  },
+  "Catablepon": {
+   "monsters": {
+    "catablepon": [
+     "Catablepon"
+    ]
+   },
+   "source": "curated.json, the task's monster pages."
+  },
+  "Cave bugs": {
+   "monsters": {
+    "cave bugs": [
+     "Cave bug"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Cave crawlers": {
+   "monsters": {
+    "cave crawlers": [
+     "Cave crawler"
+    ],
+    "icy cave crawlers": [
+     "Cave crawler#Icy"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from. The icy versions are a kind of their own, since their weakness differs."
+  },
+  "Cave slimes": {
+   "monsters": {
+    "cave slimes": [
+     "Cave slime"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Chaos druids": {
+   "monsters": {
+    "chaos druids": [
+     "Chaos druid",
+     "Elder Chaos druid"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages Krystilia's Wilderness kill spots come from."
+  },
+  "Cockatrice": {
+   "monsters": {
+    "cockatrice": [
+     "Cockatrice"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Cows": {
+   "monsters": {
+    "cows": [
+     "Cow",
+     "Cow calf"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Crabs": {
+   "monsters": {
+    "crabs": [
+     "King Sand Crab",
+     "Rock Crab",
+     "Ammonite Crab",
+     "Swamp Crab",
+     "Sand Crab"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Crawling hands": {
+   "monsters": {
+    "crawling hands": [
+     "Crawling Hand"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Crocodiles": {
+   "monsters": {
+    "crocodiles": [
+     "Crocodile"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Dark warriors": {
+   "monsters": {
+    "dark warriors": [
+     "Dark warrior"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages Krystilia's Wilderness kill spots come from."
+  },
+  "Dogs": {
+   "monsters": {
+    "jackals": [
+     "Jackal"
+    ],
+    "wild dogs": [
+     "Wild dog"
+    ],
+    "guard dogs": [
+     "Guard dog"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Dwarves": {
+   "monsters": {
+    "dwarves": [
+     "Chaos dwarf",
+     "Dwarf",
+     "Black Guard",
+     "Dwarf gang member"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Earth warriors": {
+   "monsters": {
+    "earth warriors": [
+     "Earth warrior"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages Krystilia's Wilderness kill spots come from."
+  },
+  "Ents": {
+   "monsters": {
+    "ents": [
+     "Ent"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages Krystilia's Wilderness kill spots come from."
+  },
+  "Fleshcrawlers": {
+   "monsters": {
+    "fleshcrawlers": [
+     "Flesh Crawler"
+    ]
+   },
+   "source": "curated.json, the task's monster pages."
+  },
+  "Ghosts": {
+   "monsters": {
+    "ghosts": [
+     "Ghost"
+    ],
+    "forgotten souls": [
+     "Forgotten Soul"
+    ],
+    "tortured souls": [
+     "Tortured soul"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Ghouls": {
+   "monsters": {
+    "ghouls": [
+     "Ghoul"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Goblins": {
+   "monsters": {
+    "goblins": [
+     "Goblin"
+    ],
+    "cave goblins": [
+     "Cave goblin (monster)",
+     "Cave goblin guard",
+     "Cave goblin miner"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Harpie bug swarms": {
+   "monsters": {
+    "harpie bug swarms": [
+     "Harpie Bug Swarm"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Hill giants": {
+   "monsters": {
+    "hill giants": [
+     "Hill Giant"
+    ],
+    "cyclopes": [
+     "Cyclops"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Hobgoblins": {
+   "monsters": {
+    "hobgoblins": [
+     "Hobgoblin"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Icefiends": {
+   "monsters": {
+    "icefiends": [
+     "Icefiend"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Ice giants": {
+   "monsters": {
+    "ice giants": [
+     "Ice giant"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Ice warriors": {
+   "monsters": {
+    "ice warriors": [
+     "Ice warrior"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Infernal mages": {
+   "monsters": {
+    "infernal mages": [
+     "Infernal Mage"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Jungle horrors": {
+   "monsters": {
+    "jungle horrors": [
+     "Jungle horror"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Killerwatts": {
+   "monsters": {
+    "killerwatts": [
+     "Killerwatt"
+    ]
+   },
+   "source": "curated.json, the task's monster pages."
+  },
+  "Lesser demons": {
+   "monsters": {
+    "lesser demons": [
+     "Lesser demon"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Lizards": {
+   "monsters": {
+    "lizards": [
+     "Small Lizard",
+     "Lizard",
+     "Desert Lizard"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "The Maggot King": {
+   "monsters": {
+    "the Maggot King": [
+     "Maggot King"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "Magic axes": {
+   "monsters": {
+    "magic axes": [
+     "Magic axe"
+    ]
+   },
+   "source": "curated.json, the monster pages of Krystilia's task."
+  },
+  "Mammoths": {
+   "monsters": {
+    "mammoths": [
+     "Mammoth"
+    ]
+   },
+   "source": "curated.json, the monster pages of Krystilia's task."
+  },
+  "Minotaurs": {
+   "monsters": {
+    "minotaurs": [
+     "Minotaur"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Mogres": {
+   "monsters": {
+    "mogres": [
+     "Mogre"
+    ]
+   },
+   "source": "curated.json, the task's monster pages."
+  },
+  "Molanisks": {
+   "monsters": {
+    "molanisks": [
+     "Molanisk"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Monkeys": {
+   "monsters": {
+    "monkeys": [
+     "Monkey (monster)",
+     "Monkey Archer",
+     "Monkey Guard"
+    ],
+    "monkey zombies": [
+     "Monkey Zombie"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Moss giants": {
+   "monsters": {
+    "moss giants": [
+     "Moss giant"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Ogres": {
+   "monsters": {
+    "ogres": [
+     "Ogre"
+    ],
+    "zogres": [
+     "Zogre"
+    ],
+    "skogres": [
+     "Skogre"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Otherworldly beings": {
+   "monsters": {
+    "otherworldly beings": [
+     "Otherworldly being"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Pirates": {
+   "monsters": {
+    "pirates": [
+     "Pirate"
+    ],
+    "zombie pirates": [
+     "Zombie pirate"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages Krystilia's Wilderness kill spots come from."
+  },
+  "Pyrefiends": {
+   "monsters": {
+    "pyrefiends": [
+     "Pyrefiend",
+     "Pyrelord"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Rats": {
+   "monsters": {
+    "rats": [
+     "Rat",
+     "Giant rat",
+     "Dungeon rat",
+     "Crypt rat",
+     "Giant crypt rat"
+    ],
+    "zombie rats": [
+     "Zombie rat"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Rockslugs": {
+   "monsters": {
+    "rockslugs": [
+     "Rockslug"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Rogues": {
+   "monsters": {
+    "rogues": [
+     "Rogue"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages Krystilia's Wilderness kill spots come from."
+  },
+  "Scorpions": {
+   "monsters": {
+    "scorpions": [
+     "Scorpion",
+     "King Scorpion"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Sea snakes": {
+   "monsters": {
+    "sea snakes": [
+     "Sea Snake Hatchling",
+     "Sea Snake Young"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Shades": {
+   "monsters": {
+    "shades": [
+     "Shade",
+     "Loar Shade"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Shadow warriors": {
+   "monsters": {
+    "shadow warriors": [
+     "Shadow warrior"
+    ]
+   },
+   "source": "curated.json, the task's monster pages."
+  },
+  "Skeletons": {
+   "monsters": {
+    "skeletons": [
+     "Skeleton",
+     "Skeleton (Ape Atoll)",
+     "Skeleton (Tarn's Lair)"
+    ],
+    "level 29 skeletons": [
+     "Skeleton#Lvl 29"
+    ],
+    "skogres": [
+     "Skogre"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from. The level 29 skeletons are a kind of their own, since their weakness differs."
+  },
+  "Sourhogs": {
+   "monsters": {
+    "sourhogs": [
+     "Sourhog"
+    ]
+   },
+   "source": "curated.json, the task's monster pages."
+  },
+  "Spiders": {
+   "monsters": {
+    "spiders": [
+     "Temple Spider",
+     "Spider",
+     "Blessed spider",
+     "Giant spider",
+     "Deadly red spider",
+     "Poison spider"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots and Krystilia's Wilderness kill spots come from."
+  },
+  "Terror dogs": {
+   "monsters": {
+    "terror dogs": [
+     "Terror dog"
+    ]
+   },
+   "source": "curated.json, the task's monster pages."
+  },
+  "Wall beasts": {
+   "monsters": {
+    "wall beasts": [
+     "Wall beast"
+    ]
+   },
+   "source": "curated.json, the task's monster pages."
+  },
+  "Werewolves": {
+   "monsters": {
+    "werewolves": [
+     "Werewolf"
+    ]
+   },
+   "source": "curated.json, the task's monster pages."
+  },
+  "Wolves": {
+   "monsters": {
+    "wolves": [
+     "Wolf"
+    ],
+    "white wolves": [
+     "White wolf"
+    ],
+    "big wolves": [
+     "Big Wolf"
+    ],
+    "dire wolves": [
+     "Dire Wolf"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Zombies": {
+   "monsters": {
+    "zombies": [
+     "Zombie",
+     "Monkey Zombie",
+     "Undead cow",
+     "Undead chicken",
+     "Zombie pirate"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots and Krystilia's Wilderness kill spots come from."
+  },
+  "Aquanites": {
+   "monsters": {
+    "aquanites": [
+     "Aquanite"
+    ]
+   },
+   "source": "curated.json, the task's monster pages."
+  },
+  "Araxytes": {
+   "monsters": {
+    "araxytes": [
+     "Araxyte"
+    ]
+   },
+   "source": "curated.json, the task's monster pages."
+  },
+  "Custodian Stalkers": {
+   "monsters": {
+    "custodian stalkers": [
+     "Juvenile custodian stalker",
+     "Mature custodian stalker",
+     "Elder custodian stalker"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Elves": {
+   "monsters": {
+    "elves": [
+     "Iorwerth Warrior",
+     "Iorwerth Archer",
+     "Elf Warrior",
+     "Elf Archer"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Frost dragons": {
+   "monsters": {
+    "frost dragons": [
+     "Frost dragon"
+    ]
+   },
+   "source": "curated.json, the task's monster pages."
+  },
+  "Gryphons": {
+   "monsters": {
+    "gryphons": [
+     "Gryphon"
+    ]
+   },
+   "source": "curated.json, the task's monster pages."
+  },
+  "Lava Dragons": {
+   "monsters": {
+    "lava dragons": [
+     "Lava dragon"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages Krystilia's Wilderness kill spots come from."
+  },
+  "Lesser Nagua": {
+   "monsters": {
+    "sulphur nagua": [
+     "Sulphur Nagua"
+    ],
+    "earthen nagua": [
+     "Earthen Nagua"
+    ],
+    "frost nagua": [
+     "Frost Nagua"
+    ]
+   },
+   "source": "curated.json, the task's monster pages."
+  },
+  "Metal dragons": {
+   "monsters": {
+    "metal dragons": [
+     "Bronze dragon",
+     "Iron dragon",
+     "Steel dragon",
+     "Adamant dragon",
+     "Rune dragon"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Revenants": {
+   "monsters": {
+    "revenants": [
+     "Revenant imp",
+     "Revenant demon"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages Krystilia's Wilderness kill spots come from."
+  },
+  "Scabarites": {
+   "monsters": {
+    "scabarites": [
+     "Scarab Mage",
+     "Locust rider"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Warped Creatures": {
+   "monsters": {
+    "warped terrorbirds": [
+     "Warped Terrorbird"
+    ],
+    "warped tortoises": [
+     "Warped Tortoise"
+    ]
+   },
+   "source": "curated.json, the task's monster pages."
+  },
+  "Waterfiends": {
+   "monsters": {
+    "waterfiends": [
+     "Waterfiend"
+    ]
+   },
+   "source": "slayer_areas.json, the monster pages its kill spots come from."
+  },
+  "Boss": {
+   "monsters": {},
+   "source": "None. The master picks the boss, so the generic boss task has no monster of its own."
+  },
+  "The Abyssal Sire": {
+   "monsters": {
+    "the Abyssal Sire": [
+     "Abyssal Sire"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "The Alchemical Hydra": {
+   "monsters": {
+    "the Alchemical Hydra": [
+     "Alchemical Hydra"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "Araxxor": {
+   "monsters": {
+    "Araxxor": [
+     "Araxxor"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "Barrows Brothers": {
+   "monsters": {
+    "the Barrows brothers": [
+     "Ahrim the Blighted",
+     "Dharok the Wretched",
+     "Guthan the Infested",
+     "Karil the Tainted",
+     "Torag the Corrupted",
+     "Verac the Defiled"
+    ]
+   },
+   "source": "The six brothers' pages."
+  },
+  "Callisto": {
+   "monsters": {
+    "Callisto": [
+     "Callisto"
+    ],
+    "Artio": [
+     "Artio"
+    ]
+   },
+   "source": "The boss's page and the page of Artio, which the dossier's note says counts too."
+  },
+  "Cerberus": {
+   "monsters": {
+    "Cerberus": [
+     "Cerberus"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "The Chaos Elemental": {
+   "monsters": {
+    "the Chaos Elemental": [
+     "Chaos Elemental"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "The Chaos Fanatic": {
+   "monsters": {
+    "the Chaos Fanatic": [
+     "Chaos Fanatic"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "Crazy Archaeologists": {
+   "monsters": {
+    "the Crazy Archaeologist": [
+     "Crazy archaeologist"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "Dagannoth Kings": {
+   "monsters": {
+    "Dagannoth Rex": [
+     "Dagannoth Rex"
+    ],
+    "Dagannoth Prime": [
+     "Dagannoth Prime"
+    ],
+    "Dagannoth Supreme": [
+     "Dagannoth Supreme"
+    ]
+   },
+   "source": "The three kings' pages."
+  },
+  "Deranged Archaeologist": {
+   "monsters": {
+    "the Deranged Archaeologist": [
+     "Deranged archaeologist"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "Duke Sucellus": {
+   "monsters": {
+    "Duke Sucellus": [
+     "Duke Sucellus"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "General Graardor": {
+   "monsters": {
+    "General Graardor": [
+     "General Graardor"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "The Giant Mole": {
+   "monsters": {
+    "the Giant Mole": [
+     "Giant Mole"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "The Grotesque Guardians": {
+   "monsters": {
+    "Dusk": [
+     "Dusk"
+    ],
+    "Dawn": [
+     "Dawn"
+    ]
+   },
+   "source": "The two guardians' pages."
+  },
+  "TzTok-Jad": {
+   "monsters": {
+    "TzTok-Jad": [
+     "TzTok-Jad"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "The Kalphite Queen": {
+   "monsters": {
+    "the Kalphite Queen": [
+     "Kalphite Queen"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "The King Black Dragon": {
+   "monsters": {
+    "the King Black Dragon": [
+     "King Black Dragon"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "The Cave Kraken Boss": {
+   "monsters": {
+    "the Kraken": [
+     "Kraken#Kraken"
+    ]
+   },
+   "source": "The boss's page, its surfaced version only. The Whirlpool version is the Kraken before it surfaces."
+  },
+  "Kree'arra": {
+   "monsters": {
+    "Kree'arra": [
+     "Kree'arra"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "K'ril Tsutsaroth": {
+   "monsters": {
+    "K'ril Tsutsaroth": [
+     "K'ril Tsutsaroth"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "The Phantom Muspah": {
+   "monsters": {
+    "the Phantom Muspah": [
+     "Phantom Muspah"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "Sarachnis": {
+   "monsters": {
+    "Sarachnis": [
+     "Sarachnis"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "Scorpia": {
+   "monsters": {
+    "Scorpia": [
+     "Scorpia"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "The Shellbane Gryphon": {
+   "monsters": {
+    "the Shellbane Gryphon": [
+     "Shellbane Gryphon"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "The Leviathan": {
+   "monsters": {
+    "the Leviathan": [
+     "The Leviathan"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "The Whisperer": {
+   "monsters": {
+    "the Whisperer": [
+     "The Whisperer"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "The Thermonuclear Smoke Devil": {
+   "monsters": {
+    "the Thermonuclear Smoke Devil": [
+     "Thermonuclear smoke devil"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "Vardorvis": {
+   "monsters": {
+    "Vardorvis": [
+     "Vardorvis"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "Venenatis": {
+   "monsters": {
+    "Venenatis": [
+     "Venenatis"
+    ],
+    "Spindel": [
+     "Spindel"
+    ]
+   },
+   "source": "The boss's page and the page of Spindel, which the dossier's note says counts too."
+  },
+  "Vet'ion": {
+   "monsters": {
+    "Vet'ion": [
+     "Vet'ion"
+    ],
+    "Calvar'ion": [
+     "Calvar'ion"
+    ]
+   },
+   "source": "The boss's page and the page of Calvar'ion, which the dossier's note says counts too."
+  },
+  "Vorkath": {
+   "monsters": {
+    "Vorkath": [
+     "Vorkath"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "Commander Zilyana": {
+   "monsters": {
+    "Commander Zilyana": [
+     "Commander Zilyana"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "TzKal-Zuk": {
+   "monsters": {
+    "TzKal-Zuk": [
+     "TzKal-Zuk"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "Zulrah": {
+   "monsters": {
+    "Zulrah": [
+     "Zulrah"
+    ]
+   },
+   "source": "The boss's page."
+  },
+  "Venators": {
+   "monsters": {
+    "venators": [
+     "Venator"
+    ]
+   },
+   "source": "The monster's page."
+  }
+ }
+}

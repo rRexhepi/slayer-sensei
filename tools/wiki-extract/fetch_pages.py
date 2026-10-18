@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Fetches the OSRS Wiki pages that build_slayer_areas.py reads, into cache/.
+"""Fetches the OSRS Wiki pages that build_slayer_areas.py and build_fight_fields.py read, into cache/.
 
-Reads the page titles from curated.json (task guide pages, monster pages and extra location pages) and
-access.json (the pages its requirements were read from), resolves redirects with one API call per 40
-titles, and downloads the raw wikitext of every page that is not cached yet. One request per second,
-with a descriptive User-Agent. Run with --refresh to fetch everything again.
+Reads the page titles from curated.json (task guide pages, monster pages and extra location pages),
+access.json (the pages its requirements were read from) and fight_monsters.json (the monster pages of
+each dossier entry), resolves redirects with one API call per 40 titles, and downloads the raw wikitext
+of every page that is not cached yet. One request per second, with a descriptive User-Agent. Run with
+--refresh to fetch everything again.
 """
 import json
 import os
@@ -45,7 +46,16 @@ def cited_pages(value):
     return []
 
 
-def wanted_titles(curated, access=None):
+def fight_titles(fight):
+    """The monster pages fight_monsters.json names, without their version selectors."""
+    titles = []
+    for task in fight['tasks'].values():
+        for pages in task['monsters'].values():
+            titles.extend(page.split('#')[0] for page in pages)
+    return titles
+
+
+def wanted_titles(curated, access=None, fight=None):
     titles = []
     for task in curated['tasks']:
         if task.get('page'):
@@ -60,6 +70,8 @@ def wanted_titles(curated, access=None):
     if access:
         titles.extend(cited_pages(access.get('locations', {})))
         titles.extend(cited_pages(access.get('open', {})))
+    if fight:
+        titles.extend(fight_titles(fight))
     seen = set()
     return [t for t in titles if not (t in seen or seen.add(t))]
 
@@ -86,11 +98,13 @@ def main():
     curated = json.load(open(os.path.join(HERE, 'curated.json'), encoding='utf-8'))
     access_path = os.path.join(HERE, 'access.json')
     access = json.load(open(access_path, encoding='utf-8')) if os.path.exists(access_path) else None
+    fight_path = os.path.join(HERE, 'fight_monsters.json')
+    fight = json.load(open(fight_path, encoding='utf-8')) if os.path.exists(fight_path) else None
     os.makedirs(CACHE, exist_ok=True)
     manifest = json.load(open(MANIFEST, encoding='utf-8')) if os.path.exists(MANIFEST) else {}
     # A page already cached under its own title, as the target of a redirect, needs no request either.
     cached = set(manifest) | {entry['final'] for entry in manifest.values()}
-    titles = [t for t in wanted_titles(curated, access) if refresh or t not in cached]
+    titles = [t for t in wanted_titles(curated, access, fight) if refresh or t not in cached]
     if titles:
         for title, final in resolve(titles).items():
             if not final:

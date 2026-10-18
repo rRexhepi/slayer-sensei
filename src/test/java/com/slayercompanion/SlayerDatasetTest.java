@@ -7,14 +7,19 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.slayercompanion.data.SlayerTask;
 import com.slayercompanion.data.TaskRating;
+import java.io.InputStreamReader;
 import java.lang.reflect.Method;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import net.runelite.api.gameval.DBTableID;
 import org.junit.Test;
 
@@ -157,6 +162,10 @@ public class SlayerDatasetTest
 		assertEquals(SlayerDataset.FALLBACK_LABEL, dataset.dataLabel(fallback));
 		assertEquals(SlayerDataset.DATA_LABEL, dataset.dataLabel(dataset.lookup("Abyssal demons")));
 		assertTrue(fallback.getRequiredItems().contains("Check the Slayer master's tip"));
+		// No style, and no elemental weakness, which is not known rather than none
+		assertEquals("", fallback.getStyle());
+		assertNull(fallback.getElementalWeakness());
+		assertEquals("Not known yet. Do not assume an elemental weakness.", fallback.getWeakness());
 		// The compact sidebar's place for it says so, instead of a piece of advice cut short
 		assertEquals("Not in the dossier yet", SlayerTaskText.placeItem(fallback.getBestLocation()));
 	}
@@ -260,6 +269,124 @@ public class SlayerDatasetTest
 		assertNull(dataset.lookup("Fire giants").getNote());
 		assertEquals("Kree'arra and his bodyguards count toward the task.", dataset.lookup("Aviansies").getNote());
 		assertEquals("The Kraken boss counts toward the task.", dataset.lookup("Cave kraken").getNote());
+	}
+
+	/** "Melee", "Ranged (safespot)", "Melee or magic (barrage)", "Any": a style, maybe a second, and one short qualifier. */
+	private static final Pattern STYLE = Pattern.compile("(?:(?:Melee|Ranged|Magic)(?: or (?:melee|ranged|magic))?|Any)(?: \\([a-z][a-z -]*[a-z]\\))?");
+	/** One element with a percent or a range of them, as "Water 40%" or "Water 40 to 50%". */
+	private static final String SHARE = "(Air|Water|Earth|Fire) (\\d+)(?: to (\\d+))?%";
+	private static final Pattern ONE = Pattern.compile(SHARE);
+	/** Each element with the monsters it is for, as "Fire 50% (ice trolls), Earth 50% (some mountain trolls)". */
+	private static final Pattern KINDS = Pattern.compile(SHARE + " \\(([A-Za-z0-9' -]+(?:, [A-Za-z0-9' -]+)*)\\)(?:, |$)");
+
+	/** Every entry in both files, read as they are, without the dataset's lookups or anything it fills in. */
+	static List<SlayerTask> entries() throws Exception
+	{
+		final List<SlayerTask> entries = new ArrayList<>();
+		for (String resource : new String[]{"/slayer_tasks.json", "/slayer_tasks_supplement.json"})
+		{
+			try (InputStreamReader in = new InputStreamReader(SlayerDataset.class.getResourceAsStream(resource), StandardCharsets.UTF_8))
+			{
+				entries.addAll(new Gson().<List<SlayerTask>>fromJson(in, new TypeToken<List<SlayerTask>>()
+				{
+				}.getType()));
+			}
+		}
+		return entries;
+	}
+
+	/**
+	 * Every entry has a style the compact sidebar can show after "Style: ", and an elemental weakness that is empty or in
+	 * the form build_fight_fields.py writes. Only the generic boss task says to check the boss.
+	 */
+	@Test
+	public void everyEntryHasAStyleAndAnElementalWeakness() throws Exception
+	{
+		final List<SlayerTask> entries = entries();
+		assertEquals(159, entries.size());
+		for (SlayerTask task : entries)
+		{
+			final String name = task.getTask();
+			final String style = task.getStyle();
+			assertNotNull(name, style);
+			assertTrue(name + ": " + style, style.length() <= 27 && ("Boss".equals(name) ? "Check the boss".equals(style)
+					: STYLE.matcher(style).matches()));
+			final String elemental = task.getElementalWeakness();
+			assertNotNull(name, elemental);
+			if (elemental.isEmpty()) continue;
+			final Matcher one = ONE.matcher(elemental);
+			if (one.matches())
+			{
+				checkPercents(name, elemental, one);
+				continue;
+			}
+			final Matcher kinds = KINDS.matcher(elemental);
+			final List<String> elements = new ArrayList<>();
+			int end = 0;
+			while (end < elemental.length() && kinds.find(end) && kinds.start() == end)
+			{
+				checkPercents(name, elemental, kinds);
+				assertFalse(name + ": " + elemental, elements.contains(kinds.group(1)));
+				elements.add(kinds.group(1));
+				end = kinds.end();
+			}
+			assertEquals(name + ": " + elemental, elemental.length(), end);
+		}
+	}
+
+	/** The percents of one element: from 1, at most 100, and a range from the lower to the higher. */
+	private static void checkPercents(String name, String elemental, Matcher m)
+	{
+		final int low = Integer.parseInt(m.group(2));
+		final int high = m.group(3) == null ? low : Integer.parseInt(m.group(3));
+		// The wiki gives the Zarosian spiritual creatures in the Ancient Prison a 200% fire weakness
+		final int most = "Spiritual creatures".equals(name) ? 200 : 100;
+		assertTrue(name + ": " + elemental, low >= 1 && high <= most && (m.group(3) == null || low < high));
+	}
+
+	/**
+	 * The weaknesses the code used to fill in for 17 entries are in the JSON now, in plain words and without the
+	 * elemental parts the elemental weakness carries, and every entry has one of its own.
+	 */
+	@Test
+	public void everyWeaknessIsInTheJson() throws Exception
+	{
+		for (SlayerTask task : entries())
+		{
+			assertTrue(task.getTask(), task.getWeakness() != null && !task.getWeakness().trim().isEmpty());
+		}
+		final String[] moved = {"Banshees", "Brine rats", "Cave horrors", "Cave kraken (Kraken)", "Dagannoth", "Dust devils", "Fever spiders",
+				"Fossil island wyverns", "Hydras (regular Hydra + Alchemical Hydra)", "Jellies", "Lizardmen (incl. brutes and shamans)",
+				"Zygomites", "Skeletal wyverns", "Smoke devils", "Spiritual creatures", "Suqahs", "Trolls"};
+		for (String name : moved)
+		{
+			final String weakness = dataset.lookup(name).getWeakness();
+			assertFalse(name + ": " + weakness, weakness.matches("(?i).*(\\d+%|\\b(air|water|earth|fire)\\b.*\\bspells?\\b|elemental).*"));
+			assertFalse(name + ": " + weakness, weakness.contains(";") || weakness.contains(" - ") || weakness.contains("  "));
+			assertTrue(name + ": " + weakness, weakness.endsWith("."));
+		}
+		assertEquals("Banshees are undead, so a Salve amulet works but does not stack with a Slayer helmet.", dataset.lookup("Banshees").getWeakness());
+		assertEquals("All hydras are draconic, so dragonbane weapons receive their normal bonus.", dataset.lookup("Hydra").getWeakness());
+		assertEquals("Finish each one with fungicide spray below the health threshold.", dataset.lookup("Zygomites").getWeakness());
+		assertEquals("Melee and Ranged are highly ineffective.", dataset.lookup("Cave kraken").getWeakness());
+		assertEquals("No special weapon requirement.", dataset.lookup("Trolls").getWeakness());
+	}
+
+	/** The elemental weaknesses of a few tasks, as their monsters' wiki infoboxes give them. */
+	@Test
+	public void elementalWeaknessesFollowTheWiki()
+	{
+		assertEquals("Water 40%", dataset.lookup("Black demons").getElementalWeakness());
+		assertEquals("Water 100%", dataset.lookup("Fire giants").getElementalWeakness());
+		assertEquals("Air 30 to 50%", dataset.lookup("Aberrant spectres").getElementalWeakness());
+		assertEquals("Fire 40%", dataset.lookup("Vorkath").getElementalWeakness());
+		assertEquals("Fire 40% (cave goblins)", dataset.lookup("Goblins").getElementalWeakness());
+		assertEquals("Water 50% (blue dragons), Fire 50% (blue dragons in the Ruins of Tapoyauik)", dataset.lookup("Blue dragons")
+				.getElementalWeakness());
+		assertEquals("", dataset.lookup("Abyssal demons").getElementalWeakness());
+		assertEquals("", dataset.lookup("Cows").getElementalWeakness());
+		// The prose's percent agrees: aberrant spectres are 50% weak to air and deviant spectres 30%
+		assertEquals("Air spells: 30 to 50% elemental weakness.", dataset.lookup("Aberrant spectres").getWeakness());
 	}
 
 	/** The cache builds the Assigned by line. The dossier's own text is the fallback and has no placeholder left. */

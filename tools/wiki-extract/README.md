@@ -47,8 +47,8 @@ place, none), Krystilia's Wilderness coverage, spawn lists that were dropped and
 cannon conflicts left for review, and how many places can lock, carry a note only, need nothing or are not
 settled, with the keys of the last group.
 
-`fetch_pages.py` reads its titles from `curated.json` and from the pages `access.json` cites, and skips a
-page already cached under its own title. It sends the User-Agent
+`fetch_pages.py` reads its titles from `curated.json`, from the pages `access.json` cites and from
+`fight_monsters.json`, and skips a page already cached under its own title. It sends the User-Agent
 `SlayerCompanion-data-builder/1.0 (personal RuneLite plugin)` and nothing else that identifies anyone.
 
 ## How kill spots are chosen
@@ -159,6 +159,17 @@ page that changed never locks a place on old words.
 Konar's assigned area is never checked. Her page says the roll for the area "will check any other
 additional requirements if a location is locked behind a quest", so she assigns only areas the player
 can enter.
+
+## Elemental weaknesses
+
+`build_fight_fields.py` writes the `elementalWeakness` of every entry in `slayer_tasks.json` and
+`slayer_tasks_supplement.json`, right after its `weakness`, and leaves the rest of both files as it is. It
+reads the element and the percent from the infobox of each monster page `fight_monsters.json` lists for the
+entry, across every version of the page. That file says where each list of pages came from and splits a
+task's monsters into kinds, which the field names when their weakness differs, as in "Water 50% (blue
+dragons), Fire 50% (blue dragons in the Ruins of Tapoyauik)". `Page#Name` takes only the versions with that
+infobox tab or version name. A version whose weakness is blank on the wiki is left out and listed. Run
+`python fetch_pages.py`, then `python build_fight_fields.py`. A second run changes nothing.
 
 ## Output shape
 

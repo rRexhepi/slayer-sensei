@@ -34,7 +34,6 @@ public class SlayerDataset
 	{
 		load(gson, "/slayer_tasks.json");
 		load(gson, "/slayer_tasks_supplement.json");
-		registerVerifiedWeaknesses();
 		registerVerifiedCannonGuidance();
 		registerAliases();
 		log.debug("slayer-sensei: loaded {} curated tasks", byName.size());
@@ -125,37 +124,6 @@ public class SlayerDataset
 		alias("tzhaar", "tzhaar");
 	}
 
-	/** Completes older authored records that pre-date the panel's Weakness section. */
-	private void registerVerifiedWeaknesses()
-	{
-		weakness("Banshees", "Air spells: 30% elemental weakness. Banshees are undead, so Salve works but does not stack with a Slayer helmet.");
-		weakness("Brine rats", "No listed elemental weakness; use your strongest accurate melee setup.");
-		weakness("Cave horrors", "Fire spells: 30% elemental weakness.");
-		weakness("Cave kraken (Kraken)", "Earth spells: 50% elemental weakness. Melee and Ranged remain highly ineffective.");
-		weakness("Dagannoth", "Earth spells: 35% elemental weakness on regular task Dagannoth; the three Kings each have their own combat-style weakness.");
-		weakness("Dust devils", "Air spells: 35% elemental weakness.");
-		weakness("Fever spiders", "Fire spells: 25% elemental weakness.");
-		weakness("Fossil island wyverns", "Draconic: dragonbane weapons receive their normal bonus. Elemental weaknesses vary by wyvern type.");
-		weakness("Hydras (regular Hydra + Alchemical Hydra)", "Earth spells: 40% elemental weakness on regular Hydras. All Hydras are draconic, so dragonbane weapons receive their normal bonus.");
-		weakness("Jellies", "Earth spells: 35% elemental weakness.");
-		weakness("Lizardmen (incl. brutes and shamans)", "No universal elemental weakness across lizardmen and shamans; use an accurate melee or Ranged setup and obey shaman specials.");
-		weakness("Zygomites", "No special elemental weakness; the key requirement is finishing them with fungicide spray below the health threshold.");
-		weakness("Skeletal wyverns", "Fire spells: 25% elemental weakness. Skeletal Wyverns are draconic, so dragonbane weapons receive their normal bonus.");
-		weakness("Smoke devils", "Air spells: 30% elemental weakness.");
-		weakness("Spiritual creatures", "Faction and creature type matter; many spiritual mages have an air weakness while some variants differ. Match the exact target.");
-		weakness("Suqahs", "Earth spells: 20% elemental weakness.");
-		weakness("Trolls", "Variant-dependent: many mountain and ice trolls have a 50% fire weakness, while at least one mountain-troll variant uses earth instead.");
-	}
-
-	private void weakness(String canonical, String value)
-	{
-		final SlayerTask task = byName.get(normalize(canonical));
-		if (task != null && (task.getWeakness() == null || task.getWeakness().trim().isEmpty()))
-		{
-			task.setWeakness(value);
-		}
-	}
-
 	/**
 	 * Cannon advice must name the location. In particular, the dark altar prevents a cannon from
 	 * being placed anywhere in the Catacombs of Kourend even though most of it is multicombat.
@@ -211,8 +179,11 @@ public class SlayerDataset
 		task.setBestLocation("Not in the dossier yet. Go to the area Konar named, or into the Wilderness for Krystilia. For any other"
 				+ " master, check the world map or the Slayer master's tip before you travel.");
 		task.setMultiOrSingle("Unknown. Check the area before you bring a cannon or a multi-target setup.");
+		task.setStyle("");
 		task.setKillStyle("Check the gear and weapon the monster needs before you pick a setup.");
 		task.setWeakness("Not known yet. Do not assume an elemental weakness.");
+		// Null, since it is not known. Empty would say the monsters have none.
+		task.setElementalWeakness(null);
 		task.setMonsterAttackStyle("Unknown. Watch its first attack from a safe spot and look the monster up on the wiki before"
 				+ " you rely on a prayer.");
 		task.setProtectionPrayer("No verified prayer recommendation yet.");
