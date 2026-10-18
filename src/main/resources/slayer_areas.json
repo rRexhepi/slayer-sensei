@@ -486,6 +486,10 @@
    "row": "SLAYERAREA_BRIMHAVENDUNGEON",
    "entrance": [2743, 3154, 0],
    "entranceSource": "RuneLite 1.13.1 world map data, DungeonLocation.BRIMHAVEN_N (Brimhaven Dungeon)",
+   "access": {
+    "note": "Needs 10 Woodcutting to cut the vines.",
+    "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Brimhaven_Dungeon: 'A player will also need an axe to cut the vines blocking the path (requiring level 10 Woodcutting).'"
+   },
    "tasks": [
     {
      "taskId": 30,
@@ -497,7 +501,11 @@
      "cannon": "yes",
      "cannonSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Slayer_task/Black_demons, location comparison table, rows 'Brimhaven Dungeon'",
      "combat": "single",
-     "combatSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Slayer_task/Black_demons, location comparison table, rows 'Brimhaven Dungeon'"
+     "combatSource": "OSRS Wiki https://oldschool.runescape.wiki/w/Slayer_task/Black_demons, location comparison table, rows 'Brimhaven Dungeon'",
+     "access": {
+      "note": "Needs 34 Woodcutting for the vines to the black demons.",
+      "source": "OSRS Wiki https://oldschool.runescape.wiki/w/Brimhaven_Dungeon: 'To get further in the dungeon (Black Demons and beyond), you will need at least a Woodcutting level of 34.'"
+     }
     },
     {
      "taskId": 16,

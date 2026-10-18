@@ -17,11 +17,12 @@ import java.util.regex.Pattern;
 import lombok.Value;
 
 /**
- * The sidebar's "Live gear check" line: what {@link SlayerRequirements} says the task needs and recommends, against
- * what the player carries and wears, and against what the bank held when it was last open. It is pure, so the plugin
- * only gathers the items, the bank it remembers, the kills left, Konar's area and a varbit reader for the unlocks, the
- * elite diary, the Fires of Eternal Light and Malevolent Masquerade. The compact sidebar's items and the scene overlay's
- * lines come from the same look ({@link #evaluate}).
+ * The sidebar's "Live gear check" line: what {@link SlayerRequirements} says the task and the place it goes to need and
+ * recommend, against what the player carries and wears, and against what the bank held when it was last open. It is
+ * pure, so the plugin only gathers the items, the bank it remembers, the kills left, Konar's area, the key of the place
+ * the task goes to and a varbit reader for the unlocks, the diaries, the Fires of Eternal Light, the ropes already tied
+ * and Malevolent Masquerade. The compact sidebar's items and the scene overlay's lines come from the same look
+ * ({@link #evaluate}).
  */
 final class SlayerGearCheck
 {
@@ -55,6 +56,7 @@ final class SlayerGearCheck
 		SHORT_LABELS.put(SlayerRequirements.DRAGONFIRE_PROTECTION, "dragonfire protection");
 		SHORT_LABELS.put(SlayerRequirements.HELMET_MASK_OR_SALVE, "Slayer helm, mask or salve");
 		SHORT_LABELS.put(SlayerRequirements.HELMET_OR_SALVE, "Slayer helmet or salve");
+		SHORT_LABELS.put(SlayerRequirements.SMOKE_PROTECTION, "facemask or similar");
 	}
 
 	/**
@@ -221,7 +223,20 @@ final class SlayerGearCheck
 	/** @param recommend whether the recommended tier is on, as the config sets it. Off, only mandatory items count. */
 	static boolean hasNeeds(String taskName, int assignedAreaId, IntUnaryOperator varbits, boolean recommend)
 	{
-		return taskName != null && (!needs(taskName, assignedAreaId).isEmpty() || !recommended(taskName, varbits, recommend).isEmpty());
+		return hasNeeds(taskName, assignedAreaId, null, varbits, recommend);
+	}
+
+	/**
+	 * Whether the task, or the place it goes to, needs or recommends anything.
+	 *
+	 * @param placeKey the key in /slayer_areas.json of the place the task goes to: Konar's area, or the place picked or
+	 * recommended for another master. Null when unknown, which leaves Konar's area to say the place.
+	 */
+	static boolean hasNeeds(String taskName, int assignedAreaId, String placeKey, IntUnaryOperator varbits, boolean recommend)
+	{
+		if (taskName == null) return false;
+		final List<Need> needs = needs(taskName, assignedAreaId, placeKey, varbits);
+		return !needs.isEmpty() || !recommended(taskName, place(assignedAreaId, placeKey), needs, varbits, recommend).isEmpty();
 	}
 
 	/**
@@ -261,9 +276,22 @@ final class SlayerGearCheck
 	static Result evaluate(String taskName, int killsLeft, int assignedAreaId, List<Held> held, BankGear bank,
 		IntUnaryOperator varbits, boolean recommend)
 	{
+		return evaluate(taskName, killsLeft, assignedAreaId, null, held, bank, varbits, recommend);
+	}
+
+	/**
+	 * @param placeKey the key in /slayer_areas.json of the place the task goes to: Konar's area, or the place picked or
+	 * recommended for another master. Its needs and recommendations join the task's. Null when unknown, which leaves
+	 * Konar's area to say the place.
+	 */
+	static Result evaluate(String taskName, int killsLeft, int assignedAreaId, String placeKey, List<Held> held, BankGear bank,
+		IntUnaryOperator varbits, boolean recommend)
+	{
 		if (taskName == null) return null;
-		final List<Need> needs = needs(taskName, assignedAreaId);
-		final List<Recommendation> recommended = recommended(taskName, varbits, recommend);
+		final String place = place(assignedAreaId, placeKey);
+		final boolean placeKnown = place != null || assignedAreaId > 0;
+		final List<Need> needs = needs(taskName, assignedAreaId, placeKey, varbits);
+		final List<Recommendation> recommended = recommended(taskName, place, needs, varbits, recommend);
 		if (needs.isEmpty() && recommended.isEmpty()) return null;
 		final int kills = killsLeft > 0 ? killsLeft : -1;
 		final Stock stock = new Stock(held, bank, bank == null ? Collections.<ItemGroup>emptyList() : warned(recommended, varbits));
@@ -276,8 +304,9 @@ final class SlayerGearCheck
 		final List<ItemGroup> lacking = new ArrayList<>();
 		for (Need need : needs)
 		{
-			// Konar's area is where the kills count, so the place needs no naming once it is known.
-			String where = assignedAreaId > 0 ? null : need.getWhere();
+			// A need tied to places applies only at them once where the task goes is known, so its place needs no naming
+			// then. Konar's area is where the kills count, so no place is named in it either.
+			String where = (need.isPlaceBound() ? placeKnown : assignedAreaId > 0) ? null : need.getWhere();
 			String exemptNote = null;
 			if (need.getExemptVarbit() >= 0 && varbits.applyAsInt(need.getExemptVarbit()) > 0)
 			{
@@ -303,6 +332,7 @@ final class SlayerGearCheck
 				if (need.getAlternative() != null) lacking.add(need.getAlternative());
 			}
 			if (exemptNote != null) notes.add(exemptNote);
+			if (need.getReason() != null) notes.add(need.getReason());
 		}
 		// The mandatory tier's sentence, READY only when every mandatory item is carried or worn
 		String status = null;
@@ -393,14 +423,19 @@ final class SlayerGearCheck
 		return "Ready";
 	}
 
-	/** The task's recommendations, then the Slayer helmet once Malevolent Masquerade is bought. None while the tier is off. */
-	private static List<Recommendation> recommended(String taskName, IntUnaryOperator varbits, boolean recommend)
+	/**
+	 * The task's recommendations, then the place's, then the Slayer helmet once Malevolent Masquerade is bought, only the
+	 * helmet where one of the needs puts an item on the head. None while the tier is off.
+	 */
+	private static List<Recommendation> recommended(String taskName, String place, List<Need> needs, IntUnaryOperator varbits,
+		boolean recommend)
 	{
 		if (!recommend) return Collections.emptyList();
 		final List<Recommendation> recommendations = new ArrayList<>(SlayerRequirements.recommendedFor(taskName));
+		recommendations.addAll(SlayerRequirements.recommendedAt(place));
 		if (varbits.applyAsInt(SlayerRequirements.HELMET_UNLOCK_VARBIT) > 0)
 		{
-			recommendations.add(Recommendation.of(SlayerRequirements.slayerHeadgear(taskName)));
+			recommendations.add(Recommendation.of(SlayerRequirements.slayerHeadgear(taskName, SlayerRequirements.helmetStandsIn(needs))));
 		}
 		return recommendations;
 	}
@@ -527,23 +562,40 @@ final class SlayerGearCheck
 		return matcher.find() ? Integer.parseInt(matcher.group(1)) : 0;
 	}
 
-	/** The task's needs that apply where it is done, then those of Konar's area that the task does not have yet. */
-	private static List<Need> needs(String taskName, int assignedAreaId)
+	/** The key of the place the task goes to: the one given, else that of Konar's area when the tables name it. */
+	private static String place(int assignedAreaId, String placeKey)
 	{
+		return placeKey != null ? placeKey : SlayerRequirements.placeOfArea(assignedAreaId);
+	}
+
+	/**
+	 * The task's needs that apply where it goes, then those of the place that a need of the task does not already cover.
+	 * A need whose varbit drops it without a word, such as a rope already tied, is left out.
+	 */
+	private static List<Need> needs(String taskName, int assignedAreaId, String placeKey, IntUnaryOperator varbits)
+	{
+		final String place = place(assignedAreaId, placeKey);
+		final boolean placeKnown = place != null || assignedAreaId > 0;
 		final List<Need> needs = new ArrayList<>();
 		final Requirement requirement = SlayerRequirements.forTask(taskName);
 		if (requirement != null)
 		{
 			for (Need need : requirement.getNeeds())
 			{
-				if (need.appliesIn(assignedAreaId)) needs.add(need);
+				if (need.appliesAt(assignedAreaId, place, placeKnown) && !droppedSilently(need, varbits)) needs.add(need);
 			}
 		}
-		for (Need need : SlayerRequirements.forArea(assignedAreaId))
+		for (Need need : SlayerRequirements.forPlace(place))
 		{
-			if (need.appliesIn(assignedAreaId) && !hasGroup(needs, need.getItems())) needs.add(need);
+			if (!droppedSilently(need, varbits) && !covered(needs, need.getItems())) needs.add(need);
 		}
 		return needs;
+	}
+
+	/** A need whose varbit is set and which has nothing to say then. */
+	private static boolean droppedSilently(Need need, IntUnaryOperator varbits)
+	{
+		return need.getExemptVarbit() >= 0 && need.getExemptNote() == null && varbits.applyAsInt(need.getExemptVarbit()) > 0;
 	}
 
 	/** Adds what is carried to {@code have} and returns null, or returns what the bank brings or what is missing. */
@@ -553,6 +605,9 @@ final class SlayerGearCheck
 		{
 			case PER_KILL:
 				return perKill(need, stock, kills, where, have);
+			case AMOUNT:
+				// Counted as used-up items are, against the amount in place of the kills left
+				return perKill(need, stock, need.getAmount(), where, have);
 			case CHARGES:
 				return charges(need, stock, kills, where, have);
 			case ADVICE:
@@ -701,11 +756,15 @@ final class SlayerGearCheck
 		return count;
 	}
 
-	private static boolean hasGroup(List<Need> needs, ItemGroup group)
+	/**
+	 * Whether a need already listed, advice aside, asks for items that all belong to this group, so that whatever meets
+	 * it meets this group too, as the dust devils' facemask does the Smoke Dungeon's.
+	 */
+	private static boolean covered(List<Need> needs, ItemGroup group)
 	{
 		for (Need need : needs)
 		{
-			if (need.getItems() == group) return true;
+			if (need.getKind() != Need.Kind.ADVICE && group.ids().containsAll(need.getItems().ids())) return true;
 		}
 		return false;
 	}

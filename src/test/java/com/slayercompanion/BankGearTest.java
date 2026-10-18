@@ -18,9 +18,9 @@ import org.junit.Test;
 /** What the bank memory keeps of a bank, how it is stored, and when it reads the bank, for one character and the next. */
 public class BankGearTest
 {
-	/** Coins and sharks, a rock hammer, 120 ice coolers, an Arclight, and a stack with no nose pegs left in it. */
+	/** Bones and sharks, a rock hammer, 120 ice coolers, an Arclight, and a stack with no nose pegs left in it. */
 	private static final Item[] BANK = {
-		new Item(ItemID.COINS, 2_000_000), new Item(ItemID.SLAYER_ROCK_HAMMER, 1), new Item(ItemID.SHARK, 300),
+		new Item(ItemID.BONES, 2_000), new Item(ItemID.SLAYER_ROCK_HAMMER, 1), new Item(ItemID.SHARK, 300),
 		new Item(ItemID.SLAYER_ICY_WATER, 120), new Item(ItemID.ARCLIGHT, 1), new Item(ItemID.SLAYER_NOSEPEG, 0),
 	};
 
@@ -31,8 +31,8 @@ public class BankGearTest
 		assertEquals(1, gear.quantity(ItemID.SLAYER_ROCK_HAMMER));
 		assertEquals(120, gear.quantity(ItemID.SLAYER_ICY_WATER));
 		assertEquals(1, gear.quantity(ItemID.ARCLIGHT));
-		// Coins and food are not what the check looks for, and an empty stack holds nothing
-		assertEquals(0, gear.quantity(ItemID.COINS));
+		// Bones and food are not what the check looks for, and an empty stack holds nothing
+		assertEquals(0, gear.quantity(ItemID.BONES));
 		assertEquals(0, gear.quantity(ItemID.SHARK));
 		assertEquals(0, gear.quantity(ItemID.SLAYER_NOSEPEG));
 		// Rock hammer 4162, ice cooler 6696 and Arclight 19675, lowest id first
@@ -65,13 +65,13 @@ public class BankGearTest
 		final BankGear gear = BankGear.of(BANK);
 		assertEquals(gear, BankGear.decode(gear.encode()));
 		// A bank holding none of the items has still been seen
-		final BankGear none = BankGear.of(new Item[]{new Item(ItemID.COINS, 5)});
+		final BankGear none = BankGear.of(new Item[]{new Item(ItemID.BONES, 5)});
 		assertEquals("none", none.encode());
 		assertEquals(none, BankGear.decode("none"));
 		assertEquals(0, BankGear.decode("none").count(SlayerRequirements.ROCK_HAMMERS));
 		// Parts it cannot read, and items no group lists, are skipped and the rest kept
 		assertEquals(BankGear.of(new Item[]{new Item(ItemID.SLAYER_ROCK_HAMMER, 1)}),
-			BankGear.decode("junk, " + ItemID.SLAYER_ROCK_HAMMER + ":1 ," + ItemID.COINS + ":9,7:x,:3"));
+			BankGear.decode("junk, " + ItemID.SLAYER_ROCK_HAMMER + ":1 ," + ItemID.BONES + ":9,7:x,:3"));
 	}
 
 	// ---- the memory of the character logged in ----

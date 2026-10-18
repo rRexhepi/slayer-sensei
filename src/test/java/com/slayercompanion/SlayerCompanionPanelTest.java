@@ -200,6 +200,25 @@ public class SlayerCompanionPanelTest
 		assertEquals(SlayerCompanionPanel.gearColor(SlayerGearCheck.Status.READY), sidebar.color("- Ready: Arclight"));
 	}
 
+	/** What the place needs shows as every need does: red items with the line as their tooltip, and the red line when detailed. */
+	@Test
+	public void whatThePlaceNeedsShowsLikeEveryNeed() throws Throwable
+	{
+		final Sidebar sidebar = Sidebar.konarTask(SidebarDetail.COMPACT);
+		final SlayerGearCheck.Result brimhaven = SlayerGearCheck.evaluate("Fire giants", 50, SlayerRequirements.BRIMHAVEN_AREA,
+				SlayerRequirements.BRIMHAVEN_DUNGEON, Collections.<SlayerGearCheck.Held>emptyList(), null, varbit -> 0, true);
+		sidebar.gear(brimhaven);
+		final List<String> texts = sidebar.texts();
+		final int gear = texts.indexOf("GEAR");
+		assertEquals(Arrays.asList("- Missing: axe", "- Missing: 875 coins"), texts.subList(gear + 1, gear + 3));
+		assertEquals(SlayerCompanionPanel.MISSING_COLOR, sidebar.color("- Missing: axe"));
+		assertEquals(SlayerCompanionPanel.MISSING_COLOR, sidebar.color("- Missing: 875 coins"));
+		assertEquals(SlayerCompanionPanel.tooltip(brimhaven.getLine()), sidebar.tooltip("- Missing: 875 coins"));
+		sidebar.detail = SidebarDetail.DETAILED;
+		sidebar.refresh();
+		assertEquals(SlayerCompanionPanel.MISSING_COLOR, sidebar.color(brimhaven.getLine()));
+	}
+
 	@Test
 	public void aTaskThatNeedsAndRecommendsNothingHasNoGearSection() throws Throwable
 	{

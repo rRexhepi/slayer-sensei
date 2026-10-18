@@ -317,5 +317,5 @@ KRYSTILIA Spiders at edgeville_dungeon: entrance [3096, 3469, 0] is outside the 
 DROPPED for Krystilia Spiritual Creatures at wilderness_god_wars_dungeon: Spiritual ranger LocLine 'Wilderness God Wars Dungeon': Shortest Path cannot reach any of its 12 walkable tiles
 DROPPED for Krystilia Spiritual Creatures at wilderness_god_wars_dungeon: Spiritual warrior LocLine 'Wilderness God Wars Dungeon': Shortest Path cannot reach any of its 11 walkable tiles
 DROPPED for Krystilia Spiritual Creatures at wilderness_god_wars_dungeon: Spiritual mage LocLine 'Wilderness God Wars Dungeon': Shortest Path cannot reach any of its 13 walkable tiles
-Access: 138 places can lock (4 only for some tasks), 17 carry a note only, 210 need nothing, 5 not settled.
-Access not settled: brimhaven_dungeon, north_east_karamja_instanced, jiggig_dungeon, shayzien_crypts, wizards_tower
+Access: 138 places can lock (4 only for some tasks), 18 carry a note only, 210 need nothing, 4 not settled.
+Access not settled: north_east_karamja_instanced, jiggig_dungeon, shayzien_crypts, wizards_tower

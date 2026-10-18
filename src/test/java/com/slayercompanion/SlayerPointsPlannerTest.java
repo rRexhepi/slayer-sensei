@@ -559,27 +559,25 @@ public class SlayerPointsPlannerTest
 	@Test
 	public void theXpPlanFollowsTheSpendingOrder()
 	{
-		// Plenty of points: Bigger and Badder and the blocks, then the helmet and the Fossil Island Wyvern block, then
-		// extensions, then the rest
+		// Plenty of points: Stop the Wyvern first, since the points reach it, then Bigger and Badder and the blocks, then the
+		// helmet, then extensions, then the rest
 		final Plan rich = kuradal(SlayerGoal.XP, 50000);
 		final List<String> all = names(rich.getBuyNow());
+		assertEquals(all.toString(), "Stop the Wyvern", all.get(0));
 		int tier = 1;
-		for (String name : all)
+		for (String name : all.subList(1, all.size()))
 		{
 			final int t = tier(name);
 			assertTrue(all.toString(), t >= tier);
 			tier = t;
 		}
-		assertEquals(all.toString(), 1, tier(all.get(0)));
-		assertTrue(all.toString(), all.indexOf("Bigger and Badder") < all.indexOf("Stop the Wyvern"));
+		assertEquals(all.toString(), 1, tier(all.get(1)));
 		final int helmet = all.indexOf("Malevolent Masquerade");
-		final int wyvern = all.indexOf("Stop the Wyvern");
-		assertEquals(all.toString(), 1, Math.abs(helmet - wyvern));
-		assertEquals(all.toString(), 1, tier(all.get(Math.min(helmet, wyvern) - 1)));
-		assertEquals(all.toString(), 3, tier(all.get(Math.max(helmet, wyvern) + 1)));
+		assertEquals(all.toString(), 1, tier(all.get(helmet - 1)));
+		assertEquals(all.toString(), 3, tier(all.get(helmet + 1)));
 		assertEquals(all.toString(), 4, tier(all.get(all.size() - 1)));
-		// With too few points the plan buys the start of that order and saves for the rest in the same order
-		for (int points : new int[]{521, 960, 1500})
+		// With fewer points that still reach it the plan buys the start of that order and saves for the rest in the same order
+		for (int points : new int[]{960, 1500})
 		{
 			final Plan plan = kuradal(SlayerGoal.XP, points);
 			final List<String> both = new ArrayList<>(names(plan.getBuyNow()));
@@ -593,6 +591,19 @@ public class SlayerPointsPlannerTest
 				need = l.getNeed();
 			}
 		}
+		// With points short of it the usual order holds: Bigger and Badder and the blocks first, Stop the Wyvern after them
+		final Plan poor = kuradal(SlayerGoal.XP, 521);
+		final List<String> both = new ArrayList<>(names(poor.getBuyNow()));
+		both.addAll(names(poor.getSaveFor()));
+		assertEquals(both.toString(), 1, tier(both.get(0)));
+		tier = 1;
+		for (String name : both)
+		{
+			final int t = tier(name);
+			assertTrue(both.toString(), t >= tier);
+			tier = t;
+		}
+		assertFalse(both.toString(), names(poor.getBuyNow()).contains("Stop the Wyvern"));
 	}
 
 	/** The XP order's tier of a line in the plan. */
@@ -782,12 +793,130 @@ public class SlayerPointsPlannerTest
 	@Test
 	public void stopTheWyvernFreesTheSlotItsBlockTakes()
 	{
-		// For XP fossil wyverns are worth a block at Konar, so Stop the Wyvern is worth the next best block
-		final Line wyvern = line(SlayerPlanBuilder.build(rich().withAllSlots(), DATA, DATASET, pinned(SlayerMaster.KONAR, SlayerGoal.XP),
-				SlayerMasterAccessTest.maxed()).getPlan(), "Stop the Wyvern");
+		// For XP fossil wyverns are worth a block at Konar, so Stop the Wyvern is worth the next best block, which takes the slot
+		final SlayerPlanBuilder.View view = SlayerPlanBuilder.build(rich().withAllSlots(), DATA, DATASET, pinned(SlayerMaster.KONAR,
+				SlayerGoal.XP), SlayerMasterAccessTest.maxed());
+		final Line wyvern = line(view.getPlan(), "Stop the Wyvern");
 		assertNotNull(wyvern);
-		assertTrue(wyvern.getDetail(), wyvern.getDetail().startsWith("Keeps Fossil Island Wyverns out of every master's list without a block"
-				+ " slot. The slot its block takes can then hold "));
+		assertEquals("Blocks Fossil Island Wyverns at every master without a slot. The slot goes to Abyssal Demons instead.", wyvern.getDetail());
+		assertTrue(view.getBlockAdvice().getAdd().toString(), view.getBlockAdvice().getAdd().contains("Abyssal Demons"));
+	}
+
+	/** Steve for XP with every block slot open and five of them set: cave kraken, metal dragons, abyssal demons, black demons, hellhounds. */
+	private static Account steve(int points)
+	{
+		return new Account().withVarbit(VarbitID.SLAYER_POINTS, points).withAllSlots()
+				.withVarbit(VarbitID.SLAYER_BLOCKED_NIEVE_1, 92).withVarbit(VarbitID.SLAYER_BLOCKED_NIEVE_2, 127)
+				.withVarbit(VarbitID.SLAYER_BLOCKED_NIEVE_3, 42).withVarbit(VarbitID.SLAYER_BLOCKED_NIEVE_4, 30)
+				.withVarbit(VarbitID.SLAYER_BLOCKED_NIEVE_5, 31);
+	}
+
+	private static SlayerPlanBuilder.View steveXp(Account account)
+	{
+		return SlayerPlanBuilder.build(account, DATA, DATASET, pinned(SlayerMaster.NIEVE, SlayerGoal.XP), SlayerMasterAccessTest.maxed());
+	}
+
+	/** Fossil Island Wyverns' task id, the one block lists store. */
+	private static final int FOSSIL_WYVERNS = 106;
+
+	@Test
+	public void stopTheWyvernBoughtNowTakesNoSlot()
+	{
+		// 1410 to spend reach Stop the Wyvern, so the block advice treats fossil wyverns as gone and the slot they would take
+		// goes to drakes. No block is bought for them, and the line says why.
+		SlayerPlanBuilder.View view = steveXp(steve(1500));
+		Plan plan = view.getPlan();
+		final Line wyvern = line(plan, "Stop the Wyvern");
+		assertTrue(names(plan.getBuyNow()).toString(), plan.getBuyNow().contains(wyvern));
+		assertNull(names(plan.getBuyNow()).toString(), line(plan, "Block Fossil Island Wyverns"));
+		assertEquals(Arrays.asList("Turoth", "Drakes"), view.getBlockAdvice().getAdd());
+		assertTrue(plan.getBuyNow().contains(line(plan, "Block Drakes")));
+		for (SlayerPlanText.BlockItem item : SlayerPlanText.blockListItems(view.getMasterName(), view.getBlocked(), view.getBlockAdvice()))
+		{
+			assertFalse(item.getText(), item.getText().startsWith("Fossil Island Wyverns"));
+		}
+		assertEquals("Blocks Fossil Island Wyverns at every master without a slot. The slot goes to Drakes instead.", wyvern.getDetail());
+		assertEquals("Stop the Wyvern (500)", wyvern.getLabel());
+		// A task in progress there is skipped rather than blocked
+		final Account onTask = steve(1500).onTask(SlayerAssigner.NIEVE, 11);
+		onTask.varps.put(VarPlayerID.SLAYER_TARGET, FOSSIL_WYVERNS);
+		final String task = steveXp(onTask).getTaskAdvice();
+		assertTrue(task, task.startsWith("Skip it for 30 points. "));
+
+		// A regular block they already hold is lifted, and its slot goes to drakes
+		view = steveXp(steve(1500).withVarbit(VarbitID.SLAYER_BLOCKED_NIEVE_6, FOSSIL_WYVERNS));
+		plan = view.getPlan();
+		assertEquals("Stop the Wyvern", plan.getBuyNow().get(0).getName());
+		assertEquals(Collections.singletonList(new SlayerBlockAdvisor.Misfit("Fossil Island Wyverns", "Stop the Wyvern blocks it without a slot")),
+				view.getBlockAdvice().getMisfits());
+		assertTrue(line(plan, "Block Drakes").getDetail().endsWith("Unblock Fossil Island Wyverns first to free its slot."));
+	}
+
+	@Test
+	public void stopTheWyvernSavedForLeavesFossilWyvernsToASlot()
+	{
+		// 310 to spend do not reach it: the slots take the blocks in the usual order, fossil wyverns among them, and Stop the
+		// Wyvern waits after them, saying the slot frees up once it is bought
+		final SlayerPlanBuilder.View view = steveXp(steve(400));
+		final Plan plan = view.getPlan();
+		assertEquals(Arrays.asList("Bigger and Badder", "Block Turoth", "Block Fossil Island Wyverns"), names(plan.getBuyNow()));
+		assertEquals(Arrays.asList("Turoth", "Fossil Island Wyverns"), view.getBlockAdvice().getAdd());
+		final Line wyvern = line(plan, "Stop the Wyvern");
+		assertTrue(names(plan.getSaveFor()).toString(), plan.getSaveFor().contains(wyvern));
+		assertTrue(wyvern.getDetail(), wyvern.getDetail().endsWith(" Blocks Fossil Island Wyverns at every master without a slot."
+				+ " Once it is bought, their slot frees up for Drakes."));
+		assertTrue(wyvern.getLabel(), wyvern.getLabel().startsWith("Stop the Wyvern (500), ")
+				&& wyvern.getLabel().length() <= SlayerPointsPlanner.MAX_LABEL);
+		// A task in progress there is still worth the block
+		final Account onTask = steve(400).onTask(SlayerAssigner.NIEVE, 11);
+		onTask.varps.put(VarPlayerID.SLAYER_TARGET, FOSSIL_WYVERNS);
+		final String task = steveXp(onTask).getTaskAdvice();
+		assertTrue(task, task.startsWith("Block it for 90 points. "));
+	}
+
+	@Test
+	public void forXpStopTheWyvernComesFirstOnceThePointsReachIt()
+	{
+		final Candidate wyvern = new Candidate(Type.REWARD, SlayerReward.STOP_THE_WYVERN, "Stop the Wyvern", 500, false, false, 0.01,
+				"Blocks.", null, null);
+		final Candidate superiors = new Candidate(Type.REWARD, SlayerReward.BIGGER_AND_BADDER, "Bigger and Badder", 50, false, false, 0.05,
+				"Superiors.", null, null);
+		final Candidate a = new Candidate(Type.BLOCK, null, "Block A", 90, false, false, 0.02, "A.", null, null);
+		final Candidate b = new Candidate(Type.BLOCK, null, "Block B", 90, false, false, 0.015, "B.", null, null);
+		final List<Candidate> all = Arrays.asList(a, b, superiors, wyvern);
+		// 500 above the reserve reach it, so it comes first and the rest follow in the usual order
+		Plan plan = SlayerPointsPlanner.plan(all, 590, keep(90), null, SlayerGoal.XP);
+		assertEquals(Collections.singletonList("Stop the Wyvern"), names(plan.getBuyNow()));
+		assertEquals(Arrays.asList("Bigger and Badder", "Block A", "Block B"), names(plan.getSaveFor()));
+		// 499 do not, so the cheaper purchases are never held behind it
+		plan = SlayerPointsPlanner.plan(all, 589, keep(90), null, SlayerGoal.XP);
+		assertEquals(Arrays.asList("Bigger and Badder", "Block A", "Block B"), names(plan.getBuyNow()));
+		assertEquals(Collections.singletonList("Stop the Wyvern"), names(plan.getSaveFor()));
+		assertEquals(231, plan.getSaveFor().get(0).getNeed());
+
+		// At Steve with 700 points, 90 kept for skips: Stop the Wyvern first, Bigger and Badder with what is left, then the blocks
+		final Plan steve = steveXp(steve(700)).getPlan();
+		assertEquals(Arrays.asList("Stop the Wyvern", "Bigger and Badder"), names(steve.getBuyNow()));
+		assertEquals(Arrays.asList("Block Turoth", "Block Drakes"), names(steve.getSaveFor()).subList(0, 2));
+	}
+
+	@Test
+	public void aBlockOnFossilWyvernsIsLiftedOnceStopTheWyvernIsOwned()
+	{
+		// Stop the Wyvern bought and switched on takes fossil wyverns out of every list, so a regular block on them holds a
+		// slot for nothing
+		final SlayerPlanBuilder.View view = steveXp(steve(1500).withVarbit(VarbitID.SLAYER_UNLOCK_FOSSILWYVERNBLOCK, 1)
+				.withVarbit(VarbitID.SLAYER_BLOCKED_NIEVE_6, FOSSIL_WYVERNS));
+		assertEquals(SlayerPool.Status.REMOVED, view.getPool().find(DATA.taskRowForId(FOSSIL_WYVERNS)).getStatus());
+		final SlayerBlockAdvisor.Advice advice = view.getBlockAdvice();
+		assertEquals(Collections.singletonList(new SlayerBlockAdvisor.Misfit("Fossil Island Wyverns", "Stop the Wyvern blocks it without a slot")),
+				advice.getMisfits());
+		assertFalse(advice.getKeep().contains("Fossil Island Wyverns"));
+		assertEquals(Arrays.asList("Turoth", "Drakes"), advice.getAdd());
+		final Plan plan = view.getPlan();
+		assertTrue(line(plan, "Block Drakes").getDetail().endsWith("Unblock Fossil Island Wyverns first to free its slot."));
+		assertNull(line(plan, "Stop the Wyvern"));
+		assertNull(line(plan, "Block Fossil Island Wyverns"));
 	}
 
 	@Test
@@ -1006,9 +1135,11 @@ public class SlayerPointsPlannerTest
 		assertEquals("Dagannoth", advice.getMisfits().get(0).getName());
 		// Seven open slots: six more blocks besides cave kraken
 		assertEquals(6, advice.getAdd().size());
-		// The sixth block needs dagannoth's slot, so its line says to unblock it first
-		final Line last = line(SlayerPlanBuilder.build(account.withVarbit(VarbitID.SLAYER_POINTS, 5000), DATA, DATASET,
-				pinned(SlayerMaster.KONAR, SlayerGoal.XP), SlayerMasterAccessTest.maxed()).getPlan(), "Block " + advice.getAdd().get(5));
+		// The sixth block needs dagannoth's slot, so its line says to unblock it first. 5000 points buy Stop the Wyvern now, so
+		// that plan's advice leaves fossil wyverns out and has a sixth block of its own.
+		final SlayerPlanBuilder.View rich = SlayerPlanBuilder.build(account.withVarbit(VarbitID.SLAYER_POINTS, 5000), DATA, DATASET,
+				pinned(SlayerMaster.KONAR, SlayerGoal.XP), SlayerMasterAccessTest.maxed());
+		final Line last = line(rich.getPlan(), "Block " + rich.getBlockAdvice().getAdd().get(5));
 		assertTrue(last.getDetail(), last.getDetail().endsWith("Unblock Dagannoth first to free its slot."));
 	}
 

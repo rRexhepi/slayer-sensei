@@ -7,12 +7,14 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
+import com.google.gson.Gson;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import net.runelite.api.gameval.DBTableID;
 import net.runelite.api.gameval.ItemID;
@@ -312,6 +314,78 @@ public class SlayerRequirementsTest
 				assertFalse(need.getItems().ids().isEmpty());
 			}
 		}
+	}
+
+	/** Every place the tables tie a need or a recommendation to is a place of /slayer_areas.json, so none is lost to a typo. */
+	@Test
+	public void everyPlaceTheTablesNameIsInTheData()
+	{
+		final SlayerLocations data = new SlayerLocations(new Gson());
+		assertTrue(SlayerRequirements.placeKeys().size() > 20);
+		for (String key : SlayerRequirements.placeKeys())
+		{
+			assertNotNull(key + " is not a place in slayer_areas.json", data.byKey(key));
+		}
+	}
+
+	/** Konar's area ids of those places are the data's own, and each the data gives is there, so her area brings its needs. */
+	@Test
+	public void konarsAreasOfThosePlacesAreTheDatasOwn()
+	{
+		final SlayerLocations data = new SlayerLocations(new Gson());
+		for (Map.Entry<Integer, String> area : SlayerRequirements.areaPlaces().entrySet())
+		{
+			assertEquals(area.getValue(), data.byAreaId(area.getKey()).getKey());
+		}
+		for (String key : SlayerRequirements.placeKeys())
+		{
+			final int areaId = data.byKey(key).getAreaId();
+			if (areaId > 0) assertEquals(key, SlayerRequirements.placeOfArea(areaId));
+		}
+		assertEquals(SlayerRequirements.forPlace(SlayerRequirements.KARUULM_SLAYER_DUNGEON),
+			SlayerRequirements.forArea(SlayerRequirements.KARUULM_AREA));
+	}
+
+	/**
+	 * Wiki: Vines (Brimhaven Dungeon), whose tool is any axe, and Brimhaven Dungeon, "A blessed axe will not work." Fails when
+	 * a RuneLite update adds an axe the list does not have yet. Noted copies, dummies, random event pieces, the Gauntlet's and
+	 * league copies, the Soulreaper axe's parts, the zombie axe weapon and quest props are left out.
+	 */
+	@Test
+	public void everyAxeInRuneLiteCutsTheVinesButTheBlessedAxe() throws Exception
+	{
+		final String leftOut = "ANMA_AXE|ARRAV_AXE|FORESTRY_2H_AXE_HANDLE|DEMONIC_AXE_ORNAMENT_KIT"
+			+ "|(CERT|PATTERN|MACRO|GAUNTLET|LEAGUE|SOULREAPER|ZOMBIE|SCRAMBLED)_.*";
+		final Set<Integer> axes = new HashSet<>();
+		for (Field field : ItemID.class.getFields())
+		{
+			final String name = field.getName();
+			if (!name.matches("(.*_)?AXE(_.*)?") || name.matches(".*(PICKAXE|BATTLEAXE|THROWNAXE).*") || name.matches(leftOut)) continue;
+			axes.add(field.getInt(null));
+		}
+		assertEquals(axes, SlayerRequirements.AXES.ids());
+		assertFalse(SlayerRequirements.AXES.ids().contains(ItemID.ANMA_AXE));
+	}
+
+	/**
+	 * Fails when a RuneLite update adds a pickaxe or a shade key the lists do not have yet. Pickaxes that only work in a
+	 * minigame, broken ones and kits are left out.
+	 */
+	@Test
+	public void everyPickaxeAndShadeKeyInRuneLiteIsListed() throws Exception
+	{
+		final Set<Integer> pickaxes = new HashSet<>();
+		for (Field field : ItemID.class.getFields())
+		{
+			final String name = field.getName();
+			if (!name.contains("PICKAXE") || name.matches("(CERT|PATTERN|MACRO|GAUNTLET|LEAGUE|NZONE|WBR|CARGO_CRATE)_.*|.*_(KIT|GLOW)"))
+			{
+				continue;
+			}
+			pickaxes.add(field.getInt(null));
+		}
+		assertEquals(pickaxes, SlayerRequirements.PICKAXES.ids());
+		assertEquals(itemsNamed("SHADEKEY_"), SlayerRequirements.SHADE_KEYS.ids());
 	}
 
 	/** SlayerRewardCoverageTest keeps the reward table's varbits equal to the cache, so these follow them. */

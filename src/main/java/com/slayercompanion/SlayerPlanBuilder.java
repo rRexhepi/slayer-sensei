@@ -341,9 +341,36 @@ final class SlayerPlanBuilder
 		final IntUnaryOperator tasksFor = routine
 				? need -> SlayerPointsForecast.withRoutine(need, streaks, masters, diaries, settings.getBoost())
 				: need -> SlayerPointsForecast.atMaster(need, planMaster, streaks, diaries);
-		final Plan plan = SlayerPointsPlanner.plan(candidates, points, reserve, tasksFor, goal);
+		Plan plan = SlayerPointsPlanner.plan(candidates, points, reserve, tasksFor, goal);
+		// Stop the Wyvern blocks fossil wyverns at every master without a slot. When the plan buys it now, the block advice treats
+		// them as gone, so the slot they would take goes to the next task. The plan is made again with that advice, and the task
+		// in progress is judged with them gone too.
+		SlayerPool.Player taskPlayer = player;
+		final String wyvernBlock = rewardName(data, SlayerReward.STOP_THE_WYVERN);
+		if (blockAdvice != null && buys(plan, wyvernBlock))
+		{
+			final Set<Integer> bought = new HashSet<>(owned);
+			bought.add(SlayerReward.STOP_THE_WYVERN.getRow());
+			final SlayerPool.Player gone = player(account, data, bought, access);
+			final SlayerBlockAdvisor.Advice advice = SlayerBlockAdvisor.advise(master, SlayerPool.of(planMaster, data, gone, blocks.rows,
+					ratings), goal, openSlots(master, questPoints, diaryDone), blocks.inOrder);
+			final String slot = slotGoesTo(blockAdvice, advice, gone.getRemovedTasks());
+			final List<Candidate> again = new ArrayList<>();
+			for (Candidate c : SlayerSpend.candidates(context.withBlocks(advice), r -> rewardName(data, r), r -> rewardCost(data, r),
+					i -> itemCost(data, i)))
+			{
+				again.add(c.getReward() == SlayerReward.STOP_THE_WYVERN && slot != null ? c.withNote(slot) : c);
+			}
+			final Plan withBlock = SlayerPointsPlanner.plan(again, points, reserve, tasksFor, goal);
+			if (buys(withBlock, wyvernBlock))
+			{
+				plan = withBlock;
+				blockAdvice = advice;
+				taskPlayer = gone;
+			}
+		}
 
-		final SlayerUnlockAdvisor.Situation task = situation(account, data, goal, player, ratings, dossier, owned, masters, diaries,
+		final SlayerUnlockAdvisor.Situation task = situation(account, data, goal, taskPlayer, ratings, dossier, owned, masters, diaries,
 				questPoints, diaryDone, mortimerTasks, points, cycle, planPool, ranking.isEmpty() ? null : ranking.get(0).getNpc());
 		final int taskRow = data == null || !streaks.isTaskInProgress() ? -1 : data.taskRowForId(account.varp(VarPlayerID.SLAYER_TARGET));
 		final List<String> notes = new ArrayList<>();
@@ -366,6 +393,33 @@ final class SlayerPlanBuilder
 				task,
 				SlayerTaskText.assignedBy(data, taskRow, a -> npc(masters, a)),
 				fillers);
+	}
+
+	/** Whether the plan buys this purchase now. */
+	private static boolean buys(Plan plan, String name)
+	{
+		for (SlayerPointsPlanner.Line line : plan.getBuyNow())
+		{
+			if (line.getName().equals(name)) return true;
+		}
+		return false;
+	}
+
+	/**
+	 * "The slot goes to Drakes instead." when the advice {@code before} holds a slot for one of these tasks, and the
+	 * advice {@code after}, made without them, gives a slot to a task {@code before} does not. Null otherwise.
+	 */
+	private static String slotGoesTo(SlayerBlockAdvisor.Advice before, SlayerBlockAdvisor.Advice after, Set<Integer> rows)
+	{
+		boolean held = false;
+		for (int row : rows) held |= before.getKeepRows().contains(row) || before.getAddRows().contains(row);
+		String task = null;
+		for (int i = 0; held && i < after.getAddRows().size(); i++)
+		{
+			final int row = after.getAddRows().get(i);
+			if (!before.getKeepRows().contains(row) && !before.getAddRows().contains(row)) task = after.getAdd().get(i);
+		}
+		return task == null ? null : SlayerSpend.slotGoesTo(task);
 	}
 
 	/**

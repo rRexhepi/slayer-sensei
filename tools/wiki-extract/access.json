@@ -8,6 +8,26 @@
   "open lists the places the wiki shows to need nothing, each with the sentence that shows how the place is reached. A place in neither list is not settled."
  ],
  "locations": {
+  "brimhaven_dungeon": {
+   "note": "Needs 10 Woodcutting to cut the vines.",
+   "sources": [
+    {
+     "page": "Brimhaven Dungeon",
+     "quote": "A player will also need an axe to cut the vines blocking the path (requiring level 10 Woodcutting)."
+    }
+   ],
+   "tasks": {
+    "30": {
+     "note": "Needs 34 Woodcutting for the vines to the black demons.",
+     "sources": [
+      {
+       "page": "Brimhaven Dungeon",
+       "quote": "To get further in the dungeon (Black Demons and beyond), you will need at least a Woodcutting level of 34."
+      }
+     ]
+    }
+   }
+  },
   "waterfall_dungeon": {
    "questsStarted": [
     "WATERFALL_QUEST"

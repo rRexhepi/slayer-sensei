@@ -235,6 +235,43 @@ public class SlayerSpendTest
 		assertEquals(0, find(at(SlayerAssigner.KONAR, SlayerGoal.POINTS), "Reptile Freezer").getGain(), 0);
 	}
 
+	/** Stop the Wyvern for XP at Steve's spot over this list, with this many open slots and the block advice for them. */
+	private static Candidate wyvernBlock(SlayerPool pool, int slots)
+	{
+		final SlayerBlockAdvisor.Advice advice = SlayerBlockAdvisor.advise(SlayerMaster.NIEVE, pool, SlayerGoal.XP, slots,
+				Collections.<Integer>emptyList());
+		final List<Candidate> all = SlayerSpend.candidates(new SlayerSpend.Context(SlayerGoal.XP, SlayerAssigner.NIEVE, "Steve", pool, DATA,
+				SlayerMasterRankerTest.maxed(), Collections.<Integer>emptySet(), slots, advice, Collections.<Integer>emptySet(),
+				SlayerPlanBuilder.dossier(DATASET), SlayerShopItem.Sightings.NONE, null, 0), SlayerReward::getFallbackName, r -> null, i -> null);
+		final SlayerPointsPlanner.Plan plan = SlayerPointsPlanner.plan(all, 50000, SlayerPointsPlanner.Reserve.NONE, null, SlayerGoal.XP);
+		final Candidate wyvern = find(all, "Stop the Wyvern");
+		// A purchase worth nothing is never listed, so the plan names it only when it helps
+		boolean listed = false;
+		for (List<SlayerPointsPlanner.Line> lines : Arrays.asList(plan.getBuyNow(), plan.getSaveFor(), plan.getLater(), plan.getAvoid()))
+		{
+			for (SlayerPointsPlanner.Line l : lines) listed |= l.getName().equals(wyvern.getName());
+		}
+		assertEquals(wyvern.getGain() > SlayerPointsPlanner.NOTICEABLE, listed);
+		return wyvern;
+	}
+
+	@Test
+	public void stopTheWyvernIsWorthNothingWithSlotsToSpare()
+	{
+		// Fossil wyverns are the one task here worth a block for XP, so one of seven slots holds them and six are left over. Stop
+		// the Wyvern only frees a slot nothing else needs.
+		final SlayerPool pool = SlayerPool.of(SlayerAssigner.NIEVE, Arrays.asList(
+				new SlayerPool.Entry(DBTableID.SlayerTask.Row.SLAYER_TARGET_FOSSILWYVERNS, "Fossil Island Wyverns", 5, 100, 100, 100, Status.OPEN,
+						rating(1, 3, 3)),
+				entry(1, 10, rating(5, 3, 3), Status.OPEN),
+				entry(2, 10, rating(5, 3, 3), Status.OPEN)));
+		assertEquals(Collections.singletonList("Fossil Island Wyverns"),
+				SlayerBlockAdvisor.advise(SlayerMaster.NIEVE, pool, SlayerGoal.XP, 7, Collections.<Integer>emptyList()).getAdd());
+		assertEquals(0, wyvernBlock(pool, 7).getGain(), SlayerPointsPlanner.NOTICEABLE);
+		// With no slot to hold them it is worth their block
+		assertTrue(wyvernBlock(pool, 0).getGain() > SlayerPointsPlanner.NOTICEABLE);
+	}
+
 	@Test
 	public void linesEndWithAFullStopAndUseWholeNumbers()
 	{

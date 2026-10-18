@@ -997,16 +997,18 @@ public class SlayerCompanionPlugin extends Plugin
 	}
 
 	/**
-	 * Gathers the inputs for {@link SlayerGearCheck}, with the bank as it was last seen. The items are read again only
-	 * after a container change, but the line is rebuilt every tick, since the kills left, Konar's area and the varbits
-	 * change on their own.
+	 * Gathers the inputs for {@link SlayerGearCheck}, with the bank as it was last seen and the key of the place the task
+	 * goes to, so that place's needs count whoever assigned the task. The items are read again only after a container
+	 * change, but the line is rebuilt every tick, since the kills left, the destination and the varbits change on their own.
 	 */
 	private void updateGearCheck()
 	{
 		final int areaId = Math.max(0, assignedAreaId);
+		final Destination where = destination;
+		final String placeKey = where == null ? null : where.getKey();
 		// Off, the recommended tier is left out everywhere: the sidebar, the detailed line and the panel
 		final boolean recommend = config.showRecommendedGear();
-		if (!SlayerGearCheck.hasNeeds(taskName, areaId, client::getVarbitValue, recommend))
+		if (!SlayerGearCheck.hasNeeds(taskName, areaId, placeKey, client::getVarbitValue, recommend))
 		{
 			gearCheck = null;
 			gearResult = null;
@@ -1017,7 +1019,7 @@ public class SlayerCompanionPlugin extends Plugin
 			gearItems = heldItems();
 			gearCheckDirty = false;
 		}
-		final SlayerGearCheck.Result result = SlayerGearCheck.evaluate(taskName, parseInt(taskAmount), areaId, gearItems,
+		final SlayerGearCheck.Result result = SlayerGearCheck.evaluate(taskName, parseInt(taskAmount), areaId, placeKey, gearItems,
 				bankMemory.get(), client::getVarbitValue, recommend);
 		gearCheck = result == null ? null : result.getLine();
 		gearResult = result;

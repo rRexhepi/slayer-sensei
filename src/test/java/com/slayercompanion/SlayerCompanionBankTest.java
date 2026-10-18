@@ -2,11 +2,13 @@ package com.slayercompanion;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,13 +27,14 @@ import org.junit.Test;
 
 /**
  * The plugin's bank memory on logged-in ticks without a task. The bank is looked at only after it changed, on a tick its
- * interface is open, and read at most once a tick. The gear check counts what the bank of the character logged in held.
- * The client here answers only what such a tick reads, the bank's interface and the bank, and counts the last two.
+ * interface is open, and read at most once a tick. The gear check counts what the bank of the character logged in held,
+ * and what the place the task goes to needs. The client here answers only what such a tick reads, the bank's interface
+ * and the bank, and counts the last two.
  */
 public class SlayerCompanionBankTest
 {
-	/** Coins and a rock hammer. Only the hammer is kept. */
-	private static final Item[] BANK = {new Item(ItemID.COINS, 1_000_000), new Item(ItemID.SLAYER_ROCK_HAMMER, 1)};
+	/** Bones and a rock hammer. Only the hammer is kept. */
+	private static final Item[] BANK = {new Item(ItemID.BONES, 1_000), new Item(ItemID.SLAYER_ROCK_HAMMER, 1)};
 
 	@Test
 	public void nothingLooksAtTheBankUntilItChanges() throws Exception
@@ -100,6 +103,20 @@ public class SlayerCompanionBankTest
 		assertEquals(Collections.singletonList("Missing: rock or granite hammer"), gear.getItems());
 		plugin.profile = "profile-a";
 		assertEquals(Collections.singletonList("In bank: Rock hammer"), plugin.gear("Gargoyles", "40").getItems());
+	}
+
+	/** The destination's key reaches the gear check, so a place picked for any master brings what it needs. */
+	@Test
+	public void theGearCheckAsksWhatThePlaceOfTheTaskNeeds() throws Exception
+	{
+		final Harness plugin = new Harness();
+		// Fire giants need nothing by themselves
+		assertNull(plugin.gear("Fire giants", "50"));
+		plugin.set("destination", new Destination(Destination.Origin.PREFERRED, SlayerRequirements.BRIMHAVEN_DUNGEON, 0,
+			"Brimhaven Dungeon", null, null, false, null, null, null, Collections.emptyList()));
+		final SlayerGearCheck.Result gear = plugin.gear("Fire giants", "50");
+		assertEquals(Arrays.asList("Missing: axe", "Missing: 875 coins"), gear.getItems());
+		assertTrue(gear.getLine(), gear.getLine().startsWith("MISSING: an axe, and 875 coins"));
 	}
 
 	/** Writing the memory posts a config change for its group, which must not be taken for a change of a setting. */

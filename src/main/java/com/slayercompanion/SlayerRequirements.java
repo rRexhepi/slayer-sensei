@@ -20,6 +20,10 @@ import net.runelite.api.gameval.VarbitID;
  * bonus or protection against that kind of monster, such as demonbane weapons against demons. Every entry was checked
  * on the OSRS Wiki's monster, item, attribute and location pages, named next to it.
  *
+ * <p>What a place needs whatever the task, such as an axe and 875 coins for Brimhaven Dungeon, is keyed by the place's
+ * key in /slayer_areas.json, so it applies alike to the area Konar assigned and to the place picked or recommended for
+ * any other master. A need of a task that only one of its places has is tied to that place's key the same way.
+ *
  * <p>Tasks are keyed by the names the game gives them, as {@link SlayerTaskReader} reads them, compared without case.
  * The tests check every key against those names and against RuneLite's Slayer {@code Task} enum, which holds the
  * same names. Items are matched by id rather than by name: lit and unlit lanterns
@@ -30,10 +34,32 @@ final class SlayerRequirements
 {
 	/** SLAYER_AREA ids (SlayerArea COL_AREA_ID) of the places Konar can assign that change what a task needs. */
 	static final int KARUULM_AREA = 3;
+	static final int BRIMHAVEN_AREA = 5;
+	static final int TAVERLEY_AREA = 6;
 	static final int WATERFALL_AREA = 8;
+	static final int GOD_WARS_AREA = 10;
+	static final int KALPHITE_LAIR_AREA = 11;
+	static final int SMOKE_DUNGEON_AREA = 20;
+	static final int BRINE_RAT_AREA = 35;
+	static final int ZANARIS_AREA = 36;
+	static final int EVIL_CHICKEN_AREA = 37;
 	static final int DARKMEYER_AREA = 44;
 	static final int SLEPE_AREA = 45;
+	static final int MEIYERDITCH_LABS_AREA = 46;
 	static final int VAMPYRIUM_AREA = 55;
+
+	/** Keys in /slayer_areas.json of places these tables name more than once. */
+	static final String KARUULM_SLAYER_DUNGEON = "karuulm_slayer_dungeon";
+	static final String TAVERLEY_DUNGEON = "taverley_dungeon";
+	static final String GOD_WARS_DUNGEON = "god_wars_dungeon";
+	static final String DARKMEYER = "darkmeyer";
+	static final String SLEPE = "slepe";
+	static final String VAMPYRIUM = "vampyrium";
+	static final String BRIMHAVEN_DUNGEON = "brimhaven_dungeon";
+	/** What Saniboch charges each time. Wiki: Saniboch. */
+	static final int BRIMHAVEN_FEE = 875;
+	/** Warrior guild tokens a player must carry into either cyclops room. Wiki: Warriors' Guild. */
+	static final int CYCLOPS_ROOM_TOKENS = 100;
 
 	/**
 	 * Every item id an item group lists, gathered as each group is made, so it comes before the first group. The bank
@@ -110,6 +136,96 @@ final class SlayerRequirements
 	static final ItemGroup KARUULM_BOOTS = items("boots of stone, boots of brimstone or granite boots",
 		item(ItemID.BOOTS_OF_STONE, "Boots of stone"), item(ItemID.BOOTS_OF_BRIMSTONE, "Boots of Brimstone"),
 		item(ItemID.GRANITE_BOOTS, "Granite boots"));
+
+	// ---- what places need ----
+
+	/**
+	 * Wiki: Axe, Felling axe, Vines (Brimhaven Dungeon), whose tool is any axe. The blessed axe cuts nothing but undead
+	 * trees (wiki: Blessed axe). An inactive crystal axe works as a dragon axe and an uncharged infernal axe still cuts.
+	 * The Gauntlet's axes, league copies and quest props are left out.
+	 */
+	static final ItemGroup AXES = items("an axe",
+		item(ItemID.BRONZE_AXE, "Bronze axe"), item(ItemID.IRON_AXE, "Iron axe"), item(ItemID.STEEL_AXE, "Steel axe"),
+		item(ItemID.BLACK_AXE, "Black axe"), item(ItemID.MITHRIL_AXE, "Mithril axe"), item(ItemID.ADAMANT_AXE, "Adamant axe"),
+		item(ItemID.RUNE_AXE, "Rune axe"), item(ItemID.DRAGON_AXE, "Dragon axe"),
+		item(ItemID.TRAILBLAZER_AXE_NO_INFERNAL, "Dragon axe (or)"), item(ItemID.TRAILBLAZER_RELOADED_AXE_NO_INFERNAL, "Dragon axe (or)"),
+		item(ItemID.INFERNAL_AXE, "Infernal axe"), item(ItemID.INFERNAL_AXE_EMPTY, "Infernal axe (uncharged)"),
+		item(ItemID.TRAILBLAZER_AXE, "Infernal axe (or)"), item(ItemID.TRAILBLAZER_AXE_EMPTY, "Infernal axe (uncharged)"),
+		item(ItemID.TRAILBLAZER_RELOADED_AXE, "Infernal axe (or)"), item(ItemID.TRAILBLAZER_RELOADED_AXE_EMPTY, "Infernal axe (uncharged)"),
+		item(ItemID.CRYSTAL_AXE, "Crystal axe"), item(ItemID.CRYSTAL_AXE_INACTIVE, "Crystal axe (inactive)"),
+		item(ItemID._3A_AXE, "3rd Age axe"), item(ItemID.TRAIL_GILDED_AXE, "Gilded axe"),
+		item(ItemID.BRONZE_AXE_2H, "Bronze felling axe"), item(ItemID.IRON_AXE_2H, "Iron felling axe"),
+		item(ItemID.STEEL_AXE_2H, "Steel felling axe"), item(ItemID.BLACK_AXE_2H, "Black felling axe"),
+		item(ItemID.MITHRIL_AXE_2H, "Mithril felling axe"), item(ItemID.ADAMANT_AXE_2H, "Adamant felling axe"),
+		item(ItemID.RUNE_AXE_2H, "Rune felling axe"), item(ItemID.DRAGON_AXE_2H, "Dragon felling axe"),
+		item(ItemID.CRYSTAL_AXE_2H, "Crystal felling axe"), item(ItemID.CRYSTAL_AXE_2H_INACTIVE, "Crystal felling axe (inactive)"),
+		item(ItemID._3A_AXE_2H, "3rd Age felling axe"));
+	/**
+	 * Wiki: Pickaxe, Rock slide, which respawns behind each player who mines it. An inactive crystal pickaxe works as a dragon
+	 * pickaxe. The Nightmare Zone's and the Gauntlet's copies, which only work there, and league copies are left out.
+	 */
+	static final ItemGroup PICKAXES = items("a pickaxe",
+		item(ItemID.BRONZE_PICKAXE, "Bronze pickaxe"), item(ItemID.IRON_PICKAXE, "Iron pickaxe"),
+		item(ItemID.STEEL_PICKAXE, "Steel pickaxe"), item(ItemID.BLACK_PICKAXE, "Black pickaxe"),
+		item(ItemID.MITHRIL_PICKAXE, "Mithril pickaxe"), item(ItemID.ADAMANT_PICKAXE, "Adamant pickaxe"),
+		item(ItemID.RUNE_PICKAXE, "Rune pickaxe"), item(ItemID.DRAGON_PICKAXE, "Dragon pickaxe"),
+		item(ItemID.DRAGON_PICKAXE_PRETTY, "Dragon pickaxe"), item(ItemID.ZALCANO_PICKAXE, "Dragon pickaxe (or)"),
+		item(ItemID.TRAILBLAZER_PICKAXE_NO_INFERNAL, "Dragon pickaxe (or)"),
+		item(ItemID.TRAILBLAZER_RELOADED_PICKAXE_NO_INFERNAL, "Dragon pickaxe (or)"),
+		item(ItemID.INFERNAL_PICKAXE, "Infernal pickaxe"), item(ItemID.INFERNAL_PICKAXE_EMPTY, "Infernal pickaxe (uncharged)"),
+		item(ItemID.TRAILBLAZER_PICKAXE, "Infernal pickaxe (or)"), item(ItemID.TRAILBLAZER_PICKAXE_EMPTY, "Infernal pickaxe (uncharged)"),
+		item(ItemID.TRAILBLAZER_RELOADED_PICKAXE, "Infernal pickaxe (or)"),
+		item(ItemID.TRAILBLAZER_RELOADED_PICKAXE_EMPTY, "Infernal pickaxe (uncharged)"),
+		item(ItemID.CRYSTAL_PICKAXE, "Crystal pickaxe"), item(ItemID.CRYSTAL_PICKAXE_INACTIVE, "Crystal pickaxe (inactive)"),
+		item(ItemID._3A_PICKAXE, "3rd Age pickaxe"), item(ItemID.TRAIL_GILDED_PICKAXE, "Gilded pickaxe"));
+	/** Counted, as Saniboch takes 875 each time (wiki: Saniboch). */
+	static final ItemGroup COINS = items("coins", item(ItemID.COINS, "Coins"));
+	/** Wiki: Zanaris, Fairy ring. Either staff, wielded, lets you through the shed in Lumbridge Swamp and the fairy rings. */
+	static final ItemGroup DRAMEN_OR_LUNAR_STAFF = items("a dramen or lunar staff",
+		item(ItemID.DRAMEN_STAFF, "Dramen staff"), item(ItemID.LUNAR_MOONCLAN_LIMINAL_STAFF, "Lunar staff"));
+	/** Wiki: Evil Chicken's Lair. Undead raw chicken does not work. */
+	static final ItemGroup RAW_CHICKEN = items("a raw chicken", item(ItemID.RAW_CHICKEN, "Raw chicken"));
+	static final ItemGroup GLARIALS_PEBBLE = items("Glarial's pebble", item(ItemID.GLARIALS_PEBBLE_WATERFALL_QUEST, "Glarial's pebble"));
+	/**
+	 * Wiki: Steel key ring. A key on the ring opens its door from there, and the client does not say which keys the ring
+	 * holds, so the ring counts for each key it can hold.
+	 */
+	static final ItemGroup MAZE_KEY = items("a maze key", item(ItemID.MELZARKEY, "Maze key"),
+		item(ItemID.FAVOUR_KEY_RING, "Steel key ring"));
+	static final ItemGroup DUSTY_KEY = items("a dusty key", item(ItemID.DUSTY_KEY, "Dusty key"),
+		item(ItemID.FAVOUR_KEY_RING, "Steel key ring"));
+	/** Wiki: Shade key. Any of the 25, which are not used up on the doors. */
+	static final ItemGroup SHADE_KEYS = items("a shade key",
+		item(ItemID.SHADEKEY_BRONZE_BLOODRED, "Bronze key red"), item(ItemID.SHADEKEY_BRONZE_BROWN, "Bronze key brown"),
+		item(ItemID.SHADEKEY_BRONZE_CRIMSON, "Bronze key crimson"), item(ItemID.SHADEKEY_BRONZE_BLACK, "Bronze key black"),
+		item(ItemID.SHADEKEY_BRONZE_PURPLE, "Bronze key purple"), item(ItemID.SHADEKEY_STEEL_BLOODRED, "Steel key red"),
+		item(ItemID.SHADEKEY_STEEL_BROWN, "Steel key brown"), item(ItemID.SHADEKEY_STEEL_CRIMSON, "Steel key crimson"),
+		item(ItemID.SHADEKEY_STEEL_BLACK, "Steel key black"), item(ItemID.SHADEKEY_STEEL_PURPLE, "Steel key purple"),
+		item(ItemID.SHADEKEY_BLACK_BLOODRED, "Black key red"), item(ItemID.SHADEKEY_BLACK_BROWN, "Black key brown"),
+		item(ItemID.SHADEKEY_BLACK_CRIMSON, "Black key crimson"), item(ItemID.SHADEKEY_BLACK_BLACK, "Black key black"),
+		item(ItemID.SHADEKEY_BLACK_PURPLE, "Black key purple"), item(ItemID.SHADEKEY_SILVER_BLOODRED, "Silver key red"),
+		item(ItemID.SHADEKEY_SILVER_BROWN, "Silver key brown"), item(ItemID.SHADEKEY_SILVER_CRIMSON, "Silver key crimson"),
+		item(ItemID.SHADEKEY_SILVER_BLACK, "Silver key black"), item(ItemID.SHADEKEY_SILVER_PURPLE, "Silver key purple"),
+		item(ItemID.SHADEKEY_GOLD_BLOODRED, "Gold key red"), item(ItemID.SHADEKEY_GOLD_BROWN, "Gold key brown"),
+		item(ItemID.SHADEKEY_GOLD_CRIMSON, "Gold key crimson"), item(ItemID.SHADEKEY_GOLD_BLACK, "Gold key black"),
+		item(ItemID.SHADEKEY_GOLD_PURPLE, "Gold key purple"));
+	/** Wiki: Smoke Dungeon. A gas mask keeps the smoke out too, though not the dust devils' attack. */
+	static final ItemGroup SMOKE_PROTECTION = group("a facemask, gas mask or Slayer helmet", FACEMASK_OR_HELMET,
+		items("a gas mask", item(ItemID.GASMASK, "Gas mask")));
+	static final ItemGroup WARRIOR_GUILD_TOKENS = items("warrior guild tokens", item(ItemID.WARGUILD_TOKENS, "Warrior guild token"));
+	/** Wiki: Warriors' Guild. Worn, it lets you into the cyclops rooms without tokens. */
+	static final ItemGroup ATTACK_CAPES = items("an Attack cape", item(ItemID.SKILLCAPE_ATTACK, "Attack cape"),
+		item(ItemID.SKILLCAPE_ATTACK_TRIMMED, "Attack cape(t)"));
+	/** Wiki: God Wars Dungeon. A hammer, any warhammer, the elder maul or the Imcando hammer bangs the gong of Bandos' Stronghold. */
+	static final ItemGroup HAMMERS = items("a hammer or warhammer",
+		item(ItemID.HAMMER, "Hammer"), item(ItemID.IMCANDO_HAMMER, "Imcando hammer"),
+		item(ItemID.IMCANDO_HAMMER_OFFHAND, "Imcando hammer (off-hand)"), item(ItemID.ELDER_MAUL, "Elder maul"),
+		item(ItemID.ELDER_MAUL_ORNAMENT, "Elder maul (or)"), item(ItemID.BRONZE_WARHAMMER, "Bronze warhammer"),
+		item(ItemID.IRON_WARHAMMER, "Iron warhammer"), item(ItemID.STEEL_WARHAMMER, "Steel warhammer"),
+		item(ItemID.BLACK_WARHAMMER, "Black warhammer"), item(ItemID.WHITE_WARHAMMER, "White warhammer"),
+		item(ItemID.MITHRIL_WARHAMMER, "Mithril warhammer"), item(ItemID.ADAMNT_WARHAMMER, "Adamant warhammer"),
+		item(ItemID.RUNE_WARHAMMER, "Rune warhammer"), item(ItemID.DRAGON_WARHAMMER, "Dragon warhammer"),
+		item(ItemID.DRAGON_WARHAMMER_ORNAMENT, "Dragon warhammer (or)"));
 
 	/** Only lit ids. The unlit ones share the name of the lit ones for the lamps, lanterns and the mining helmet. */
 	static final ItemGroup LIGHT_SOURCE = items("a lit light source",
@@ -278,6 +394,16 @@ final class SlayerRequirements
 
 	static final String ELITE_DIARY_NOTE = "The elite Kourend & Kebos diary protects you from the hot floor";
 	static final String NO_ICON_ADVICE = "No witchwood icon, so keep Protect from Melee on";
+	static final String BLESSED_AXE_NOTE = "A blessed axe does not cut the vines";
+	static final String BRIMHAVEN_FEE_NOTE = "Saniboch takes 875 coins each time, or 1,000,000 once for permanent access";
+	static final String KALPHITE_DIARY_NOTE = "The hard Desert diary lets you into the Kalphite Lair without a rope";
+	static final String ZANARIS_DIARY_NOTE = "The elite Lumbridge & Draynor diary lets you into Zanaris without a staff";
+	static final String FAIRY_RING_DIARY_NOTE = "The elite Lumbridge & Draynor diary lets you use the fairy rings without a staff";
+	static final String SWAMP_ROPE_ADVICE = "The entrance in Lumbridge Swamp needs a rope the first time";
+	static final String GOD_WARS_ROPE_ADVICE = "The God Wars Dungeon entrance needs a rope the first time";
+	static final String NO_DUSTY_KEY_ADVICE = "No dusty key, so you need 70 Agility for the pipe past the gate";
+	static final String DAEYALT_REASON = "The quick way in through the mines needs 15 daeyalt ore mined to get out, unless you wear"
+		+ " three pieces of Vyre noble clothing";
 
 	static final Unlock GARGOYLE_SMASHER = new Unlock("Gargoyle Smasher", VarbitID.SLAYER_AUTOKILL_GARGOYLES, ANY_ROCK_HAMMER);
 	static final Unlock SLUG_SALTER = new Unlock("Slug Salter", VarbitID.SLAYER_AUTOKILL_ROCKSLUGS, BAG_OF_SALT);
@@ -285,8 +411,14 @@ final class SlayerRequirements
 	static final Unlock SHROOM_SPRAYER = new Unlock("'Shroom Sprayer", VarbitID.SLAYER_AUTOKILL_ZYGOMITES, FUNGICIDE_SPRAY);
 
 	private static final Map<String, Requirement> REQUIREMENTS = new LinkedHashMap<>();
-	/** Needs that come with a place Konar assigned, whatever the task. */
-	private static final Map<Integer, List<Need>> AREA_NEEDS = new HashMap<>();
+	/** Needs that come with a place whatever the task, by the place's key in /slayer_areas.json. */
+	private static final Map<String, List<Need>> PLACE_NEEDS = new HashMap<>();
+	/** The recommended tier a place adds whatever the task, by the same key. */
+	private static final Map<String, List<Recommendation>> PLACE_RECOMMENDED = new HashMap<>();
+	/** Konar's SLAYER_AREA ids of the places these tables name, so an area she assigned brings their needs by its id alone. */
+	private static final Map<Integer, String> AREA_PLACES = new HashMap<>();
+	/** Every place key these tables name, with a need, a recommendation or a need of a task tied to it. */
+	private static final Set<String> PLACE_KEYS = new LinkedHashSet<>();
 	/** The recommended tier: item classes by task, in the order the line names them. The helmet is added for every task. */
 	private static final Map<String, List<Recommendation>> RECOMMENDED = new LinkedHashMap<>();
 	/** Tasks whose monsters have the undead attribute (wiki: Undead (attribute)). Ghouls, vampyres and skeletal wyverns do not. */
@@ -334,7 +466,9 @@ final class SlayerRequirements
 		put("The Grotesque Guardians", null, Need.have(ANY_ROCK_HAMMER));
 		put("Rockslugs", SLUG_SALTER, Need.perKill(BAG_OF_SALT, "bag of salt", "bags of salt").or(BRINE_SABRE, false));
 		// Sulphur and grimy lizards also count for the task and need no ice coolers.
-		put("Lizards", REPTILE_FREEZER, Need.perKill(ICE_COOLER, "ice cooler", "ice coolers").onlyAt("for desert lizards"));
+		// Desert lizards alone need the coolers. Sulphur lizards at Mount Karuulm and in Neypotzli, which Konar assigns, do not.
+		put("Lizards", REPTILE_FREEZER, Need.perKill(ICE_COOLER, "ice cooler", "ice coolers").onlyAt("for desert lizards",
+			"kharidian_desert", "kharidian_desert_north_of_nardah", "south_east_of_shantay_pass", "west_of_ruins_of_ullek"));
 		put("Mutated zygomites", SHROOM_SPRAYER, Need.charges(FUNGICIDE_SPRAY, FUNGICIDE, FUNGICIDE_REFILL_CHARGES,
 			"fungicide spray charge", "fungicide spray charges"));
 		// Mogres only surface for an explosive at Mudskipper Point. Since Sailing a boat's cannons can also kill them.
@@ -345,20 +479,108 @@ final class SlayerRequirements
 		put("Hydras", null, karuulmBoots);
 		put("The Alchemical Hydra", null, karuulmBoots);
 		// Wyrms also live in Wyrmscraig, Neypotzli and the Charred Dungeon, where the floor is safe.
-		put("Wyrms", null, karuulmBoots.onlyAt("for the Karuulm Slayer Dungeon", KARUULM_AREA));
-		AREA_NEEDS.put(KARUULM_AREA, Collections.singletonList(karuulmBoots));
-		// The rope takes you over the rock and down the dead tree to the entrance. It is not used up.
-		AREA_NEEDS.put(WATERFALL_AREA, Collections.singletonList(Need.have(ROPE).unless(
-			VarbitID.KANDARIN_DIARY_MEDIUM_COMPLETE, "The medium Kandarin diary lets you into the Waterfall Dungeon without a rope")));
+		put("Wyrms", null, karuulmBoots.onlyAt("for the Karuulm Slayer Dungeon", KARUULM_SLAYER_DUNGEON));
 
 		put("Venators", null, Need.have(VAMPYREBANE));
-		// Feral vampyres elsewhere take damage from any weapon, so only Konar's places need anything.
-		put("Vampyres", null, Need.have(VAMPYREBANE).onlyIfAssigned(SLEPE_AREA, VAMPYRIUM_AREA),
-			Need.have(SILVER_OR_EFARITAY).onlyIfAssigned(DARKMEYER_AREA));
+		// Feral vampyres elsewhere take damage from any weapon, so only these places need anything.
+		put("Vampyres", null, Need.have(VAMPYREBANE).onlyIn(SLEPE, VAMPYRIUM), Need.have(SILVER_OR_EFARITAY).onlyIn(DARKMEYER));
 
 		put("The Giant Mole", null, Need.have(SPADE), Need.have(LIGHT_SOURCE)
 			.unless(VarbitID.MY2ARM_FIRE_MOLE, "Your Fire of Eternal Light lights the Mole Hole"));
 		put("The Shellbane Gryphon", null, Need.have(TORTUGAN_SHIELD));
+
+		// Wiki: Taverley Dungeon, "Access to this area requires a dusty key, or at least 70 Agility to use the obstacle pipe."
+		// The hellhounds and black demons live in that second half. 70 Agility does without the key, so it is advice.
+		final Need dustyKey = Need.advice(DUSTY_KEY, NO_DUSTY_KEY_ADVICE).onlyIn(TAVERLEY_DUNGEON);
+		put("Black demons", null, dustyKey);
+		put("Hellhounds", null, dustyKey);
+		// Wiki: Slayer task/Hill giants, "Requires level 70 Strength and a hammer or dragon warhammer (and a rope the first
+		// time)." Its cyclopes are in Bandos' Stronghold, whose gong is struck with a hammer (wiki: God Wars Dungeon).
+		put("Hill giants", null, Need.have(HAMMERS).onlyIn(GOD_WARS_DUNGEON));
+
+		// ---- what places need, whatever the task ----
+
+		area(KARUULM_AREA, KARUULM_SLAYER_DUNGEON);
+		area(BRIMHAVEN_AREA, BRIMHAVEN_DUNGEON);
+		area(TAVERLEY_AREA, TAVERLEY_DUNGEON);
+		area(WATERFALL_AREA, "waterfall_dungeon");
+		area(GOD_WARS_AREA, GOD_WARS_DUNGEON);
+		area(KALPHITE_LAIR_AREA, "kalphite_lair");
+		area(SMOKE_DUNGEON_AREA, "smoke_dungeon");
+		area(BRINE_RAT_AREA, "brine_rat_cavern");
+		area(ZANARIS_AREA, "zanaris");
+		area(EVIL_CHICKEN_AREA, "evil_chickens_lair");
+		area(DARKMEYER_AREA, DARKMEYER);
+		area(SLEPE_AREA, SLEPE);
+		area(MEIYERDITCH_LABS_AREA, "meiyerditch_laboratories");
+		area(VAMPYRIUM_AREA, VAMPYRIUM);
+
+		place(KARUULM_SLAYER_DUNGEON, karuulmBoots);
+		// The rope takes you over the rock and down the dead tree to the entrance. It is not used up.
+		place("waterfall_dungeon", Need.have(ROPE).unless(VarbitID.KANDARIN_DIARY_MEDIUM_COMPLETE,
+			"The medium Kandarin diary lets you into the Waterfall Dungeon without a rope"));
+		// Wiki: Brimhaven Dungeon, "A player will also need an axe to cut the vines blocking the path (requiring level 10
+		// Woodcutting)." and "A blessed axe will not work." Saniboch: "Players must pay 875 coins to him to gain entrance, or a
+		// one-off fee of 1,000,000 coins (equivalent to 1,143 entry fees) for permanent free access." The million paid sets
+		// KARAM_DUNGEON_PERMANENTACCESS, and the coins are not asked for then.
+		place(BRIMHAVEN_DUNGEON, Need.have(AXES).because(BLESSED_AXE_NOTE),
+			Need.amount(COINS, BRIMHAVEN_FEE, "coin", "coins").because(BRIMHAVEN_FEE_NOTE).unless(VarbitID.KARAM_DUNGEON_PERMANENTACCESS));
+		// Wiki: Kalphite Lair, "The main entrance requires one rope each visit unless the Hard Desert Diary is done."
+		place("kalphite_lair", Need.have(ROPE).unless(VarbitID.DESERT_DIARY_HARD_COMPLETE, KALPHITE_DIARY_NOTE));
+		// Wiki: Brine Rat Cavern, "The Brine Rat Cavern is in the north-eastern region of the Fremennik Province, and requires a
+		// spade to access." The brine rats ask for it too, and it is named once.
+		place("brine_rat_cavern", Need.have(SPADE));
+		// Wiki: Spade, "A spade is also needed to enter the Barrows crypts and the Mole Hole."
+		place("barrows", Need.have(SPADE));
+		place("barrows_crypt", Need.have(SPADE));
+		// Wiki: Zanaris, "Zanaris can also be accessed by wielding a dramen staff or lunar staff and entering the small hut in
+		// the middle of Lumbridge Swamp", the other way in being a fairy ring. Fairy ring: "If the elite Lumbridge & Draynor
+		// Diary is completed, no staff of either kind is needed." Shed (Lumbridge Swamp) says the same of the hut.
+		final Need zanarisStaff = Need.have(DRAMEN_OR_LUNAR_STAFF).unless(VarbitID.LUMBRIDGE_DIARY_ELITE_COMPLETE, ZANARIS_DIARY_NOTE);
+		place("zanaris", zanarisStaff);
+		// Wiki: Evil Chicken's Lair, "The Evil Chicken's Lair is located on Zanaris and is accessed by using a raw chicken on the
+		// Chicken Shrine." Slayer task/Black dragons calls it a sacrifice, so each way in takes one.
+		place("evil_chickens_lair", zanarisStaff, Need.have(RAW_CHICKEN));
+		// Wiki: Enchanted Valley, "The Enchanted Valley is a hidden realm that is only accessible by fairy ring, using code BKQ."
+		// Fairy ring: "Players can access the fairy ring system from any fairy ring while wielding either a dramen staff or
+		// lunar staff."
+		place("enchanted_valley", Need.have(DRAMEN_OR_LUNAR_STAFF).unless(VarbitID.LUMBRIDGE_DIARY_ELITE_COMPLETE,
+			FAIRY_RING_DIARY_NOTE));
+		// Wiki: Lumbridge Swamp Caves, the entrance in the swamp is "requiring a rope to enter. After one rope has been used,
+		// further ropes are not required." Only the first time, so it is advice, and it goes once the varbit says the rope is
+		// tied. The light the caves need stays with their tasks above.
+		place("lumbridge_swamp_caves", Need.advice(ROPE, SWAMP_ROPE_ADVICE).unless(VarbitID.SWAMP_CAVES_ROPED_ENTRANCE));
+		// Wiki: God Wars Dungeon, "A rope is also required the first time." Likewise advice until the rope is tied.
+		place(GOD_WARS_DUNGEON, Need.advice(ROPE, GOD_WARS_ROPE_ADVICE).unless(VarbitID.GODWARS_ENTRANCE_ROPE));
+		// Wiki: Glarial's Tomb, "To enter, the player needs Glarial's pebble, which is obtained during the Waterfall Quest"
+		place("glarials_tomb", Need.have(GLARIALS_PEBBLE));
+		// Wiki: Maze key, "The maze key is a key used to open the front door of Melzar's Maze."
+		place("melzars_maze", Need.have(MAZE_KEY));
+		// Wiki: Digsite Dungeon, "The player must use a rope on the west winch to enter the dungeon there, which will not be
+		// consumed." The skeletons are in the south chamber of that part.
+		place("digsite_dungeon", Need.have(ROPE));
+		// Wiki: Pirates' Hideout, "A lockpick and 39 Thieving are required to pick the door lock and gain entry."
+		place("pirates_hideout", Need.have(LOCKPICK));
+		// Wiki: Smoke Dungeon, "While in the dungeon, the player must wear a facemask, Slayer helmet, or Slayer helmet (i) to
+		// protect themselves from the smoke." Without one the smoke deals 20 damage every 12 seconds. The dust devils ask for
+		// a facemask or helmet themselves, which this then adds nothing to.
+		place("smoke_dungeon", Need.have(SMOKE_PROTECTION));
+		// Wiki: Warriors' Guild, "Players need to carry at least 100 warrior guild tokens to enter this room." and "No tokens
+		// are required for players that wear the level 99 Attack cape." Of the basement: "The same rules as on the top floor
+		// apply here". Each minute inside takes 10 more.
+		final Need tokens = Need.amount(WARRIOR_GUILD_TOKENS, CYCLOPS_ROOM_TOKENS, "warrior guild token", "warrior guild tokens")
+			.or(ATTACK_CAPES, false);
+		place("warriors_guild", tokens);
+		place("warriors_guild_basement", tokens);
+		// Wiki: Ice Queen's Lair, "The entrance is blocked by a rock slide requiring a pickaxe and level 50 Mining to remove."
+		place("ice_queens_lair", Need.have(PICKAXES));
+		// Wiki: Shade key, "At least 1 key of any type is required to enter the catacombs"
+		place("shade_catacombs", Need.have(SHADE_KEYS));
+		// Wiki: Meiyerditch Laboratories, "To exit the mine immediately, players who haven't completed The Blood Moon Rises up
+		// until the final Lowerniel Drakan fight will need to equip three pieces of Vyre noble clothing when speaking with a
+		// Vampyre Juvinate. Otherwise, one must mine 15 daeyalt ore to exit; bring the best pickaxe you can use". The other
+		// ways in need none, so it is recommended.
+		recommendAt("meiyerditch_laboratories", Recommendation.because(PICKAXES, DAEYALT_REASON));
 
 		// The recommended tier. Wiki: Dragonfire. Chromatic, lava and frost dragons breathe it up close, brutal and metal
 		// dragons and the bosses from range. Baby dragons cannot. Drakes are left out, as their breath is dodged by moving a
@@ -397,8 +619,39 @@ final class SlayerRequirements
 	/** Needs that any task assigned to this SLAYER_AREA id brings with it. */
 	static List<Need> forArea(int areaId)
 	{
-		final List<Need> needs = AREA_NEEDS.get(areaId);
+		return forPlace(placeOfArea(areaId));
+	}
+
+	/** Needs that any task done at this place brings with it, by the place's key. Empty for a key without any or null. */
+	static List<Need> forPlace(String key)
+	{
+		final List<Need> needs = key == null ? null : PLACE_NEEDS.get(key);
 		return needs == null ? Collections.emptyList() : needs;
+	}
+
+	/** The recommended tier this place adds to any task done there. Empty when it adds none. */
+	static List<Recommendation> recommendedAt(String key)
+	{
+		final List<Recommendation> recommendations = key == null ? null : PLACE_RECOMMENDED.get(key);
+		return recommendations == null ? Collections.emptyList() : recommendations;
+	}
+
+	/** The key of the place Konar assigned by its SLAYER_AREA id, for the places these tables name. Null for any other area. */
+	static String placeOfArea(int areaId)
+	{
+		return AREA_PLACES.get(areaId);
+	}
+
+	/** Every place key the tables name, for the tests that keep them equal to the keys of /slayer_areas.json. */
+	static Set<String> placeKeys()
+	{
+		return Collections.unmodifiableSet(PLACE_KEYS);
+	}
+
+	/** Konar's area ids of those places, for the same tests. */
+	static Map<Integer, String> areaPlaces()
+	{
+		return Collections.unmodifiableMap(AREA_PLACES);
 	}
 
 	/** Normalised task names with a requirement, for the tests that keep them equal to the game's names. */
@@ -436,8 +689,13 @@ final class SlayerRequirements
 	static boolean helmetStandsIn(String taskName)
 	{
 		final Requirement requirement = forTask(taskName);
-		if (requirement == null) return false;
-		for (Need need : requirement.getNeeds())
+		return requirement != null && helmetStandsIn(requirement.getNeeds());
+	}
+
+	/** Whether one of these needs is met by a Slayer helmet, as a facemask's is, so it takes the head slot. */
+	static boolean helmetStandsIn(List<Need> needs)
+	{
+		for (Need need : needs)
 		{
 			if (need.getItems().ids().contains(ItemID.SLAYER_HELM)) return true;
 		}
@@ -450,8 +708,14 @@ final class SlayerRequirements
 	 */
 	static ItemGroup slayerHeadgear(String taskName)
 	{
+		return slayerHeadgear(taskName, helmetStandsIn(taskName));
+	}
+
+	/** As above, where {@code headTaken} says whether the needs where the task is done put such an item on the head. */
+	static ItemGroup slayerHeadgear(String taskName, boolean headTaken)
+	{
 		final boolean undead = UNDEAD.contains(normalize(taskName));
-		if (helmetStandsIn(taskName)) return undead ? HELMET_OR_SALVE : SLAYER_HELMET;
+		if (headTaken) return undead ? HELMET_OR_SALVE : SLAYER_HELMET;
 		return undead ? HELMET_MASK_OR_SALVE : HELMET_OR_MASK;
 	}
 
@@ -476,6 +740,33 @@ final class SlayerRequirements
 		final List<Need> list = new ArrayList<>();
 		Collections.addAll(list, needs);
 		REQUIREMENTS.put(key, new Requirement(Collections.unmodifiableList(list), unlock));
+		for (Need need : needs)
+		{
+			if (need.places != null) Collections.addAll(PLACE_KEYS, need.places);
+		}
+	}
+
+	private static void place(String key, Need... needs)
+	{
+		if (PLACE_NEEDS.containsKey(key)) throw new IllegalStateException("Two entries for " + key);
+		final List<Need> list = new ArrayList<>();
+		Collections.addAll(list, needs);
+		PLACE_NEEDS.put(key, Collections.unmodifiableList(list));
+		PLACE_KEYS.add(key);
+	}
+
+	private static void recommendAt(String key, Recommendation... recommendations)
+	{
+		if (PLACE_RECOMMENDED.containsKey(key)) throw new IllegalStateException("Two recommendations for " + key);
+		final List<Recommendation> list = new ArrayList<>();
+		Collections.addAll(list, recommendations);
+		PLACE_RECOMMENDED.put(key, Collections.unmodifiableList(list));
+		PLACE_KEYS.add(key);
+	}
+
+	private static void area(int areaId, String key)
+	{
+		if (AREA_PLACES.put(areaId, key) != null) throw new IllegalStateException("Two places for area " + areaId);
 	}
 
 	private static void recommend(ItemGroup items, String... tasks)
@@ -599,7 +890,7 @@ final class SlayerRequirements
 	/**
 	 * One item class of the recommended tier. Most are asked for whenever none is held. A conditional one is asked for
 	 * only while one of another group is held, such as a covered lantern while an open flame is the light, unless its
-	 * varbit is set, and its reason follows the request in the line.
+	 * varbit is set. A reason follows the request in the line.
 	 */
 	static final class Recommendation
 	{
@@ -619,6 +910,12 @@ final class SlayerRequirements
 		static Recommendation of(ItemGroup items)
 		{
 			return new Recommendation(items, null, -1, null);
+		}
+
+		/** Asked for whenever none is held, with the reason after the request. */
+		static Recommendation because(ItemGroup items, String reason)
+		{
+			return new Recommendation(items, null, -1, reason);
 		}
 
 		static Recommendation onlyWith(ItemGroup items, ItemGroup onlyWith, int exemptVarbit, String reason)
@@ -681,8 +978,9 @@ final class SlayerRequirements
 	}
 
 	/**
-	 * One thing a task needs. By default it applies wherever the task is done. A need tied to a place applies
-	 * when Konar assigned that place, and otherwise carries the place in its text so the line stays true.
+	 * One thing a task or a place needs. By default it applies wherever the task is done. A need of a task tied to some
+	 * places, by their keys, applies when the task goes to one of them. While where the task goes is not known, it either
+	 * carries the place in its text, so the line stays true, or is left out.
 	 */
 	static final class Need
 	{
@@ -692,6 +990,8 @@ final class SlayerRequirements
 			HAVE,
 			/** Used up once per kill, so the count is compared with the kills left. A kept item may replace it. */
 			PER_KILL,
+			/** A set number of the items, such as an entry fee, counted as a used-up item is with that number for the kills left. */
+			AMOUNT,
 			/** Charges read from the item names plus refills, one charge per kill. */
 			CHARGES,
 			/** Not mandatory. A note replaces it when it is missing. */
@@ -700,6 +1000,7 @@ final class SlayerRequirements
 
 		private final Kind kind;
 		private final ItemGroup items;
+		private final int amount;
 		private final ItemGroup alternative;
 		private final boolean alternativeFirst;
 		private final ItemGroup refills;
@@ -707,19 +1008,21 @@ final class SlayerRequirements
 		private final String one;
 		private final String many;
 		private final String advice;
+		private final String reason;
 		private final String where;
-		private final int[] areas;
-		private final boolean assignedOnly;
+		private final String[] places;
+		private final boolean placeOnly;
 		private final int exemptVarbit;
 		private final String exemptNote;
 		private final String exemptWhere;
 
-		private Need(Kind kind, ItemGroup items, ItemGroup alternative, boolean alternativeFirst, ItemGroup refills,
-			int refillCharges, String one, String many, String advice, String where, int[] areas, boolean assignedOnly,
-			int exemptVarbit, String exemptNote, String exemptWhere)
+		private Need(Kind kind, ItemGroup items, int amount, ItemGroup alternative, boolean alternativeFirst, ItemGroup refills,
+			int refillCharges, String one, String many, String advice, String reason, String where, String[] places,
+			boolean placeOnly, int exemptVarbit, String exemptNote, String exemptWhere)
 		{
 			this.kind = kind;
 			this.items = items;
+			this.amount = amount;
 			this.alternative = alternative;
 			this.alternativeFirst = alternativeFirst;
 			this.refills = refills;
@@ -727,9 +1030,10 @@ final class SlayerRequirements
 			this.one = one;
 			this.many = many;
 			this.advice = advice;
+			this.reason = reason;
 			this.where = where;
-			this.areas = areas;
-			this.assignedOnly = assignedOnly;
+			this.places = places;
+			this.placeOnly = placeOnly;
 			this.exemptVarbit = exemptVarbit;
 			this.exemptNote = exemptNote;
 			this.exemptWhere = exemptWhere;
@@ -737,44 +1041,55 @@ final class SlayerRequirements
 
 		static Need have(ItemGroup items)
 		{
-			return new Need(Kind.HAVE, items, null, false, null, 0, null, null, null, null, null, false, -1, null, null);
+			return new Need(Kind.HAVE, items, 0, null, false, null, 0, null, null, null, null, null, null, false, -1, null, null);
 		}
 
 		static Need perKill(ItemGroup items, String one, String many)
 		{
-			return new Need(Kind.PER_KILL, items, null, false, null, 0, one, many, null, null, null, false, -1, null, null);
+			return new Need(Kind.PER_KILL, items, 0, null, false, null, 0, one, many, null, null, null, null, false, -1, null, null);
+		}
+
+		/** A set number of the items, such as 875 coins. A kept item may replace them, as with {@link #or}. */
+		static Need amount(ItemGroup items, int amount, String one, String many)
+		{
+			return new Need(Kind.AMOUNT, items, amount, null, false, null, 0, one, many, null, null, null, null, false, -1, null,
+				null);
 		}
 
 		static Need charges(ItemGroup items, ItemGroup refills, int refillCharges, String one, String many)
 		{
-			return new Need(Kind.CHARGES, items, null, false, refills, refillCharges, one, many, null, null, null, false,
+			return new Need(Kind.CHARGES, items, 0, null, false, refills, refillCharges, one, many, null, null, null, null, false,
 				-1, null, null);
 		}
 
 		static Need advice(ItemGroup items, String advice)
 		{
-			return new Need(Kind.ADVICE, items, null, false, null, 0, null, null, advice, null, null, false, -1, null, null);
+			return new Need(Kind.ADVICE, items, 0, null, false, null, 0, null, null, advice, null, null, null, false, -1, null, null);
 		}
 
 		/** A kept item that does the job of the used-up one, such as a rock hammer instead of thrownhammers. */
 		Need or(ItemGroup alternative, boolean nameItFirst)
 		{
-			return new Need(kind, items, alternative, nameItFirst, refills, refillCharges, one, many, advice, where, areas,
-				assignedOnly, exemptVarbit, exemptNote, exemptWhere);
+			return new Need(kind, items, amount, alternative, nameItFirst, refills, refillCharges, one, many, advice, reason, where,
+				places, placeOnly, exemptVarbit, exemptNote, exemptWhere);
 		}
 
-		/** Needed only at one place. It applies when Konar assigned one of the areas, or names the place otherwise. */
-		Need onlyAt(String where, int... areas)
+		/**
+		 * Needed only at these places, by their keys in /slayer_areas.json. It applies when the task goes to one of them,
+		 * and while where it goes is not known it applies with the place in its text. Without any place it applies only
+		 * while Konar assigned no area.
+		 */
+		Need onlyAt(String where, String... places)
 		{
-			return new Need(kind, items, alternative, alternativeFirst, refills, refillCharges, one, many, advice, where,
-				areas, false, exemptVarbit, exemptNote, exemptWhere);
+			return new Need(kind, items, amount, alternative, alternativeFirst, refills, refillCharges, one, many, advice, reason,
+				where, places, false, exemptVarbit, exemptNote, exemptWhere);
 		}
 
-		/** Needed only when Konar assigned one of these areas. Without an assigned area it is left out. */
-		Need onlyIfAssigned(int... areas)
+		/** Needed only at these places, by their keys. While where the task goes is not known it is left out. */
+		Need onlyIn(String... places)
 		{
-			return new Need(kind, items, alternative, alternativeFirst, refills, refillCharges, one, many, advice, where,
-				areas, true, exemptVarbit, exemptNote, exemptWhere);
+			return new Need(kind, items, amount, alternative, alternativeFirst, refills, refillCharges, one, many, advice, reason,
+				where, places, true, exemptVarbit, exemptNote, exemptWhere);
 		}
 
 		/** Not needed once the varbit is set, such as boots after the elite Kourend & Kebos diary. */
@@ -783,22 +1098,46 @@ final class SlayerRequirements
 			return unless(varbit, note, null);
 		}
 
+		/** Not needed once the varbit is set, and then not mentioned, such as a rope once it is tied at an entrance. */
+		Need unless(int varbit)
+		{
+			return unless(varbit, null, null);
+		}
+
 		/** The varbit removes the need at one place, and {@code stillWhere} names where it is still needed. */
 		Need unless(int varbit, String note, String stillWhere)
 		{
-			return new Need(kind, items, alternative, alternativeFirst, refills, refillCharges, one, many, advice, where,
-				areas, assignedOnly, varbit, note, stillWhere);
+			return new Need(kind, items, amount, alternative, alternativeFirst, refills, refillCharges, one, many, advice, reason,
+				where, places, placeOnly, varbit, note, stillWhere);
 		}
 
-		boolean appliesIn(int assignedAreaId)
+		/** Said after the line while the items are not carried, such as why a blessed axe does not do. */
+		Need because(String reason)
 		{
-			if (assignedAreaId <= 0) return !assignedOnly;
-			if (areas == null) return true;
-			for (int area : areas)
+			return new Need(kind, items, amount, alternative, alternativeFirst, refills, refillCharges, one, many, advice, reason,
+				where, places, placeOnly, exemptVarbit, exemptNote, exemptWhere);
+		}
+
+		/**
+		 * Whether it applies where the task goes. {@code place} is the place's key, and {@code known} says whether anything
+		 * is known of where the task goes, which an area Konar assigned and these tables do not name also is.
+		 */
+		boolean appliesAt(int assignedAreaId, String place, boolean known)
+		{
+			if (places == null) return true;
+			if (places.length == 0) return assignedAreaId <= 0;
+			if (!known) return !placeOnly;
+			for (String key : places)
 			{
-				if (area == assignedAreaId) return true;
+				if (key.equals(place)) return true;
 			}
 			return false;
+		}
+
+		/** Whether it is tied to places, so its text needs no place once where the task goes is known. */
+		boolean isPlaceBound()
+		{
+			return places != null && places.length > 0;
 		}
 
 		Kind getKind()
@@ -809,6 +1148,18 @@ final class SlayerRequirements
 		ItemGroup getItems()
 		{
 			return items;
+		}
+
+		/** How many of the items an {@link Kind#AMOUNT} need asks for. */
+		int getAmount()
+		{
+			return amount;
+		}
+
+		/** Said after the line while the items are not carried, or null. */
+		String getReason()
+		{
+			return reason;
 		}
 
 		ItemGroup getAlternative()

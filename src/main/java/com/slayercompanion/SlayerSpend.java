@@ -42,7 +42,7 @@ import net.runelite.api.Skill;
  * <li>Task unlocks and Chance of Heavy Frost: the list with the task added, or heavier. For XP an unlock whose task the
  * wiki's Slayer guide says not to unlock is never recommended and always named under Skip these.</li>
  * <li>Stop the Wyvern: fossil wyverns gone from the list, and a slot they took or would take used for the next
- * best block.</li>
+ * best block. When the plan buys it now, the block advice already leaves them out, so only their going counts.</li>
  * <li>The rest: the documented effects below, each applied to the tasks it touches in the master's list, so the
  * value follows the list. They are judgments from the wiki pages named, read 4 October 2026. A speed-up raises
  * every goal's rate alike, since the same task in less time leaves more time for the rest.</li>
@@ -117,6 +117,12 @@ final class SlayerSpend
 		 * points, Mortimer's choice). See {@link SlayerMasterRanker#skipBudget}.
 		 */
 		double skipBudget;
+
+		/** The same context with another block advice at the master. */
+		Context withBlocks(SlayerBlockAdvisor.Advice blocks)
+		{
+			return new Context(goal, master, npc, pool, data, player, blockedRows, emptySlots, blocks, owned, dossier, items, routine, skipBudget);
+		}
 	}
 
 	/**
@@ -417,7 +423,8 @@ final class SlayerSpend
 
 	/**
 	 * Stop the Wyvern takes the task out of every list. Valued against the advised block list with and without it:
-	 * a slot fossil wyverns take, or would take, then holds the next best block.
+	 * a slot fossil wyverns take, or would take, then holds the next best block. When the plan buys it now, the block
+	 * advice already leaves them out (see {@link SlayerPlanBuilder}), so the value is their going on top of those blocks.
 	 */
 	private static Valued blocker(Model m, SlayerReward r)
 	{
@@ -448,14 +455,20 @@ final class SlayerSpend
 		final List<SlayerPool.Entry> extra = SlayerGoalModel.bestBlocks(gone, m.goal(), fixed, Math.max(0, slots - fixed.size()));
 		final List<Integer> after = new ArrayList<>(fixed);
 		for (SlayerPool.Entry e : extra) after.add(e.getTaskRow());
-		final StringBuilder why = new StringBuilder("Keeps ").append(name(c, rows)).append(" out of every master's list without a block slot.");
+		final StringBuilder why = new StringBuilder("Blocks ").append(name(c, rows)).append(" at every master without a slot.");
 		boolean usesSlot = false;
 		for (int row : rows) usesSlot |= before.contains(row);
 		if (usesSlot && !extra.isEmpty())
 		{
-			why.append(" The slot its block takes can then hold ").append(extra.get(extra.size() - 1).getName()).append('.');
+			why.append(" Once it is bought, their slot frees up for ").append(extra.get(extra.size() - 1).getName()).append('.');
 		}
 		return new Valued(m.gain(pool.withBlocks(before), gone.withBlocks(after)), why.toString(), later ? lockedBy : null);
+	}
+
+	/** "The slot goes to Drakes instead.": the task a slot goes to once the plan buys Stop the Wyvern now. */
+	static String slotGoesTo(String task)
+	{
+		return "The slot goes to " + task + " instead.";
 	}
 
 	private static Valued helper(Model m, SlayerReward r)

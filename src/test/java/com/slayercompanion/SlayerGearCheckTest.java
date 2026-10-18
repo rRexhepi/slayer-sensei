@@ -808,7 +808,7 @@ public class SlayerGearCheckTest
 	@Test
 	public void anUnseenOrEmptyBankChangesNothing()
 	{
-		final BankGear empty = BankGear.of(new Item[]{new Item(ItemID.COINS, 100)});
+		final BankGear empty = BankGear.of(new Item[]{new Item(ItemID.BONES, 100)});
 		for (String task : everyKnownTask())
 		{
 			for (int area : new int[]{0, SlayerRequirements.KARUULM_AREA, SlayerRequirements.SLEPE_AREA})
@@ -877,6 +877,294 @@ public class SlayerGearCheckTest
 		}
 		assertTrue(ids.size() > 100);
 		return ids;
+	}
+
+	// ---- the place the task goes to ----
+
+	private static final String BRIMHAVEN = SlayerRequirements.BRIMHAVEN_DUNGEON;
+	private static final String BRIMHAVEN_NOTES = ". " + SlayerRequirements.BLESSED_AXE_NOTE + ". " + SlayerRequirements.BRIMHAVEN_FEE_NOTE;
+	private static final Held BRONZE_AXE = held(ItemID.BRONZE_AXE, "Bronze axe");
+
+	@Test
+	public void brimhavenDungeonNeedsAnAxeAndTheFeeWhoeverSentYou()
+	{
+		// Konar's area by its key or by its id alone, and the same place picked for another master
+		for (SlayerGearCheck.Result none : Arrays.asList(at("Fire giants", SlayerRequirements.BRIMHAVEN_AREA, BRIMHAVEN, NO_VARBITS),
+			at("Fire giants", SlayerRequirements.BRIMHAVEN_AREA, null, NO_VARBITS), at("Fire giants", 0, BRIMHAVEN, NO_VARBITS)))
+		{
+			assertEquals("MISSING: an axe, and 875 coins" + BRIMHAVEN_NOTES, none.getLine());
+			assertEquals(Arrays.asList("Missing: axe", "Missing: 875 coins"), none.getItems());
+			assertEquals(SlayerGearCheck.Status.MISSING, none.getStatus());
+		}
+		// The same task at another place needs nothing
+		assertNull(at("Fire giants", 0, "giants_den", NO_VARBITS));
+		// The coins are counted: 874 are short of the fee and 875 are enough
+		final SlayerGearCheck.Result oneShort = at("Fire giants", 0, BRIMHAVEN, NO_VARBITS, BRONZE_AXE, held(ItemID.COINS, "Coins", 874));
+		assertEquals("MISSING: 1 more coin (have 874, need 875). " + SlayerRequirements.BRIMHAVEN_FEE_NOTE, oneShort.getLine());
+		assertEquals(Collections.singletonList("Missing: 1 coin (874 of 875)"), oneShort.getItems());
+		final SlayerGearCheck.Result paid = at("Fire giants", 0, BRIMHAVEN, NO_VARBITS, BRONZE_AXE, held(ItemID.COINS, "Coins", 875));
+		assertEquals("READY: Bronze axe and 875 coins (need 875)", paid.getLine());
+		assertTrue(paid.isReady());
+		// Every axe that cuts counts, and the blessed axe does not
+		assertEquals("READY: Crystal felling axe (inactive) and 2000 coins (need 875)", at("Fire giants", 0, BRIMHAVEN, NO_VARBITS,
+			held(ItemID.CRYSTAL_AXE_2H_INACTIVE, "Crystal felling axe (inactive)"), held(ItemID.COINS, "Coins", 2000)).getLine());
+		assertEquals("MISSING: an axe. " + SlayerRequirements.BLESSED_AXE_NOTE, at("Fire giants", 0, BRIMHAVEN, NO_VARBITS,
+			held(ItemID.ANMA_AXE, "Blessed axe"), held(ItemID.COINS, "Coins", 875)).getLine());
+		// Once Saniboch was paid 1,000,000 for permanent access the fee is not asked for, and nothing is said of it
+		final IntUnaryOperator permanent = set(VarbitID.KARAM_DUNGEON_PERMANENTACCESS);
+		assertEquals("MISSING: an axe. " + SlayerRequirements.BLESSED_AXE_NOTE, at("Fire giants", 0, BRIMHAVEN, permanent).getLine());
+		assertEquals(Collections.singletonList("Missing: axe"), at("Fire giants", 0, BRIMHAVEN, permanent).getItems());
+		assertEquals("READY: Bronze axe", at("Fire giants", SlayerRequirements.BRIMHAVEN_AREA, null, permanent, BRONZE_AXE).getLine());
+	}
+
+	@Test
+	public void brimhavensAxeAndCoinsComeFromTheBankLikeAnyNeed()
+	{
+		final SlayerGearCheck.Result banked = SlayerGearCheck.evaluate("Metal dragons", 40, 0, BRIMHAVEN, Collections.<Held>emptyList(),
+			bank(ItemID.BRONZE_AXE, 1, ItemID.COINS, 2000, ItemID.DRAGONHUNTER_LANCE, 1, ItemID.ANTIDRAGONBREATHSHIELD, 1), NO_VARBITS, true);
+		assertEquals("Bring from your bank: Bronze axe, 875 coins, Anti-dragon shield and Dragon hunter lance" + BRIMHAVEN_NOTES,
+			banked.getLine());
+		assertEquals(Arrays.asList("In bank: Bronze axe", "In bank: 875 coins", "From bank: Anti-dragon shield",
+			"From bank: Dragon hunter lance"), banked.getItems());
+		assertEquals(SlayerGearCheck.Status.BRING, banked.getStatus());
+		// Coins carried and the rest in the bank
+		final SlayerGearCheck.Result topUp = SlayerGearCheck.evaluate("Fire giants", 40, 0, BRIMHAVEN, Arrays.asList(BRONZE_AXE,
+			held(ItemID.COINS, "Coins", 500)), bank(ItemID.COINS, 1000), NO_VARBITS, true);
+		assertEquals("Bring from your bank: 375 more coins (have 500, need 875). " + SlayerRequirements.BRIMHAVEN_FEE_NOTE, topUp.getLine());
+		assertEquals(Collections.singletonList("In bank: 375 coins (500 of 875)"), topUp.getItems());
+		// Not enough in the bank either
+		assertEquals(Collections.singletonList("Missing: 375 coins (500 of 875)"), SlayerGearCheck.evaluate("Fire giants", 40, 0,
+			BRIMHAVEN, Arrays.asList(BRONZE_AXE, held(ItemID.COINS, "Coins", 500)), bank(ItemID.COINS, 374), NO_VARBITS, true).getItems());
+	}
+
+	@Test
+	public void theGearSectionShowsForWhatThePlaceNeeds()
+	{
+		assertFalse(SlayerGearCheck.hasNeeds("Fire giants", 0, null, NO_VARBITS, false));
+		assertTrue(SlayerGearCheck.hasNeeds("Fire giants", 0, BRIMHAVEN, NO_VARBITS, false));
+		assertTrue(SlayerGearCheck.hasNeeds("Fire giants", SlayerRequirements.BRIMHAVEN_AREA, null, NO_VARBITS, false));
+		assertFalse(SlayerGearCheck.hasNeeds("Fire giants", 0, "giants_den", NO_VARBITS, false));
+		// A recommendation of the place counts while the tier is on
+		assertTrue(SlayerGearCheck.hasNeeds("Crawling hands", 0, "meiyerditch_laboratories", NO_VARBITS, true));
+		assertFalse(SlayerGearCheck.hasNeeds("Crawling hands", 0, "meiyerditch_laboratories", NO_VARBITS, false));
+		assertEquals(Arrays.asList(new SlayerCompanionOverlay.GearLine("Missing: axe", SlayerCompanionPanel.MISSING_COLOR),
+			new SlayerCompanionOverlay.GearLine("Missing: 875 coins", SlayerCompanionPanel.MISSING_COLOR)),
+			SlayerCompanionOverlay.gearLines(at("Fire giants", 0, BRIMHAVEN, NO_VARBITS)));
+	}
+
+	@Test
+	public void karuulmBootsAndTheWaterfallRopeComeWithAPickedPlaceToo()
+	{
+		assertEquals("MISSING: " + KARUULM_BOOTS, at("Fire giants", 0, SlayerRequirements.KARUULM_SLAYER_DUNGEON, NO_VARBITS).getLine());
+		assertEquals("MISSING: a rope", at("Fire giants", 0, "waterfall_dungeon", NO_VARBITS).getLine());
+		// Wyrms name no place once it is known, and the safe floors ask for nothing
+		assertEquals("MISSING: " + KARUULM_BOOTS + BRING_DRAGONBANE,
+			at("Wyrms", 0, SlayerRequirements.KARUULM_SLAYER_DUNGEON, NO_VARBITS).getLine());
+		assertEquals("Bring a dragonbane weapon", at("Wyrms", 0, "wyrmscraig", NO_VARBITS).getLine());
+		// The desert lizards' coolers go with the desert places, and the sulphur lizards' dungeon asks for its boots instead
+		assertEquals("MISSING: 40 ice coolers", at("Lizards", 0, "kharidian_desert", NO_VARBITS).getLine());
+		assertEquals("MISSING: 40 ice coolers", at("Lizards", 0, "west_of_ruins_of_ullek", NO_VARBITS).getLine());
+		assertEquals("MISSING: 40 ice coolers for desert lizards", at("Lizards", 0, null, NO_VARBITS).getLine());
+		assertEquals("MISSING: " + KARUULM_BOOTS, at("Lizards", 0, SlayerRequirements.KARUULM_SLAYER_DUNGEON, NO_VARBITS).getLine());
+		assertEquals("MISSING: " + KARUULM_BOOTS, at("Lizards", SlayerRequirements.KARUULM_AREA, null, NO_VARBITS).getLine());
+		assertNull(at("Lizards", 0, "neypotzli", NO_VARBITS));
+		// Vampyres picked at Slepe or Darkmeyer need what Konar's areas there do
+		final Held efaritay = held(ItemID.VAMPYRE_RING, "Efaritay's aid");
+		assertEquals("MISSING: an Ivandis flail or better vampyrebane weapon", at("Vampyres", 0, SlayerRequirements.SLEPE, NO_VARBITS,
+			efaritay).getLine());
+		assertEquals("READY: Efaritay's aid", at("Vampyres", 0, SlayerRequirements.DARKMEYER, NO_VARBITS, efaritay).getLine());
+		assertNull(at("Vampyres", 0, "haunted_woods", NO_VARBITS));
+	}
+
+	@Test
+	public void placesYouDigIntoNeedASpade()
+	{
+		assertEquals("MISSING: a spade", at("Bats", 0, "brine_rat_cavern", NO_VARBITS).getLine());
+		// The brine rats ask for it too, and it is named once
+		final SlayerGearCheck.Result rats = at("Brine rats", SlayerRequirements.BRINE_RAT_AREA, "brine_rat_cavern", NO_VARBITS);
+		assertEquals("MISSING: a spade", rats.getLine());
+		assertEquals(Collections.singletonList("Missing: spade"), rats.getItems());
+		assertEquals("MISSING: a spade", at("Skeletons", 0, "barrows", NO_VARBITS).getLine());
+		assertEquals("READY: Spade", at("Rats", 0, "barrows_crypt", NO_VARBITS, held(ItemID.SPADE, "Spade")).getLine());
+	}
+
+	@Test
+	public void zanarisAndTheFairyRingPlacesNeedAStaffUntilTheEliteLumbridgeDiary()
+	{
+		final IntUnaryOperator diary = set(VarbitID.LUMBRIDGE_DIARY_ELITE_COMPLETE);
+		final SlayerGearCheck.Result zanaris = at("Cows", 0, "zanaris", NO_VARBITS);
+		assertEquals("MISSING: a dramen or lunar staff", zanaris.getLine());
+		assertEquals(Collections.singletonList("Missing: dramen or lunar staff"), zanaris.getItems());
+		assertEquals("READY: Lunar staff", at("Cows", 0, "zanaris", NO_VARBITS, held(ItemID.LUNAR_MOONCLAN_LIMINAL_STAFF,
+			"Lunar staff")).getLine());
+		assertEquals("READY: " + SlayerRequirements.ZANARIS_DIARY_NOTE, at("Cows", 0, "zanaris", diary).getLine());
+		assertEquals("MISSING: a dramen or lunar staff", at("Trolls", 0, "enchanted_valley", NO_VARBITS).getLine());
+		assertEquals("READY: " + SlayerRequirements.FAIRY_RING_DIARY_NOTE, at("Trolls", 0, "enchanted_valley", diary).getLine());
+		// The Evil Chicken's Lair is in Zanaris and takes a raw chicken each time. An undead one does not do.
+		final String dragons = ". Bring an anti-dragon shield or antifire potion, and a dragonbane weapon";
+		assertEquals("MISSING: a dramen or lunar staff, and a raw chicken" + dragons,
+			at("Black dragons", SlayerRequirements.EVIL_CHICKEN_AREA, "evil_chickens_lair", NO_VARBITS).getLine());
+		assertEquals("MISSING: a raw chicken" + dragons, at("Black dragons", 0, "evil_chickens_lair", NO_VARBITS,
+			held(ItemID.DRAMEN_STAFF, "Dramen staff"), held(ItemID.RAW_CHICKEN_UNDEAD, "Raw chicken")).getLine());
+		assertEquals("READY: Raw chicken. " + SlayerRequirements.ZANARIS_DIARY_NOTE + dragons, at("Black dragons", 0, "evil_chickens_lair",
+			diary, held(ItemID.RAW_CHICKEN, "Raw chicken")).getLine());
+	}
+
+	@Test
+	public void theKalphiteLairTakesARopeEachVisitUntilTheHardDesertDiary()
+	{
+		final String keris = ". Bring a keris or keris partisan";
+		assertEquals("MISSING: a rope" + keris, at("Kalphites", SlayerRequirements.KALPHITE_LAIR_AREA, "kalphite_lair", NO_VARBITS).getLine());
+		assertEquals("READY: " + SlayerRequirements.KALPHITE_DIARY_NOTE + keris, at("Kalphites", 0, "kalphite_lair",
+			set(VarbitID.DESERT_DIARY_HARD_COMPLETE)).getLine());
+		assertEquals("Bring a keris or keris partisan", at("Kalphites", 0, "kalphite_cave", NO_VARBITS).getLine());
+	}
+
+	@Test
+	public void aRopeNeededTheFirstTimeIsAdviceUntilTheRopeIsTied()
+	{
+		final SlayerGearCheck.Result goblins = at("Goblins", 0, "lumbridge_swamp_caves", NO_VARBITS);
+		assertEquals("READY: " + SlayerRequirements.SWAMP_ROPE_ADVICE, goblins.getLine());
+		assertEquals(Collections.singletonList("Ready"), goblins.getItems());
+		assertEquals("READY: Rope", at("Goblins", 0, "lumbridge_swamp_caves", NO_VARBITS, held(ItemID.ROPE, "Rope")).getLine());
+		// Once it is tied nothing is said
+		assertNull(at("Goblins", 0, "lumbridge_swamp_caves", set(VarbitID.SWAMP_CAVES_ROPED_ENTRANCE)));
+		assertEquals("MISSING: a lit light source. " + SlayerRequirements.SWAMP_ROPE_ADVICE, at("Cave bugs", 0, "lumbridge_swamp_caves",
+			NO_VARBITS).getLine());
+		assertEquals("MISSING: a lit light source", at("Cave bugs", 0, "lumbridge_swamp_caves",
+			set(VarbitID.SWAMP_CAVES_ROPED_ENTRANCE)).getLine());
+		assertEquals("READY: " + SlayerRequirements.GOD_WARS_ROPE_ADVICE, at("Goblins", 0, SlayerRequirements.GOD_WARS_DUNGEON,
+			NO_VARBITS).getLine());
+		assertNull(at("Goblins", 0, SlayerRequirements.GOD_WARS_DUNGEON, set(VarbitID.GODWARS_ENTRANCE_ROPE)));
+	}
+
+	@Test
+	public void keysAndQuestItemsLetYouIn()
+	{
+		final SlayerGearCheck.Result tomb = at("Zombies", 0, "glarials_tomb", NO_VARBITS);
+		assertEquals("MISSING: Glarial's pebble", tomb.getLine());
+		assertEquals(Collections.singletonList("Missing: Glarial's pebble"), tomb.getItems());
+		assertEquals("MISSING: a maze key", at("Rats", 0, "melzars_maze", NO_VARBITS).getLine());
+		// The key ring may hold the key, and the client does not say
+		assertEquals("READY: Steel key ring", at("Ghosts", 0, "melzars_maze", NO_VARBITS, held(ItemID.FAVOUR_KEY_RING,
+			"Steel key ring")).getLine());
+		assertEquals("MISSING: a shade key", at("Shades", 0, "shade_catacombs", NO_VARBITS).getLine());
+		assertEquals("READY: Gold key purple", at("Shades", 0, "shade_catacombs", NO_VARBITS, held(ItemID.SHADEKEY_GOLD_PURPLE,
+			"Gold key purple")).getLine());
+		assertEquals("MISSING: a lockpick", at("Pirates", 0, "pirates_hideout", NO_VARBITS).getLine());
+		assertEquals("MISSING: a rope", at("Skeletons", 0, "digsite_dungeon", NO_VARBITS).getLine());
+		assertEquals("MISSING: a pickaxe", at("Ice giants", 0, "ice_queens_lair", NO_VARBITS).getLine());
+		assertEquals("READY: Crystal pickaxe (inactive)", at("Ice warriors", 0, "ice_queens_lair", NO_VARBITS,
+			held(ItemID.CRYSTAL_PICKAXE_INACTIVE, "Crystal pickaxe (inactive)")).getLine());
+	}
+
+	@Test
+	public void theSmokeDungeonNeedsSomethingAgainstTheSmoke()
+	{
+		final SlayerGearCheck.Result giants = at("Fire giants", SlayerRequirements.SMOKE_DUNGEON_AREA, "smoke_dungeon", NO_VARBITS);
+		assertEquals("MISSING: a facemask, gas mask or Slayer helmet", giants.getLine());
+		assertEquals(Collections.singletonList("Missing: facemask or similar"), giants.getItems());
+		final Held gasMask = held(ItemID.GASMASK, "Gas mask");
+		assertEquals("READY: Gas mask. Bring a demonbane weapon", at("Pyrefiends", 0, "smoke_dungeon", NO_VARBITS, gasMask).getLine());
+		// The dust devils' own need covers the smoke, so it is named once, and a gas mask does not keep their attack out
+		final SlayerGearCheck.Result devils = at("Dust devils", SlayerRequirements.SMOKE_DUNGEON_AREA, "smoke_dungeon", NO_VARBITS);
+		assertEquals("MISSING: a facemask or Slayer helmet", devils.getLine());
+		assertEquals(Collections.singletonList("Missing: facemask or Slayer helmet"), devils.getItems());
+		assertEquals("MISSING: a facemask or Slayer helmet", at("Dust devils", 0, "smoke_dungeon", NO_VARBITS, gasMask).getLine());
+		// With a facemask on the head only the Slayer helmet does both jobs
+		assertEquals("READY: Facemask. Bring a Slayer helmet", at("Fire giants", 0, "smoke_dungeon", HELMET_UNLOCKED,
+			held(ItemID.SLAYER_FACEMASK, "Facemask")).getLine());
+		assertEquals("Bring a Slayer helmet or black mask", at("Fire giants", 0, "giants_den", HELMET_UNLOCKED).getLine());
+	}
+
+	@Test
+	public void theCyclopsRoomsTakeTokensOrAnAttackCape()
+	{
+		for (String guild : Arrays.asList("warriors_guild", "warriors_guild_basement"))
+		{
+			final SlayerGearCheck.Result none = at("Hill giants", 0, guild, NO_VARBITS);
+			assertEquals("MISSING: 100 warrior guild tokens, or an Attack cape", none.getLine());
+			assertEquals(Collections.singletonList("Missing: 100 warrior guild tokens"), none.getItems());
+		}
+		final SlayerGearCheck.Result few = at("Hill giants", 0, "warriors_guild", NO_VARBITS, held(ItemID.WARGUILD_TOKENS,
+			"Warrior guild token", 99));
+		assertEquals("MISSING: 1 more warrior guild token (have 99, need 100), or an Attack cape", few.getLine());
+		assertEquals(Collections.singletonList("Missing: 1 warrior guild token"), few.getItems());
+		assertEquals("READY: 340 warrior guild tokens (need 100)", at("Hill giants", 0, "warriors_guild", NO_VARBITS,
+			held(ItemID.WARGUILD_TOKENS, "Warrior guild token", 340)).getLine());
+		assertEquals("READY: Attack cape", at("Hill giants", 0, "warriors_guild_basement", NO_VARBITS, held(ItemID.SKILLCAPE_ATTACK,
+			"Attack cape")).getLine());
+	}
+
+	@Test
+	public void needsOfATaskTiedToOneOfItsPlaces()
+	{
+		// Taverley's second half: the dusty key, or 70 Agility for the pipe
+		final String demonbane = ". Bring a demonbane weapon";
+		assertEquals("READY: " + SlayerRequirements.NO_DUSTY_KEY_ADVICE + demonbane, at("Hellhounds", SlayerRequirements.TAVERLEY_AREA,
+			SlayerRequirements.TAVERLEY_DUNGEON, NO_VARBITS).getLine());
+		assertEquals("READY: Dusty key" + demonbane, at("Black demons", 0, SlayerRequirements.TAVERLEY_DUNGEON, NO_VARBITS,
+			held(ItemID.DUSTY_KEY, "Dusty key")).getLine());
+		assertEquals("Bring a demonbane weapon", at("Hellhounds", 0, "catacombs_of_kourend", NO_VARBITS).getLine());
+		assertEquals("Bring a demonbane weapon", at("Black demons", 0, null, NO_VARBITS).getLine());
+		// The hill giants' cyclopes in Bandos' Stronghold, behind the gong
+		final SlayerGearCheck.Result bandos = at("Hill giants", 0, SlayerRequirements.GOD_WARS_DUNGEON, NO_VARBITS);
+		assertEquals("MISSING: a hammer or warhammer. " + SlayerRequirements.GOD_WARS_ROPE_ADVICE, bandos.getLine());
+		assertEquals(Collections.singletonList("Missing: hammer or warhammer"), bandos.getItems());
+		assertEquals("READY: Dragon warhammer", at("Hill giants", 0, SlayerRequirements.GOD_WARS_DUNGEON,
+			set(VarbitID.GODWARS_ENTRANCE_ROPE), held(ItemID.DRAGON_WARHAMMER, "Dragon warhammer")).getLine());
+		assertNull(at("Hill giants", 0, null, NO_VARBITS));
+	}
+
+	@Test
+	public void meiyerditchLaboratoriesRecommendAPickaxeForTheMines()
+	{
+		final String reason = ". " + SlayerRequirements.DAEYALT_REASON;
+		final SlayerGearCheck.Result hands = at("Crawling hands", 0, "meiyerditch_laboratories", NO_VARBITS);
+		assertEquals("Bring a pickaxe" + reason, hands.getLine());
+		assertEquals(Collections.singletonList("Bring: pickaxe"), hands.getItems());
+		assertEquals(SlayerGearCheck.Status.BRING, hands.getStatus());
+		assertEquals(Arrays.asList("Bring: demonbane weapon", "Bring: pickaxe"), at("Bloodveld", SlayerRequirements.MEIYERDITCH_LABS_AREA,
+			null, NO_VARBITS).getItems());
+		assertEquals("You have Rune pickaxe", at("Crawling hands", 0, "meiyerditch_laboratories", NO_VARBITS, held(ItemID.RUNE_PICKAXE,
+			"Rune pickaxe")).getLine());
+		final SlayerGearCheck.Result banked = SlayerGearCheck.evaluate("Crawling hands", 40, 0, "meiyerditch_laboratories",
+			Collections.<Held>emptyList(), bank(ItemID.RUNE_PICKAXE, 1), NO_VARBITS, true);
+		assertEquals("Bring from your bank: Rune pickaxe" + reason, banked.getLine());
+		assertEquals(Collections.singletonList("Bring from bank: Rune pickaxe"), banked.getItems());
+		// Off with the rest of the recommended tier
+		assertNull(SlayerGearCheck.evaluate("Crawling hands", 40, 0, "meiyerditch_laboratories", Collections.<Held>emptyList(), null,
+			NO_VARBITS, false));
+	}
+
+	/** Every item the bank can name, alone in the bank, at every place the tables name: each compact item still fits. */
+	@Test
+	public void everyCompactItemAtAPlaceIsShort() throws Exception
+	{
+		final List<Integer> ids = new ArrayList<>(oneIdPerName().values());
+		ids.add(-1);
+		for (String place : SlayerRequirements.placeKeys())
+		{
+			for (String task : Arrays.asList("Cows", "Dust devils", "Hill giants", "Hellhounds", "Black dragons"))
+			{
+				for (int id : ids)
+				{
+					final SlayerGearCheck.Result result = SlayerGearCheck.evaluate(task, 40, 0, place, Collections.<Held>emptyList(),
+						id < 0 ? null : bank(id, 1000), HELMET_UNLOCKED, true);
+					if (result == null) continue;
+					for (String item : result.getItems())
+					{
+						assertTrue(place + ", " + task + ": " + item, item.length() <= SlayerGearCheck.MAX_ITEM);
+					}
+				}
+			}
+		}
+	}
+
+	/** The gear check at a place, as the plugin asks for it: Konar's area or 0, and the key of the place the task goes to. */
+	private static SlayerGearCheck.Result at(String task, int area, String place, IntUnaryOperator varbits, Held... items)
+	{
+		return SlayerGearCheck.evaluate(task, 40, area, place, Arrays.asList(items), null, varbits, true);
 	}
 
 	private static SlayerGearCheck.Result withBank(String task, int killsLeft, IntUnaryOperator varbits, BankGear bank, Held... items)

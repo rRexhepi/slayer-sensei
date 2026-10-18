@@ -418,6 +418,18 @@ public class SlayerLocationsTest
 		assertFalse("the Catacombs need nothing", PlaceAccess.check(PlaceAccess.of(data.byKey("catacombs_of_kourend"), 41), fresh).isLocked());
 	}
 
+	/** Brimhaven Dungeon's vines want Woodcutting levels the wiki does not call unboostable, so they are notes that lock nothing. */
+	@Test
+	public void brimhavensVinesAreNotesForThePlaceAndTheBlackDemons()
+	{
+		final PlaceAccess.Verdict demons = PlaceAccess.check(PlaceAccess.of(data.byKey("brimhaven_dungeon"), 30), PlaceAccess.Account.UNKNOWN);
+		assertFalse(demons.isLocked());
+		assertEquals("Needs 10 Woodcutting to cut the vines. Needs 34 Woodcutting for the vines to the black demons.", demons.sentence());
+		// The fire giants are not said to lie past the 34 vines
+		assertEquals("Needs 10 Woodcutting to cut the vines.",
+				PlaceAccess.check(PlaceAccess.of(data.byKey("brimhaven_dungeon"), 16), PlaceAccess.Account.UNKNOWN).sentence());
+	}
+
 	@Test
 	public void everyTaskListNamesKnownPlaces()
 	{

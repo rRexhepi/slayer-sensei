@@ -81,7 +81,10 @@ final class SlayerBlockAdvisor
 			final SlayerPool.Entry e = pool.find(row);
 			if (e == null || !e.isAssignable())
 			{
-				lifted.put(row, new Misfit(e == null ? "Task row " + row : e.getName(), "you cannot be given it anyway"));
+				// Stop the Wyvern takes fossil wyverns out of every list, when owned or when the plan buys it now
+				final String why = e != null && e.getStatus() == SlayerPool.Status.REMOVED
+						? SlayerReward.STOP_THE_WYVERN.getFallbackName() + " blocks it without a slot" : "you cannot be given it anyway";
+				lifted.put(row, new Misfit(e == null ? "Task row " + row : e.getName(), why));
 			}
 			else if (!e.isRated())
 			{

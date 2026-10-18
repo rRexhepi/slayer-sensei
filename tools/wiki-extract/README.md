@@ -145,6 +145,10 @@ on. A Sailing level to land on an island locks, because the wiki's Mooring point
 disembarking is not boostable. Where the wiki says partial completion or during the quest, the place
 needs the quest started, the lowest progress that can be read.
 
+Items to carry and entry fees, such as an axe and 875 coins for Brimhaven Dungeon, are asked for by the
+plugin's gear check instead (`SlayerRequirements`), by the same location keys. A test keeps those keys
+on places of `slayer_areas.json`.
+
 Each source is `{"page", "quote"}` or `{"page", "field", "value"}`. A quote is plain text: links show
 their text, formatting and references are gone, `{{SCP|Agility|60}}` reads as "60 Agility" and
 `{{Boostable|no}}` as "(not boostable)" (`wikiparse.plain_text`). A field names a field of the page's

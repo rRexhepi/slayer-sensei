@@ -75,6 +75,15 @@ The check only says you are ready when you wear or carry everything you must hav
 once on a character, only your inventory and worn items are checked, and the tooltip on the GEAR heading
 asks you to open it.
 
+The place the task goes to counts as well, whether Konar assigned it or you picked it for another master.
+Brimhaven Dungeon asks for an axe for the vines, any axe but the blessed one, and 875 coins for Saniboch,
+who takes them each time you go in. Once you have paid him 1,000,000 for permanent access the coins are no
+longer asked for. Other places ask for what gets you in, such as a spade for the Barrows crypts, a dramen
+or lunar staff for Zanaris until the elite Lumbridge & Draynor diary, a rope for the Kalphite Lair until
+the hard Desert diary, or 100 warrior guild tokens for the cyclopes. A rope needed only the first time, at
+the Lumbridge Swamp Caves and the God Wars Dungeon, is a note in the tooltip until it is tied. Meiyerditch
+Laboratories add a pickaxe to the items to bring, for the quick way in through the mines.
+
 ### Fight notes
 
 Short notes for the fight. They give the style to kill it with, its weakness, how it attacks, a prayer
@@ -97,6 +106,8 @@ The goal sits at the top of the plan, and you can switch it there or in the sett
   purchases that would work against your goal.
 - It shows the block list of the plan's master with the blocks to keep, to add and to lift. On the points
   routine the block list at Turael's spot is shown too.
+- Stop the Wyvern blocks fossil wyverns at every master without using a slot. For XP the plan buys it first
+  once your points cover it, and gives the slot fossil wyverns would take to the next task worth a block.
 
 The plan reads your levels, quests, unlocks, purchases and block lists from the game. It reads each
 master's task list from the game's own tables. Items from the reward shop's Buy tab count as owned once the
@@ -160,8 +171,9 @@ the sidebar says that it is optional and where to get it.
 - It makes no network requests. Everything it knows is bundled with the plugin or read from the game client.
 - It saves its settings and the place you picked for each task in your RuneLite settings. The Buy tab
   items it has seen are saved there too, per character, and so is what your bank held of the gear check's
-  items the last time you opened it, each item by its id with its count. Nothing else about your bank is
-  saved, and the bank is only read while you have it open.
+  items the last time you opened it, each item by its id with its count. Coins and warrior guild tokens are
+  among those items, for the places that charge them. Nothing else about your bank is saved, and the bank is
+  only read while you have it open.
 - The fight notes, the prayer line among them, are fixed text for each task from the bundled data. They do
   not change during a fight.
 

@@ -94,6 +94,11 @@ final class SlayerPointsPlanner
 		{
 			return new Candidate(type, reward, name, cost, owned, cosmetic, gain, why, lockedBy, note, list, avoid);
 		}
+
+		Candidate withNote(String note)
+		{
+			return new Candidate(type, reward, name, cost, owned, cosmetic, gain, why, lockedBy, note, list, avoid);
+		}
 	}
 
 	@Value
@@ -259,7 +264,8 @@ final class SlayerPointsPlanner
 		}
 
 		final boolean inOrder = goal == SlayerGoal.XP;
-		wanted.sort(inOrder ? XP_ORDER : BEST_FIRST);
+		int budget = Math.max(0, points - reserve.getPoints());
+		wanted.sort(inOrder ? xpOrder(budget) : BEST_FIRST);
 		keepBlockOrder(wanted, candidates);
 		later.sort(BEST_FIRST);
 		// The wiki's own advice against a purchase comes first, then the goal model's, worst first
@@ -267,7 +273,6 @@ final class SlayerPointsPlanner
 
 		final List<Line> buyNow = new ArrayList<>();
 		final List<Line> saveFor = new ArrayList<>();
-		int budget = Math.max(0, points - reserve.getPoints());
 		boolean saving = false;
 		// In the XP order a purchase waits for the ones before it, so its shortfall counts them too
 		int ahead = 0;
@@ -336,8 +341,11 @@ final class SlayerPointsPlanner
 			.thenComparing(Comparator.comparingDouble(Candidate::getGain).reversed())
 			.thenComparing(Candidate::getName);
 
-	/** The wiki's tiers for XP first, the goal model's order within each. */
-	static final Comparator<Candidate> XP_ORDER = Comparator.comparingInt(SlayerPointsPlanner::xpTier).thenComparing(BEST_FIRST);
+	/** The wiki's tiers for XP first, the goal model's order within each. {@code budget} is the points above the reserve. */
+	static Comparator<Candidate> xpOrder(int budget)
+	{
+		return Comparator.comparingInt((Candidate c) -> xpTier(c, budget)).thenComparing(BEST_FIRST);
+	}
 
 	/**
 	 * A purchase's place in the XP order: 1 regular blocks and Bigger and Badder, 2 Stop the Wyvern and Malevolent
@@ -346,10 +354,15 @@ final class SlayerPointsPlanner
 	 * 50 points and the wiki itself recommends turning it on ("optional, but recommended since you can toggle it off
 	 * without penalty"), while Stop the Wyvern costs 500, five blocks' worth, to free one block slot. Taken literally, the
 	 * order would hold a 50 point purchase behind a 500 point one.
+	 * <p>
+	 * When {@code budget}, the points above the reserve, already covers Stop the Wyvern, it comes first of all (0). Nothing
+	 * waits behind it then, and the blocks bought after it go to other tasks, since it blocks fossil wyverns at every master
+	 * without a slot.
 	 */
-	static int xpTier(Candidate c)
+	static int xpTier(Candidate c, int budget)
 	{
 		final SlayerReward r = c.getReward();
+		if (r == SlayerReward.STOP_THE_WYVERN && c.getCost() >= 0 && c.getCost() <= budget) return 0;
 		if (c.getType() == Type.BLOCK || r == SlayerReward.BIGGER_AND_BADDER) return 1;
 		if (r == SlayerReward.STOP_THE_WYVERN || r == SlayerReward.MALEVOLENT_MASQUERADE) return 2;
 		if (r != null && r.getKind() == SlayerReward.Kind.EXTENSION) return 3;
